@@ -6,7 +6,7 @@ name                 : "Edgardo Correa"
 description          : "Analista de Sistemas de Informação"
 url                  : "https://edgardocorrea.github.io"
 baseurl              : "" # Deixe em branco
-repository           : "edgardocorrea/edgardo-correa.github.io"
+repository           : "edgardocorrea/edgardocorrea.github.io" # CORRIGIDO: sem o hífen
 
 # Seus dados
 author:
@@ -34,3 +34,20 @@ collections:
 
 # Aparência do Tema
 minimal_mistakes_skin    : "contrast" # Opções: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise". Teste as que mais gostar!
+
+# =================================================================
+# CONFIGURAÇÕES ESSENCIAIS PARA O GITHUB PAGES (NÃO APAGAR)
+# =================================================================
+
+# 1. Usa o tema diretamente do GitHub, evitando erros de build
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+
+# 2. Plugins necessários para o tema funcionar corretamente
+plugins:
+  - jekyll-include-cache
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-paginate
+
+# =================================================================
