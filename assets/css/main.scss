@@ -75,16 +75,16 @@
 
 // Ajusta o título e descrição do hero
 .page__hero-caption {
-  padding: 0.5rem 0 !important;
+  padding: 0.2rem 0 !important;
   
   .page__title {
-    font-size: 1.2rem !important; // Reduz tamanho do título
-    margin-bottom: 0.2rem !important;
+    font-size: 10px !important; // Reduz tamanho do título
+    margin-bottom: 8px !important;
   }
   
   .page__lead {
-    font-size: 0.7rem !important; // Reduz tamanho da descrição
-    margin-bottom: 0.3rem !important;
+    font-size: 8px !important; // Reduz tamanho da descrição
+    margin-bottom: 8px !important;
   }
   // Compacta o botão "Ver Meus Projetos"
   .btn {
