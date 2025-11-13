@@ -4,7 +4,7 @@
 // Importa os estilos do tema. NÃO APAGUE ESTA LINHA.
 @import "minimal-mistakes";
 
-// --- SEUS ESTILOS CUSTOMIZADOS ---
+// --- SEUS ESTILOS CUSTOMIZADOS  ---
 
 // 1. Remove o fundo branco e as margens que estão cobrindo o wallpaper
 .page {
@@ -16,53 +16,130 @@
   padding: 0;
 }
 
-// 2. Controla o tamanho do cabeçalho (hero image)
+// 2. Controla o tamanho do cabeçalho (hero image) para ocupar a tela inteira
 .page__hero {
   height: 100vh;
   overflow: hidden;
 }
 
-// 3. CONTROLE DEFINITIVO DO RODAPÉ
-.page__footer {
-  padding: 0 !important;
-}
-.page__footer-follow {
-  margin: 0 !important;
-}
-.page__footer-copyright {
-  margin: 0 !important;
-  padding: 0.5em 0 !important;
+// 3. CORREÇÃO DO HEADER (TOPO) - 
+.masthead {
+  padding: 8px 16px !important; // Reduz a altura do cabeçalho
+  
+  .site-title {
+    font-size: 19px !important; // Título do site menor
+    line-height: 1.2 !important;
+  }
+  
+  .greedy-nav {
+    min-height: auto !important;
+    
+    a {
+      padding: 8px 12px !important; // Reduz o padding dos links do menu
+    }
+  }
 }
 
-// 4. CONTROLE DO TAMANHO DO TÍTULO E TEXTO (A NOVA PARTE)
+// 4. CORREÇÃO DO HERO/BANNER - Posicionamento do texto
+.page__hero-inner {
+  padding: 0;
+  
+  .text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 650px;
+    padding: 8px; // Padding interno em PX
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+  }
+}
 
-// --- Estilos para Desktops (Telas Grandes) ---
+// 5. CONTROLE DO TAMANHO DO TÍTULO E TEXTO 
 .page__hero--overlay .page__title {
-  font-size: 48px !important; // Tamanho do título em desktops
+  font-size: 48px !important; // Título em desktops
   line-height: 1.2 !important;
 }
 
 .page__hero--overlay .page__lead {
-  font-size: 20px !important; // Tamanho do texto em desktops
+  font-size: 20px !important; // Texto em desktops
   line-height: 1.5 !important;
 }
 
-// --- Estilos para Tablets (Telas Médias) ---
+// Para Tablets
 @media (max-width: 768px) {
   .page__hero--overlay .page__title {
-    font-size: 38px !important; // Título um pouco menor em tablets
+    font-size: 38px !important;
   }
   .page__hero--overlay .page__lead {
-    font-size: 18px !important; // Texto um pouco menor em tablets
+    font-size: 18px !important;
+  }
+  .masthead {
+    padding: 4px 8px !important;
   }
 }
 
-// --- Estilos para Celulares (Telas Pequenas) ---
+// Para Celulares
 @media (max-width: 480px) {
   .page__hero--overlay .page__title {
-    font-size: 28px !important; // Título ainda menor em celulares
+    font-size: 28px !important;
   }
   .page__hero--overlay .page__lead {
-    font-size: 16px !important; // Texto base para celulares
+    font-size: 16px !important;
   }
+}
+
+// 6. CORREÇÃO DO BOTÃO PRIMÁRIO (AZUL ESCURO)
+.btn--primary {
+  background-color: #004d99 !important;
+  color: #ffffff !important;
+  border-color: #004d99 !important;
+  
+  &:hover {
+    background-color: #003366 !important;
+    border-color: #003366 !important;
+    color: #ffffff !important;
+  }
+}
+
+// 7. CORREÇÃO DO FOOTER (RODAPÉ) - 
+.page__footer {
+  padding: 5px 0 !important; // Reduz drasticamente a altura
+  margin-top: 11px !important;
+  
+  footer {
+    padding: 8px 16px !important;
+    
+    .page__footer-follow {
+      margin-bottom: 8px !important;
+      ul {
+        margin-bottom: 0 !important;
+      }
+    }
+    
+    .page__footer-copyright {
+      margin-top: 8px !important;
+      margin-bottom: 0 !important;
+      font-size: 11px !important; // Fonte menor em PX
+    }
+  }
+}
+
+// 8. AJUSTES GERAIS - 
+.layout--splash {
+  .feature__wrapper {
+    padding: 16px 0 !important; // Reduz espaçamento
+    
+    .feature__item {
+      margin-bottom: 24px !important;
+    }
+  }
+}
+
+.page__content {
+  padding-top: 8px !important;
+  padding-bottom: 8px !important;
 }
