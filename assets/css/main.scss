@@ -1,202 +1,68 @@
 ---
 ---
 
-// Importa os estilos do tema Minimal Mistakes. É ESSENCIAL que esta linha seja a primeira.
+// Importa os estilos do tema. NÃO APAGUE ESTA LINHA.
 @import "minimal-mistakes";
 
-// --- SEUS ESTILOS CUSTOMIZADOS COMEÇAM AQUI ---
+// --- SEUS ESTILOS CUSTOMIZADOS ---
 
-// ==================== CORREÇÃO DO HEADER (TOPO) ====================
-
-.masthead {
-  // Reduz a altura do cabeçalho
-  padding: 0.5rem 1rem !important; // Valor original é maior
-  
-  .site-title {
-    // Reduz o tamanho do título do site
-    font-size: 1.2rem !important;
-    line-height: 1.2 !important;
-  }
-  
-  .greedy-nav {
-    // Ajusta o menu de navegação
-    min-height: auto !important;
-    
-    a {
-      // Reduz o padding dos links do menu
-      padding: 0.5rem 0.75rem !important;
-    }
-  }
+// 1. Remove o fundo branco e as margens que estão cobrindo o wallpaper
+.page {
+  background-color: transparent;
 }
 
-// ==================== CORREÇÃO DO HERO/BANNER ====================
-
-.page__hero--overlay {
-  // Reduz a altura do banner principal
-  min-height: 150px !important; // Padrão é 600px+
-  max-height: 250px !important;
-  padding: 1rem 0 !important; // Reduz padding vertical
-  
-  // Garante que o conteúdo posicionado fique dentro desta área
-  position: relative; 
-}
-
-.page__hero-inner {
-  // Remove o padding padrão que pode atrapalhar
+.page__inner {
+  background-color: transparent;
   padding: 0;
-  
-  // Cria um container para o texto e o posiciona sobre a tela do notebook
-  .text-wrapper {
-    // Posiciona o container de forma absoluta em relação à .page__hero
-    position: absolute;
-    
-    // Centraliza o container. Ajuste estes valores para alinhar perfeitamente com a tela do notebook na sua imagem.
-    top: 45%;       // Move o topo do container para o meio da imagem
-    left: 50%;      // Move a esquerda do container para o meio da imagem
-    transform: translate(-50%, -50%); // Cria o deslocamento perfeito para o centro
-    
-    // Define a largura do container para ser aproximadamente a largura da tela do notebook
-    width: 60%; 
-    
-    // Impede que o texto fique muito largo em telas grandes
-    max-width: 650px;
-    
-    // Adiciona um pouco de espaço dentro do container
-    padding: 0.5rem;
-    
-    // Alinha o texto ao centro
-    text-align: center;
-    
-    // Garante que o texto fique legível sobre a imagem
-    color: #ffffff; // Texto branco
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); // Sombra no texto para dar contraste
-  }
 }
 
-// Ajusta o título e descrição do hero
-.page__hero-caption {
-  padding: 0.2rem 0 !important;
-  
-  .page__title {
-    font-size: 10px !important; // Reduz tamanho do título
-    margin-bottom: 8px !important;
-  }
-  
-  .page__lead {
-    font-size: 8px !important; // Reduz tamanho da descrição
-    margin-bottom: 8px !important;
-  }
-  // Compacta o botão "Ver Meus Projetos"
-  .btn {
-      margin-top: 0.5rem !important;
-      padding: 0.4rem 0.8rem !important; 
-      font-size: 0.8rem !important;
-  }
+// 2. Controla o tamanho do cabeçalho (hero image)
+.page__hero {
+  height: 100vh;
+  overflow: hidden;
 }
 
-// ==================== CORREÇÃO DE BOTÃO (AZUL ESCURO) ====================
-
-// Define a cor de fundo para o botão principal/primário (usado no Hero e Projetos)
-.btn--primary {
-  // Azul escuro (exemplo: #004d99)
-  background-color: #004d99 !important; 
-  // Cor do texto
-  color: #ffffff !important; 
-  // Borda (opcional)
-  border-color: #004d99 !important; 
-  
-  // Efeito ao passar o mouse (hover)
-  &:hover {
-    // Um tom ligeiramente mais escuro (ex: #003366)
-    background-color: #003366 !important;
-    border-color: #003366 !important;
-    color: #ffffff !important;
-  }
-}
-
-// ==================== CORREÇÃO DO FOOTER (RODAPÉ) ====================
-
+// 3. CONTROLE DEFINITIVO DO RODAPÉ
 .page__footer {
-  // Reduz drasticamente a altura do rodapé
-  padding: 0.3rem 0 !important; // Valor original é ~3em
-  margin-top: 0.7rem !important;
-  
-  footer {
-    padding: 0.5rem 1rem !important;
-    
-    // Remove espaçamento excessivo
-    .page__footer-follow {
-      margin-bottom: 0.5rem !important;
-      
-      ul {
-        margin-bottom: 0 !important;
-      }
-    }
-    
-    .page__footer-copyright {
-      margin-top: 0.5rem !important;
-      margin-bottom: 0 !important;
-      font-size: 0.7rem !important; // Reduz tamanho da fonte
-    }
-  }
+  padding: 0 !important;
+}
+.page__footer-follow {
+  margin: 0 !important;
+}
+.page__footer-copyright {
+  margin: 0 !important;
+  padding: 0.5em 0 !important;
 }
 
-// ==================== AJUSTES GERAIS ====================
+// 4. CONTROLE DO TAMANHO DO TÍTULO E TEXTO (A NOVA PARTE)
 
-// Reduz espaçamento entre seções
-.layout--splash {
-  .feature__wrapper {
-    padding: 1rem 0 !important; // Reduz de ~4rem
-    
-    .feature__item {
-      margin-bottom: 1.5rem !important;
-    }
-  }
+// --- Estilos para Desktops (Telas Grandes) ---
+.page__hero--overlay .page__title {
+  font-size: 48px !important; // Tamanho do título em desktops
+  line-height: 1.2 !important;
 }
 
-// Reduz margens do conteúdo principal
-.page__content {
-  padding-top: 0.5rem !important;
-  padding-bottom: 0.5rem !important;
+.page__hero--overlay .page__lead {
+  font-size: 20px !important; // Tamanho do texto em desktops
+  line-height: 1.5 !important;
 }
 
-// ==================== RESPONSIVIDADE ====================
-
-// Para tablets e menores
+// --- Estilos para Tablets (Telas Médias) ---
 @media (max-width: 768px) {
-  .page__hero--overlay {
-    min-height: 300px !important;
-    padding: 1rem 0 !important;
+  .page__hero--overlay .page__title {
+    font-size: 38px !important; // Título um pouco menor em tablets
   }
-  
-  .page__hero-caption {
-    .page__title {
-      font-size: 10px !important;
-    }
-    
-    .page__lead {
-      font-size: 8px !important;
-    }
-  }
-  
-  .masthead {
-    padding: 0.25rem 0.5rem !important;
+  .page__hero--overlay .page__lead {
+    font-size: 18px !important; // Texto um pouco menor em tablets
   }
 }
 
-// Para smartphones
+// --- Estilos para Celulares (Telas Pequenas) ---
 @media (max-width: 480px) {
-  .page__hero--overlay {
-    min-height: 250px !important;
+  .page__hero--overlay .page__title {
+    font-size: 28px !important; // Título ainda menor em celulares
   }
-  
-  .page__hero-caption {
-    .page__title {
-      font-size: 10px !important;
-    }
-    
-    .page__lead {
-      font-size: 8px !important;
-    }
+  .page__hero--overlay .page__lead {
+    font-size: 16px !important; // Texto base para celulares
   }
 }
