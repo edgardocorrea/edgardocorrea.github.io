@@ -10,7 +10,6 @@ header:
       url: "/portfolio/"
 excerpt: "Analista de Sistemas com base em infraestrutura de TI com sólida experiência em redes, sistemas e automação. Apaixonado por construir soluções robustas e eficientes."
 ---
-
 <div class="text-wrapper">
   <h1 class="page__title">{{ page.title }}</h1>
   <p class="page__lead">{{ page.excerpt | markdownify }}</p>
@@ -19,5 +18,5 @@ excerpt: "Analista de Sistemas com base em infraestrutura de TI com sólida expe
   {% endif %}
 </div>
 
-{% include feature_row id="intro" type="center" %}
+
 
