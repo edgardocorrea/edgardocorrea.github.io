@@ -1,20 +1,34 @@
-# Site Settings
-locale               : "pt-BR"
-title                : "Edgardo Correa"
-title_separator      : "-"
-name                 : "Edgardo Correa"
-description          : "Analista de Sistemas de Informação"
-url                  : "https://edgardocorrea.github.io"
-baseurl              : "" # Deixe em branco
-repository           : "edgardocorrea/edgardocorrea.github.io"
+# =================================================================
+# CONFIGURAÇÕES DO SITE - Minimal Mistakes Theme
+# =================================================================
 
-# Seus dados
+# ==================== INFORMAÇÕES BÁSICAS ====================
+locale: "pt-BR"
+title: "Edgardo Correa"
+title_separator: "|"  # CORRIGIDO: Usar "|" ao invés de "-" (melhor SEO)
+subtitle: "Analista de Sistemas"
+name: "Edgardo Correa"
+description: "Analista de Sistemas de Informação com foco em infraestrutura de redes, automação e segurança."
+url: "https://edgardocorrea.github.io"
+baseurl: ""
+repository: "edgardocorrea/edgardocorrea.github.io"
+
+# ==================== TEMA ====================
+# IMPORTANTE: Sempre especifique a versão para evitar quebras
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "contrast"  # Opções: air, aqua, contrast, dark, dirt, neon, mint, plum, sunrise
+
+# ==================== CONFIGURAÇÕES DE HEADER ====================
+logo: ""  # Deixe vazio para header compacto
+masthead_title: "Edgardo Correa"
+
+# ==================== AUTOR ====================
 author:
-  name             : "Edgardo Correa"
-  avatar           : "/assets/images/bio-photo.jpg" # adicionar sua foto depois
-  bio              : "Profissional formado em Sistemas da Informação, com foco em infraestrutura de redes, automação e segurança."
-  location         : "São Paulo, São Paulo"
-  email            : "edgardo.correa@email.com"
+  name: "Edgardo Correa"
+  avatar: "/assets/images/bio-photo.jpg"
+  bio: "Analista de Sistemas de Informação | Infraestrutura de Redes | Automação | Segurança"
+  location: "São Paulo, SP - Brasil"
+  email: "edgardo.correa@email.com"  # ATENÇÃO: Substitua por seu email real
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
@@ -23,31 +37,193 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/edgardocorrea"
     - label: "Credly"
-      icon: "fas fa-fw fa-certificate" # Ícone de certificado
+      icon: "fas fa-fw fa-certificate"
       url: "https://www.credly.com/users/edgardo.correa/badges"
+    # OPCIONAL: Adicione mais links se necessário
+    # - label: "Email"
+    #   icon: "fas fa-fw fa-envelope"
+    #   url: "mailto:edgardo.correa@email.com"
 
-# Portfolio
+# ==================== FOOTER (COMPACTO) ====================
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/edgardocorrea"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/edgardocorrea"
+
+# ==================== COLLECTIONS (PORTFÓLIO) ====================
 collections:
   portfolio:
     output: true
-    permalink: /:collection/:name/
+    permalink: /:collection/:path/  # CORRIGIDO: :path ao invés de :name
 
-# Aparência do Tema
-minimal_mistakes_skin    : "contrast" # Opções: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise". Teste as que mais gostar!
+# ==================== DEFAULTS ====================
+defaults:
+  # _posts (Blog)
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: true
+      related: true
+      show_date: true
+      sidebar:
+        nav: ""  # Remove sidebar de navegação
+      
+  # _pages (Páginas)
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: single
+      author_profile: false
+      sidebar:
+        nav: ""  # Remove sidebar de navegação
+  
+  # _portfolio (Portfólio)
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: single
+      author_profile: false
+      share: true
+      sidebar:
+        nav: ""
 
-# =================================================================
-# CONFIGURAÇÕES ESSENCIAIS PARA O GITHUB PAGES (NÃO APAGAR)
-# =================================================================
+# ==================== PAGINAÇÃO ====================
+paginate: 6  # CORRIGIDO: 6 é melhor para layout de 2 colunas
+paginate_path: /blog/page:num/  # MELHORADO: Adiciona /blog/ ao caminho
 
-# 1. Usa o tema diretamente do GitHub, evitando erros de build
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-
-# 2. Plugins necessários para o tema funcionar corretamente
+# ==================== PLUGINS ====================
 plugins:
-  - jekyll-include-cache
-  - jekyll-feed
+  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
-  - jekyll-paginate
+  - jekyll-feed
+  - jekyll-include-cache
+  # OPCIONAL: Descomentar se quiser SEO avançado
+  # - jekyll-seo-tag
 
-# =================================================================
+# ==================== CONFIGURAÇÕES MARKDOWN ====================
+markdown: kramdown
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Configurações do Kramdown
+kramdown:
+  input: GFM  # GitHub Flavored Markdown
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+# ==================== SEARCH (BUSCA NO SITE) ====================
+search: true
+search_full_content: true
+search_provider: lunr  # Busca local (sem dependências externas)
+
+# ==================== TIMEZONE E IDIOMA ====================
+timezone: America/Sao_Paulo
+locale: "pt-BR"
+
+# ==================== SEO ====================
+og_image: "/assets/images/site-og-image.jpg"
+social:
+  type: Person
+  name: Edgardo Correa
+  links:
+    - "https://www.linkedin.com/in/edgardocorrea"
+    - "https://github.com/edgardocorrea"
+
+# ==================== ANALYTICS (OPCIONAL) ====================
+# Descomente e configure quando tiver conta no Google Analytics
+# analytics:
+#   provider: "google-gtag"
+#   google:
+#     tracking_id: "G-XXXXXXXXXX"  # Seu ID do Google Analytics 4
+#     anonymize_ip: true
+
+# ==================== COMENTÁRIOS (OPCIONAL) ====================
+# Descomente se quiser adicionar sistema de comentários
+# comments:
+#   provider: "disqus"
+#   disqus:
+#     shortname: "seu-shortname-disqus"
+
+# ==================== ARQUIVOS EXCLUÍDOS DO BUILD ====================
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - LICENSE
+  - CHANGELOG.md
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
+  - assets/js/plugins
+  - assets/js/_main.js
+  - assets/js/vendor
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gruntfile.js
+  - gulpfile.js
+  - log
+  - Rakefile
+  - tmp
+  - /docs
+  - /test
+
+# ==================== KEEP (MANTER NO BUILD) ====================
+keep_files:
+  - .git
+  - .svn
+
+# ==================== ENCODING ====================
+encoding: "utf-8"
+markdown_ext: "markdown,mkdown,mkdn,mkd,md"
+
+# ==================== CONVERSÃO ====================
+excerpt_separator: "\n\n"
+
+# ==================== CATEGORIA E TAGS ====================
+category_archive:
+  type: liquid
+  path: /categories/
+tag_archive:
+  type: liquid
+  path: /tags/
+
+# ==================== READING FILES ====================
+include:
+  - .htaccess
+  - _pages
+
+# ==================== SASS/SCSS ====================
+sass:
+  sass_dir: _sass
+  style: compressed  # Comprime CSS para melhor performance
