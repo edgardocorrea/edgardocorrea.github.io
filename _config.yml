@@ -6,7 +6,7 @@ name                 : "Edgardo Correa"
 description          : "Analista de Sistemas de Informação"
 url                  : "https://edgardocorrea.github.io"
 baseurl              : "" # Deixe em branco
-repository           : "edgardocorrea/edgardocorrea.github.io" # CORRIGIDO: sem o hífen
+repository           : "edgardocorrea/edgardocorrea.github.io"
 
 # Seus dados
 author:
