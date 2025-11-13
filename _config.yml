@@ -130,11 +130,6 @@ kramdown:
   smart_quotes: lsquo,rsquo,ldquo,rdquo
   enable_coderay: false
 
-# ==================== SEARCH (BUSCA NO SITE) ====================
-search: true
-search_full_content: true
-search_provider: lunr  # Busca local (sem dependências externas)
-
 # ==================== TIMEZONE E IDIOMA ====================
 timezone: America/Sao_Paulo
 locale: "pt-BR"
