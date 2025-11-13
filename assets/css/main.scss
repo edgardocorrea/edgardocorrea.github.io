@@ -1,4 +1,28 @@
 ---
 ---
 
+// Importa os estilos do tema. NÃO APAGUE ESTA LINHA.
 @import "minimal-mistakes";
+
+// --- SEUS ESTILOS CUSTOMIZADOS ---
+
+// 1. Remove o fundo branco e as margens que estão cobrindo o wallpaper
+.page {
+  background-color: transparent; // Torna o fundo da página transparente
+}
+
+.page__inner {
+  background-color: transparent; // Garante que o conteúdo interno também não tenha fundo branco
+  padding: 0; // Remove o padding padrão
+}
+
+// 2. Controla o tamanho do cabeçalho (hero image)
+.page__hero {
+  height: 100vh; // Faz o cabeçalho ocupar 100% da altura da tela
+  overflow: hidden; // Garante que nada "vaze" para fora
+}
+
+// 3. Reduz o tamanho do rodapé
+.page__footer {
+  padding: 1em 0; // Reduz o padding do rodapé para um valor menor
+}
