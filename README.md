@@ -1,7 +1,7 @@
 
 # Meu Portfólio Pessoal
 
-[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-222222?style=for-the-badge&logo=github)](https://edgardo-correa.github.io)
+[![GitHub Pages](https://img.shields.io/badge/GitHub-Pages-222222?style=for-the-badge&logo=github)](https://edgardocorrea.github.io)
 [![Jekyll](https://img.shields.io/badge/Jekyll-CC0000?style=for-the-badge&logo=jekyll)](https://jekyllrb.com/)
 
 > Este repositório contém o código-fonte do meu portfólio profissional, desenvolvido com Jekyll e o tema Minimal Mistakes. O site foi criado para apresentar meus projetos, habilidades técnicas e certificações na área de infraestrutura de TI e redes.
@@ -44,8 +44,8 @@ Para rodar este portfólio em sua máquina local, siga os passos abaixo:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone https://github.com/edgardocorrea/edgardo-correa.github.io.git
-    cd edgardo-correa.github.io
+    git clone https://github.com/edgardocorrea/edgardocorrea.github.io.git
+    cd edgardocorrea.github.io
     ```
 
 2.  **Instale as dependências do Ruby e do Jekyll:**
@@ -66,6 +66,7 @@ Para rodar este portfólio em sua máquina local, siga os passos abaixo:
 Este projeto utiliza o fantástico tema [Minimal Mistakes](https://github.com/mmistakes/minimal-mistakes) desenvolvido por [Michael Rose](https://github.com/mmistakes).
 
 ---
+
 
 
 
