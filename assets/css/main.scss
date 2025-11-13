@@ -51,7 +51,7 @@
     transform: translate(-50%, -50%);
     width: 60%;
     max-width: 650px;
-    padding: 8px; // Padding interno em PX
+    padding: 4px;
     text-align: center;
     color: #ffffff;
     text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
@@ -60,25 +60,25 @@
 
 // 5. CONTROLE DO TAMANHO DO TÍTULO E TEXTO 
 .page__hero--overlay .page__title {
-  font-size: 48px !important; // Título em desktops
+  font-size: 28px !important; // Título em desktops
   line-height: 1.2 !important;
 }
 
 .page__hero--overlay .page__lead {
-  font-size: 20px !important; // Texto em desktops
+  font-size: 16px !important; // Texto em desktops
   line-height: 1.5 !important;
 }
 
 // Para Tablets
 @media (max-width: 768px) {
   .page__hero--overlay .page__title {
-    font-size: 38px !important;
+    font-size: 28px !important;
   }
   .page__hero--overlay .page__lead {
     font-size: 18px !important;
   }
   .masthead {
-    padding: 4px 8px !important;
+    padding: 2px 4px !important;
   }
 }
 
@@ -108,22 +108,22 @@
 // 7. CORREÇÃO DO FOOTER (RODAPÉ) - 
 .page__footer {
   padding: 5px 0 !important; // Reduz drasticamente a altura
-  margin-top: 11px !important;
+  margin-top: 6px !important;
   
   footer {
-    padding: 8px 16px !important;
+    padding: 4px 4px !important;
     
     .page__footer-follow {
       margin-bottom: 8px !important;
       ul {
-        margin-bottom: 0 !important;
+        margin-bottom: 1px !important;
       }
     }
     
     .page__footer-copyright {
-      margin-top: 8px !important;
+      margin-top: 4px !important;
       margin-bottom: 0 !important;
-      font-size: 11px !important; // Fonte menor em PX
+      font-size: 11px !important;
     }
   }
 }
