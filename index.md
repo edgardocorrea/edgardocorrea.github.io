@@ -9,6 +9,7 @@ header:
 <!-- Conteúdo principal da página -->
 <div class="text-wrapper">
   <h1>Olá, eu sou Edgardo Correa</h1>
-  <p>Engenheiro de Infraestrutura de TI com sólida experiência em redes, sistemas e automação. Apaixonado por construir soluções robustas e eficientes.</p>
+  <p>Analista de Sistemas com base em infraestrutura de TI com sólida experiência em redes, sistemas e automação. Apaixonado por construir soluções robustas e eficientes.</p>
   <a href="/portfolio/" class="btn btn--primary btn--large">Ver Meus Projetos</a>
 </div>
+
