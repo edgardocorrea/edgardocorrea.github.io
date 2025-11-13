@@ -1,37 +1,176 @@
 ---
 ---
 
-// Importa os estilos do tema. NÃO APAGUE ESTA LINHA.
+// Importa os estilos do tema Minimal Mistakes. É ESSENCIAL que esta linha seja a primeira.
 @import "minimal-mistakes";
 
-// --- SEUS ESTILOS CUSTOMIZADOS ---
+// --- SEUS ESTILOS CUSTOMIZADOS COMEÇAM AQUI ---
 
-// 1. Remove o fundo branco e as margens que estão cobrindo o wallpaper
-.page {
-  background-color: transparent;
+// ==================== CORREÇÃO DO HEADER (TOPO) ====================
+
+.masthead {
+  // Reduz a altura do cabeçalho
+  padding: 0.5rem 1rem !important; // Valor original é maior
+  
+  .site-title {
+    // Reduz o tamanho do título do site
+    font-size: 1.2rem !important;
+    line-height: 1.2 !important;
+  }
+  
+  .greedy-nav {
+    // Ajusta o menu de navegação
+    min-height: auto !important;
+    
+    a {
+      // Reduz o padding dos links do menu
+      padding: 0.5rem 0.75rem !important;
+    }
+  }
 }
 
-.page__inner {
-  background-color: transparent;
+// ==================== CORREÇÃO DO HERO/BANNER ====================
+
+.page__hero--overlay {
+  // Reduz a altura do banner principal
+  min-height: 400px !important; // Padrão é 600px+
+  max-height: 500px !important;
+  padding: 2rem 0 !important; // Reduz padding vertical
+  
+  // Garante que o conteúdo posicionado fique dentro desta área
+  position: relative; 
+}
+
+.page__hero-inner {
+  // Remove o padding padrão que pode atrapalhar
   padding: 0;
+  
+  // Cria um container para o texto e o posiciona sobre a tela do notebook
+  .text-wrapper {
+    // Posiciona o container de forma absoluta em relação à .page__hero
+    position: absolute;
+    
+    // Centraliza o container. Ajuste estes valores para alinhar perfeitamente com a tela do notebook na sua imagem.
+    top: 50%;       // Move o topo do container para o meio da imagem
+    left: 50%;      // Move a esquerda do container para o meio da imagem
+    transform: translate(-50%, -50%); // Cria o deslocamento perfeito para o centro
+    
+    // Define a largura do container para ser aproximadamente a largura da tela do notebook
+    width: 55%; 
+    
+    // Impede que o texto fique muito largo em telas grandes
+    max-width: 600px;
+    
+    // Adiciona um pouco de espaço dentro do container
+    padding: 1rem;
+    
+    // Alinha o texto ao centro
+    text-align: center;
+    
+    // Garante que o texto fique legível sobre a imagem
+    color: #ffffff; // Texto branco
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); // Sombra no texto para dar contraste
+  }
 }
 
-// 2. Controla o tamanho do cabeçalho (hero image)
-.page__hero {
-  height: 100vh;
-  overflow: hidden;
+// Ajusta o título e descrição do hero
+.page__hero-caption {
+  padding: 1rem 0 !important;
+  
+  .page__title {
+    font-size: 2rem !important; // Reduz tamanho do título
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .page__lead {
+    font-size: 1rem !important; // Reduz tamanho da descrição
+    margin-bottom: 1rem !important;
+  }
 }
 
-// 3. CONTROLE DEFINITIVO DO RODAPÉ (A NOVA PARTE)
+// ==================== CORREÇÃO DO FOOTER (RODAPÉ) ====================
+
 .page__footer {
-  padding: 0 !important; // Força o padding a ser zero
+  // Reduz drasticamente a altura do rodapé
+  padding: 1rem 0 !important; // Valor original é ~3em
+  margin-top: 2rem !important;
+  
+  footer {
+    padding: 0.5rem 1rem !important;
+    
+    // Remove espaçamento excessivo
+    .page__footer-follow {
+      margin-bottom: 0.5rem !important;
+      
+      ul {
+        margin-bottom: 0 !important;
+      }
+    }
+    
+    .page__footer-copyright {
+      margin-top: 0.5rem !important;
+      margin-bottom: 0 !important;
+      font-size: 0.75rem !important; // Reduz tamanho da fonte
+    }
+  }
 }
 
-.page__footer-follow {
-  margin: 0 !important; // Remove a margem da seção de links do rodapé
+// ==================== AJUSTES GERAIS ====================
+
+// Reduz espaçamento entre seções
+.layout--splash {
+  .feature__wrapper {
+    padding: 2rem 0 !important; // Reduz de ~4rem
+    
+    .feature__item {
+      margin-bottom: 1.5rem !important;
+    }
+  }
 }
 
-.page__footer-copyright {
-  margin: 0 !important; // Remove a margem da seção de copyright
-  padding: 0.5em 0 !important; // Adiciona um padding muito pequeno só para não ficar colado
+// Reduz margens do conteúdo principal
+.page__content {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+// ==================== RESPONSIVIDADE ====================
+
+// Para tablets e menores
+@media (max-width: 768px) {
+  .page__hero--overlay {
+    min-height: 300px !important;
+    padding: 1rem 0 !important;
+  }
+  
+  .page__hero-caption {
+    .page__title {
+      font-size: 1.5rem !important;
+    }
+    
+    .page__lead {
+      font-size: 0.9rem !important;
+    }
+  }
+  
+  .masthead {
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+// Para smartphones
+@media (max-width: 480px) {
+  .page__hero--overlay {
+    min-height: 250px !important;
+  }
+  
+  .page__hero-caption {
+    .page__title {
+      font-size: 1.25rem !important;
+    }
+    
+    .page__lead {
+      font-size: 0.85rem !important;
+    }
+  }
 }
