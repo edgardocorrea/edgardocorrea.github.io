@@ -7,6 +7,14 @@ sidebar: null
 ---
 
 <style>
+/* ==================== FUNDO AZUL PARA INITIAL-CONTENT ==================== */
+.initial-content {
+  background: linear-gradient(145deg, rgba(20, 40, 80, 0.8), rgba(10, 20, 40, 0.9));
+  padding: 40px 20px;
+  border-radius: 15px; /* opcional, para combinar com os cards */
+  box-sizing: border-box;
+}
+
 /* ====================  FORÇAR CENTRALIZAÇÃO VIA CSS ==================== */
 
 /* 1. Oculta completamente a barra lateral e seu contêiner */
@@ -290,6 +298,9 @@ body.page--portfolio main.grid__item {
 .project-card:nth-child(3) { animation-delay: 0.3s; }
 .project-card:nth-child(4) { animation-delay: 0.4s; }
 </style>
+
+
+
 
 
 <!-- Introdução -->
