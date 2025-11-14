@@ -1,12 +1,10 @@
 ---
-layout: splash
 title: "" # Força título vazio
 excerpt: "" # Força excerpt vazio
 header:
   overlay_image: /assets/images/banner-home.jpg
   image_description: "" # Remove alt text
 ---
-
 <!-- Texto customizado posicionado sobre a tela do notebook -->
 <div class="custom-hero-text">
   <p class="custom-excerpt">
@@ -19,10 +17,10 @@ header:
 .custom-hero-text {
   position: absolute;
   top: 38%; /* Ajuste conforme necessário */
-  left: 55%; /* Ajuste conforme necessário */
+  left: 60%; /* Ajuste conforme necessário */
   transform: translate(-50%, -50%);
   width: 55%;
-  max-width: 700px;
+  max-width: 600px;
   text-align: center;
   z-index: 10;
   padding: 20px 30px;
@@ -33,7 +31,7 @@ header:
 }
 
 .custom-title {
-  font-size: 8px !important;
+  font-size: 28px !important;
   line-height: 1.2 !important;
   color: #ffffff !important;
   margin: 0 0 15px 0 !important;
@@ -42,7 +40,7 @@ header:
 }
 
 .custom-excerpt {
-  font-size: max(13px, 2.5vw) !important;
+  font-size: 16px !important;
   line-height: 1.5 !important;
   color: #e6e6e6 !important;
   margin: 0 !important;
@@ -89,8 +87,3 @@ header:
   }
 }
 </style>
-
-
-
-
-
