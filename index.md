@@ -6,9 +6,6 @@ header:
   overlay_color: "rgba(0, 0, 0, 0.5)"
   overlay_image: /assets/images/banner-home.jpg
   image_description: "" # Remove alt text
-  actions:
-    - label: "Ver Meus Projetos"
-      url: "/portfolio/"
 ---
 
 <!-- Texto customizado posicionado sobre a tela do notebook -->
@@ -93,4 +90,5 @@ header:
   }
 }
 </style>
+
 
