@@ -1,5 +1,14 @@
+---
+title: "Meus Projetos"
+layout: single
+permalink: /portfolio/
+classes: wide
+author_profile: false
+---
+
 <style>
 /* ====================MUDANÇA FEITA ==================== */
+
 
 /* Customizações só para /portfolio/ */
 .page--portfolio {
@@ -372,3 +381,4 @@
   </div>
 
 </div>
+
