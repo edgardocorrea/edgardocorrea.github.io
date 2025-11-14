@@ -4,16 +4,20 @@ excerpt: "" # Força excerpt vazio
 layout: splash
 header:
   overlay_color: "rgba(0,0,0,0.4)"
-  overlay_image: "/assets/images/banner-home.jpg"
   overlay_filter: 0.3
   image_description: "" # Remove alt text
 ---
-<!-- Texto customizado posicionado sobre a tela do notebook -->
-<div class="custom-hero-text">
-  <p class="custom-excerpt">
-    Analista de Sistemas com base em infraestrutura de TI com sólida experiência em redes, sistemas e automação. Apaixonado por construir soluções robustas e eficientes.
-  </p>
+<!-- Imagem e texto customizado posicionado sobre a tela do notebook -->
+<div class="hero-image-wrapper">
+  <img src="/assets/images/banner-home.jpg" alt="Notebook Banner" class="hero-img">
+
+  <div class="custom-hero-text">
+    <p class="custom-excerpt">
+      Analista de Sistemas com sólida experiência em infraestrutura, redes e automação. Apaixonado por soluções eficientes.
+    </p>
+  </div>
 </div>
+
 
 <style>
 /* Estilo para o texto customizado */
@@ -90,6 +94,7 @@ header:
   }
 }
 </style>
+
 
 
 
