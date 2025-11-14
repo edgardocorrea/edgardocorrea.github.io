@@ -7,7 +7,33 @@ author_profile: false
 ---
 
 <style>
-/* ==================== BACKGROUND ESCURO COM GRADIENTE ==================== */
+/* ====================MUDANÇA FEITA ==================== */
+
+
+/* Customizações só para /portfolio/ */
+.page--portfolio {
+  .page__content {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .project-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .btn-custom {
+    width: 100%;
+    max-width: 240px;
+    text-align: center;
+  }
+}
 
 
 /* ==================== TÍTULO PRINCIPAL ==================== */
@@ -350,3 +376,4 @@ author_profile: false
   </div>
 
 </div>
+
