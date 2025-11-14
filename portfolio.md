@@ -4,6 +4,7 @@ layout: single
 permalink: /portfolio/
 classes: wide
 author_profile: false
+sidebar: null
 ---
 
 <style>
