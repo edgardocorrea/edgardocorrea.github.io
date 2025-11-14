@@ -1,13 +1,12 @@
 ---
 title: "Projetos"
-# Mude de 'collection' para 'archive' ou 'single' para aceitar o HTML customizado
 layout: archive 
 permalink: /portfolio/
 collection: portfolio
 excerpt: "Alguns dos meus projetos mais relevantes em infraestrutura e automação."
 ---
 
-##  Projetos em Destaque
+## Projetos em Destaque
 
 <div class="feature__wrapper">
 
