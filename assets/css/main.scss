@@ -17,21 +17,13 @@
 }
 
 // 2. Hero ocupa tela inteira E centraliza imagem
-.page__hero {
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  
-  // FORÇA centralização da imagem de fundo
-  background-position: center center !important;
-  background-size: cover !important;
-  background-repeat: no-repeat !important;
-}
 
-// Centraliza também no overlay
+.page__hero,
 .page__hero--overlay {
-  background-position: center center !important;
+  height: 100vh !important;
+  min-height: 600px !important;
   background-size: cover !important;
+  background-position: center center !important;
 }
 
 // 3. HEADER (TOPO) - Compacto
