@@ -24,11 +24,15 @@ sidebar: null
   padding-right: 20px;
 }
 
+<style>
+/* ==================== FUNDO ESCURO APENAS PARA O PORTFOLIO ==================== */
+body.page--portfolio {
+  background-color: #000000;
+}
+
 /* ====================MUDANÇA FEITA ==================== */
 
 /* Customizações só para /portfolio/ */
-
-
 
   /* CORREÇÃO DOS BOTÕES: Organizar verticalmente */
   .project-buttons {
@@ -381,5 +385,5 @@ sidebar: null
       </a>
     </div>
   </div>
-
 </div>
+
