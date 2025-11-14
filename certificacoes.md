@@ -1,6 +1,6 @@
 ---
-title: "Minhas Habilidades"
-permalink: /habilidades/
+title: "Certificações e Badges"
+permalink: /certificacoes/
 layout: single
 ---
 
@@ -147,37 +147,35 @@ body.page--certificacoes {
 
 
 
+Nesta página, apresento as minhas certificações profissionais, que validam as minhas competências em diversas áreas da tecnologia. Para mais detalhes ou para verificar a autenticidade, visite meu perfil completo no [Credly](https://www.credly.com/users/edgardo.correa).
 
+---
 
+## Redes
 
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="232a032a-8675-4fbd-9752-b74219f08ad8" data-share-badge-host="https://www.credly.com"></div>
 
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="5c6077c7-6f57-4196-b648-e7d3b5b82624" data-share-badge-host="https://www.credly.com"></div>
 
-## 💻 Principais Habilidades
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="e0ee1601-18f3-41d2-97f3-67a836bfe4c9" data-share-badge-host="https://www.credly.com"></div>
 
-<div class="notice--info">
-  <h4>Infraestrutura & Redes</h4>
-  <ul>
-    <li>Configuração de switches, routers e firewalls</li>
-    <li>Mikrotik, TP-Link</li>
-    <li>Protocolos: TCP/IP, VLANs, OSPF, BGP</li>
-    <li>Segurança de rede e VPN</li>
-  </ul>
-</div>
+---
 
-<div class="notice--success">
-  <h4>Sistemas & Virtualização</h4>
-  <ul>
-    <li>Linux (Slackware, Ubuntu, CentOS)</li>
-    <li>Windows Server (2016/2019/2022)</li>
-    <li>VMware vSphere & Hyper-V</li>
-  </ul>
-</div>
+## Segurança da Informação
 
-<div class="notice--warning">
-  <h4>Automação & Scripting</h4>
-  <ul>
-    <li>PowerShell para automação Windows</li>
-    <li>Bash scripting para Linux</li>
-    <li>Python para automação de tarefas</li>
-  </ul>
-</div>
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="d44d5772-1fee-4491-9326-ab1aa4a908ca" data-share-badge-host="https://www.credly.com"></div>
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="02abd07a-71a8-4024-8316-0dd40691fa74" data-share-badge-host="https://www.credly.com"></div>
+
+---
+
+## Inteligência Artificial e Metodologias Ágeis
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="aa5e1665-af74-4d59-9567-409b890991f4" data-share-badge-host="https://www.credly.com"></div>
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bdb8bcd3-8357-4d2e-8894-f1fe4e36e079" data-share-badge-host="https://www.credly.com"></div>
+
+<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="24f3cc92-a5fb-469b-820d-d2d85b4d487c" data-share-badge-host="https://www.credly.com"></div>
+
+<!-- Script do Credly para renderizar todos os badges acima. Apenas um é necessário por página. -->
+<script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
