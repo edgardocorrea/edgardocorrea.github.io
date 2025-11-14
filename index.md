@@ -13,7 +13,6 @@ header:
 
 <!-- Texto customizado posicionado sobre a tela do notebook -->
 <div class="custom-hero-text">
-  <h1 class="custom-title">Olá, eu sou Edgardo Correa</h1>
   <p class="custom-excerpt">
     Analista de Sistemas com base em infraestrutura de TI com sólida experiência em redes, sistemas e automação. Apaixonado por construir soluções robustas e eficientes.
   </p>
@@ -24,10 +23,10 @@ header:
 .custom-hero-text {
   position: absolute;
   top: 38%; /* Ajuste conforme necessário */
-  left: 60%; /* Ajuste conforme necessário */
+  left: 55%; /* Ajuste conforme necessário */
   transform: translate(-50%, -50%);
   width: 55%;
-  max-width: 600px;
+  max-width: 700px;
   text-align: center;
   z-index: 10;
   padding: 20px 30px;
@@ -94,3 +93,4 @@ header:
   }
 }
 </style>
+
