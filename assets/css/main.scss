@@ -16,14 +16,26 @@
   padding: 0;
 }
 
-// 2. Hero ocupa tela inteira E centraliza imagem
+// 2. Remove Hero
 
 .page__hero,
-.page__hero--overlay {
-  height: 100vh !important;
-  min-height: 600px !important;
-  background-size: cover !important;
-  background-position: center center !important;
+.page__hero--overlay,
+.page__hero-inner {
+  display: none !important;
+  height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+// 2.1 Remove Splash
+.layout--splash .page {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.layout--splash .page__content {
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 // 3. HEADER (TOPO) - Compacto
