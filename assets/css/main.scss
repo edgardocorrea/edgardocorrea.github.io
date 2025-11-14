@@ -184,45 +184,46 @@
 /* ----------------------------------------------------- */
 
 /* ============================================================
-   ESTILO PERSONALIZADO — SEÇÃO DE PROJETOS
+   ESTILO PERSONALIZADO PARA A SEÇÃO DE PROJETOS (PORTFOLIO)
    ============================================================ */
 
-/* Wrapper geral */
+/* Grid geral */
 .feature__wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 25px;
   margin-top: 20px;
+  justify-content: center;
 }
 
-/* Card do projeto */
+/* Card */
 .archive__item {
-  background: #0d1117; /* Preto elegante estilo GitHub Dark */
+  background: #0d1117; /* GitHub dark */
   border: 1px solid #30363d;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 20px;
   width: 100%;
-  max-width: 360px;
+  max-width: 350px;
   transition: all 0.25s ease-in-out;
-  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.45);
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.45);
 }
 
-/* Hover elegante */
+/* Hover */
 .archive__item:hover {
   border-color: #00aaff;
-  box-shadow: 0 0 15px rgba(0, 170, 255, 0.5);
-  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(0,170,255,0.5);
+  transform: translateY(-5px);
 }
 
-/* Imagem do projeto */
+/* Imagens */
 .archive__item-teaser img {
   width: 100%;
-  max-height: 180px;
+  max-height: 160px;
   object-fit: contain;
   margin-bottom: 15px;
 }
 
-/* Título */
+/* Títulos */
 .archive__item-title {
   font-size: 1.3rem;
   font-weight: 700;
@@ -243,7 +244,8 @@
 .archive__item .btn--primary {
   background: #005f99 !important;
   border-color: #005f99 !important;
-  transition: background 0.2s ease;
+  padding: 8px 14px;
+  transition: background 0.25s ease;
 }
 
 .archive__item .btn--primary:hover {
