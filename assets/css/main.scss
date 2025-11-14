@@ -4,36 +4,100 @@
 // Importa os estilos do tema. NÃO APAGUE ESTA LINHA.
 @import "minimal-mistakes";
 
-// ==================== ESTILOS CUSTOMIZADOS ====================
+// ==================== PÁGINA ESTÁTICA SEM SCROLL ====================
 
-// 1. Background escuro com gradiente tecnológico
-body {
+// 1. Remove TODOS os scrolls
+html, body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden !important; // BLOQUEIA scroll vertical e horizontal
+  position: fixed; // Fixa a página
   background: linear-gradient(135deg, #0a0a0a 0%, #001a33 100%);
   color: #ffffff;
-  overflow-x: hidden; // Remove scroll horizontal
-  overflow-y: auto; // MANTÉM scroll vertical
 }
 
-// 2. Remove fundo branco das páginas
+// 2. Container principal ocupa 100% da tela
+.layout--splash {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
+}
+
+// 3. Remove fundo branco
 .page {
   background-color: transparent;
+  height: 100vh;
+  overflow: hidden !important;
+  display: flex;
+  flex-direction: column;
 }
 
 .page__inner {
   background-color: transparent;
   padding: 0;
+  height: 100%;
+  overflow: hidden !important;
 }
 
-// 3. HERO - Altura FIXA (não 100vh) para permitir scroll
+// 4. HEADER - Compacto e fixo no topo
+.masthead {
+  padding: 8px 16px !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  height: 50px; // Altura fixa
+  
+  .site-title {
+    font-size: 18px !important;
+    line-height: 1.2 !important;
+    color: #ffffff !important;
+  }
+  
+  .greedy-nav {
+    min-height: auto !important;
+    background-color: transparent !important;
+    
+    a {
+      padding: 6px 10px !important;
+      color: #ffffff !important;
+      font-size: 14px !important;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        color: #4da6ff !important;
+        background-color: rgba(77, 166, 255, 0.1);
+      }
+    }
+    
+    .visible-links {
+      background-color: transparent !important;
+    }
+    
+    .greedy-nav__toggle {
+      color: #ffffff !important;
+    }
+  }
+}
+
+// 5. HERO - Ocupa todo espaço entre header e footer
 .page__hero {
-  height: 70vh; // CORRIGIDO: 70% da altura da tela ao invés de 100vh
-  min-height: 500px; // Altura mínima
-  max-height: 700px; // Altura máxima
-  overflow: visible; // CORRIGIDO: permite conteúdo vazar
+  height: calc(100vh - 100px) !important; // 100vh - (header 50px + footer 50px)
+  min-height: auto !important;
+  max-height: none !important;
+  overflow: hidden !important;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 50px; // Espaço do header
   
   // Overlay escuro com efeito azul
   &::after {
@@ -49,153 +113,113 @@ body {
   }
 }
 
-// 4. HEADER (TOPO) - Compacto
-.masthead {
-  padding: 8px 16px !important;
-  background-color: rgba(0, 0, 0, 0.85) !important;
-  position: sticky; // CORRIGIDO: Header fixo ao scrollar
-  top: 0;
-  z-index: 999;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-  
-  .site-title {
-    font-size: 19px !important;
-    line-height: 1.2 !important;
-    color: #ffffff !important;
-  }
-  
-  .greedy-nav {
-    min-height: auto !important;
-    background-color: transparent !important;
-    
-    a {
-      padding: 8px 12px !important;
-      color: #ffffff !important;
-      transition: all 0.3s ease;
-      
-      &:hover {
-        color: #4da6ff !important;
-        background-color: rgba(77, 166, 255, 0.1);
-      }
-    }
-    
-    .visible-links {
-      background-color: transparent !important;
-    }
-    
-    // Botão do menu mobile
-    .greedy-nav__toggle {
-      color: #ffffff !important;
-    }
-  }
-}
-
-// 5. CAIXA DE TEXTO CENTRALIZADA (Retângulo Amarelo da Imagem)
+// 6. CAIXA DE TEXTO CENTRALIZADA (Retângulo Amarelo)
 .page__hero--overlay {
+  height: 100%;
+  overflow: hidden !important;
+  
   .page__hero-caption {
     position: relative;
     z-index: 1;
-    width: 90%;
-    max-width: 900px; // AUMENTADO para caber mais texto
+    width: 85%;
+    max-width: 850px;
     margin: 0 auto;
-    padding: 30px 40px; // AUMENTADO padding
-    background-color: rgba(0, 0, 0, 0.7); // Fundo semi-transparente escuro
-    border: 3px solid #ffcc00; // BORDA AMARELA como na imagem
+    padding: 25px 35px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border: 3px solid #ffcc00; // BORDA AMARELA
     border-radius: 8px;
-    box-shadow: 0 8px 30px rgba(255, 204, 0, 0.3); // Brilho amarelo
+    box-shadow: 0 8px 30px rgba(255, 204, 0, 0.3);
     
-    // Título principal
+    // Título principal (;D)
     .page__title {
-      font-size: 42px !important;
-      line-height: 1.3 !important;
+      font-size: 36px !important;
+      line-height: 1.2 !important;
       color: #ffffff !important;
-      margin-bottom: 20px !important;
+      margin-bottom: 15px !important;
+      margin-top: 0 !important;
       font-weight: 700;
       text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.9);
     }
     
     // Texto descritivo
     .page__lead {
-      font-size: 18px !important;
-      line-height: 1.6 !important;
+      font-size: 16px !important;
+      line-height: 1.5 !important;
       color: #e6e6e6 !important;
-      margin-bottom: 25px !important;
+      margin-bottom: 20px !important;
+      margin-top: 0 !important;
       text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
-      text-align: left; // CORRIGIDO: Texto alinhado à esquerda
-      padding: 0 10px; // Espaçamento interno
+      text-align: left;
+      padding: 0 10px;
     }
     
-    // Container de ações (botões)
+    // Container de botões
     .page__hero-actions {
-      margin-top: 25px;
+      margin-top: 20px;
+      margin-bottom: 0;
       
       .btn {
-        margin: 5px 10px;
+        margin: 5px 8px;
       }
     }
   }
 }
 
-// 6. RESPONSIVIDADE - Tablets
-@media (max-width: 768px) {
-  .page__hero {
-    height: 60vh;
-    min-height: 400px;
-  }
+// 7. FOOTER - Fixo no rodapé
+.page__footer {
+  padding: 10px 0 !important;
+  margin-top: 0 !important;
+  background-color: rgba(0, 0, 0, 0.85) !important;
+  border-top: 1px solid rgba(77, 166, 255, 0.3);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  height: 50px; // Altura fixa
   
-  .page__hero--overlay .page__hero-caption {
-    width: 95%;
-    padding: 20px 25px;
+  footer {
+    padding: 5px 15px !important;
     
-    .page__title {
-      font-size: 32px !important;
+    .page__footer-follow {
+      margin-bottom: 5px !important;
+      
+      ul {
+        margin-bottom: 0 !important;
+        
+        li {
+          display: inline-block;
+          margin: 0 8px;
+          
+          a {
+            color: #ffffff !important;
+            font-size: 13px !important;
+            transition: all 0.3s ease;
+            
+            &:hover {
+              color: #4da6ff !important;
+            }
+          }
+        }
+      }
     }
     
-    .page__lead {
-      font-size: 16px !important;
-    }
-  }
-  
-  .masthead {
-    padding: 6px 12px !important;
-    
-    .site-title {
-      font-size: 17px !important;
+    .page__footer-copyright {
+      margin-top: 5px !important;
+      margin-bottom: 0 !important;
+      font-size: 11px !important;
+      color: #cccccc !important;
     }
   }
 }
 
-// 7. RESPONSIVIDADE - Celulares
-@media (max-width: 480px) {
-  .page__hero {
-    height: 50vh;
-    min-height: 350px;
-  }
-  
-  .page__hero--overlay .page__hero-caption {
-    width: 98%;
-    padding: 15px 20px;
-    border-width: 2px; // Borda mais fina em mobile
-    
-    .page__title {
-      font-size: 24px !important;
-      margin-bottom: 15px !important;
-    }
-    
-    .page__lead {
-      font-size: 14px !important;
-      margin-bottom: 20px !important;
-    }
-  }
-}
-
-// 8. BOTÃO PRIMÁRIO (Azul escuro)
+// 8. BOTÃO PRIMÁRIO
 .btn--primary {
   background-color: #004d99 !important;
   color: #ffffff !important;
   border: 2px solid #004d99 !important;
-  padding: 12px 28px !important;
-  font-size: 16px !important;
+  padding: 10px 24px !important;
+  font-size: 15px !important;
   font-weight: 600 !important;
   border-radius: 6px !important;
   transition: all 0.3s ease !important;
@@ -209,169 +233,156 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 6px 20px rgba(77, 166, 255, 0.4);
   }
+}
+
+// 9. Remove qualquer conteúdo que cause scroll
+.page__content {
+  display: none !important; // Esconde conteúdo adicional
+}
+
+.layout--splash .feature__wrapper {
+  display: none !important; // Esconde seções extras
+}
+
+// 10. RESPONSIVIDADE - Tablets
+@media (max-width: 768px) {
+  .masthead {
+    height: 45px;
+    padding: 6px 12px !important;
+    
+    .site-title {
+      font-size: 16px !important;
+    }
+    
+    .greedy-nav a {
+      padding: 5px 8px !important;
+      font-size: 13px !important;
+    }
+  }
   
-  &:active {
-    transform: translateY(-1px);
+  .page__hero {
+    height: calc(100vh - 95px) !important; // Ajusta para header/footer menores
+    margin-top: 45px;
+  }
+  
+  .page__hero--overlay .page__hero-caption {
+    width: 90%;
+    padding: 20px 25px;
+    border-width: 2px;
+    
+    .page__title {
+      font-size: 28px !important;
+      margin-bottom: 12px !important;
+    }
+    
+    .page__lead {
+      font-size: 14px !important;
+      margin-bottom: 15px !important;
+    }
+    
+    .page__hero-actions .btn {
+      font-size: 14px !important;
+      padding: 8px 20px !important;
+    }
+  }
+  
+  .page__footer {
+    height: 50px;
+    
+    footer .page__footer-follow ul li a {
+      font-size: 12px !important;
+    }
+    
+    .page__footer-copyright {
+      font-size: 10px !important;
+    }
   }
 }
 
-// 9. FOOTER (RODAPÉ) - Compacto
-.page__footer {
-  padding: 15px 0 !important;
-  margin-top: 40px !important;
-  background-color: rgba(0, 0, 0, 0.85) !important;
-  border-top: 1px solid rgba(77, 166, 255, 0.3);
-  
-  footer {
-    padding: 10px 20px !important;
+// 11. RESPONSIVIDADE - Celulares
+@media (max-width: 480px) {
+  .masthead {
+    height: 40px;
+    padding: 4px 8px !important;
     
-    .page__footer-follow {
+    .site-title {
+      font-size: 14px !important;
+    }
+    
+    .greedy-nav a {
+      padding: 4px 6px !important;
+      font-size: 12px !important;
+    }
+  }
+  
+  .page__hero {
+    height: calc(100vh - 85px) !important;
+    margin-top: 40px;
+  }
+  
+  .page__hero--overlay .page__hero-caption {
+    width: 95%;
+    padding: 15px 20px;
+    
+    .page__title {
+      font-size: 22px !important;
       margin-bottom: 10px !important;
+    }
+    
+    .page__lead {
+      font-size: 13px !important;
+      line-height: 1.4 !important;
+      margin-bottom: 12px !important;
+    }
+    
+    .page__hero-actions .btn {
+      font-size: 13px !important;
+      padding: 8px 18px !important;
+      margin: 4px 6px;
+    }
+  }
+  
+  .page__footer {
+    height: 45px;
+    
+    footer {
+      padding: 3px 10px !important;
       
-      ul {
-        margin-bottom: 0 !important;
+      .page__footer-follow ul li {
+        margin: 0 5px;
         
-        li {
-          a {
-            color: #ffffff !important;
-            transition: all 0.3s ease;
-            
-            &:hover {
-              color: #4da6ff !important;
-            }
-          }
+        a {
+          font-size: 11px !important;
         }
       }
     }
     
     .page__footer-copyright {
-      margin-top: 10px !important;
-      margin-bottom: 0 !important;
-      font-size: 12px !important;
-      color: #cccccc !important;
+      font-size: 9px !important;
     }
   }
 }
 
-// 10. SEÇÕES DE CONTEÚDO - Espaçamento adequado
-.layout--splash {
-  .feature__wrapper {
-    padding: 40px 0 !important;
-    background-color: transparent;
-    
-    .feature__item {
-      margin-bottom: 30px !important;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 20px;
-      border-radius: 8px;
-      border: 1px solid rgba(77, 166, 255, 0.2);
-      transition: all 0.3s ease;
-      
-      &:hover {
-        border-color: rgba(77, 166, 255, 0.5);
-        box-shadow: 0 4px 15px rgba(77, 166, 255, 0.2);
-        transform: translateY(-3px);
-      }
-    }
-  }
+// 12. Remove elementos que podem aparecer
+.breadcrumbs,
+.page__meta,
+.page__share,
+.page__related,
+.sidebar,
+.toc,
+.author-profile {
+  display: none !important;
 }
 
-// 11. CONTEÚDO DA PÁGINA
-.page__content {
-  padding-top: 30px !important;
-  padding-bottom: 30px !important;
-  background-color: transparent;
-  
-  h2, h3, h4 {
-    color: #ffffff;
-    margin-top: 30px;
-    margin-bottom: 15px;
-  }
-  
-  p {
-    color: #e6e6e6;
-    line-height: 1.7;
-  }
-  
-  a {
-    color: #4da6ff;
-    
-    &:hover {
-      color: #66b3ff;
-    }
-  }
+// 13. Garante que nada cause overflow
+* {
+  max-width: 100vw;
+  box-sizing: border-box;
 }
 
-// 12. ÍCONES DE REDES SOCIAIS
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin: 20px 0;
-  
-  a {
-    color: #ffffff;
-    font-size: 24px;
-    transition: all 0.3s ease;
-    
-    &:hover {
-      color: #4da6ff;
-      transform: translateY(-3px);
-    }
-  }
-}
-
-// 13. NOTICES (Caixas de aviso)
-.notice {
-  background-color: rgba(0, 0, 0, 0.6);
-  border-left: 4px solid #4da6ff;
-  padding: 15px 20px;
-  margin: 20px 0;
-  border-radius: 4px;
-  
-  &--info {
-    border-left-color: #4da6ff;
-  }
-  
-  &--success {
-    border-left-color: #00cc66;
-  }
-  
-  &--warning {
-    border-left-color: #ffcc00;
-  }
-  
-  h4 {
-    margin-top: 0 !important;
-    color: #ffffff;
-  }
-  
-  ul {
-    margin-bottom: 0;
-    
-    li {
-      color: #e6e6e6;
-    }
-  }
-}
-
-// 14. SIDEBAR (se existir)
-.sidebar {
-  background-color: rgba(0, 0, 0, 0.7);
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid rgba(77, 166, 255, 0.2);
-}
-
-// 15. NAVEGAÇÃO BREADCRUMB
-.breadcrumbs {
-  background-color: transparent;
-  
-  a {
-    color: #4da6ff !important;
-    
-    &:hover {
-      color: #66b3ff !important;
-    }
-  }
+// 14. Remove margens/paddings extras
+.initial-content,
+.page__inner-wrap {
+  margin: 0 !important;
+  padding: 0 !important;
 }
