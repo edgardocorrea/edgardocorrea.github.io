@@ -274,3 +274,101 @@
 .project-card:nth-child(3) { animation-delay: 0.3s; }
 .project-card:nth-child(4) { animation-delay: 0.4s; }
 </style>
+
+<!-- Introdução -->
+<p class="intro-text">
+  🚀 Confira alguns dos meus projetos mais relevantes em <strong>infraestrutura, redes e automação</strong>. Cada projeto foi desenvolvido com foco em eficiência, automação e boas práticas de desenvolvimento.
+</p>
+
+<!-- Grid de Projetos -->
+<div class="projects-grid">
+
+  <!-- Projeto 1: Modem VIVO Unlock -->
+  <div class="project-card">
+    <span class="status-badge">✓ Ativo</span>
+    
+    <div class="project-icon">
+      📡
+    </div>
+    
+    <h2 class="project-title">Modem VIVO Unlock</h2>
+    
+    <p class="project-description">
+      Ferramenta de automação completa para desbloqueio de configurações avançadas do modem Askey RTF8115VW REV5 (VIVO). Desenvolvida com Node.js e Selenium WebDriver para automatizar o processo de forma segura e eficiente.
+    </p>
+    
+    <div class="tech-tags">
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">Selenium</span>
+      <span class="tech-tag">PowerShell</span>
+      <span class="tech-tag">ChromeDriver</span>
+      <span class="tech-tag">JavaScript</span>
+    </div>
+    
+    <div class="project-buttons">
+      <a href="https://github.com/edgardocorrea/modem-vivo" class="btn-custom btn-github" target="_blank">
+        <i class="fab fa-github"></i> Ver no GitHub
+      </a>
+      <a href="https://github.com/edgardocorrea/modem-vivo#readme" class="btn-custom btn-demo" target="_blank">
+        <i class="fas fa-book"></i> Documentação
+      </a>
+    </div>
+  </div>
+
+  <!-- Projeto 2: Limpeza Avançada Windows -->
+  <div class="project-card">
+    <span class="status-badge">✓ Ativo</span>
+    
+    <div class="project-icon">
+      🧹
+    </div>
+    
+    <h2 class="project-title">Limpeza Avançada Windows</h2>
+    
+    <p class="project-description">
+      Script PowerShell automatizado para limpeza profunda do Windows. Remove arquivos temporários, cache, logs e otimiza o sistema operacional com interface intuitiva e opções avançadas de personalização.
+    </p>
+    
+    <div class="tech-tags">
+      <span class="tech-tag">PowerShell</span>
+      <span class="tech-tag">Windows API</span>
+      <span class="tech-tag">Batch</span>
+      <span class="tech-tag">Automação</span>
+    </div>
+    
+    <div class="project-buttons">
+      <a href="https://github.com/edgardocorrea/LimpezaAvancada" class="btn-custom btn-github" target="_blank">
+        <i class="fab fa-github"></i> Ver no GitHub
+      </a>
+      <a href="https://github.com/edgardocorrea/LimpezaAvancada#readme" class="btn-custom btn-demo" target="_blank">
+        <i class="fas fa-book"></i> Documentação
+      </a>
+    </div>
+  </div>
+
+  <!-- Projeto 3: (Adicione mais projetos aqui) -->
+  <div class="project-card">
+    <span class="status-badge" style="background: linear-gradient(135deg, #ffcc00, #ff9900);">⏳ Em Breve</span>
+    
+    <div class="project-icon">
+      🔧
+    </div>
+    
+    <h2 class="project-title">Outros Projetos</h2>
+    
+    <p class="project-description">
+      Novos projetos de infraestrutura, automação e desenvolvimento em andamento. Fique atento para mais atualizações em breve!
+    </p>
+    
+    <div class="tech-tags">
+      <span class="tech-tag">Em Desenvolvimento</span>
+    </div>
+    
+    <div class="project-buttons">
+      <a href="https://github.com/edgardocorrea" class="btn-custom btn-github" target="_blank">
+        <i class="fab fa-github"></i> Ver GitHub
+      </a>
+    </div>
+  </div>
+
+</div>
