@@ -155,6 +155,55 @@ h2, h3, h4 {
     padding: 20px;
   }
 }
+
+/* ============================================================
+   TITULOS DOS CERTIFICADOS — BRANCO PURO (SEM NEON)
+   ============================================================ */
+.cert-title,
+.cert-section-title,
+.cert-provider,
+.cert-card h3,
+.cert-card h4 {
+  color: #ffffff !important;
+  font-weight: 700;
+  position: relative;
+  z-index: 3;
+  text-shadow: none !important; /* remove o neon */
+}
+
+/* ============================================================
+   BADGES (IMAGENS) — BORDA NEON + EFEITO HOVER
+   ============================================================ */
+.cert-card img {
+  display: block;
+  width: 110px;
+  height: auto;
+  margin-bottom: 15px;
+  
+  border-radius: 12px;
+  padding: 4px;
+
+  background: transparent;
+  border: 2px solid #4da6ff;
+  box-shadow:
+    0 0 8px rgba(77,166,255,0.6),
+    0 0 15px rgba(0,204,255,0.5);
+
+  transition: 0.35s ease-in-out;
+  position: relative;
+  z-index: 3;
+}
+
+/* HOVER NEON MAIS FORTE */
+.cert-card img:hover {
+  transform: scale(1.06);
+  box-shadow:
+    0 0 12px rgba(77,166,255,0.9),
+    0 0 25px rgba(0,204,255,0.8),
+    0 0 45px rgba(0,204,255,0.4);
+  border-color: #00ccff;
+}
+  
 </style>
 
 
