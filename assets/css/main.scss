@@ -137,15 +137,15 @@
 // 8. AJUSTES GERAIS - 
 .layout--splash {
   .feature__wrapper {
-    padding: 4px 0 !important; // Reduz espaçamento
+    padding: 2px 0 !important; // Reduz espaçamento
     
     .feature__item {
-      margin-bottom: 24px !important;
+      margin-bottom: 6px !important;
     }
   }
 }
 
 .page__content {
-  padding-top: 8px !important;
-  padding-bottom: 8px !important;
+  // Alteração: Zera todo o padding interno do conteúdo principal
+  padding: 0 !important; 
 }
