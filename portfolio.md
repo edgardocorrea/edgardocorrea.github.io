@@ -9,32 +9,28 @@ author_profile: false
 <style>
 /* ====================MUDANÇA FEITA ==================== */
 
-
 /* Customizações só para /portfolio/ */
 .page--portfolio {
-  /* CORREÇÃO 1: Forçar a página a usar uma coluna e centralizar o conteúdo */
-  .grid__wrapper {
-    display: block; /* Ignora o layout de grade do tema */
-    width: 100%;
-    max-width: 100%;
-  }
-
-  .page__content {
-    margin-left: auto !important; /* Usar !important para garantir que sobrescreva o tema */
+  /* CORREÇÃO PRINCIPAL: Centralizar a COLUNA INTEIRA (título + conteúdo) */
+  main.grid__item {
+    margin-left: auto !important;
     margin-right: auto !important;
-    max-width: 1100px;
-    padding-left: 20px;
+    max-width: 1100px; /* Largura máxima desejada para todo o bloco */
+    padding-left: 20px;  /* Espaçamento nas laterais */
     padding-right: 20px;
     box-sizing: border-box;
   }
 
-  /* CORREÇÃO 2: Centralizar e organizar os botões verticalmente */
+  /* A regra antiga para .page__content não é mais necessária,
+     pois o contêiner pai (main.grid__item) já está centralizado. */
+
+  /* CORREÇÃO DOS BOTÕES: Organizar verticalmente */
   .project-buttons {
     display: flex;
     flex-direction: column; /* Garante que os botões fiquem em coluna */
     gap: 10px;
     align-items: center;
-    margin-top: 25px; /* Mantido da regra antiga */
+    margin-top: 25px;
   }
 
   .btn-custom {
@@ -74,15 +70,14 @@ author_profile: false
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
-  margin: 40px auto;
-  padding: 0 15px; /* evita overflow horizontal */
+  margin: 40px 0; /* Margem vertical ajustada, pois o padding está no pai */
   width: 100%;
-  box-sizing: border-box; /* importante para padding */
+  box-sizing: border-box;
 }
 
 /* ==================== CARD DE PROJETO ==================== */
 .project-card {
-  width: 100%; /* garante que não ultrapasse a coluna */
+  width: 100%;
   box-sizing: border-box;
   background: linear-gradient(145deg, rgba(20, 40, 80, 0.8), rgba(10, 20, 40, 0.9));
   border: 2px solid transparent;
@@ -178,12 +173,12 @@ author_profile: false
 }
 
 /* ==================== BOTÕES ==================== */
-/* A regra .project-buttons foi movida para dentro de .page--portfolio para evitar conflitos e garantir a especificidade. */
+/* A regra .project-buttons foi movida para dentro de .page--portfolio para evitar conflitos. */
 
 .btn-custom {
   display: inline-flex;
   align-items: center;
-  justify-content: center; /* Centraliza o texto e o ícone dentro do botão */
+  justify-content: center;
   gap: 8px;
   padding: 12px 24px;
   border-radius: 8px;
@@ -234,10 +229,14 @@ author_profile: false
 
 /* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
+  .page--portfolio main.grid__item {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 25px;
-    padding: 0 15px;
   }
   
   .page__title {
@@ -250,11 +249,6 @@ author_profile: false
   
   .project-card {
     padding: 25px;
-  }
-  
-  /* A regra abaixo já está implícita na nova regra principal, mas pode ser mantida para clareza */
-  .project-buttons {
-    flex-direction: column;
   }
   
   .btn-custom {
