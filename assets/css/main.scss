@@ -107,21 +107,21 @@
 
 // 7. CORREÇÃO DO FOOTER (RODAPÉ) - 
 .page__footer {
-  padding: 5px 0 !important; // Reduz drasticamente a altura
-  margin-top: 6px !important;
+	padding: 2 0 !important;
+	margin-top: 2 !important;
   
   footer {
-    padding: 4px 4px !important;
+    padding: 0 0 !important;
     
     .page__footer-follow {
-      margin-bottom: 8px !important;
+      margin-bottom: 2px !important;
       ul {
-        margin-bottom: 1px !important;
+        margin-bottom: 0px !important;
       }
     }
     
     .page__footer-copyright {
-      margin-top: 4px !important;
+      margin-top: 2px !important;
       margin-bottom: 0 !important;
       font-size: 11px !important;
     }
