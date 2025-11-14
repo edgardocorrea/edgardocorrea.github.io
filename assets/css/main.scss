@@ -24,18 +24,17 @@
 
 // 3. CORREÇÃO DO HEADER (TOPO) - 
 .masthead {
-  padding: 8px 16px !important; // Reduz a altura do cabeçalho
+  padding: 8px 16px !important;
   
   .site-title {
-    font-size: 19px !important; // Título do site menor
+    font-size: 19px !important;
     line-height: 1.2 !important;
   }
   
   .greedy-nav {
     min-height: auto !important;
-    
     a {
-      padding: 8px 12px !important; // Reduz o padding dos links do menu
+      padding: 8px 12px !important;
     }
   }
 }
@@ -43,10 +42,11 @@
 // 4. CORREÇÃO DO HERO/BANNER - Posicionamento do texto
 .page__hero-inner {
   padding: 0;
-  
   .text-wrapper {
     position: absolute;
-    top: 50%;
+    // === ALTERAÇÃO FEITA AQUI ===
+    top: 38%; // Ajustado para colocar o texto na tela do notebook
+    // ===========================
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
@@ -60,12 +60,12 @@
 
 // 5. CONTROLE DO TAMANHO DO TÍTULO E TEXTO 
 .page__hero--overlay .page__title {
-  font-size: 28px !important; // Título em desktops
+  font-size: 28px !important;
   line-height: 1.2 !important;
 }
 
 .page__hero--overlay .page__lead {
-  font-size: 16px !important; // Texto em desktops
+  font-size: 16px !important;
   line-height: 1.5 !important;
 }
 
@@ -107,12 +107,11 @@
 
 // 7. CORREÇÃO DO FOOTER (RODAPÉ) - 
 .page__footer {
-  padding: 5px 0 !important; // Reduz drasticamente a altura
+  padding: 5px 0 !important;
   margin-top: 6px !important;
   
   footer {
     padding: 4px 4px !important;
-    
     .page__footer-follow {
       margin-bottom: 8px !important;
       ul {
@@ -131,7 +130,7 @@
 // 8. AJUSTES GERAIS - 
 .layout--splash {
   .feature__wrapper {
-    padding: 16px 0 !important; // Reduz espaçamento
+    padding: 4px 0 !important;
     
     .feature__item {
       margin-bottom: 24px !important;
