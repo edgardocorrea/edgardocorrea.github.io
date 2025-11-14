@@ -13,20 +13,18 @@ header:
   </p>
 </div>
 
-<style>
-/* Estilo para o texto customizado */
 .custom-hero-text {
   position: absolute;
-  top: 38%; /* Ajuste conforme necessário */
-  left: 60%; /* Ajuste conforme necessário */
+  top: 50%;   /* CENTRALIZA NA TELA DO NOTEBOOK */
+  left: 50%;
   transform: translate(-50%, -50%);
-  width: 55%;
+  width: 40%;
   max-width: 600px;
   text-align: center;
   z-index: 10;
   padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
-  border: 3px solid #ffcc00; /* Borda amarela como na imagem */
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 3px solid #ffcc00;
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(255, 204, 0, 0.3);
 }
@@ -88,4 +86,5 @@ header:
   }
 }
 </style>
+
 
