@@ -3,36 +3,19 @@ title: "Minhas Habilidades"
 permalink: /habilidades/
 layout: single
 ---
+
 <style>
-/* ==================== FUNDO NEON ANIMADO PARA HABILIDADES ==================== */
-body {
-  background: #142850;
+/* ==================== FUNDO DA PÁGINA ==================== */
+body.page--habilidades {
+  background: #0a1425;
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
   font-family: sans-serif;
 }
 
-/* Camada de fundo neon animada */
-body::before {
-  content: "";
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: linear-gradient(45deg, #4da6ff, #00ccff, #0088cc, #4da6ff);
-  opacity: 0.1;
-  filter: blur(120px);
-  animation: neonBackground 10s linear infinite;
-  z-index: 0;
-}
-
-/* Conteúdo principal */
-.initial-content,
-.notice--info,
-.notice--success,
-.notice--warning {
+/* ==================== FUNDO AZUL PARA INITIAL-CONTENT ==================== */
+.initial-content {
   background: linear-gradient(145deg, rgba(20, 40, 80, 0.8), rgba(10, 20, 40, 0.9));
   border-radius: 15px;
   padding: 30px 25px;
@@ -41,10 +24,23 @@ body::before {
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease;
-  z-index: 1;
 }
 
-/* Camada neon nos blocos */
+/* ==================== BLOCOS DE HABILIDADES (INFO/SUCCESS/WARNING) ==================== */
+.notice--info,
+.notice--success,
+.notice--warning {
+  background: rgba(20, 40, 80, 0.5);
+  border-radius: 15px;
+  padding: 30px 25px;
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s ease;
+}
+
+/* Camada neon animada nos blocos */
 .initial-content::before,
 .notice--info::before,
 .notice--success::before,
@@ -56,7 +52,7 @@ body::before {
   width: 200%;
   height: 200%;
   background: linear-gradient(135deg, #4da6ff, #00ccff, #4da6ff, #00ccff);
-  opacity: 0.2;
+  opacity: 0.15;
   transform: rotate(45deg);
   filter: blur(40px);
   animation: neonGlow 6s linear infinite;
@@ -74,7 +70,30 @@ body::before {
   transform: translateY(-5px) scale(1.02);
 }
 
-/* Títulos neon */
+/* ==================== TÍTULO PRINCIPAL EM NEON ==================== */
+.page__title {
+  text-align: center;
+  font-size: 48px !important;
+  font-weight: 700;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #4da6ff, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
+}
+
+/* ==================== SUBTÍTULO PRINCIPAL EM NEON ==================== */
+.intro-text {
+  text-align: center;
+  font-size: 20px;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  background: linear-gradient(90deg, #4da6ff, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==================== TÍTULOS DAS HABILIDADES ==================== */
 h4 {
   position: relative;
   z-index: 1;
@@ -87,7 +106,7 @@ h4 {
   margin-bottom: 10px;
 }
 
-/* Itens da lista */
+/* ==================== ITENS DE LISTA ==================== */
 li {
   position: relative;
   z-index: 1;
@@ -96,7 +115,7 @@ li {
   margin-bottom: 8px;
 }
 
-/* Marcadores neon */
+/* Marcador neon antes do item */
 li::before {
   content: "•";
   position: absolute;
@@ -109,18 +128,10 @@ li::before {
     0 0 10px #00ccff;
 }
 
-/* ==================== ANIMAÇÕES ==================== */
+/* ==================== ANIMAÇÃO NEON ==================== */
 @keyframes neonGlow {
   0%, 100% { transform: rotate(0deg) translate(-50%, -50%); }
   50% { transform: rotate(45deg) translate(-50%, -50%); }
-}
-
-@keyframes neonBackground {
-  0% { transform: rotate(0deg) translate(-50%, -50%); }
-  25% { transform: rotate(30deg) translate(-50%, -50%); }
-  50% { transform: rotate(60deg) translate(-50%, -50%); }
-  75% { transform: rotate(30deg) translate(-50%, -50%); }
-  100% { transform: rotate(0deg) translate(-50%, -50%); }
 }
 
 /* ==================== RESPONSIVO ==================== */
@@ -132,11 +143,20 @@ li::before {
     padding: 20px 15px;
   }
 
+  .page__title {
+    font-size: 36px !important;
+  }
+
+  .intro-text {
+    font-size: 18px;
+  }
+
   h4 {
     font-size: 20px;
   }
 }
 </style>
+
 
 
 
