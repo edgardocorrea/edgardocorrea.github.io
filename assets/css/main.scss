@@ -24,7 +24,8 @@
 
 // 3. CORREÇÃO DO HEADER (TOPO) - 
 .masthead {
-  padding: 8px 16px !important; // Reduz a altura do cabeçalho
+// Alteração: Zera o padding vertical (topo e base) para remover o espaço extra.
+  padding: 0px 16px !important;
   
   .site-title {
     font-size: 19px !important; // Título do site menor
@@ -46,9 +47,14 @@
   
   .text-wrapper {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 38%; // Mantém o ajuste de altura que fizemos antes
+    
+    // === ALTERAÇÃO: MOVE PARA A DIREITA ===
+    left: 60%; // Define o ponto de âncora a 60% da esquerda
+    // Ajusta o deslocamento X em 100% para que a BORDA DIREITA fique ancorada em 60%
+    transform: translate(-100%, -50%); 
+    // =====================================
+    
     width: 60%;
     max-width: 650px;
     padding: 4px;
