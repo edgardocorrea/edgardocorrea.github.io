@@ -1,38 +1,62 @@
 ---
 layout: splash
+title: "" # Força título vazio
+excerpt: "" # Força excerpt vazio
 header:
   overlay_color: "rgba(0, 0, 0, 0.5)"
   overlay_image: /assets/images/banner-home.jpg
+  image_description: "" # Remove alt text
+  actions:
+    - label: "Ver Meus Projetos"
+      url: "/portfolio/"
 ---
 
 <!-- Texto customizado posicionado sobre a tela do notebook -->
 <div class="custom-hero-text">
+  <h1 class="custom-title">Olá, eu sou Edgardo Correa</h1>
   <p class="custom-excerpt">
     Analista de Sistemas com base em infraestrutura de TI com sólida experiência em redes, sistemas e automação. Apaixonado por construir soluções robustas e eficientes.
   </p>
 </div>
 
 <style>
+/* CENTRALIZA A IMAGEM DE FUNDO */
+.page__hero--overlay {
+  background-position: center center !important; /* Centraliza horizontal e vertical */
+  background-size: cover !important; /* Cobre toda área mantendo proporção */
+}
+
+/* Remove qualquer título/excerpt que apareça */
+.page__hero-caption,
+.page__title,
+.page__lead,
+h1.page__title,
+.page__hero--overlay h1,
+.page__hero--overlay p {
+  display: none !important;
+  visibility: hidden !important;
+}
+
 /* Estilo para o texto customizado */
 .custom-hero-text {
   position: absolute;
-  top: 38%; /* Ajuste conforme necessário */
-  left: 52%; /* Ajuste conforme necessário */
+  top: 45%; /* AJUSTADO: Mais abaixo para afastar da tela */
+  left: 50%; /* AJUSTADO: Centralizado horizontalmente */
   transform: translate(-50%, -50%);
-  width: 55%;
-  max-width: 600px;
+  width: 50%; /* REDUZIDO: Menos largura */
+  max-width: 600px; /* REDUZIDO: Para não invadir a tela */
   text-align: center;
   z-index: 10;
-  padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+  padding: 20px 30px; /* REDUZIDO: Menos padding */
+  background-color: rgba(0, 0, 0, 0.80); /* Fundo mais escuro */
   border: 3px solid #ffcc00; /* Borda amarela como na imagem */
   border-radius: 8px;
   box-shadow: 0 8px 30px rgba(255, 204, 0, 0.3);
 }
 
 .custom-title {
-  font-size: 20px !important;
-  line-height: 1.2 !important;
+  font-size: 28px !important; /* REDUZIDO: Para caber melhor */
+  line-height: 1.3 !important;
   color: #ffffff !important;
   margin: 0 0 15px 0 !important;
   font-weight: 700;
@@ -40,7 +64,7 @@ header:
 }
 
 .custom-excerpt {
-  font-size: 18px !important;
+  font-size: 16px !important; /* REDUZIDO: Para caber melhor */
   line-height: 1.5 !important;
   color: #e6e6e6 !important;
   margin: 0 !important;
@@ -54,15 +78,15 @@ header:
     width: 70%;
     top: 40%;
     left: 50%;
-    padding: 15px 20px;
+    padding: 20px 25px;
   }
   
   .custom-title {
-    font-size: 24px !important;
+    font-size: 26px !important;
   }
   
   .custom-excerpt {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
 }
 
@@ -72,20 +96,18 @@ header:
     width: 85%;
     top: 45%;
     left: 50%;
-    padding: 12px 15px;
+    padding: 15px 18px;
     border-width: 2px;
   }
   
   .custom-title {
-    font-size: 20px !important;
-    margin-bottom: 10px !important;
+    font-size: 22px !important;
+    margin-bottom: 12px !important;
   }
   
   .custom-excerpt {
-    font-size: 13px !important;
-    line-height: 1.4 !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
   }
 }
 </style>
-
-
