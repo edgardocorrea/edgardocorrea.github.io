@@ -22,6 +22,11 @@
   overflow: hidden;
 }
 
+// === NOVO AJUSTE: Remove padding do overlay para compressão máxima ===
+.page__hero--overlay {
+  padding: 0 !important;
+}
+
 // 3. CORREÇÃO DO HEADER (TOPO) - 
 .masthead {
 // Alteração: Zera o padding vertical (topo e base) para remover o espaço extra.
