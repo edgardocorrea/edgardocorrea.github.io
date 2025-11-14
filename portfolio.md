@@ -1,29 +1,4 @@
----
-title: "Meus Projetos"
-layout: single
-permalink: /portfolio/
-author_profile: false
-sidebar: null
----
-
 <style>
-/* ====================  FORÇAR CENTRALIZAÇÃO VIA CSS ==================== */
-
-/* 1. Oculta completamente a barra lateral e seu contêiner */
-.sidebar, .sidebar__wrapper {
-  display: none !important;
-}
-
-/* 2. Força o conteúdo principal a ocupar a largura total da grade */
-.page--portfolio main.grid__item {
-  grid-column: 1 / -1; /* Isso significa "começar na primeira linha da grade e ir até a última" */
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1100px; /* Mantém seu controle de largura máxima */
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
 /* ==================== FUNDO ESCURO APENAS PARA O PORTFOLIO ==================== */
 body.page--portfolio .initial-content {
   background-color: #000000 !important;
@@ -33,6 +8,16 @@ body.page--portfolio .initial-content {
 /* ====================MUDANÇA FEITA ==================== */
 
 /* Customizações só para /portfolio/ */
+.page--portfolio {
+  /* CORREÇÃO PRINCIPAL: Centralizar a COLUNA INTEIRA (título + conteúdo) */
+  main.grid__item {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    max-width: 1100px; /* Largura máxima desejada para todo o bloco */
+    padding-left: 20px;  /* Espaçamento nas laterais */
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
 
   /* CORREÇÃO DOS BOTÕES: Organizar verticalmente */
   .project-buttons {
@@ -48,6 +33,8 @@ body.page--portfolio .initial-content {
     max-width: 240px;
     text-align: center;
   }
+}
+
 
 /* ==================== TÍTULO PRINCIPAL ==================== */
 .page__title {
@@ -112,7 +99,7 @@ body.page--portfolio .initial-content {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.4s ease;
-  pointer-events: none; 
+  pointer-events: none;
 }
 
 .project-card:hover::before {
@@ -182,8 +169,6 @@ body.page--portfolio .initial-content {
 }
 
 /* ==================== BOTÕES ==================== */
-/* A regra .project-buttons foi movida para dentro de .page--portfolio para evitar conflitos. */
-
 .btn-custom {
   display: inline-flex;
   align-items: center;
@@ -286,103 +271,3 @@ body.page--portfolio .initial-content {
 .project-card:nth-child(3) { animation-delay: 0.3s; }
 .project-card:nth-child(4) { animation-delay: 0.4s; }
 </style>
-
-
-<!-- Introdução -->
-<p class="intro-text">
-  Confira alguns dos meus projetos mais relevantes em <strong>infraestrutura, redes e automação</strong>. Cada projeto foi desenvolvido com foco em eficiência, automação e boas práticas de desenvolvimento.
-</p>
-
-<!-- Grid de Projetos -->
-<div class="projects-grid">
-
-  <!-- Projeto 1: Modem VIVO Unlock -->
-  <div class="project-card">
-    <span class="status-badge">✓ Ativo</span>
-    
-    <div class="project-icon">
-      📡
-    </div>
-    
-    <h2 class="project-title">Modem VIVO Unlock</h2>
-    
-    <p class="project-description">
-      Ferramenta de automação completa para desbloqueio de configurações avançadas do modem Askey RTF8115VW REV5 (VIVO). Desenvolvida com Node.js e Selenium WebDriver para automatizar o processo de forma segura e eficiente.
-    </p>
-    
-    <div class="tech-tags">
-      <span class="tech-tag">Node.js</span>
-      <span class="tech-tag">Selenium</span>
-      <span class="tech-tag">PowerShell</span>
-      <span class="tech-tag">ChromeDriver</span>
-      <span class="tech-tag">JavaScript</span>
-    </div>
-    
-    <div class="project-buttons">
-      <a href="https://github.com/edgardocorrea/modem-vivo" class="btn-custom btn-github" target="_blank">
-        <i class="fab fa-github"></i> Ver no GitHub
-      </a>
-      <a href="https://github.com/edgardocorrea/modem-vivo#readme" class="btn-custom btn-demo" target="_blank">
-        <i class="fas fa-book"></i> Documentação
-      </a>
-    </div>
-  </div>
-
-  <!-- Projeto 2: Limpeza Avançada Windows -->
-  <div class="project-card">
-    <span class="status-badge">✓ Ativo</span>
-    
-    <div class="project-icon">
-      🧹
-    </div>
-    
-    <h2 class="project-title">Limpeza Avançada Windows</h2>
-    
-    <p class="project-description">
-      Script PowerShell automatizado para limpeza profunda do Windows. Remove arquivos temporários, cache, logs e otimiza o sistema operacional com interface intuitiva e opções avançadas de personalização.
-    </p>
-    
-    <div class="tech-tags">
-      <span class="tech-tag">PowerShell</span>
-      <span class="tech-tag">Windows API</span>
-      <span class="tech-tag">Batch</span>
-      <span class="tech-tag">Automação</span>
-    </div>
-    
-    <div class="project-buttons">
-      <a href="https://github.com/edgardocorrea/LimpezaAvancada" class="btn-custom btn-github" target="_blank">
-        <i class="fab fa-github"></i> Ver no GitHub
-      </a>
-      <a href="https://github.com/edgardocorrea/LimpezaAvancada#readme" class="btn-custom btn-demo" target="_blank">
-        <i class="fas fa-book"></i> Documentação
-      </a>
-    </div>
-  </div>
-
-  <!-- Projeto 3: (Adicione mais projetos aqui) -->
-  <div class="project-card">
-    <span class="status-badge" style="background: linear-gradient(135deg, #ffcc00, #ff9900);">⏳ Em Breve</span>
-    
-    <div class="project-icon">
-      🔧
-    </div>
-    
-    <h2 class="project-title">Outros Projetos</h2>
-    
-    <p class="project-description">
-      Novos projetos de infraestrutura, automação e desenvolvimento em andamento. Fique atento para mais atualizações em breve!
-    </p>
-    
-    <div class="tech-tags">
-      <span class="tech-tag">Em Desenvolvimento</span>
-    </div>
-    
-    <div class="project-buttons">
-      <a href="https://github.com/edgardocorrea" class="btn-custom btn-github" target="_blank">
-        <i class="fab fa-github"></i> Ver GitHub
-      </a>
-    </div>
-  </div>
-
-</div>
-
