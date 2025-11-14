@@ -45,23 +45,27 @@
 .page__hero-inner {
   padding: 0;
   
-  .text-wrapper {
-    position: absolute;
-    // O 38% da altura estava perfeito para a tela do notebook
-    top: 38%; 
-    
-    // === ALTERAÇÃO: MOVE O BLOCO PARA A DIREITA (80% da tela) ===
-    left: 80%; 
+// Cria um container para o texto e o posiciona sobre a tela do notebook
+.text-wrapper {
+  position: absolute;
+  
+  // Ajuste para altura visual (alinhado com a tela do notebook na imagem)
+  top: 38%; 
+  
+  // Move o bloco para a direita do centro.
+  // Mude para 50% se quiser de volta ao centro
+  left: 60%; 
+  
+  // Mantém a centralização perfeita do bloco no ponto (38%, 60%)
+  transform: translate(-50%, -50%); 
+  
+  width: 55%; 
+  max-width: 600px;
+  text-align: center;
+  color: #ffffff; 
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.8); 
+}
 
-    // ==========================================================
-    
-    width: 60%;
-    max-width: 650px;
-    padding: 4px;
-    text-align: center;
-    color: #ffffff;
-    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
-  }
 }
 
 // 5. CONTROLE DO TAMANHO DO TÍTULO E TEXTO 
