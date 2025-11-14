@@ -24,10 +24,10 @@ sidebar: null
   padding-right: 20px;
 }
 
-<style>
 /* ==================== FUNDO ESCURO APENAS PARA O PORTFOLIO ==================== */
-body.page--portfolio {
-  background-color: #000000;
+body.page--portfolio .initial-content {
+  background-color: #000000 !important;
+  background-image: none !important;
 }
 
 /* ====================MUDANÇA FEITA ==================== */
@@ -385,5 +385,6 @@ body.page--portfolio {
       </a>
     </div>
   </div>
+
 </div>
 
