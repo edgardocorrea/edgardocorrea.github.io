@@ -110,6 +110,7 @@ sidebar: null
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.4s ease;
+  pointer-events: none; 
 }
 
 .project-card:hover::before {
@@ -382,4 +383,3 @@ sidebar: null
   </div>
 
 </div>
-
