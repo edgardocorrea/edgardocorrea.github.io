@@ -25,12 +25,13 @@ sidebar: null
 }
 
 /* ==================== FUNDO ESCURO APENAS PARA O PORTFOLIO ==================== */
-/* Força o fundo preto em toda a área de conteúdo principal */
-body.page--portfolio .initial-content,
-body.page--portfolio .page__content {
-  background-color: #000000 !important;
-  background-image: none !important;
- /* border-radius: 0; Remove bordas arredondadas que o tema possa adicionar */
+/* Fundo azul escuro para o portfólio */
+body.page--portfolio {
+  background-color: #142850 !important;
+}
+
+body.page--portfolio main.grid__item {
+  background-color: #142850 !important;
 }
 
 /* ====================MUDANÇA FEITA ==================== */
