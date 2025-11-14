@@ -18,9 +18,9 @@
 
 // 2. Hero ocupa tela inteira E centraliza imagem
 .page__hero {
-.page__hero {
-  height: 100vh; // Altere de 110vh para 100vh
+  height: 100vh;
   overflow: hidden;
+  position: relative;
   
   // FORÇA centralização da imagem de fundo
   background-position: center center !important;
@@ -39,7 +39,7 @@
   padding: 0px 16px !important; // Zero padding vertical
   
   .site-title {
-    font-size: 8px !important;
+    font-size: 19px !important;
     line-height: 1.2 !important;
   }
   
