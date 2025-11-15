@@ -28,6 +28,9 @@ body.page--certificacoes {
   z-index: 1;
 }
 
+
+#ac-toc,
+#ac-toc-wrapper,
 .ac-toc {
   display: none !important;
 }
