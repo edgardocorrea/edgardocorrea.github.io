@@ -26,14 +26,16 @@ header:
 
 <style>
 /* ==================== FUNDO ESCURO APENAS PARA O PORTFOLIO ==================== */
-/* Fundo azul escuro para o portfólio */
-body.page--portfolio {
+/* Fundo gradiente azul para o hero e para o body */
+body {
   background: linear-gradient(90deg, #4da6ff, #00ccff);
-  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
+  color: #ffffff; /* garante visibilidade do texto */
 }
 
-body.page--portfolio main.grid__item {
-  background-color: #142850 !important;
+.hero-image-wrapper {
+  background: linear-gradient(90deg, #142850, #4da6ff);
+  position: relative;  /* já estava, mas garante sobreposição do canvas e da imagem */
+  overflow: hidden;
 }
 
 
