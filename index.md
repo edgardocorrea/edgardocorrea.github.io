@@ -83,17 +83,7 @@ header:
   text-shadow: 0 0 8px #00d4ff88;
 }
 
-/* ==================== BACKGROUND AZUL MARINHO ==================== */
-.initial-content {
-  background: #000000 !important;
-  border: 2px solid rgba(77, 166, 255, 0.3);
-  padding: 40px !important;
-  border-radius: 15px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
-  margin-top: 40px;
-}
-
-
+/* ==================== CURSOS PISCANDO ==================== */
 
 /* Cursor piscando */
 .cursor-blink {
