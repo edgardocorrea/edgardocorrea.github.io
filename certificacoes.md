@@ -30,12 +30,11 @@ body.page--certificacoes {
 .page__title {
   text-align: center;
   font-size: 48px !important;
-  font-weight: 900;
-  color: #ffffff; /* branco normal */
-  text-shadow:
-     0 0 3px rgba(255,255,255,0.5),
-     0 0 6px rgba(255,255,255,0.3); /* neon suave */
-  margin-bottom: 25px;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4da6ff, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
 }
 
 /* ============================================================
