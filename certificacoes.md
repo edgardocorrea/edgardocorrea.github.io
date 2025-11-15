@@ -31,14 +31,10 @@ body.page--certificacoes {
 ============================================================ */
 .page__title {
   text-align: center;
-  font-size: 48px !important;
-  color: #ffffff !important;
-  margin-bottom: 20px !important;
-  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
   background: linear-gradient(90deg, #4da6ff, #00ccff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
+  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
 }
 
 /* ============================================================
