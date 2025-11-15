@@ -51,10 +51,10 @@ header:
   text-align: left;
   z-index: 10;
   padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.7);
-  border: 3px solid #00c8ff; /* Azul neon */
+  background-color: rgba(0, 0, 0, 0.3); /* Fundo mais transparente */
+  border: none; /* Remove borda azul */
   border-radius: 8px;
-  box-shadow: 0 8px 30px rgba(0, 200, 255, 0.3);
+  box-shadow: none; /* Remove sombra */
   font-family: "Courier New", monospace;
   animation: flickerScreen 1.5s infinite;
 }
@@ -118,7 +118,6 @@ header:
     width: 85%;
     top: 45%;
     padding: 12px 15px;
-    border-width: 2px;
   }
   #textBlock .custom-excerpt {
     font-size: 13px;
