@@ -2,8 +2,6 @@
 title: "Certificações e Badges"
 permalink: /certificacoes/
 layout: single
-author_profile: false
-sidebar: null
 toc: false
 ---
 
