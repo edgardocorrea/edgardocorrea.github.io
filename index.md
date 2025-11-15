@@ -25,18 +25,6 @@ header:
 </div>
 
 <style>
-/* ==================== FUNDO ESCURO APENAS PARA O PORTFOLIO ==================== */
-/* Fundo gradiente azul para o hero e para o body */
-.hero-image-wrapper {
-  background: #142850 !important;
-  position: relative;  /* já estava, mas garante sobreposição do canvas e da imagem */
-  overflow: hidden;
-}
-
-
-
-
-
 /* Canvas de ruído digital */
 #noiseCanvas {
   position: absolute;
@@ -214,3 +202,4 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 </script>
+
