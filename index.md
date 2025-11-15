@@ -11,6 +11,17 @@ header:
 <div class="hero-image-wrapper">
   <canvas id="noiseCanvas"></canvas>
   <img src="/assets/images/banner-home.jpg" alt="Notebook Banner" class="hero-img">
+
+  <div class="custom-hero-text">
+    <span class="prompt-blue">edgardo@career:~$</span>
+    <span id="typewriter"></span>
+    <span class="cursor-blink"></span>
+
+    <div id="textBlock" style="display: none;">
+      <p class="custom-excerpt">
+      </p>
+    </div>
+  </div>
 </div>
 
 <style>
