@@ -5,7 +5,7 @@ classes: wide
 title: "Certificações e Badges"
 author_profile: false
 sidebar:
-nav: "" 
+  nav: "" 
 ---
 
 <style>
@@ -150,7 +150,8 @@ h2:first-of-type {
 }
 
 .btn-container {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin: 50px 0 30px 0;
 }
 
