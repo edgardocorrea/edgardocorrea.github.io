@@ -97,7 +97,7 @@ header:
 
 /* ==================== BACKGROUND AZUL MARINHO ==================== */
 .initial-content {
-  background: #001a33 !important;
+  background: #02091b !important;
   border: 2px solid rgba(77, 166, 255, 0.3);
   padding: 40px !important;
   border-radius: 15px;
