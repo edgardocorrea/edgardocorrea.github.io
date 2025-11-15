@@ -11,17 +11,6 @@ header:
 <div class="hero-image-wrapper">
   <canvas id="noiseCanvas"></canvas>
   <img src="/assets/images/banner-home.jpg" alt="Notebook Banner" class="hero-img">
-
-  <div class="custom-hero-text">
-    <span class="prompt-blue">edgardo@career:~$</span>
-    <span id="typewriter"></span>
-    <span class="cursor-blink"></span>
-
-    <div id="textBlock" style="display: none;">
-      <p class="custom-excerpt">
-      </p>
-    </div>
-  </div>
 </div>
 
 <style>
@@ -108,6 +97,9 @@ header:
   #textBlock .custom-excerpt {
     font-size: 14px;
   }
+  #typewriter, .prompt-blue {
+    font-size: 14px;
+  }
 }
 
 /* Responsivo - Celulares */
@@ -115,11 +107,21 @@ header:
   .custom-hero-text {
     width: 85%;
     top: 45%;
-    padding: 12px 15px;
+    padding: 10px 12px;
   }
   #textBlock .custom-excerpt {
-    font-size: 13px;
-    line-height: 1.4;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+  #typewriter, .prompt-blue {
+    font-size: 12px;
+  }
+  .cursor-blink {
+    width: 6px;
+    height: 16px;
+  }
+  .custom-hero-text {
+    overflow-wrap: break-word;
   }
 }
 </style>
