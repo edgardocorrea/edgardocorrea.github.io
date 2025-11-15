@@ -11,6 +11,17 @@ header:
 <div class="hero-image-wrapper">
   <canvas id="noiseCanvas"></canvas>
   <img src="/assets/images/banner-home.jpg" alt="Notebook Banner" class="hero-img">
+
+  <div class="custom-hero-text">
+    <span class="prompt-blue">edgardo@lnx:~$</span>
+    <span id="typewriter"></span>
+    <span class="cursor-blink"></span>
+
+    <div id="textBlock" style="display: none;">
+      <p class="custom-excerpt">
+      </p>
+    </div>
+  </div>
 </div>
 
 <style>
@@ -128,7 +139,7 @@ header:
 
 <script>
 // Frase que será "digitada"
-const text = `read -p "Analista de Sistemas com experiência em infra, redes e automação." name ; echo "Apaixonado por soluções eficientes"`;
+const text = `read -p "Analista de Sistemas com experiência em infra, redes e automação." edyone ; echo "Apaixonado por soluções eficientes"`;
 let i = 0;
 
 function typeWriterEffect() {
