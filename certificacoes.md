@@ -2,6 +2,8 @@
 title: "Certificações e Badges"
 permalink: /certificacoes/
 layout: single
+author_profile: false
+sidebar: null
 ---
 
 <style>
@@ -94,9 +96,9 @@ h2 {
 }
 
 /* Define o nome do badge em branco */
-#badge-name {
-  color: #ffffff; /* branco */
-  font-weight: 600; /* opcional, deixa mais destacado */
+.badge-name {
+  color: #ffffff;
+  font-weight: 600;
 }
 
 /* ============================================================
