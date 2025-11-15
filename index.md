@@ -28,7 +28,7 @@ header:
 /* ==================== FUNDO ESCURO APENAS PARA O PORTFOLIO ==================== */
 /* Fundo gradiente azul para o hero e para o body */
 .hero-image-wrapper {
-  background-color: #142850 !important;
+  background: #142850 !important;
   position: relative;  /* já estava, mas garante sobreposição do canvas e da imagem */
   overflow: hidden;
 }
