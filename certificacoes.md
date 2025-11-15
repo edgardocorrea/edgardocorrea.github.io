@@ -2,7 +2,6 @@
 title: "Certificações e Badges"
 permalink: /certificacoes/
 layout: single
-classes: wide
 author_profile: false
 sidebar: null
 ---
@@ -27,19 +26,11 @@ body.page--certificacoes {
   z-index: 1;
 }
 
-
-ac-toc,
-ac-toc-wrapper,
-.ac-toc {
-  display: none !important;
-}
-
 /* ============================================================
    TÍTULO PRINCIPAL COM NEON
 ============================================================ */
 .page__title {
   text-align: center;
-  font-size: 48px !important;
   background: linear-gradient(90deg, #4da6ff, #00ccff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
