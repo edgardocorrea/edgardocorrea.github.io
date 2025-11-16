@@ -4,39 +4,39 @@ title: "Sobre Mim"
 permalink: /sobre/
 author_profile: false
 ---
+<div id="custom-sobre-page">
 
 <style>
-/* ==================== RESET & BASE (ISOLADO) ==================== */
-/* ALTERADO: O reset agora afeta apenas o nosso wrapper, não o site inteiro. */
-#custom-sobre-page,
-#custom-sobre-page * {
+/* ==================== RESET & BASE ==================== */
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ALTERADO: O 'body' para esta página é agora o nosso wrapper. */
-#custom-sobre-page {
+body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  overflow-x: hidden; /* Previne rolagem horizontal */
-  position: relative; /* Contexto para os elementos posicionados */
-  background-color: #000814; /* Fundo para a página inteira */
-  color: #ffffff;
+  overflow-x: hidden;
 }
 
-/* O .initial-content é do tema, vamos apenas garantir que ele não atrapalhe */
-.initial-content {
+  .initial-content {
   position: relative;
-  background: transparent; /* Deixa o fundo do nosso wrapper aparecer */
-  padding: 0 !important; /* Remove o padding do tema */
-  border-radius: 0 !important; /* Remove a borda do tema */
-  box-shadow: none !important; /* Remove a sombra do tema */
-  max-width: 100% !important; /* Ocupa toda a largura disponível */
+  background: rgba(10,20,40,0.85);
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+  }
+
+.page__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* ==================== PARTÍCULAS DE FUNDO ==================== */
-/* Sem mudanças necessárias aqui, mas vamos isolar por segurança */
-#custom-sobre-page .particles-bg {
+.particles-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -44,85 +44,494 @@ author_profile: false
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
 }
-#custom-sobre-page .particles-bg::before {
+
+.particles-bg::before {
   content: '';
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: repeating-linear-gradient(0deg, rgba(0, 234, 255, 0.03) 0px, transparent 2px, transparent 40px), repeating-linear-gradient(90deg, rgba(0, 234, 255, 0.03) 0px, transparent 2px, transparent 40px);
+  background-image: 
+    repeating-linear-gradient(0deg, rgba(0, 234, 255, 0.03) 0px, transparent 2px, transparent 40px),
+    repeating-linear-gradient(90deg, rgba(0, 234, 255, 0.03) 0px, transparent 2px, transparent 40px);
   animation: gridMove 20s linear infinite;
 }
-@keyframes gridMove { /* ... */ }
+
+@keyframes gridMove {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(40px, 40px); }
+}
 
 /* ==================== HERO SECTION ==================== */
-/* ALTERADO: Removido o min-height conflitante. Agora usa padding para preencher a tela. */
-#custom-sobre-page .hero-section {
+.hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  /* Ajuste estes valores conforme necessário para preencher a tela verticalmente */
-  padding: 120px 20px 80px 20px; 
-  min-height: 90vh; /* Uma abordagem mais segura que 100vh */
-  z-index: 1;
-}
-
-/* ... O restante dos seus estilos para .sobre-brilhante, .avatar-container, etc. devem ser prefixados ... */
-#custom-sobre-page .sobre-brilhante { /* ... */ }
-#custom-sobre-page .avatar-container { /* ... */ }
-#custom-sobre-page .avatar-glow { /* ... */ }
-#custom-sobre-page .avatar-container img { /* ... */ }
-@keyframes float { /* ... */ }
-@keyframes pulse { /* ... */ }
-#custom-sobre-page .hero-title { /* ... */ }
-@keyframes gradient { /* ... */ }
-#custom-sobre-page .typewriter { /* ... */ }
-@keyframes typing { /* ... */ }
-@keyframes blink { /* ... */ }
-#custom-sobre-page .hero-description { /* ... */ }
-#custom-sobre-page .cta-button { /* ... */ }
-#custom-sobre-page .cta-button:hover { /* ... */ }
-@keyframes ctaPulse { /* ... */ }
-#custom-sobre-page .scroll-indicator { /* ... */ }
-@keyframes bounce { /* ... */ }
-
-/* ==================== SEÇÕES EXPANSÍVEIS ==================== */
-#custom-sobre-page .content-section {
+  padding: 60px 20px;
   position: relative;
   z-index: 1;
-  padding: 0 20px 80px 20px; /* Adiciona padding na parte de baixo */
+  padding-bottom: 120px; /* espaço para o scroll-indicator */
 }
-#custom-sobre-page .section-accordion { /* ... */ }
-#custom-sobre-page .section-accordion:hover { /* ... */ }
-#custom-sobre-page .accordion-header { /* ... */ }
-#custom-sobre-page .accordion-title { /* ... */ }
-#custom-sobre-page .accordion-icon { /* ... */ }
-#custom-sobre-page .accordion-header:hover .accordion-icon { /* ... */ }
-#custom-sobre-page .accordion-arrow { /* ... */ }
-#custom-sobre-page .section-accordion.active .accordion-arrow { /* ... */ }
-#custom-sobre-page .accordion-content { /* ... */ }
-#custom-sobre-page .section-accordion.active .accordion-content { /* ... */ }
 
-/* ... Continue prefixando TODOS os outros seletores ... */
-/* Exemplo: */
-/* .timeline vira #custom-sobre-page .timeline */
-/* .skills-grid vira #custom-sobre-page .skills-grid */
-/* E assim por diante... */
+.sobre-brilhante {
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffffff, 0 0 20px #00eaff, 0 0 30px #00eaff;
+}
+
+.avatar-container {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 40px;
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
+
+.avatar-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(0, 234, 255, 0.4), transparent 70%);
+  animation: pulse 2s ease-in-out infinite;
+  filter: blur(20px);
+}
+
+.avatar-container img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(0, 234, 255, 0.8));
+  z-index: 2;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 1; transform: translate(-50%, -50%) scale(1.1); }
+}
+
+.hero-title {
+  font-size: 64px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00eaff, #0066ff, #00eaff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 3s ease infinite;
+  text-shadow: 0 0 40px rgba(0, 234, 255, 0.5);
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.typewriter {
+  font-size: 28px;
+  color: #00ff88;
+  font-weight: 600;
+  margin-bottom: 30px;
+  border-right: 3px solid #00ff88;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(40) 1s 1 normal both, blink 0.7s infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink {
+  50% { border-color: transparent; }
+}
+
+.hero-description {
+  font-size: 18px;
+  color: #b3d9ff;
+  max-width: 600px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(135deg, #00ff88, #00ccaa);
+  color: #000814;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.4);
+  animation: ctaPulse 2s ease-in-out infinite;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0, 255, 136, 0.6);
+}
+
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.4); }
+  50% { box-shadow: 0 0 50px rgba(0, 255, 136, 0.8); }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #00eaff;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-20px); }
+  60% { transform: translateX(-50%) translateY(-10px); }
+}
+
+/* ==================== SEÇÕES EXPANSÍVEIS ==================== */
+.content-section {
+  position: relative;
+  z-index: 1;
+  margin: 80px 0;
+}
+
+.section-accordion {
+  background: linear-gradient(145deg, rgba(0, 102, 255, 0.05), rgba(0, 234, 255, 0.05));
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  border-radius: 20px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.section-accordion:hover {
+  border-color: rgba(0, 234, 255, 0.6);
+  box-shadow: 0 10px 40px rgba(0, 234, 255, 0.2);
+}
+
+.accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 30px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #00eaff;
+}
+
+.accordion-icon {
+  font-size: 32px;
+  transition: transform 0.3s ease;
+}
+
+.accordion-header:hover .accordion-icon {
+  transform: scale(1.2);
+}
+
+.accordion-arrow {
+  font-size: 24px;
+  color: #00ff88;
+  transition: transform 0.3s ease;
+}
+
+.section-accordion.active .accordion-arrow {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, padding 0.5s ease;
+  padding: 0 30px;
+}
+
+.section-accordion.active .accordion-content {
+  max-height: 2000px;
+  padding: 0 30px 30px 30px;
+}
+
+/* ==================== TIMELINE ==================== */
+.timeline {
+  position: relative;
+  padding: 20px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, #00eaff, #0066ff);
+  box-shadow: 0 0 10px #00eaff;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 40px;
+  position: relative;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.2s; }
+.timeline-item:nth-child(2) { animation-delay: 0.4s; }
+.timeline-item:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-content {
+  width: 45%;
+  background: rgba(0, 20, 40, 0.6);
+  border: 1px solid rgba(0, 234, 255, 0.3);
+  border-radius: 15px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: #00ff88;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #00ff88;
+  animation: dotPulse 2s infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 20px #00ff88; }
+  50% { box-shadow: 0 0 40px #00ff88; }
+}
+
+.timeline-date {
+  color: #00ff88;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.timeline-title {
+  color: #00eaff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* ==================== SKILLS ==================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.skill-item {
+  margin-bottom: 25px;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.skill-name {
+  color: #00eaff;
+  font-weight: 600;
+}
+
+.skill-level {
+  color: #00ff88;
+  font-weight: 600;
+}
+
+.skill-bar {
+  height: 10px;
+  background: rgba(0, 234, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.skill-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0066ff, #00eaff);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+  width: 0;
+  transition: width 1.5s ease;
+}
+
+.section-accordion.active .skill-fill {
+  animation: fillBar 1.5s ease forwards;
+}
+
+@keyframes fillBar {
+  to { width: var(--skill-width); }
+}
+
+/* ==================== CARDS DE INTERESSE ==================== */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.interest-card {
+  background: rgba(0, 20, 40, 0.6);
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.interest-card:hover {
+  transform: translateY(-10px);
+  border-color: #00eaff;
+  box-shadow: 0 15px 40px rgba(0, 234, 255, 0.3);
+}
+
+.interest-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.interest-title {
+  color: #00eaff;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+/* ==================== LINKS SOCIAIS ==================== */
+.social-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-card {
+  background: rgba(0, 20, 40, 0.6);
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.social-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.social-card:hover::before {
+  left: 100%;
+}
+
+.social-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 234, 255, 0.4);
+}
+
+.social-card.linkedin { border-color: #0077b5; }
+.social-card.linkedin:hover { border-color: #0077b5; box-shadow: 0 15px 40px rgba(0, 119, 181, 0.4); }
+
+.social-card.github { border-color: #333; }
+.social-card.github:hover { border-color: #fff; box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3); }
+
+.social-card.email { border-color: #00ff88; }
+.social-card.email:hover { border-color: #00ff88; box-shadow: 0 15px 40px rgba(0, 255, 136, 0.4); }
+
+.social-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.social-title {
+  color: #00eaff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.social-description {
+  color: #b3d9ff;
+  font-size: 14px;
+}
 
 /* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
-  #custom-sobre-page .hero-title { font-size: 42px; }
-  #custom-sobre-page .typewriter { font-size: 20px; }
-  #custom-sobre-page .hero-description { font-size: 16px; }
-  #custom-sobre-page .timeline::before { left: 20px; }
-  #custom-sobre-page .timeline-item { flex-direction: column !important; margin-left: 40px; }
-  #custom-sobre-page .timeline-content { width: 100%; }
-  #custom-sobre-page .timeline-dot { left: 20px; }
-  #custom-sobre-page .accordion-title { font-size: 22px; }
-  #custom-sobre-page .skills-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: 42px; }
+  .typewriter { font-size: 20px; }
+  .hero-description { font-size: 16px; }
+  
+  .timeline::before { left: 20px; }
+  .timeline-item { flex-direction: column !important; margin-left: 40px; }
+  .timeline-content { width: 100%; }
+  .timeline-dot { left: 20px; }
+  
+  .accordion-title { font-size: 22px; }
+  .skills-grid { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -347,6 +756,7 @@ author_profile: false
   </div>
 
 </div>
+</div> <!-- FIM DO WRAPPER -->
 
 <!-- Script para Acordeão -->
 <script>
