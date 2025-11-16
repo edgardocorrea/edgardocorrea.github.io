@@ -8,6 +8,24 @@
    CUSTOMIZAÇÕES DO SITE – VERSÃO OTIMIZADA E SEM CONFLITOS
    ============================================================ */
 
+// ===================================================================
+// SUAS CUSTOMIZAÇÕES PERSONALIZADAS
+// ===================================================================
+
+// 1. Esconde o botão de menu (hambúrguer) em TODAS as telas
+.masthead .menu-toggle {
+  display: none !important;
+}
+
+// 2. Esconde a barra de navegação inteira em telas PEQUENAS (menos de 600px)
+//    Isso cria a experiência de tela cheia que você deseja.
+@media (max-width: 600px) {
+  .masthead .greedy-nav {
+    display: none;
+  }
+}
+
+
 
 /* ------------------------------------------------------------
    1) REMOVER HERO ORIGINAL DO MINIMAL MISTAKES
