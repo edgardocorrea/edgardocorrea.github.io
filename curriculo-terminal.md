@@ -19,7 +19,6 @@ author_profile: false
 /* ---------------- BACKGROUND ---------------- */
 body {
   overflow-x: hidden;
-  background: #0a1428 !important;
 }
 
 .initial-content {
@@ -299,7 +298,7 @@ const skills = [
   { name: "VMware / Hyper-V", level: 80 },
 ];
 
-/* ---------------- EXECUTAR COMANDO ---------------- */ 
+/* ---------------- EXECUTAR COMANDO ---------------- */
 function executeCommand(cmd) {
   cmd = cmd.toLowerCase().trim();
 
