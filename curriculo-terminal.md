@@ -176,7 +176,7 @@ body {
   border: 1px solid #00d4ff;
   border-radius: 4px;
   padding: 15px;
-  margin-top: 20px;
+  margin-top: 8px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
