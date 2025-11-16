@@ -127,7 +127,7 @@ body {
 }
 
 .success {
-  color: #00ff88;
+  color: #ffffff; /* Alterado de verde para branco */
 }
 
 .warning {
@@ -465,10 +465,10 @@ const skills = [
  */
 function showWelcomeMessage() {
   terminalOutput.innerHTML = ""; // Limpa o terminal antes de exibir
-  addLine(`<span class="success">╔══════════════════════════════════════════════════════════════╗</span>`);
-  addLine(`<span class="success">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span>`);
-  addLine(`<span class="success">║  Analista de Sistemas | Curriculo On-Line versão 1.3b        ║</span>`);
-  addLine(`<span class="success">╚══════════════════════════════════════════════════════════════╝</span>`);
+  addLine(`<span class="output">╔══════════════════════════════════════════════════════════════╗</span>`);
+  addLine(`<span class="output">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span>`);
+  addLine(`<span class="output">║  Analista de Sistemas | Curriculo On-Line versão 1.3b        ║</span>`);
+  addLine(`<span class="output">╚══════════════════════════════════════════════════════════════╝</span>`);
   addLine(`<span class="output">Sistema inicializado...</span>`);
   addLine(`<span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span>`);
 }
@@ -528,17 +528,48 @@ function renderSkills() {
   if (!container) return;
 
   container.innerHTML = "";
-  skills.forEach((s, i) => {
+  
+  // Cria um fragmento de documento para melhorar o desempenho
+  const fragment = document.createDocumentFragment();
+  
+  skills.forEach((skill, index) => {
+    // Cria a barra de habilidades
+    const skillBar = document.createElement("div");
+    skillBar.className = "skill-bar";
+    
+    // Cria o nome da habilidade
+    const skillName = document.createElement("span");
+    skillName.className = "skill-name";
+    skillName.textContent = skill.name;
+    
+    // Cria o contêiner da barra de progresso
+    const skillProgress = document.createElement("div");
+    skillProgress.className = "skill-progress";
+    
+    // Cria a barra de preenchimento
+    const skillFill = document.createElement("div");
+    skillFill.className = "skill-fill";
+    skillFill.style.width = "0%"; // Começa com 0% para a animação
+    skillFill.textContent = skill.level + "%"; // Adiciona o texto da porcentagem
+    
+    // Adiciona a barra de preenchimento ao contêiner
+    skillProgress.appendChild(skillFill);
+    
+    // Adiciona o nome e a barra ao elemento principal
+    skillBar.appendChild(skillName);
+    skillBar.appendChild(skillProgress);
+    
+    // Adiciona a barra completa ao fragmento
+    fragment.appendChild(skillBar);
+    
+    // Anima a barra após um pequeno atraso
     setTimeout(() => {
-      container.innerHTML += `
-        <div class="skill-bar">
-          <span class="skill-name">${s.name}</span>
-          <div class="skill-progress">
-            <div class="skill-fill" style="width:${s.level}%">${s.level}%</div>
-          </div>
-        </div>`;
-    }, i * 100);
+      skillFill.style.width = skill.level + "%";
+    }, 100 * index);
   });
+  
+  // Adiciona todas as barras ao contêiner de uma vez
+  container.appendChild(fragment);
 }
 
 /* ==================== EVENT LISTENERS ==================== */
