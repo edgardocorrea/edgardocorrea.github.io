@@ -84,12 +84,13 @@ body {
   font-family: 'Courier New', monospace;
 }
 
+/* Terminal Output */
 .terminal-output {
   min-height: 400px;
   color: #00d4ff;
   font-size: 14px;
   line-height: 1.6;
-  white-space: pre-wrap; /* Mudança de pre para pre-wrap */
+  white-space: pre-wrap; /* Mantém a formatação da arte ASCII */
   font-family: 'Courier New', monospace;
 }
 
@@ -97,7 +98,7 @@ body {
   margin-bottom: 2px;
   opacity: 0;
   animation: fadeIn 0.3s forwards;
-  letter-spacing: 0; /* Garante espaçamento consistente entre caracteres */
+  letter-spacing: 0; /* Garante espaçamento consistente */
 }
 
 .success, .output, .command, .error, .warning {
@@ -144,7 +145,6 @@ body {
 
 .terminal-input {
   background: transparent;
-  /* BORDA BRANCA E BRILHANTE */
   border: 1px solid #ffffff;
   border-radius: 4px;
   padding: 5px;
@@ -154,7 +154,6 @@ body {
   flex: 1;
   outline: none;
   caret-color: #00d4ff;
-  /* EFEITO DE BRILHO */
   box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
 
@@ -295,19 +294,11 @@ body {
     <span class="terminal-title">edgardo@lnx:~$</span>
   </div>
 
-  <div class="terminal-output" id="terminalOutput">
-    <!-- CAIXA ASCII AJUSTADA -->
-    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════╗</span></div>
-    <div class="terminal-line"><span class="success">║ Bem-vindo ao Sistema de Informação de Edgardo Correa ║</span></div>
-    <div class="terminal-line"><span class="success">║ Analista de Sistemas | Curriculo On-Line versão 1.3b ║</span></div>
-    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════╝</span></div>
-    <div class="terminal-line"><span class="output">Sistema inicializado...</span></div>
-    <div class="terminal-line"><span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span></div>
-  </div>
+  <!-- IMPORTANTE: Deixe este div vazio. O JavaScript vai preenchê-lo. -->
+  <div class="terminal-output" id="terminalOutput"></div>
 
   <div class="terminal-input-area">
     <span class="prompt">edgardo@lnx:~$</span>
-    <!-- PLACEHOLDER VAZIO -->
     <input type="text" class="terminal-input" id="commandInput" placeholder="Digite um comando aqui...na duvida digite ajuda..." autofocus>
     <span class="cursor"></span>
   </div>
@@ -329,10 +320,11 @@ body {
 </div>
 
 <script>
-/* ==================== MIGRAÇÃO PARA COMANDOS EM PORTUGUÊS ==================== */
+/* ==================== VARIÁVEIS GLOBAIS ==================== */
 const terminalOutput = document.getElementById("terminalOutput");
 const commandInput = document.getElementById("commandInput");
 
+/* ==================== BANCO DE COMANDOS ==================== */
 const commands = {
   ajuda: `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -452,7 +444,7 @@ Clique no link abaixo:
   apagar: "CLEAR_SCREEN"
 };
 
-/* ==================== HABILIDADES COM BARRA ==================== */
+/* ==================== DADOS DAS HABILIDADES ==================== */
 const skills = [
   { name: 'Redes (TCP/IP, VLANs)', level: 80 },
   { name: 'Linux (Ubuntu, Slackware)', level: 65 },
@@ -466,9 +458,13 @@ const skills = [
   { name: 'Troubleshooting', level: 92 }
 ];
 
-/* ==================== FUNÇÃO DE INICIALIZAÇÃO ==================== */
+/* ==================== FUNÇÕES PRINCIPAIS ==================== */
+
+/**
+ * Exibe a mensagem de boas-vindas no terminal.
+ */
 function showWelcomeMessage() {
-  terminalOutput.innerHTML = ""; // Garante que esteja limpo
+  terminalOutput.innerHTML = ""; // Limpa o terminal antes de exibir
   addLine(`<span class="success">╔══════════════════════════════════════════════════════════════╗</span>`);
   addLine(`<span class="success">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span>`);
   addLine(`<span class="success">║  Analista de Sistemas | Curriculo On-Line versão 1.3b        ║</span>`);
@@ -477,39 +473,45 @@ function showWelcomeMessage() {
   addLine(`<span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span>`);
 }
 
+/**
+ * Executa o comando digitado pelo usuário.
+ * @param {string} cmd - O comando a ser executado.
+ */
 function executeCommand(cmd) {
   cmd = cmd.toLowerCase().trim();
 
-  // Caso especial: o comando 'apagar' apenas restaura a mensagem inicial
+  // Se o comando for 'apagar', apenas mostra a mensagem de boas-vindas.
   if (cmd === "apagar") {
     showWelcomeMessage();
-    commandInput.value = ""; // Limpa o input
-    return; // Para a execução da função aqui
+    commandInput.value = "";
+    return;
   }
 
-  // Para todos os outros comandos, limpe a tela primeiro
+  // Para qualquer outro comando, limpa a tela primeiro.
   terminalOutput.innerHTML = '';
 
-  // Adiciona a linha com o comando que foi executado
+  // Exibe o comando que foi digitado.
   addLine(`edgardo@lnx:~$ ${cmd}`);
 
-  // Verifica e executa o comando, mostrando o resultado
+  // Processa e exibe o resultado do comando.
   if (cmd === "habilidades") {
     addLine(commands[cmd]);
     setTimeout(() => renderSkills(), 100);
   } else if (commands[cmd]) {
     addLine(commands[cmd]);
-  } else if (cmd !== "") { // Se o comando não for vazio e não for encontrado
-    addLine(`bash: ${cmd}: comando não encontrado`);
-    addLine(`Digite "ajuda" para ver os comandos.`);
+  } else if (cmd !== "") {
+    addLine(`<span class="error">bash: ${cmd}: comando não encontrado</span>`);
+    addLine(`<span class="warning">Digite "ajuda" para ver os comandos.</span>`);
   }
 
-  // Limpa o campo de input para o próximo comando
+  // Limpa o campo de input para o próximo comando.
   commandInput.value = "";
 }
 
-
-
+/**
+ * Adiciona uma linha de texto ao terminal.
+ * @param {string} content - O conteúdo HTML da linha.
+ */
 function addLine(content) {
   const line = document.createElement("div");
   line.className = "terminal-line";
@@ -518,6 +520,9 @@ function addLine(content) {
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
+/**
+ * Renderiza as barras de habilidades com animação.
+ */
 function renderSkills() {
   const container = document.getElementById("skillsContainer");
   if (!container) return;
@@ -536,15 +541,18 @@ function renderSkills() {
   });
 }
 
-// Event listener para o input
+/* ==================== EVENT LISTENERS ==================== */
+
+// Executa o comando ao pressionar Enter.
 commandInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     executeCommand(commandInput.value);
   }
 });
 
-// Inicialização para garantir que o placeholder apareça
+// Inicializa o terminal quando a página carrega.
 document.addEventListener("DOMContentLoaded", function() {
   commandInput.placeholder = "Digite um comando aqui...na duvida digite ajuda...";
+  showWelcomeMessage();
 });
 </script>
