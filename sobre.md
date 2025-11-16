@@ -567,7 +567,7 @@ body {
   <div class="section-accordion">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">🔖</span>
+        <span class="accordion-icon">🔵</span>
         <span class="sobre-brilhante">Sobre Mim</span>
       </div>
       <span class="accordion-arrow">▼</span>
@@ -589,7 +589,7 @@ body {
   <div class="section-accordion">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">🔖️</span>
+        <span class="accordion-icon">🔹</span>
         <span>Arsenal Técnico</span>
       </div>
       <span class="accordion-arrow">▼</span>
@@ -681,7 +681,7 @@ body {
   <div class="section-accordion">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">🔖</span>
+        <span class="accordion-icon">🔵</span>
         <span>Além do Código</span>
       </div>
       <span class="accordion-arrow">▼</span>
@@ -720,7 +720,7 @@ body {
   <div class="section-accordion" id="contato">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">🔖</span>
+        <span class="accordion-icon">🔵</span>
         <span>Vamos Conectar?</span>
       </div>
       <span class="accordion-arrow">▼</span>
