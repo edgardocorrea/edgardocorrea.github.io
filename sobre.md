@@ -8,6 +8,11 @@ author_profile: false
 
 <style>
 /* ==================== RESET & BASE ==================== */
+html, body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -17,6 +22,7 @@ author_profile: false
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
+  position: relative;
 }
 
   .initial-content {
@@ -40,13 +46,21 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
   width: 100%;
   height: 100%;
   z-index: 0;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
+  radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%),
+  radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
+  will-change: transform;
+  transform: translateY(0) !important;
+  pointer-events: none;
+  overflow: hidden;
+  will-change: transform;
 }
 
 .particles-bg::before {
@@ -841,7 +855,7 @@ window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       const parallaxBg = document.querySelector('.particles-bg');
       if (parallaxBg) {
-        parallaxBg.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`;
+        parallaxBg.style.transform = `translateY(${scrolled * 0.2}px)`;
       }
       ticking = false;
     });
