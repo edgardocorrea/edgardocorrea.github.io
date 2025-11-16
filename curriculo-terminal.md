@@ -466,40 +466,49 @@ const skills = [
   { name: 'Troubleshooting', level: 92 }
 ];
 
-/* ==================== EXECUTAR COMANDO ==================== */
-function executeCommand(cmd) {
-  cmd = cmd.toLowerCase().trim();
-  
-  // Garante que o input sempre tenha o placeholder correto
-  commandInput.placeholder = "Digite um comando aqui...na duvida digite ajuda...";
-  
-  // Adiciona o comando digitado ao terminal
-  addLine(`edgardo@lnx:~$ ${cmd}`);
-
-if (cmd === "apagar") {
-  terminalOutput.innerHTML = "";
-  // Restaura a mensagem inicial após limpar
-  addLine(`<span class="success">╔══════════════════════════════════════════════════════╗</span>`);
-  addLine(`<span class="success">║ Bem-vindo ao Sistema de Informação de Edgardo Correa ║</span>`);
-  addLine(`<span class="success">║ Analista de Sistemas | Curriculo On-Line versão 1.3b ║</span>`);
-  addLine(`<span class="success">╚══════════════════════════════════════════════════════╝</span>`);
-  addLine(`<span class="output">Terminal limpo. Digite um comando ou clique em uma sugestão abaixo ↓</span>`);
-  return;
+/* ==================== FUNÇÃO DE INICIALIZAÇÃO ==================== */
+function showWelcomeMessage() {
+  terminalOutput.innerHTML = ""; // Garante que esteja limpo
+  addLine(`<span class="success">╔══════════════════════════════════════════════════════════════╗</span>`);
+  addLine(`<span class="success">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span>`);
+  addLine(`<span class="success">║  Analista de Sistemas | Curriculo On-Line versão 1.3b        ║</span>`);
+  addLine(`<span class="success">╚══════════════════════════════════════════════════════════════╝</span>`);
+  addLine(`<span class="output">Sistema inicializado...</span>`);
+  addLine(`<span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span>`);
 }
 
+function executeCommand(cmd) {
+  cmd = cmd.toLowerCase().trim();
+
+  // Caso especial: o comando 'apagar' apenas restaura a mensagem inicial
+  if (cmd === "apagar") {
+    showWelcomeMessage();
+    commandInput.value = ""; // Limpa o input
+    return; // Para a execução da função aqui
+  }
+
+  // Para todos os outros comandos, limpe a tela primeiro
+  terminalOutput.innerHTML = '';
+
+  // Adiciona a linha com o comando que foi executado
+  addLine(`edgardo@lnx:~$ ${cmd}`);
+
+  // Verifica e executa o comando, mostrando o resultado
   if (cmd === "habilidades") {
     addLine(commands[cmd]);
     setTimeout(() => renderSkills(), 100);
-    return;
-  }
-
-  if (commands[cmd]) {
+  } else if (commands[cmd]) {
     addLine(commands[cmd]);
-  } else if (cmd !== "") {
+  } else if (cmd !== "") { // Se o comando não for vazio e não for encontrado
     addLine(`bash: ${cmd}: comando não encontrado`);
     addLine(`Digite "ajuda" para ver os comandos.`);
   }
+
+  // Limpa o campo de input para o próximo comando
+  commandInput.value = "";
 }
+
+
 
 function addLine(content) {
   const line = document.createElement("div");
@@ -531,7 +540,6 @@ function renderSkills() {
 commandInput.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     executeCommand(commandInput.value);
-    commandInput.value = "";
   }
 });
 
