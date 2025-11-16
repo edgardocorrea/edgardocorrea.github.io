@@ -17,13 +17,13 @@ body.page--habilidades {
 
 /* Bloco inicial (initial-content) – fundo azul, sem hover animado */
 .initial-content {
-  background: linear-gradient(145deg, rgba(20, 40, 80, 0.8), rgba(10, 20, 40, 0.9));
-  border-radius: 15px;
-  padding: 30px 25px;
-  margin-bottom: 25px;
   position: relative;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  background: rgba(10,20,40,0.85);
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 1;
   /* Remover movimento ou transição hover para esse bloco */
   transition: none;
   box-sizing: border-box;
