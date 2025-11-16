@@ -37,6 +37,10 @@
 .masthead {
   padding-top: 4px;
   padding-bottom: 4px;
+  
+  .menu-toggle {
+    display: none !important;
+  }
 
   .site-title {
     font-size: 20px;
