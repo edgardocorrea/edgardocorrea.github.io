@@ -188,7 +188,7 @@ body {
 
 .command-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
 
@@ -201,6 +201,10 @@ body {
   transition: all 0.3s;
   border: 1px solid transparent;
   font-family: 'Courier New', monospace;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .command-item:hover {
@@ -259,12 +263,19 @@ body {
   }
 
   .command-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .skill-name {
     width: 120px;
     font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .command-item {
+    font-size: 12px;
+    padding: 6px;
   }
 }
 </style>
@@ -505,6 +516,4 @@ commandInput.addEventListener("keypress", (e) => {
   }
 });
 
-/* AUTOEXECUTAR "quem" AO INICIAR */
-setTimeout(() => executeCommand("quem"), 1500);
 </script>
