@@ -143,13 +143,18 @@ body {
 
 .terminal-input {
   background: transparent;
-  border: none;
+  /* BORDA BRANCA E BRILHANTE */
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  padding: 5px;
   color: #00d4ff;
   font-family: 'Courier New', monospace;
   font-size: 14px;
   flex: 1;
   outline: none;
   caret-color: #00d4ff;
+  /* EFEITO DE BRILHO */
+  box-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff;
 }
 
 .cursor {
@@ -290,17 +295,19 @@ body {
   </div>
 
   <div class="terminal-output" id="terminalOutput">
-    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════════════════════╗</span></div>
-    <div class="terminal-line"><span class="success">║  Bem-vindo ao Sistema de Carreira de Edgardo Correa                   ║</span></div>
-    <div class="terminal-line"><span class="success">║  Analista de Sistemas | Infraestrutura & Automação                    ║</span></div>
-    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════════════════════╝</span></div>
+    <!-- CAIXA ASCII AJUSTADA -->
+    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════════════╗</span></div>
+    <div class="terminal-line"><span class="success">║  Bem-vindo ao Sistema de Carreira de Edgardo Correa          ║</span></div>
+    <div class="terminal-line"><span class="success">║  Analista de Sistemas | Infraestrutura & Automação           ║</span></div>
+    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════════════╝</span></div>
     <div class="terminal-line"><span class="output">Sistema inicializado...</span></div>
     <div class="terminal-line"><span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span></div>
   </div>
 
   <div class="terminal-input-area">
     <span class="prompt">edgardo@carreira:~$</span>
-    <input type="text" class="terminal-input" id="commandInput" placeholder="Digite um comando..." autofocus>
+    <!-- PLACEHOLDER VAZIO -->
+    <input type="text" class="terminal-input" id="commandInput" placeholder="" autofocus>
     <span class="cursor"></span>
   </div>
 </div>
