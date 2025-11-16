@@ -13,59 +13,34 @@ author_profile: false
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
   width: 100%;
 }
 
-/* ==================== BACKGROUND AZUL ESCURO ==================== */
+/* ---------------- BACKGROUND ---------------- */
 body {
   overflow-x: hidden;
   background: #0a1428 !important;
 }
 
-.initial-content {
-  position: relative;
-  background: rgba(10,20,40,0.85);
-  padding: 30px 25px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-  backdrop-filter: blur(3px);
-  z-index: 1;
-}
+.page__title { display: none; }
 
-.page {
-  background: transparent;
-}
-
-.page__content {
-  background: transparent;
-  padding: 20px;
-  max-width: 100%;
-}
-
-.page__title {
-  display: none;
-}
-
-/* ==================== TERMINAL CONTAINER ==================== */
+/* ---------------- TERMINAL ---------------- */
 .terminal-container {
   background: #000814;
   border: 2px solid #00d4ff;
-  border-radius: 8px;
+  border-radius: 10px;
   padding: 20px;
-  margin: 20px auto;
+  margin-top: 15px;
+  width: 95%;
   max-width: 900px;
-  width: 100%;
   box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-  position: relative;
 }
 
-/* Terminal Header */
+/* HEADER */
 .terminal-header {
   display: flex;
   gap: 8px;
-  margin-bottom: 20px;
-  padding-bottom: 10px;
+  padding-bottom: 8px;
   border-bottom: 1px solid #00d4ff;
 }
 
@@ -73,7 +48,6 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  display: inline-block;
 }
 
 .btn-close { background: #ff5555; }
@@ -84,76 +58,56 @@ body {
   color: #00d4ff;
   margin-left: 10px;
   font-size: 12px;
-  font-family: 'Courier New', monospace;
+  font-family: "Courier New", monospace;
 }
 
-/* Terminal Output */
+/* OUTPUT */
 .terminal-output {
-  min-height: 400px;
+  min-height: 250px;
   color: #00d4ff;
   font-size: 14px;
-  line-height: 1.6;
-  white-space: pre; /* ← ARRUMA A CAIXA ASCII */
-  font-family: 'Courier New', monospace;
+  white-space: pre;
+  font-family: "Courier New", monospace;
 }
 
+/* Diminuir espaçamento vertical do ASCII */
 .terminal-line {
-  margin-bottom: 10px;
   opacity: 0;
   animation: fadeIn 0.3s forwards;
+  margin-bottom: 2px; /* antes era 10 → reduzido */
 }
 
 @keyframes fadeIn {
   to { opacity: 1; }
 }
 
-.prompt {
-  color: #00d4ff;
-  font-weight: bold;
-}
+.prompt { color: #00d4ff; font-weight: bold; }
+.command { color: #00ffff; }
+.output { color: #ffffff; }
+.error { color: #ff5555; }
+.success { color: #00ff88; }
+.warning { color: #ffff55; }
 
-.command {
-  color: #00ffff;
-}
-
-.output {
-  color: #ffffff;
-}
-
-.error {
-  color: #ff5555;
-}
-
-.success {
-  color: #00ff88;
-}
-
-.warning {
-  color: #ffff55;
-}
-
-/* Terminal Input */
+/* INPUT */
 .terminal-input-area {
   display: flex;
   align-items: center;
-  margin-top: 20px;
-  padding-top: 20px;
+  margin-top: 10px;
+  padding-top: 15px;
   border-top: 1px solid #00d4ff;
 }
 
 .terminal-input {
+  flex: 1;
   background: transparent;
   border: none;
   color: #00d4ff;
-  font-family: 'Courier New', monospace;
-  font-size: 14px;
-  flex: 1;
   outline: none;
-  caret-color: #00d4ff;
+  font-size: 14px;
+  font-family: "Courier New", monospace;
 }
 
 .cursor {
-  display: inline-block;
   width: 8px;
   height: 16px;
   background: #00d4ff;
@@ -166,110 +120,74 @@ body {
   51%, 100% { opacity: 0; }
 }
 
-/* Command Suggestions */
+/* -------------------- COMANDOS DISPONÍVEIS EM HORIZONTAL -------------------- */
 .command-suggestions {
-  background: rgba(0, 212, 255, 0.05);
-  border: 1px solid #00d4ff;
-  border-radius: 4px;
-  padding: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
+  width: 95%;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.command-suggestions h3 {
-  color: #ffffff;
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: 700;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .command-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  display: flex;
   gap: 10px;
+  overflow-x: auto;
+  padding: 10px 5px;
+  scrollbar-width: thin;
 }
 
 .command-item {
-  color: #00ffff;
-  padding: 8px;
+  white-space: nowrap;
+  padding: 8px 14px;
   background: rgba(0, 212, 255, 0.1);
-  border-radius: 4px;
+  border-radius: 5px;
+  border: 1px solid #00d4ff;
+  color: #00ffff;
+  font-family: "Courier New", monospace;
   cursor: pointer;
-  transition: all 0.3s;
-  border: 1px solid transparent;
-  font-family: 'Courier New', monospace;
+  transition: 0.2s;
 }
 
 .command-item:hover {
-  background: rgba(0, 212, 255, 0.2);
-  transform: translateX(5px);
-  border-color: #00d4ff;
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+  background: rgba(0, 212, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px rgba(0, 212, 255, 0.5);
 }
 
-/* Skills Bar */
+/* SKILLS */
 .skill-bar {
   display: flex;
   align-items: center;
-  margin: 8px 0;
+  margin: 5px 0;
 }
 
 .skill-name {
   width: 180px;
   color: #00ffff;
-  font-family: 'Courier New', monospace;
 }
 
 .skill-progress {
   flex: 1;
-  height: 22px;
+  height: 20px;
   background: rgba(0, 212, 255, 0.1);
   border: 1px solid #00d4ff;
   border-radius: 4px;
-  overflow: hidden;
-  position: relative;
 }
 
 .skill-fill {
   height: 100%;
   background: linear-gradient(90deg, #00d4ff, #00ffff);
-  transition: width 1s ease;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 8px;
   color: #000;
-  font-weight: bold;
   font-size: 12px;
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 5px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  .terminal-container {
-    margin: 10px;
-    padding: 15px;
-  }
-
-  .terminal-output {
-    font-size: 12px;
-  }
-
-  .command-list {
-    grid-template-columns: 1fr;
-  }
-
-  .skill-name {
-    width: 120px;
-    font-size: 12px;
-  }
-}
 </style>
 
-<!-- ==================== TERMINAL ==================== -->
+<!-- ---------------- TERMINAL HTML ---------------- -->
 <div class="terminal-container">
   <div class="terminal-header">
     <span class="terminal-button btn-close"></span>
@@ -279,175 +197,99 @@ body {
   </div>
 
   <div class="terminal-output" id="terminalOutput">
-    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════════════════════╗</span></div>
-    <div class="terminal-line"><span class="success">║  Bem-vindo ao Sistema de Carreira de Edgardo Correa                   ║</span></div>
-    <div class="terminal-line"><span class="success">║  Analista de Sistemas | Infraestrutura & Automação                    ║</span></div>
-    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════════════════════╝</span></div>
-    <div class="terminal-line"><span class="output">Sistema inicializado...</span></div>
-    <div class="terminal-line"><span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span></div>
+    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════════════╗</span></div>
+    <div class="terminal-line"><span class="success">║  Bem-vindo ao Sistema de Carreira de Edgardo Correa           ║</span></div>
+    <div class="terminal-line"><span class="success">║  Analista de Sistemas | Infraestrutura & Automação            ║</span></div>
+    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════════════╝</span></div>
+
+    <div class="terminal-line"><span class="output">Digite um comando para começar...</span></div>
   </div>
 
   <div class="terminal-input-area">
     <span class="prompt">edgardo@carreira:~$</span>
-    <input type="text" class="terminal-input" id="commandInput" placeholder="Digite um comando..." autofocus>
+    <input type="text" id="commandInput" class="terminal-input" placeholder="">
     <span class="cursor"></span>
   </div>
 </div>
 
-<!-- ==================== SUGESTÕES ==================== -->
+<!-- ---------------- COMANDOS DISPONÍVEIS ---------------- -->
 <div class="command-suggestions">
-  <h3>⚡ Comandos disponíveis:</h3>
   <div class="command-list">
-    <div class="command-item" onclick="executeCommand('quem')">📋 quem</div>
-    <div class="command-item" onclick="executeCommand('habilidades')">💻 habilidades</div>
-    <div class="command-item" onclick="executeCommand('experiencia')">📊 experiência</div>
-    <div class="command-item" onclick="executeCommand('projetos')">🚀 projetos</div>
-    <div class="command-item" onclick="executeCommand('contato')">📧 contato</div>
-    <div class="command-item" onclick="executeCommand('baixar')">⬇️ baixar</div>
-    <div class="command-item" onclick="executeCommand('apagar')">🗑️ apagar</div>
-    <div class="command-item" onclick="executeCommand('ajuda')">❓ ajuda</div>
+    <div class="command-item" onclick="executeCommand('quem')">quem</div>
+    <div class="command-item" onclick="executeCommand('habilidades')">habilidades</div>
+    <div class="command-item" onclick="executeCommand('experiencia')">experiência</div>
+    <div class="command-item" onclick="executeCommand('projetos')">projetos</div>
+    <div class="command-item" onclick="executeCommand('contato')">contato</div>
+    <div class="command-item" onclick="executeCommand('baixar')">baixar</div>
+    <div class="command-item" onclick="executeCommand('apagar')">apagar</div>
+    <div class="command-item" onclick="executeCommand('ajuda')">ajuda</div>
   </div>
 </div>
 
 <script>
-/* ==================== MIGRAÇÃO PARA COMANDOS EM PORTUGUÊS ==================== */
+/* ---------------- COMANDOS EM PORTUGUÊS ---------------- */
 const terminalOutput = document.getElementById("terminalOutput");
 const commandInput = document.getElementById("commandInput");
 
 const commands = {
   ajuda: `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-COMANDOS DISPONÍVEIS:
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-  quem           Informações pessoais
-  habilidades    Habilidades técnicas
-  experiencia    Experiência profissional
-  projetos       Projetos realizados
-  contato        Formas de contato
-  baixar         Baixar currículo PDF
-  apagar         Limpar terminal
-  ajuda          Exibir ajuda
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+Comandos disponíveis:
+  quem
+  habilidades
+  experiencia
+  projetos
+  contato
+  baixar
+  apagar
+  ajuda`,
 
   quem: `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INFORMAÇÕES PESSOAIS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Nome:          Edgardo Correa
-Cargo:         Analista de Sistemas
-Área:          Infraestrutura & Automação
-Local:         São Paulo, SP - Brasil
-Experiência:   5+ anos
-
-Profissional especializado em redes, automação e
-administração de sistemas Linux e Windows.
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+Nome:        Edgardo Correa
+Cargo:       Analista de Sistemas
+Área:        Infraestrutura & Automação
+Local:       São Paulo - SP
+Experiência: 5+ anos`,
 
   habilidades: `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 HABILIDADES TÉCNICAS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-<div id="skillsContainer"></div>
-
-Outras competências:
-  • Virtualização (VMware, Hyper-V)
-  • Containers (Docker)
-  • Git & GitHub
-  • Troubleshooting avançado
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+<div id="skillsContainer"></div>`,
 
   experiencia: `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EXPERIÊNCIA PROFISSIONAL
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📍 Analista de Sistemas Senior (2020 - Presente)
-• Gerenciamento de infraestrutura de rede
-• Implementação de automações
-• Administração de servidores Linux/Windows
-
-📍 Analista de Infraestrutura (2018 - 2020)
-• Configuração de switches e routers
-• Ambientes virtualizados
-• Backups automatizados
-
-📍 Técnico de Suporte (2016 - 2018)
-• Suporte técnico avançado
-• Diagnóstico de falhas
-• Manutenção de equipamentos
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+Analista de Sistemas Senior (2020 - Atual)
+• Redes e automação
+• Linux e Windows Server`,
 
   projetos: `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PROJETOS DESTAQUES
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROJETOS DESTACADOS
 
-🚀 Modem VIVO Unlock
-Desbloqueio automatizado de configurações do modem Askey
-RTF8115VW REV5.
-
-Tecnologias: Node.js, Selenium, PowerShell  
-GitHub: github.com/edgardocorrea/modem-vivo
-
-🧹 Limpeza Avançada Windows
-Script avançado para limpeza profunda do sistema.
-
-Tecnologias: PowerShell  
-GitHub: github.com/edgardocorrea/LimpezaAvancada
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+• Modem VIVO Unlock
+• Limpeza Avançada Windows`,
 
   contato: `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CONTATO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Email:        edgardo.correa@email.com
-Localização:  São Paulo, SP - Brasil
-LinkedIn:     linkedin.com/in/edgardocorrea
-GitHub:       github.com/edgardocorrea
-Site:         edgardocorrea.github.io
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+Email:  edgardo.correa@email.com
+GitHub: github.com/edgardocorrea
+LinkedIn: linkedin.com/in/edgardocorrea`,
 
   baixar: `
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-DOWNLOAD DO CURRÍCULO
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-Preparando download...
-✓ Currículo atualizado
-
-Clique no link abaixo:
-👉 <a href="/assets/files/curriculo-edgardo-correa.pdf" style="color:#00ffff" download>Baixar PDF</a>
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+Baixar currículo PDF:
+👉 /assets/files/curriculo-edgardo-correa.pdf`,
 
   apagar: "CLEAR_SCREEN"
 };
 
-/* ==================== HABILIDADES COM BARRA ==================== */
+/* ---------------- LISTA DAS SKILLS ---------------- */
 const skills = [
-  { name: 'Redes (TCP/IP, VLANs)', level: 90 },
-  { name: 'Linux (Ubuntu, CentOS)', level: 95 },
-  { name: 'Windows Server', level: 85 },
-  { name: 'PowerShell', level: 90 },
-  { name: 'Bash Scripting', level: 85 },
-  { name: 'VMware / Hyper-V', level: 80 },
-  { name: 'Docker', level: 75 },
-  { name: 'Automação', level: 88 },
-  { name: 'Segurança', level: 82 },
-  { name: 'Troubleshooting', level: 92 }
+  { name: "Redes (TCP/IP, VLANs)", level: 90 },
+  { name: "Linux", level: 95 },
+  { name: "Windows Server", level: 85 },
+  { name: "PowerShell", level: 90 },
+  { name: "Bash", level: 85 },
+  { name: "VMware / Hyper-V", level: 80 },
 ];
 
-/* ==================== EXECUTAR COMANDO ==================== */
+/* ---------------- EXECUTAR COMANDO ---------------- */
 function executeCommand(cmd) {
   cmd = cmd.toLowerCase().trim();
 
@@ -460,51 +302,44 @@ function executeCommand(cmd) {
 
   if (cmd === "habilidades") {
     addLine(commands[cmd]);
-    setTimeout(() => renderSkills(), 100);
+    setTimeout(renderSkills, 100);
     return;
   }
 
-  if (commands[cmd]) {
-    addLine(commands[cmd]);
-  } else if (cmd !== "") {
-    addLine(`bash: ${cmd}: comando não encontrado`);
-    addLine(`Digite "ajuda" para ver os comandos.`);
-  }
-}
+  if (commands[cmd]) addLine(commands[cmd]);
+  else addLine(`Comando não encontrado. Digite "ajuda".`);
 
-function addLine(content) {
-  const line = document.createElement("div");
-  line.className = "terminal-line";
-  line.innerHTML = content;
-  terminalOutput.appendChild(line);
   terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
+function addLine(text) {
+  const div = document.createElement("div");
+  div.className = "terminal-line";
+  div.textContent = text;
+  terminalOutput.appendChild(div);
+}
+
+/* ---------------- RENDER SKILLS ---------------- */
 function renderSkills() {
   const container = document.getElementById("skillsContainer");
   if (!container) return;
 
-  container.innerHTML = "";
-  skills.forEach((s, i) => {
-    setTimeout(() => {
-      container.innerHTML += `
-        <div class="skill-bar">
-          <span class="skill-name">${s.name}</span>
-          <div class="skill-progress">
-            <div class="skill-fill" style="width:${s.level}%">${s.level}%</div>
-          </div>
-        </div>`;
-    }, i * 100);
+  skills.forEach(s => {
+    container.innerHTML += `
+      <div class="skill-bar">
+        <span class="skill-name">${s.name}</span>
+        <div class="skill-progress">
+          <div class="skill-fill" style="width:${s.level}%">${s.level}%</div>
+        </div>
+      </div>`;
   });
 }
 
-commandInput.addEventListener("keypress", (e) => {
+/* ---------------- ENTER PARA ENVIAR ---------------- */
+commandInput.addEventListener("keypress", e => {
   if (e.key === "Enter") {
     executeCommand(commandInput.value);
     commandInput.value = "";
   }
 });
-
-/* AUTOEXECUTAR "quem" AO INICIAR */
-setTimeout(() => executeCommand("quem"), 1500);
 </script>
