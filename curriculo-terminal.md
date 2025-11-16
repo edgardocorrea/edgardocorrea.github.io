@@ -7,9 +7,20 @@ author_profile: false
 ---
 
 <style>
+/* ==================== CENTRALIZAÇÃO GLOBAL ==================== */
+.page,
+.page__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
 /* ==================== BACKGROUND AZUL ESCURO ==================== */
 body {
   overflow-x: hidden;
+  background: #0a1428 !important;
 }
 
 .initial-content {
@@ -21,7 +32,7 @@ body {
   backdrop-filter: blur(3px);
   z-index: 1;
 }
-  
+
 .page {
   background: transparent;
 }
@@ -43,7 +54,8 @@ body {
   border-radius: 8px;
   padding: 20px;
   margin: 20px auto;
-  max-width: 1000px;
+  max-width: 900px;
+  width: 100%;
   box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
   position: relative;
 }
@@ -81,7 +93,7 @@ body {
   color: #00d4ff;
   font-size: 14px;
   line-height: 1.6;
-  white-space: pre-wrap;
+  white-space: pre; /* ← ARRUMA A CAIXA ASCII */
   font-family: 'Courier New', monospace;
 }
 
@@ -105,7 +117,7 @@ body {
 }
 
 .output {
-  color: #ffffff; /* FONTE BRANCA NORMAL */
+  color: #ffffff;
 }
 
 .error {
@@ -161,13 +173,13 @@ body {
   border-radius: 4px;
   padding: 15px;
   margin-top: 20px;
-  max-width: 1000px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .command-suggestions h3 {
-  color: #ffffff; /* TÍTULO BRANCO BRILHANTE */
+  color: #ffffff;
   margin-bottom: 10px;
   font-size: 18px;
   font-weight: 700;
@@ -235,21 +247,21 @@ body {
   box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
 }
 
-/* ==================== RESPONSIVO ==================== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .terminal-container {
     margin: 10px;
     padding: 15px;
   }
-  
+
   .terminal-output {
     font-size: 12px;
   }
-  
+
   .command-list {
     grid-template-columns: 1fr;
   }
-  
+
   .skill-name {
     width: 120px;
     font-size: 12px;
@@ -263,181 +275,165 @@ body {
     <span class="terminal-button btn-close"></span>
     <span class="terminal-button btn-minimize"></span>
     <span class="terminal-button btn-maximize"></span>
-    <span class="terminal-title">edgardo@career:~$</span>
+    <span class="terminal-title">edgardo@carreira:~$</span>
   </div>
-  
+
   <div class="terminal-output" id="terminalOutput">
-    <div class="terminal-line" style="animation-delay: 0.1s;">
-      <span class="success">╔════════════════════════════════════════════════════════════╗</span>
-    </div>
-    <div class="terminal-line" style="animation-delay: 0.2s;">
-      <span class="success">║  Bem-vindo ao Sistema de Carreira de Edgardo Correa       ║</span>
-    </div>
-    <div class="terminal-line" style="animation-delay: 0.3s;">
-      <span class="success">║  Analista de Sistemas | Infraestrutura & Automação        ║</span>
-    </div>
-    <div class="terminal-line" style="animation-delay: 0.4s;">
-      <span class="success">╚════════════════════════════════════════════════════════════╝</span>
-    </div>
-    <div class="terminal-line" style="animation-delay: 0.6s;">
-      <span class="output">Sistema inicializado...</span>
-    </div>
-    <div class="terminal-line" style="animation-delay: 0.8s;">
-      <span class="output">Digite um comando ou clique nas sugestões ↓</span>
-    </div>
+    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════════════════════╗</span></div>
+    <div class="terminal-line"><span class="success">║  Bem-vindo ao Sistema de Carreira de Edgardo Correa                   ║</span></div>
+    <div class="terminal-line"><span class="success">║  Analista de Sistemas | Infraestrutura & Automação                    ║</span></div>
+    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════════════════════╝</span></div>
+    <div class="terminal-line"><span class="output">Sistema inicializado...</span></div>
+    <div class="terminal-line"><span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span></div>
   </div>
-  
+
   <div class="terminal-input-area">
-    <span class="prompt">edgardo@career:~$</span>
+    <span class="prompt">edgardo@carreira:~$</span>
     <input type="text" class="terminal-input" id="commandInput" placeholder="Digite um comando..." autofocus>
     <span class="cursor"></span>
   </div>
 </div>
 
+<!-- ==================== SUGESTÕES ==================== -->
 <div class="command-suggestions">
-  <h3>⚡ Comandos Disponíveis:</h3>
+  <h3>⚡ Comandos disponíveis:</h3>
   <div class="command-list">
-    <div class="command-item" onclick="executeCommand('whoami')">📋 whoami</div>
-    <div class="command-item" onclick="executeCommand('skills')">💻 skills</div>
-    <div class="command-item" onclick="executeCommand('experience')">📊 experience</div>
-    <div class="command-item" onclick="executeCommand('projects')">🚀 projects</div>
-    <div class="command-item" onclick="executeCommand('contact')">📧 contact</div>
-    <div class="command-item" onclick="executeCommand('download')">⬇️ download</div>
-    <div class="command-item" onclick="executeCommand('clear')">🗑️ clear</div>
-    <div class="command-item" onclick="executeCommand('help')">❓ help</div>
+    <div class="command-item" onclick="executeCommand('quem')">📋 quem</div>
+    <div class="command-item" onclick="executeCommand('habilidades')">💻 habilidades</div>
+    <div class="command-item" onclick="executeCommand('experiencia')">📊 experiência</div>
+    <div class="command-item" onclick="executeCommand('projetos')">🚀 projetos</div>
+    <div class="command-item" onclick="executeCommand('contato')">📧 contato</div>
+    <div class="command-item" onclick="executeCommand('baixar')">⬇️ baixar</div>
+    <div class="command-item" onclick="executeCommand('apagar')">🗑️ apagar</div>
+    <div class="command-item" onclick="executeCommand('ajuda')">❓ ajuda</div>
   </div>
 </div>
 
 <script>
-// ==================== TERMINAL LOGIC ====================
-const terminalOutput = document.getElementById('terminalOutput');
-const commandInput = document.getElementById('commandInput');
+/* ==================== MIGRAÇÃO PARA COMANDOS EM PORTUGUÊS ==================== */
+const terminalOutput = document.getElementById("terminalOutput");
+const commandInput = document.getElementById("commandInput");
 
 const commands = {
-  help: `
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-<span class="warning">COMANDOS DISPONÍVEIS:</span>
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  ajuda: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+COMANDOS DISPONÍVEIS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  <span class="command">whoami</span>       Informações pessoais
-  <span class="command">skills</span>       Habilidades técnicas
-  <span class="command">experience</span>   Experiência profissional
-  <span class="command">projects</span>     Projetos em destaque
-  <span class="command">contact</span>      Informações de contato
-  <span class="command">download</span>     Baixar currículo PDF
-  <span class="command">clear</span>        Limpar terminal
-  <span class="command">help</span>         Exibir esta mensagem
+  quem           Informações pessoais
+  habilidades    Habilidades técnicas
+  experiencia    Experiência profissional
+  projetos       Projetos realizados
+  contato        Formas de contato
+  baixar         Baixar currículo PDF
+  apagar         Limpar terminal
+  ajuda          Exibir ajuda
 
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>`,
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
 
-  whoami: `
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-<span class="warning">INFORMAÇÕES PESSOAIS</span>
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  quem: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+INFORMAÇÕES PESSOAIS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-<span class="command">Nome:</span>        Edgardo Correa
-<span class="command">Cargo:</span>       Analista de Sistemas
-<span class="command">Área:</span>        Infraestrutura & Automação
-<span class="command">Local:</span>       São Paulo, SP - Brasil
-<span class="command">Experiência:</span> 5+ anos
+Nome:          Edgardo Correa
+Cargo:         Analista de Sistemas
+Área:          Infraestrutura & Automação
+Local:         São Paulo, SP - Brasil
+Experiência:   5+ anos
 
-<span class="output">Profissional com foco em infraestrutura de redes,
-automação e administração de sistemas Linux/Windows.</span>
+Profissional especializado em redes, automação e
+administração de sistemas Linux e Windows.
 
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>`,
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
 
-  skills: `
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-<span class="warning">HABILIDADES TÉCNICAS</span>
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  habilidades: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HABILIDADES TÉCNICAS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 <div id="skillsContainer"></div>
 
-<span class="command">📦 Outras Competências:</span>
+Outras competências:
   • Virtualização (VMware, Hyper-V)
   • Containers (Docker)
   • Git & GitHub
   • Troubleshooting avançado
 
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>`,
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
 
-  experience: `
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-<span class="warning">EXPERIÊNCIA PROFISSIONAL</span>
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  experiencia: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+EXPERIÊNCIA PROFISSIONAL
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-<span class="command">📍 Analista de Sistemas Senior</span>
-   Período: 2020 - Presente
-   • Gerenciamento de infraestrutura de rede
-   • Implementação de soluções de automação
-   • Administração de servidores Linux/Windows
+📍 Analista de Sistemas Senior (2020 - Presente)
+• Gerenciamento de infraestrutura de rede
+• Implementação de automações
+• Administração de servidores Linux/Windows
 
-<span class="command">📍 Analista de Infraestrutura</span>
-   Período: 2018 - 2020
-   • Configuração de switches e routers
-   • Gestão de ambientes virtualizados
-   • Implementação de backups automatizados
+📍 Analista de Infraestrutura (2018 - 2020)
+• Configuração de switches e routers
+• Ambientes virtualizados
+• Backups automatizados
 
-<span class="command">📍 Técnico de Suporte</span>
-   Período: 2016 - 2018
-   • Suporte técnico avançado
-   • Troubleshooting de problemas complexos
-   • Manutenção de equipamentos
+📍 Técnico de Suporte (2016 - 2018)
+• Suporte técnico avançado
+• Diagnóstico de falhas
+• Manutenção de equipamentos
 
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>`,
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
 
-  projects: `
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-<span class="warning">PROJETOS EM DESTAQUE</span>
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+  projetos: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROJETOS DESTAQUES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-<span class="command">🚀 Modem VIVO Unlock</span>
-   Automação para desbloqueio de configurações
-   do modem Askey RTF8115VW REV5
-   
-   <span class="output">Tech:</span> Node.js, Selenium, PowerShell
-   <span class="output">GitHub:</span> github.com/edgardocorrea/modem-vivo
+🚀 Modem VIVO Unlock
+Desbloqueio automatizado de configurações do modem Askey
+RTF8115VW REV5.
 
-<span class="command">🧹 Limpeza Avançada Windows</span>
-   Script automatizado para limpeza profunda
-   
-   <span class="output">Tech:</span> PowerShell, Windows API
-   <span class="output">GitHub:</span> github.com/edgardocorrea/LimpezaAvancada
+Tecnologias: Node.js, Selenium, PowerShell  
+GitHub: github.com/edgardocorrea/modem-vivo
 
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>`,
+🧹 Limpeza Avançada Windows
+Script avançado para limpeza profunda do sistema.
 
-  contact: `
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-<span class="warning">INFORMAÇÕES DE CONTATO</span>
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+Tecnologias: PowerShell  
+GitHub: github.com/edgardocorrea/LimpezaAvancada
 
-<span class="command">📧 Email:</span>      edgardo.correa@email.com
-<span class="command">📍 Localização:</span> São Paulo, SP - Brasil
-<span class="command">💼 LinkedIn:</span>   linkedin.com/in/edgardocorrea
-<span class="command">💻 GitHub:</span>     github.com/edgardocorrea
-<span class="command">🌐 Website:</span>    edgardocorrea.github.io
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
 
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>`,
+  contato: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CONTATO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-  download: `
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
-<span class="warning">DOWNLOAD DO CURRÍCULO</span>
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+Email:        edgardo.correa@email.com
+Localização:  São Paulo, SP - Brasil
+LinkedIn:     linkedin.com/in/edgardocorrea
+GitHub:       github.com/edgardocorrea
+Site:         edgardocorrea.github.io
 
-<span class="output">🔄 Preparando download...</span>
-<span class="success">✓ Currículo em formato PDF</span>
-<span class="success">✓ Versão atualizada</span>
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
 
-<span class="command">📥 Clique no link abaixo:</span>
-   <a href="/assets/files/curriculo-edgardo-correa.pdf" style="color: #00ffff;" download>
-     → Baixar Currículo PDF
-   </a>
+  baixar: `
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DOWNLOAD DO CURRÍCULO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-<span class="success">━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>`,
+Preparando download...
+✓ Currículo atualizado
 
-  clear: 'CLEAR_SCREEN'
+Clique no link abaixo:
+👉 <a href="/assets/files/curriculo-edgardo-correa.pdf" style="color:#00ffff" download>Baixar PDF</a>
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
+
+  apagar: "CLEAR_SCREEN"
 };
 
+/* ==================== HABILIDADES COM BARRA ==================== */
 const skills = [
   { name: 'Redes (TCP/IP, VLANs)', level: 90 },
   { name: 'Linux (Ubuntu, CentOS)', level: 95 },
@@ -451,74 +447,64 @@ const skills = [
   { name: 'Troubleshooting', level: 92 }
 ];
 
+/* ==================== EXECUTAR COMANDO ==================== */
 function executeCommand(cmd) {
   cmd = cmd.toLowerCase().trim();
-  
-  // Add command to output
-  addLine(`<span class="prompt">edgardo@career:~$</span> <span class="command">${cmd}</span>`);
-  
-  if (cmd === 'clear') {
-    terminalOutput.innerHTML = '';
+
+  addLine(`edgardo@carreira:~$ ${cmd}`);
+
+  if (cmd === "apagar") {
+    terminalOutput.innerHTML = "";
     return;
   }
-  
-  if (cmd === 'skills' || cmd === 'skills --list') {
-    addLine(commands.skills);
+
+  if (cmd === "habilidades") {
+    addLine(commands[cmd]);
     setTimeout(() => renderSkills(), 100);
     return;
   }
-  
+
   if (commands[cmd]) {
     addLine(commands[cmd]);
-  } else if (cmd === '') {
-    // Do nothing
-  } else {
-    addLine(`<span class="error">bash: ${cmd}: comando não encontrado</span>`);
-    addLine(`<span class="output">Digite <span class="command">help</span> para ver os comandos disponíveis.</span>`);
+  } else if (cmd !== "") {
+    addLine(`bash: ${cmd}: comando não encontrado`);
+    addLine(`Digite "ajuda" para ver os comandos.`);
   }
-  
-  // Scroll to bottom
-  terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
 function addLine(content) {
-  const line = document.createElement('div');
-  line.className = 'terminal-line';
+  const line = document.createElement("div");
+  line.className = "terminal-line";
   line.innerHTML = content;
   terminalOutput.appendChild(line);
+  terminalOutput.scrollTop = terminalOutput.scrollHeight;
 }
 
 function renderSkills() {
-  const container = document.getElementById('skillsContainer');
+  const container = document.getElementById("skillsContainer");
   if (!container) return;
-  
-  container.innerHTML = '';
-  skills.forEach((skill, index) => {
+
+  container.innerHTML = "";
+  skills.forEach((s, i) => {
     setTimeout(() => {
-      const skillHtml = `
+      container.innerHTML += `
         <div class="skill-bar">
-          <span class="skill-name">${skill.name}</span>
+          <span class="skill-name">${s.name}</span>
           <div class="skill-progress">
-            <div class="skill-fill" style="width: ${skill.level}%">${skill.level}%</div>
+            <div class="skill-fill" style="width:${s.level}%">${s.level}%</div>
           </div>
-        </div>
-      `;
-      container.innerHTML += skillHtml;
-    }, index * 100);
+        </div>`;
+    }, i * 100);
   });
 }
 
-// Handle Enter key
-commandInput.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    const cmd = commandInput.value;
-    executeCommand(cmd);
-    commandInput.value = '';
+commandInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    executeCommand(commandInput.value);
+    commandInput.value = "";
   }
 });
 
-// Auto-execute whoami on load
-setTimeout(() => {
-  executeCommand('whoami');
-}, 1500);
+/* AUTOEXECUTAR "quem" AO INICIAR */
+setTimeout(() => executeCommand("quem"), 1500);
 </script>
