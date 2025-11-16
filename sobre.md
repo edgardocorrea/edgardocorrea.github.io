@@ -66,8 +66,9 @@ body {
 
 /* ==================== HERO SECTION ==================== */
 .hero-section {
+  display: block;
   position: relative;
-  min-height: 100vh;
+  min-height: calc(100vh - 120px); /* ajusta para o footer */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -838,7 +839,7 @@ window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       const parallaxBg = document.querySelector('.particles-bg');
       if (parallaxBg) {
-        parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        parallaxBg.style.transform = `translate3d(0, ${scrolled * 0.5}px, 0)`;
       }
       ticking = false;
     });
