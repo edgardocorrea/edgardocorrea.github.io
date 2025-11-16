@@ -1,6 +1,6 @@
 ---
 layout: single
-title: ""
+title: "Sobre Mim"
 permalink: /sobre/
 author_profile: false
 ---
@@ -567,7 +567,7 @@ body {
   <div class="section-accordion">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">💡</span>
+        <span class="accordion-icon">🔖</span>
         <span class="sobre-brilhante">Sobre Mim</span>
       </div>
       <span class="accordion-arrow">▼</span>
@@ -585,58 +585,11 @@ body {
     </div>
   </div>
 
-  <!-- Experiência -->
-  <div class="section-accordion">
-    <div class="accordion-header" onclick="toggleAccordion(this)">
-      <div class="accordion-title">
-        <span class="accordion-icon">💼</span>
-        <span>Jornada Profissional</span>
-      </div>
-      <span class="accordion-arrow">▼</span>
-    </div>
-    <div class="accordion-content">
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">2024 - Atual</div>
-            <div class="timeline-title">Analista de Suporte & Infraestrutura</div>
-            <p style="color: #b3d9ff; margin-top: 10px;">
-              Especialização em Service Desk, Windows Server, Active Directory e automação de processos. Foco em melhorar a experiência do usuário e reduzir tempo de resolução.
-            </p>
-          </div>
-          <div class="timeline-dot"></div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">2023 - 2024</div>
-            <div class="timeline-title">Desenvolvedor de Automações</div>
-            <p style="color: #b3d9ff; margin-top: 10px;">
-              Criação de ferramentas de automação com PowerShell, Node.js e Selenium. Projetos como desbloqueio de modems e scripts de limpeza avançada do Windows.
-            </p>
-          </div>
-          <div class="timeline-dot"></div>
-        </div>
-        
-        <div class="timeline-item">
-          <div class="timeline-content">
-            <div class="timeline-date">2019 - 2023</div>
-            <div class="timeline-title">Graduação em Sistemas de Informação</div>
-            <p style="color: #b3d9ff; margin-top: 10px;">
-              Base sólida em infraestrutura, redes, desenvolvimento e gestão de TI. Projetos acadêmicos focados em soluções práticas para o mercado.
-            </p>
-          </div>
-          <div class="timeline-dot"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- Habilidades -->
   <div class="section-accordion">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">🛠️</span>
+        <span class="accordion-icon">🔖️</span>
         <span>Arsenal Técnico</span>
       </div>
       <span class="accordion-arrow">▼</span>
@@ -728,7 +681,7 @@ body {
   <div class="section-accordion">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">🎮</span>
+        <span class="accordion-icon">🔖</span>
         <span>Além do Código</span>
       </div>
       <span class="accordion-arrow">▼</span>
@@ -736,27 +689,27 @@ body {
     <div class="accordion-content">
       <div class="interests-grid">
         <div class="interest-card">
-          <span class="interest-icon">📺</span>
+          <span class="interest-icon">🔹</span>
           <div class="interest-title">Animes & Séries</div>
         </div>
         <div class="interest-card">
-          <span class="interest-icon">🤖</span>
+          <span class="interest-icon">🔹</span>
           <div class="interest-title">Inteligência Artificial</div>
         </div>
         <div class="interest-card">
-          <span class="interest-icon">⚡</span>
+          <span class="interest-icon">🔹</span>
           <div class="interest-title">Automação</div>
         </div>
         <div class="interest-card">
-          <span class="interest-icon">💡</span>
+          <span class="interest-icon">🔹</span>
           <div class="interest-title">Inovação Tech</div>
         </div>
         <div class="interest-card">
-          <span class="interest-icon">🎧</span>
+          <span class="interest-icon">🔹</span>
           <div class="interest-title">Podcasts Tech</div>
         </div>
         <div class="interest-card">
-          <span class="interest-icon">🌐</span>
+          <span class="interest-icon">🔹</span>
           <div class="interest-title">Web Development</div>
         </div>
       </div>
@@ -767,7 +720,7 @@ body {
   <div class="section-accordion" id="contato">
     <div class="accordion-header" onclick="toggleAccordion(this)">
       <div class="accordion-title">
-        <span class="accordion-icon">📬</span>
+        <span class="accordion-icon">🔖</span>
         <span>Vamos Conectar?</span>
       </div>
       <span class="accordion-arrow">▼</span>
