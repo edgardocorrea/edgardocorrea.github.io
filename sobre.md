@@ -68,10 +68,27 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: 
-    repeating-linear-gradient(0deg, rgba(0, 234, 255, 0.03) 0px, transparent 2px, transparent 40px),
-    repeating-linear-gradient(90deg, rgba(0, 234, 255, 0.03) 0px, transparent 2px, transparent 40px);
-  animation: gridMove 20s linear infinite;
+  
+  /* Fundo liso escuro com leve iluminação */
+  background: 
+    radial-gradient(circle at 25% 20%, rgba(0, 234, 255, 0.10), transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(0, 102, 255, 0.10), transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.06), transparent 70%);
+  
+  /* Movimento suave para dar vida */
+  animation: softGlow 12s ease-in-out infinite alternate;
+  filter: blur(4px);
+}
+
+@keyframes softGlow {
+  0% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 @keyframes gridMove {
