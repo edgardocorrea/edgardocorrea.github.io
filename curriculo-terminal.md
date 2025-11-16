@@ -297,10 +297,10 @@ body {
 
   <div class="terminal-output" id="terminalOutput">
     <!-- CAIXA ASCII AJUSTADA -->
-    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════════════╗</span></div>
-    <div class="terminal-line"><span class="success">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span></div>
-    <div class="terminal-line"><span class="success">║  Analista de Sistemas | Curriculo On-Line versão 1.3b        ║</span></div>
-    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════════════╝</span></div>
+    <div class="terminal-line"><span class="success">╔══════════════════════════════════════════════════════╗</span></div>
+    <div class="terminal-line"><span class="success">║ Bem-vindo ao Sistema de Informação de Edgardo Correa ║</span></div>
+    <div class="terminal-line"><span class="success">║ Analista de Sistemas | Curriculo On-Line versão 1.3b ║</span></div>
+    <div class="terminal-line"><span class="success">╚══════════════════════════════════════════════════════╝</span></div>
     <div class="terminal-line"><span class="output">Sistema inicializado...</span></div>
     <div class="terminal-line"><span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span></div>
   </div>
@@ -408,7 +408,7 @@ EXPERIÊNCIA PROFISSIONAL
 PROJETOS DESTAQUES
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🚀 Modem VIVO Unlock
+🚀 Modem VIVO Configuração avançada
 Desbloqueio automatizado de configurações do modem Askey
 RTF8115VW REV5.
 
@@ -479,10 +479,10 @@ function executeCommand(cmd) {
 if (cmd === "apagar") {
   terminalOutput.innerHTML = "";
   // Restaura a mensagem inicial após limpar
-  addLine(`<span class="success">╔══════════════════════════════════════════════════════════════╗</span>`);
-  addLine(`<span class="success">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span>`);
-  addLine(`<span class="success">║  Analista de Sistemas | Curriculo On-Line versão 1.3b        ║</span>`);
-  addLine(`<span class="success">╚══════════════════════════════════════════════════════════════╝</span>`);
+  addLine(`<span class="success">╔══════════════════════════════════════════════════════╗</span>`);
+  addLine(`<span class="success">║ Bem-vindo ao Sistema de Informação de Edgardo Correa ║</span>`);
+  addLine(`<span class="success">║ Analista de Sistemas | Curriculo On-Line versão 1.3b ║</span>`);
+  addLine(`<span class="success">╚══════════════════════════════════════════════════════╝</span>`);
   addLine(`<span class="output">Terminal limpo. Digite um comando ou clique em uma sugestão abaixo ↓</span>`);
   return;
 }
