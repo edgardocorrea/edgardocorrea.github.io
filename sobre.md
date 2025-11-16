@@ -1,3 +1,13 @@
+---
+layout: single
+permalink: /sobre/
+classes: wide
+title: "Sobre mim"
+author_profile: false
+sidebar:
+  nav: "" 
+---
+
 <style>
   body {
     background: #000;
