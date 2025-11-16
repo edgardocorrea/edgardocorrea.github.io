@@ -19,16 +19,7 @@ author_profile: false
 /* ---------------- BACKGROUND ---------------- */
 body {
   overflow-x: hidden;
-}
-
-.initial-content {
-  position: relative;
-  background: rgba(10,20,40,0.85);
-  padding: 30px 25px;
-  border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-  backdrop-filter: blur(3px);
-  z-index: 1;
+  background: #0a1428 !important;
 }
 
 .page__title { display: none; }
