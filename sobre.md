@@ -44,7 +44,7 @@
 
 # Sobre mim
 
-<img src="./minha_foto.jpg" alt="Minha foto" width="200" style="border-radius: 12px; box-shadow: 0 0 20px #00eaff;" />
+<img src="./assets/images/minha_foto.jpg" alt="Minha foto" width="200" style="border-radius: 12px; box-shadow: 0 0 20px #00eaff;" />
 
 ##  Olá, sou **Edgardo Correa**
 
