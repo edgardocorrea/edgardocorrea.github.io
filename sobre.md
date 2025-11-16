@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Sobre Mim"
+title: ""
 permalink: /sobre/
 author_profile: false
 ---
