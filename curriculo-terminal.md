@@ -306,7 +306,7 @@ body {
   <div class="terminal-input-area">
     <span class="prompt">edgardo@carreira:~$</span>
     <!-- PLACEHOLDER VAZIO -->
-    <input type="text" class="terminal-input" id="commandInput" placeholder="" autofocus>
+    <input type="text" class="terminal-input" id="commandInput" placeholder="Digite um comando aqui...na duvida digite ajuda..." autofocus>
     <span class="cursor"></span>
   </div>
 </div>
