@@ -38,33 +38,34 @@ header:
   opacity: 0.15; /* intensidade do ruído */
 }
 
-/* Imagem com borda neon e cantos arredondados */
+/* Imagem com borda neon azul-escuro e cantos arredondados */
 .hero-img {
   position: relative;
   z-index: 8;
   border-radius: 18px;
-  border: 3px solid #00eaff;
+  border: 3px solid #10192c; /* Azul escuro */
   box-shadow:
-    0 0 10px #00eaff,
-    0 0 20px #00eaffaa,
-    0 0 35px #00eaff77;
+    0 0 6px #10192c,
+    0 0 12px #16233a,   /* tom levemente mais claro */
+    0 0 22px #1d3254;   /* brilho externo */
   animation: neonPulse 2.5s ease-in-out infinite alternate;
 }
 
 @keyframes neonPulse {
   0% {
     box-shadow:
-      0 0 8px #00eaff,
-      0 0 15px #00eaffaa,
-      0 0 25px #00eaff77;
+      0 0 6px #10192c,
+      0 0 12px #16233a,
+      0 0 22px #1d3254;
   }
   100% {
     box-shadow:
-      0 0 15px #00eaff,
-      0 0 30px #00eaffaa,
-      0 0 45px #00eaff77;
+      0 0 10px #16233a,
+      0 0 20px #1d3254,
+      0 0 35px #274977; /* brilho máximo */
   }
 }
+
 
 
 
