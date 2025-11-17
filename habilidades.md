@@ -1,5 +1,5 @@
 ---
-title: "Habilidades"
+title: "Minhas Habilidades"
 permalink: /habilidades/
 layout: single
 ---
@@ -15,32 +15,36 @@ body.page--habilidades {
   position: relative;
 }
 
-/* Bloco inicial */
+/* Bloco inicial (initial-content) – fundo azul, sem hover animado */
 .initial-content {
+  position: relative;
   background: rgba(10,20,40,0.85);
   padding: 30px 25px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
   backdrop-filter: blur(3px);
+  z-index: 1;
+  /* Remover movimento ou transição hover para esse bloco */
+  transition: none;
+  box-sizing: border-box;
 }
 
-/* ==================== CARDS ==================== */
-
-/* Estilo base de todos os cards */
-.card1, .card2, .card3 {
+/* Todos os cards de habilidades (notice) */
+.notice--info,
+.notice--success,
+.notice--warning {
   background: rgba(10, 20, 40, 0.8);
   border-radius: 15px;
   padding: 30px 25px;
   margin-bottom: 25px;
   position: relative;
   overflow: hidden;
-  z-index: 2;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease;
 }
 
-/* ==================== CARD1 (Infraestrutura) – COM NEON ==================== */
-.card1::before {
+/* Somente no card de Infraestrutura & Redes (notice--info) aplicar neon animado */
+.notice--info::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -52,24 +56,27 @@ body.page--habilidades {
   transform: rotate(45deg);
   filter: blur(40px);
   animation: neonGlow 6s linear infinite;
-  z-index: 1;
   pointer-events: none;
+  z-index: 0;
+  border-radius: 20px;
 }
 
-.card1:hover {
-  box-shadow: 0 15px 50px rgba(77,166,255,0.5);
+/* Hover só no notice--info (Infraestrutura) para brilho neon */
+.notice--info:hover {
+  box-shadow: 0 15px 50px rgba(77, 166, 255, 0.5);
   transform: translateY(-5px) scale(1.02);
 }
 
-/* ==================== CARD2 e CARD3 com hover leve ==================== */
-.card2:hover, .card3:hover {
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
+/* Outros cards (success, warning) sem pseudo-elemento neon antes */
+.notice--success:hover,
+.notice--warning:hover {
+  /* se quiser, pode manter um hover leve, mas sem neon */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
   transform: translateY(-3px) scale(1.01);
 }
 
 /* ==================== TÍTULOS ==================== */
-
-/* Título principal (neon) */
+/* Neon apenas no título principal “Minhas Habilidades” */
 .page__title {
   text-align: center;
   font-size: 48px !important;
@@ -77,49 +84,58 @@ body.page--habilidades {
   background: linear-gradient(90deg, #4da6ff, #00ccff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 10px rgba(77,166,255,0.5);
+  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
 }
 
-/* Subtítulo brilhante */
-.habilidade-brilhante {
-  display: block;
-  text-align: center;
-  margin-top: 25px;
-  margin-bottom: 35px;
-  font-size: 32px;
-  font-weight: 700;
-  color: #ffffff;
-  text-shadow:
-    0 0 10px rgba(255, 255, 255, 0.9),
-    0 0 20px rgba(0, 234, 255, 0.8),
-    0 0 35px rgba(0, 234, 255, 0.6),
-    0 0 50px rgba(0, 234, 255, 0.4);
+/* Título “Principais Habilidades” (ou h2/h3) com cor preta normal */
+.intro-text, /* se seu “Principais Habilidades” for intro-text */ 
+h2, h3 {
+  color: #000; /* preto */
+  background: none;
+  -webkit-background-clip: unset;
+  -webkit-text-fill-color: unset;
+  text-shadow: none;
 }
 
-/* Títulos internos */
-.card1 h4, .card2 h4, .card3 h4 {
+/* Títulos dentro dos cards */
+.notice--info h4,
+.notice--success h4,
+.notice--warning h4 {
+  position: relative;
+  z-index: 1;
   color: #cccccc;
+  text-shadow: none;
   margin-bottom: 10px;
 }
 
-/* ==================== LISTAS ==================== */
-.card1 ul, .card2 ul, .card3 ul {
+/* ==================== LISTAS nos cards ==================== */
+/* Remover a bolinha padrão dos <li> */
+.notice--info ul,
+.notice--success ul,
+.notice--warning ul {
   list-style: none;
-  padding-left: 0;
+  padding-left: 0; /* opcional para alinhar melhor */
 }
 
-.card1 li, .card2 li, .card3 li {
+/* Manter apenas a bolinha neon personalizada */
+.notice--info li,
+.notice--success li,
+.notice--warning li {
   position: relative;
+  z-index: 1;
+  color: #cccccc;
   padding-left: 20px;
   margin-bottom: 8px;
-  color: #cccccc;
 }
 
-.card1 li::before, .card2 li::before, .card3 li::before {
+.notice--info li::before,
+.notice--success li::before,
+.notice--warning li::before {
   content: "•";
   position: absolute;
   left: 0;
   color: #4da6ff;
+  font-weight: bold;
   text-shadow:
     0 0 3px #4da6ff,
     0 0 6px #00ccff,
@@ -128,29 +144,38 @@ body.page--habilidades {
 
 /* ==================== ANIMAÇÃO NEON ==================== */
 @keyframes neonGlow {
-  0%, 100% { transform: rotate(0deg); }
-  50% { transform: rotate(45deg); }
+  0%, 100% {
+    transform: rotate(0deg) translate(-50%, -50%);
+  }
+  50% {
+    transform: rotate(45deg) translate(-50%, -50%);
+  }
 }
 
 /* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
-  .card1, .card2, .card3 {
+  .initial-content,
+  .notice--info,
+  .notice--success,
+  .notice--warning {
     padding: 20px 15px;
   }
   .page__title {
     font-size: 36px !important;
   }
-  .habilidade-brilhante {
-    font-size: 26px;
-  }
 }
 </style>
 
-<!-- Subtítulo -->
-<span class="habilidade-brilhante">💻 Principais Habilidades</span>
 
-<!-- CARD 1 -->
-<div class="card1">
+
+
+
+
+
+
+## 💻 Principais Habilidades
+
+<div class="notice--info">
   <h4>Infraestrutura & Redes</h4>
   <ul>
     <li>Configuração de switches, routers e firewalls</li>
@@ -160,8 +185,7 @@ body.page--habilidades {
   </ul>
 </div>
 
-<!-- CARD 2 -->
-<div class="card2">
+<div class="notice--success">
   <h4>Sistemas & Virtualização</h4>
   <ul>
     <li>Linux (Slackware, Ubuntu, CentOS)</li>
@@ -170,8 +194,7 @@ body.page--habilidades {
   </ul>
 </div>
 
-<!-- CARD 3 -->
-<div class="card3">
+<div class="notice--warning">
   <h4>Automação & Scripting</h4>
   <ul>
     <li>PowerShell para automação Windows</li>
