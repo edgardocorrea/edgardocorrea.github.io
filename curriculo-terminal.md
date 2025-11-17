@@ -379,23 +379,23 @@ Outras competências:
 
   experiencia: `
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EXPERIÊNCIA PROFISSIONAL
+EXPERIÊNCIA PROFISSIONAL (RESUMO)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-📍 Analista de Sistemas Senior (2020 - Presente)
-• Gerenciamento de infraestrutura de rede
-• Implementação de automações
-• Administração de servidores Linux/Windows
+📍 Analista de Suporte Técnico
+• Atendimento a usuários via telefone, chat e acesso remoto
+• Solução de incidentes em Windows, redes e aplicativos corporativos
+• Acompanhamento e registro de chamados em sistema ITSM
 
-📍 Analista de Infraestrutura (2018 - 2020)
-• Configuração de switches e routers
-• Ambientes virtualizados
-• Backups automatizados
+📍 Assistente de Infraestrutura de TI
+• Suporte em Active Directory, permissões e políticas de acesso
+• Configuração básica de VPN, redes e equipamentos de conectividade
+• Apoio na manutenção de servidores e monitoramento de ambientes
 
-📍 Técnico de Suporte (2016 - 2018)
-• Suporte técnico avançado
-• Diagnóstico de falhas
-• Manutenção de equipamentos
+📍 Técnico de Service Desk
+• Diagnóstico e resolução de problemas técnicos de primeira e segunda camada
+• Orientação ao usuário e suporte ao uso de sistemas internos
+• Instalação, manutenção e atualização de estações de trabalho e softwares
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`,
 
