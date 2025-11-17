@@ -62,17 +62,11 @@ body.page--habilidades {
 }
 
 /* Hover só no notice--info (Infraestrutura) para brilho neon */
-.notice--info:hover {
-  box-shadow: 0 15px 50px rgba(77, 166, 255, 0.5);
-  transform: translateY(-5px) scale(1.02);
-}
-
-/* Outros cards (success, warning) sem pseudo-elemento neon antes */
+.notice--info:hover,
 .notice--success:hover,
 .notice--warning:hover {
-  /* se quiser, pode manter um hover leve, mas sem neon */
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 15px 50px rgba(77, 166, 255, 0.5);
+  transform: translateY(-5px) scale(1.02);
 }
 
 /* ==================== TÍTULOS ==================== */
