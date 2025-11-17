@@ -90,7 +90,7 @@ body.page--habilidades {
 /* Título “Principais Habilidades” (ou h2/h3) com cor preta normal */
 .intro-text, /* se seu “Principais Habilidades” for intro-text */ 
 h2, h3 {
-  color: #000; /* preto */
+  color: #FFFFFF; /* preto */
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
