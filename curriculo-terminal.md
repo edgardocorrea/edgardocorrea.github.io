@@ -123,7 +123,7 @@ body {
 }
 
 .outputw {
-  color: #006400;
+  color: #00FF00;
 }
 
 .error {
