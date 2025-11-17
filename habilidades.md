@@ -22,25 +22,25 @@ body.page--habilidades {
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
   backdrop-filter: blur(3px);
-  box-sizing: border-box;
 }
 
-/* Cards */
-.notice--info,
-.notice--success,
-.notice--warning {
+/* ==================== CARDS ==================== */
+
+/* Estilo base de todos os cards */
+.card1, .card2, .card3 {
   background: rgba(10, 20, 40, 0.8);
   border-radius: 15px;
   padding: 30px 25px;
   margin-bottom: 25px;
   position: relative;
   overflow: hidden;
+  z-index: 2;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
   transition: all 0.4s ease;
 }
 
-/* Neon animado apenas no card notice--info */
-.notice--info::before {
+/* ==================== CARD1 (Infraestrutura) – COM NEON ==================== */
+.card1::before {
   content: "";
   position: absolute;
   top: -50%;
@@ -52,19 +52,32 @@ body.page--habilidades {
   transform: rotate(45deg);
   filter: blur(40px);
   animation: neonGlow 6s linear infinite;
+  z-index: 1;
   pointer-events: none;
-  border-radius: 20px;
 }
 
-.notice--info:hover {
-  box-shadow: 0 15px 50px rgba(77, 166, 255, 0.5);
+.card1:hover {
+  box-shadow: 0 15px 50px rgba(77,166,255,0.5);
   transform: translateY(-5px) scale(1.02);
 }
 
-.notice--success:hover,
-.notice--warning:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+/* ==================== CARD2 e CARD3 com hover leve ==================== */
+.card2:hover, .card3:hover {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.4);
   transform: translateY(-3px) scale(1.01);
+}
+
+/* ==================== TÍTULOS ==================== */
+
+/* Título principal (neon) */
+.page__title {
+  text-align: center;
+  font-size: 48px !important;
+  font-weight: 700;
+  background: linear-gradient(90deg, #4da6ff, #00ccff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 10px rgba(77,166,255,0.5);
 }
 
 /* Subtítulo brilhante */
@@ -83,46 +96,26 @@ body.page--habilidades {
     0 0 50px rgba(0, 234, 255, 0.4);
 }
 
-/* Título principal (neon) */
-.page__title {
-  text-align: center;
-  font-size: 48px !important;
-  font-weight: 700;
-  background: linear-gradient(90deg, #4da6ff, #00ccff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
-}
-
-/* Títulos dentro dos cards */
-.notice--info h4,
-.notice--success h4,
-.notice--warning h4 {
+/* Títulos internos */
+.card1 h4, .card2 h4, .card3 h4 {
   color: #cccccc;
   margin-bottom: 10px;
-  position: relative;
 }
 
-/* Listas */
-.notice--info ul,
-.notice--success ul,
-.notice--warning ul {
+/* ==================== LISTAS ==================== */
+.card1 ul, .card2 ul, .card3 ul {
   list-style: none;
   padding-left: 0;
 }
 
-.notice--info li,
-.notice--success li,
-.notice--warning li {
+.card1 li, .card2 li, .card3 li {
   position: relative;
   padding-left: 20px;
   margin-bottom: 8px;
   color: #cccccc;
 }
 
-.notice--info li::before,
-.notice--success li::before,
-.notice--warning li::before {
+.card1 li::before, .card2 li::before, .card3 li::before {
   content: "•";
   position: absolute;
   left: 0;
@@ -133,22 +126,15 @@ body.page--habilidades {
     0 0 10px #00ccff;
 }
 
-/* Animação Neon */
+/* ==================== ANIMAÇÃO NEON ==================== */
 @keyframes neonGlow {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(45deg);
-  }
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(45deg); }
 }
 
-/* Responsivo */
+/* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
-  .initial-content,
-  .notice--info,
-  .notice--success,
-  .notice--warning {
+  .card1, .card2, .card3 {
     padding: 20px 15px;
   }
   .page__title {
@@ -160,11 +146,11 @@ body.page--habilidades {
 }
 </style>
 
-<!-- Subtítulo correto e no lugar certo -->
+<!-- Subtítulo -->
 <span class="habilidade-brilhante">💻 Principais Habilidades</span>
 
-<!-- CARDS -->
-<div class="notice--info">
+<!-- CARD 1 -->
+<div class="card1">
   <h4>Infraestrutura & Redes</h4>
   <ul>
     <li>Configuração de switches, routers e firewalls</li>
@@ -174,7 +160,8 @@ body.page--habilidades {
   </ul>
 </div>
 
-<div class="notice--success">
+<!-- CARD 2 -->
+<div class="card2">
   <h4>Sistemas & Virtualização</h4>
   <ul>
     <li>Linux (Slackware, Ubuntu, CentOS)</li>
@@ -183,7 +170,8 @@ body.page--habilidades {
   </ul>
 </div>
 
-<div class="notice--warning">
+<!-- CARD 3 -->
+<div class="card3">
   <h4>Automação & Scripting</h4>
   <ul>
     <li>PowerShell para automação Windows</li>
