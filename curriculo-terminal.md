@@ -248,16 +248,16 @@ body {
 
 .skill-fill {
   height: 100%;
-  background: linear-gradient(90deg, #ffffff  #terminal, #00ffff);
+  background: linear-gradient(90deg, #0a4c82, #0099ff);
   transition: width 1s ease;
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding-right: 8px;
-  color: #000;
+  color: #ffffff;
   font-weight: bold;
   font-size: 12px;
-  box-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.8);
 }
 
 /* RESPONSIVE */
