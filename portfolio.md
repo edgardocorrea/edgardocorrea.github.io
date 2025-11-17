@@ -357,7 +357,7 @@ body.page--portfolio main.grid__item {
     <h2 class="project-title">Limpeza Avançada Windows</h2>
     
     <p class="project-description">
-      Script PowerShell automatizado para limpeza profunda do Windows. Remove arquivos temporários, cache, logs e otimiza o sistema operacional com interface intuitiva e opções avançadas de personalização.
+      Script Grafico automatizado para limpeza profunda do Windows. Remove arquivos temporários, cache, logs e otimiza o sistema operacional com interface intuitiva e opções avançadas de personalização.
     </p>
     
     <div class="tech-tags">
@@ -388,7 +388,7 @@ body.page--portfolio main.grid__item {
     <h2 class="project-title">Outros Projetos</h2>
     
     <p class="project-description">
-      Novos projetos de infraestrutura, automação e desenvolvimento em andamento. Fique atento para mais atualizações em breve!
+      Novos projetos com N8N, automação e desenvolvimento em andamento. Mais atualizações em breve!
     </p>
     
     <div class="tech-tags">
@@ -403,4 +403,3 @@ body.page--portfolio main.grid__item {
   </div>
 
 </div>
-
