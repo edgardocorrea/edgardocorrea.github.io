@@ -446,19 +446,21 @@ Preparando download...
       display:inline-flex;
       align-items:center;
       gap:10px;
-      padding:12px 18px;
+      padding:10px 16px;
       background:#0A66C2;
       color:white;
-      border-radius:8px;
+      border-radius:6px;
       font-size:16px;
       font-weight:600;
       text-decoration:none;
       font-family:Arial, sans-serif;
    "
 >
-   <svg width="18" height="18" fill="white" viewBox="0 0 24 24">
-      <path d="M10 17l6-5-6-5v10z"/>
+   <!-- Ícone SVG do LinkedIn -->
+   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" viewBox="0 0 24 24">
+      <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.22 8.47h4.55V24H.22V8.47zM8.54 8.47h4.36v2.11h.06c.61-1.15 2.11-2.36 4.34-2.36 4.64 0 5.5 3.05 5.5 7.02V24h-4.55v-7.77c0-1.85-.03-4.23-2.58-4.23-2.58 0-2.97 2.01-2.97 4.09V24H8.54V8.47z"/>
    </svg>
+
    Ver / Baixar Currículo no LinkedIn
 </a>
 
