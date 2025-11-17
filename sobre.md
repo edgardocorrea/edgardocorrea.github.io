@@ -654,6 +654,8 @@ body {
       </p>
       <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
         Minha filosofia: <strong style="color: #00ff88;">"Todo problema tem solução, e cada desafio é uma oportunidade de crescimento."</strong> Adoro trabalhar em equipe, compartilhar conhecimento e trazer energia positiva para os projetos.
+      </p>      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+        Meu slogan: <strong style="color: #00ff88;">"Simplifique e Conquiste o Certo."</strong>
       </p>
       <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
         Quando não estou codando ou resolvendo tickets, você me encontra assistindo animes, explorando novas tecnologias ou pensando em como automatizar processos do dia a dia. 
