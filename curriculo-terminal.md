@@ -424,7 +424,7 @@ GitHub: github.com/edgardocorrea/LimpezaAvancada
 CONTATO
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Email:        edgardo.correa@email.com
+Email:        edgardo.edyone-1@yahoo.com
 Localização:  São Paulo, SP - Brasil
 LinkedIn:     linkedin.com/in/edgardocorrea
 GitHub:       github.com/edgardocorrea
