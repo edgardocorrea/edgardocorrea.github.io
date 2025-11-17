@@ -187,32 +187,25 @@ body {
 
 .typewriter {
   font-size: 28px;
-  color: #ffffff; /* texto branco brilhante */
+  color: #ffffff; /* branco simples */
   font-weight: 700;
   margin-bottom: 30px;
 
-  /* Cursor piscando */
+  /* Cursor piscando branco simples */
   border-right: 3px solid #ffffff;
 
-  /* REMOÇÃO COMPLETA DE QUALQUER FUNDO */
+  /* Fundo completamente transparente */
   background: transparent !important;
   background-color: transparent !important;
-
-  /* Remoção de qualquer bloco de fundo herdado */
-  display: inline-block;
-
-  /* Brilho suave */
-  text-shadow:
-    0 0 10px #fff,
-    0 0 20px #00eaff,
-    0 0 40px #00eaff;
 
   white-space: nowrap;
   overflow: hidden;
 
+  /* Sem brilho */
+  text-shadow: none !important;
+
   animation: typing 3s steps(40) 1s 1 normal both, blink 0.7s infinite;
 }
-
 
 
 @keyframes typing {
