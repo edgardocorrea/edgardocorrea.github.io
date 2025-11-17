@@ -115,7 +115,7 @@ body {
 }
 
 .command {
-  color: #00ffff;
+  color: #ffffff;
 }
 
 .output {
