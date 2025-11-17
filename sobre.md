@@ -746,9 +746,9 @@ body {
         <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">🤝 Trabalho em Equipe</span>
         <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">💬 Comunicação Clara</span>
         <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">🎯 Foco em Resultados</span>
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">🚀 Proatividade</span>
+        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">⚡Proatividade</span>
         <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">😊 Otimismo</span>
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">📚 Aprendizado Contínuo</span>
+        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">📝 Aprendizado Contínuo</span>
       </div>
     </div>
   </div>
