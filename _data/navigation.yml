@@ -7,5 +7,5 @@ main:
     url: /habilidades/     # NOVO
   - title: "Certificações"
     url: /certificacoes/
-  - title: "Currículo (PDF)"
-    url: /assets/files/curriculo-edgardo-correa.pdf
+  - title: "Currículo"
+    url: /curriculo/
