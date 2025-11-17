@@ -1,5 +1,5 @@
 ---
-title: "Minhas Habilidades"
+title: "Habilidades"
 permalink: /habilidades/
 layout: single
 ---
