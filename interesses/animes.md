@@ -330,6 +330,97 @@ body {
   .anime-card { padding: 35px 25px; }
   .slide-arrow { font-size: 28px; padding: 6px 10px; }
 }
+
+/* ==================== ADICIONAL ==================== */
+
+.video-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video-screen {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+#video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(0, 238, 255, 0.8);
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.play-button:hover {
+  background: rgba(0, 238, 255, 1);
+  transform: scale(1.1);
+}
+
+.video-controls {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0 15px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  color: #00eaff;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.progress {
+  height: 100%;
+  background: #00eaff;
+  border-radius: 5px;
+  width: 0%;
+}
+
 </style>
 
 
@@ -697,6 +788,93 @@ body {
 
 <!-- JavaScript -->
 <script>
+
+// Carregar a API do YouTube Iframe Player
+let tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+let firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let player;
+
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('youtube-iframe', {
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  // Event listener para o botão de play
+  document.getElementById('play-button').addEventListener('click', function() {
+    document.getElementById('video-overlay').style.display = 'none';
+    player.playVideo();
+  });
+  
+  // Event listener para o botão de play/pause
+  document.getElementById('play-pause-btn').addEventListener('click', function() {
+    if (player.getPlayerState() == YT.PlayerState.PLAYING) {
+      player.pauseVideo();
+      this.textContent = '▶';
+    } else {
+      player.playVideo();
+      this.textContent = '⏸';
+    }
+  });
+  
+  // Event listener para o botão de mute
+  document.getElementById('mute-btn').addEventListener('click', function() {
+    if (player.isMuted()) {
+      player.unMute();
+      this.textContent = '🔊';
+    } else {
+      player.mute();
+      this.textContent = '🔇';
+    }
+  });
+  
+  // Event listener para o botão de fullscreen
+  document.getElementById('fullscreen-btn').addEventListener('click', function() {
+    const iframe = document.getElementById('youtube-iframe');
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+      iframe.mozRequestFullScreen();
+    } else if (iframe.msRequestFullscreen) {
+      iframe.msRequestFullscreen();
+    }
+  });
+  
+  // Event listener para a barra de progresso
+  document.querySelector('.progress-bar').addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    player.seekTo(pos * player.getDuration());
+  });
+}
+
+function onPlayerStateChange(event) {
+  // Atualizar o botão de play/pause
+  if (event.data == YT.PlayerState.PLAYING) {
+    document.getElementById('play-pause-btn').textContent = '⏸';
+  } else {
+    document.getElementById('play-pause-btn').textContent = '▶';
+  }
+}
+
+// Atualizar a barra de progresso
+setInterval(function() {
+  if (player && player.getPlayerState() == YT.PlayerState.PLAYING) {
+    const progress = (player.getCurrentTime() / player.getDuration()) * 100;
+    document.getElementById('video-progress').style.width = progress + '%';
+  }
+}, 100);
+
+
 // ==================== SLIDESHOW ====================
 let currentSlide = {};
 
