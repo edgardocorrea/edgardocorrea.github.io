@@ -176,6 +176,7 @@ body {
   margin-top: 25px;
   box-shadow: 0 15px 40px rgba(0, 238, 255, 0.25);
   height: 400px;
+  width: 100%;
 }
 
 .slide {
@@ -192,6 +193,7 @@ body {
   width: 100%;
   height: 400px;
   object-fit: cover;
+  object-position: center;
   border-radius: 20px;
 }
 
@@ -252,13 +254,101 @@ body {
   box-shadow: 0 0 15px #00eaff;
 }
 
-/* ==================== VIDEO EMBED ==================== */
+/* ==================== VIDEO PLAYER ==================== */
 .video-container {
   margin: 25px 0 35px;
   aspect-ratio: 16 / 9;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 238, 255, 0.25);
+}
+
+.video-player {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.video-screen {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+#video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(0, 238, 255, 0.8);
+  border: none;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.play-button:hover {
+  background: rgba(0, 238, 255, 1);
+  transform: scale(1.1);
+}
+
+.video-controls {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 0 15px;
+}
+
+.control-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  color: #00eaff;
+}
+
+.progress-bar {
+  flex-grow: 1;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.progress {
+  height: 100%;
+  background: #00eaff;
+  border-radius: 5px;
+  width: 0%;
 }
 
 /* ==================== CONTENT BLOCKS ==================== */
@@ -285,6 +375,11 @@ body {
   padding: 25px;
   border-radius: 15px;
   margin: 30px 0;
+}
+
+.highlight-box h3 {
+  color: #ffffff;
+  text-shadow: 0 0 8px #00eaff;
 }
 
 .highlight-box p {
@@ -463,12 +558,30 @@ body {
         </div>
       </div>
 
-      <!-- Video Embed -->
-      <div class="video-container">
+      <!-- Video Embed Personalizado -->
+      <div class="video-container" id="evangelion-video">
+        <div class="video-player">
+          <div class="video-screen">
+            <img src="https://img.youtube.com/vi/13nSISwxrY4/maxresdefault.jpg" alt="Evangelion Preview" id="video-thumbnail">
+            <div class="video-overlay" id="video-overlay">
+              <button class="play-button" id="play-button">▶</button>
+            </div>
+          </div>
+          <div class="video-controls">
+            <button class="control-btn" id="play-pause-btn">▶</button>
+            <div class="progress-bar">
+              <div class="progress" id="video-progress"></div>
+            </div>
+            <button class="control-btn" id="mute-btn">🔊</button>
+            <button class="control-btn" id="fullscreen-btn">⛶</button>
+          </div>
+        </div>
         <iframe 
-          src="https://www.youtube.com/embed/13nSISwxrY4" 
+          id="youtube-iframe"
+          src="https://www.youtube.com/embed/13nSISwxrY4?enablejsapi=1&controls=0&showinfo=0&rel=0&modestbranding=1" 
           title="Evangelion Trailer" 
           frameborder="0" 
+          style="display:none;"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
@@ -615,12 +728,30 @@ body {
         </div>
       </div>
 
-      <!-- Video Embed -->
-      <div class="video-container">
+      <!-- Video Embed Personalizado -->
+      <div class="video-container" id="blackmirror-video">
+        <div class="video-player">
+          <div class="video-screen">
+            <img src="https://img.youtube.com/vi/jROLrhQkK78/maxresdefault.jpg" alt="Black Mirror Preview" id="video-thumbnail-bm">
+            <div class="video-overlay" id="video-overlay-bm">
+              <button class="play-button" id="play-button-bm">▶</button>
+            </div>
+          </div>
+          <div class="video-controls">
+            <button class="control-btn" id="play-pause-btn-bm">▶</button>
+            <div class="progress-bar">
+              <div class="progress" id="video-progress-bm"></div>
+            </div>
+            <button class="control-btn" id="mute-btn-bm">🔊</button>
+            <button class="control-btn" id="fullscreen-btn-bm">⛶</button>
+          </div>
+        </div>
         <iframe 
-          src="https://www.youtube.com/embed/jROLrhQkK78" 
+          id="youtube-iframe-bm"
+          src="https://www.youtube.com/embed/jROLrhQkK78?enablejsapi=1&controls=0&showinfo=0&rel=0&modestbranding=1" 
           title="Black Mirror Trailer" 
           frameborder="0" 
+          style="display:none;"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
@@ -764,6 +895,166 @@ function goToSlide(containerId, index) {
 function autoPlay(containerId, interval = 5500) {
   setInterval(() => changeSlide(containerId, 1), interval);
 }
+
+// ==================== VIDEO PLAYER ====================
+// Carregar a API do YouTube Iframe Player
+let tag = document.createElement('script');
+tag.src = "https://www.youtube.com/iframe_api";
+let firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+let playerEvangelion, playerBlackMirror;
+
+function onYouTubeIframeAPIReady() {
+  // Player para Evangelion
+  playerEvangelion = new YT.Player('youtube-iframe', {
+    events: {
+      'onReady': onPlayerReadyEvangelion,
+      'onStateChange': onPlayerStateChangeEvangelion
+    }
+  });
+  
+  // Player para Black Mirror
+  playerBlackMirror = new YT.Player('youtube-iframe-bm', {
+    events: {
+      'onReady': onPlayerReadyBlackMirror,
+      'onStateChange': onPlayerStateChangeBlackMirror
+    }
+  });
+}
+
+function onPlayerReadyEvangelion(event) {
+  // Event listener para o botão de play
+  document.getElementById('play-button').addEventListener('click', function() {
+    document.getElementById('video-overlay').style.display = 'none';
+    playerEvangelion.playVideo();
+  });
+  
+  // Event listener para o botão de play/pause
+  document.getElementById('play-pause-btn').addEventListener('click', function() {
+    if (playerEvangelion.getPlayerState() == YT.PlayerState.PLAYING) {
+      playerEvangelion.pauseVideo();
+      this.textContent = '▶';
+    } else {
+      playerEvangelion.playVideo();
+      this.textContent = '⏸';
+    }
+  });
+  
+  // Event listener para o botão de mute
+  document.getElementById('mute-btn').addEventListener('click', function() {
+    if (playerEvangelion.isMuted()) {
+      playerEvangelion.unMute();
+      this.textContent = '🔊';
+    } else {
+      playerEvangelion.mute();
+      this.textContent = '🔇';
+    }
+  });
+  
+  // Event listener para o botão de fullscreen
+  document.getElementById('fullscreen-btn').addEventListener('click', function() {
+    const iframe = document.getElementById('youtube-iframe');
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+      iframe.mozRequestFullScreen();
+    } else if (iframe.msRequestFullscreen) {
+      iframe.msRequestFullscreen();
+    }
+  });
+  
+  // Event listener para a barra de progresso
+  document.querySelector('.progress-bar').addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    playerEvangelion.seekTo(pos * playerEvangelion.getDuration());
+  });
+}
+
+function onPlayerStateChangeEvangelion(event) {
+  // Atualizar o botão de play/pause
+  if (event.data == YT.PlayerState.PLAYING) {
+    document.getElementById('play-pause-btn').textContent = '⏸';
+  } else {
+    document.getElementById('play-pause-btn').textContent = '▶';
+  }
+}
+
+function onPlayerReadyBlackMirror(event) {
+  // Event listener para o botão de play
+  document.getElementById('play-button-bm').addEventListener('click', function() {
+    document.getElementById('video-overlay-bm').style.display = 'none';
+    playerBlackMirror.playVideo();
+  });
+  
+  // Event listener para o botão de play/pause
+  document.getElementById('play-pause-btn-bm').addEventListener('click', function() {
+    if (playerBlackMirror.getPlayerState() == YT.PlayerState.PLAYING) {
+      playerBlackMirror.pauseVideo();
+      this.textContent = '▶';
+    } else {
+      playerBlackMirror.playVideo();
+      this.textContent = '⏸';
+    }
+  });
+  
+  // Event listener para o botão de mute
+  document.getElementById('mute-btn-bm').addEventListener('click', function() {
+    if (playerBlackMirror.isMuted()) {
+      playerBlackMirror.unMute();
+      this.textContent = '🔊';
+    } else {
+      playerBlackMirror.mute();
+      this.textContent = '🔇';
+    }
+  });
+  
+  // Event listener para o botão de fullscreen
+  document.getElementById('fullscreen-btn-bm').addEventListener('click', function() {
+    const iframe = document.getElementById('youtube-iframe-bm');
+    if (iframe.requestFullscreen) {
+      iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+      iframe.webkitRequestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+      iframe.mozRequestFullScreen();
+    } else if (iframe.msRequestFullscreen) {
+      iframe.msRequestFullscreen();
+    }
+  });
+  
+  // Event listener para a barra de progresso
+  document.querySelectorAll('.progress-bar')[1].addEventListener('click', function(e) {
+    const rect = this.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    playerBlackMirror.seekTo(pos * playerBlackMirror.getDuration());
+  });
+}
+
+function onPlayerStateChangeBlackMirror(event) {
+  // Atualizar o botão de play/pause
+  if (event.data == YT.PlayerState.PLAYING) {
+    document.getElementById('play-pause-btn-bm').textContent = '⏸';
+  } else {
+    document.getElementById('play-pause-btn-bm').textContent = '▶';
+  }
+}
+
+// Atualizar as barras de progresso
+setInterval(function() {
+  if (playerEvangelion && playerEvangelion.getPlayerState() == YT.PlayerState.PLAYING) {
+    const progress = (playerEvangelion.getCurrentTime() / playerEvangelion.getDuration()) * 100;
+    document.getElementById('video-progress').style.width = progress + '%';
+  }
+  
+  if (playerBlackMirror && playerBlackMirror.getPlayerState() == YT.PlayerState.PLAYING) {
+    const progress = (playerBlackMirror.getCurrentTime() / playerBlackMirror.getDuration()) * 100;
+    document.getElementById('video-progress-bm').style.width = progress + '%';
+  }
+}, 100);
 
 // ==================== PAGE INIT ====================
 document.addEventListener('DOMContentLoaded', () => {
