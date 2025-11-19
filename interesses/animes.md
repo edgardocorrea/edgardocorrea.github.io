@@ -26,17 +26,14 @@ body {
 }
 
 /* ==================== BACKGROUND ==================== */
-.particles-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: 
-    radial-gradient(circle at 20% 30%, rgba(0, 238, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 238, 255, 0.1) 0%, transparent 50%);
+.initial-content {
+  position: relative;
+  background: rgba(10,20,40,0.85);
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 1;
 }
 
 /* ==================== BREADCRUMB ==================== */
@@ -71,7 +68,7 @@ body {
   border-radius: 25px;
   overflow: hidden;
   margin-bottom: 60px;
-  box-shadow: 0 20px 60px rgba(0, 238, 255, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 20, 40, 0.85);
 }
 
 .hero-banner::before {
@@ -196,12 +193,12 @@ body {
   color: #ffffff;
   border-left: 4px solid #00eaff;
   padding-left: 15px;
-  text-shadow: 0 0 8px #00eaff;
+  text-shadow: 0 0 8px color: #f6fbff;
 }
 
 .content-block p {
   font-size: 18px;
-  color: #e0eaff;
+color: #f6fbff;
 }
 
 .highlight-box {
@@ -211,7 +208,7 @@ body {
 
 .highlight-box strong {
   color: #ffffff;
-  text-shadow: 0 0 8px #00eaff;
+  text-shadow: 0 0 8px color: #f6fbff;
 }
 
 /* ==================== TAGS ==================== */
