@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Animes & Séries"
+title: ""
 permalink: /interesses/animes/
 author_profile: false
 sidebar: null
@@ -261,6 +261,7 @@ body {
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 15px 40px rgba(0, 238, 255, 0.25);
+  position: relative;
 }
 
 .video-player {
@@ -278,7 +279,7 @@ body {
   height: calc(100% - 50px);
 }
 
-#video-thumbnail {
+#video-thumbnail, #video-thumbnail-bm {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -294,6 +295,7 @@ body {
   justify-content: center;
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
+  z-index: 10;
 }
 
 .play-button {
@@ -306,6 +308,7 @@ body {
   font-size: 30px;
   cursor: pointer;
   transition: all 0.3s;
+  z-index: 11;
 }
 
 .play-button:hover {
@@ -349,6 +352,18 @@ body {
   background: #00eaff;
   border-radius: 5px;
   width: 0%;
+}
+
+/* Estilo para o iframe do YouTube */
+.youtube-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 20px;
+  z-index: 5;
 }
 
 /* ==================== CONTENT BLOCKS ==================== */
@@ -566,6 +581,15 @@ body {
             <div class="video-overlay" id="video-overlay">
               <button class="play-button" id="play-button">▶</button>
             </div>
+            <iframe 
+              id="youtube-iframe"
+              class="youtube-iframe"
+              src="https://www.youtube.com/embed/13nSISwxrY4?enablejsapi=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0" 
+              title="Evangelion Trailer" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
           </div>
           <div class="video-controls">
             <button class="control-btn" id="play-pause-btn">▶</button>
@@ -576,15 +600,6 @@ body {
             <button class="control-btn" id="fullscreen-btn">⛶</button>
           </div>
         </div>
-        <iframe 
-          id="youtube-iframe"
-          src="https://www.youtube.com/embed/13nSISwxrY4?enablejsapi=1&controls=0&showinfo=0&rel=0&modestbranding=1" 
-          title="Evangelion Trailer" 
-          frameborder="0" 
-          style="display:none;"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
       </div>
 
       <!-- Resumo -->
@@ -736,6 +751,15 @@ body {
             <div class="video-overlay" id="video-overlay-bm">
               <button class="play-button" id="play-button-bm">▶</button>
             </div>
+            <iframe 
+              id="youtube-iframe-bm"
+              class="youtube-iframe"
+              src="https://www.youtube.com/embed/jROLrhQkK78?enablejsapi=1&controls=0&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&cc_load_policy=0" 
+              title="Black Mirror Trailer" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
           </div>
           <div class="video-controls">
             <button class="control-btn" id="play-pause-btn-bm">▶</button>
@@ -746,15 +770,6 @@ body {
             <button class="control-btn" id="fullscreen-btn-bm">⛶</button>
           </div>
         </div>
-        <iframe 
-          id="youtube-iframe-bm"
-          src="https://www.youtube.com/embed/jROLrhQkK78?enablejsapi=1&controls=0&showinfo=0&rel=0&modestbranding=1" 
-          title="Black Mirror Trailer" 
-          frameborder="0" 
-          style="display:none;"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
       </div>
 
       <!-- Resumo -->
@@ -926,7 +941,13 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReadyEvangelion(event) {
   // Event listener para o botão de play
   document.getElementById('play-button').addEventListener('click', function() {
+    // Esconder a sobreposição
     document.getElementById('video-overlay').style.display = 'none';
+    // Esconder a thumbnail
+    document.getElementById('video-thumbnail').style.display = 'none';
+    // Mostrar o iframe
+    document.getElementById('youtube-iframe').style.display = 'block';
+    // Reproduzir o vídeo
     playerEvangelion.playVideo();
   });
   
@@ -954,15 +975,15 @@ function onPlayerReadyEvangelion(event) {
   
   // Event listener para o botão de fullscreen
   document.getElementById('fullscreen-btn').addEventListener('click', function() {
-    const iframe = document.getElementById('youtube-iframe');
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) {
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.mozRequestFullScreen) {
-      iframe.mozRequestFullScreen();
-    } else if (iframe.msRequestFullscreen) {
-      iframe.msRequestFullscreen();
+    const container = document.getElementById('evangelion-video');
+    if (container.requestFullscreen) {
+      container.requestFullscreen();
+    } else if (container.webkitRequestFullscreen) {
+      container.webkitRequestFullscreen();
+    } else if (container.mozRequestFullScreen) {
+      container.mozRequestFullScreen();
+    } else if (container.msRequestFullscreen) {
+      container.msRequestFullscreen();
     }
   });
   
@@ -986,7 +1007,13 @@ function onPlayerStateChangeEvangelion(event) {
 function onPlayerReadyBlackMirror(event) {
   // Event listener para o botão de play
   document.getElementById('play-button-bm').addEventListener('click', function() {
+    // Esconder a sobreposição
     document.getElementById('video-overlay-bm').style.display = 'none';
+    // Esconder a thumbnail
+    document.getElementById('video-thumbnail-bm').style.display = 'none';
+    // Mostrar o iframe
+    document.getElementById('youtube-iframe-bm').style.display = 'block';
+    // Reproduzir o vídeo
     playerBlackMirror.playVideo();
   });
   
@@ -1014,15 +1041,15 @@ function onPlayerReadyBlackMirror(event) {
   
   // Event listener para o botão de fullscreen
   document.getElementById('fullscreen-btn-bm').addEventListener('click', function() {
-    const iframe = document.getElementById('youtube-iframe-bm');
-    if (iframe.requestFullscreen) {
-      iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) {
-      iframe.webkitRequestFullscreen();
-    } else if (iframe.mozRequestFullScreen) {
-      iframe.mozRequestFullScreen();
-    } else if (iframe.msRequestFullscreen) {
-      iframe.msRequestFullscreen();
+    const container = document.getElementById('blackmirror-video');
+    if (container.requestFullscreen) {
+      container.requestFullscreen();
+    } else if (container.webkitRequestFullscreen) {
+      container.webkitRequestFullscreen();
+    } else if (container.mozRequestFullScreen) {
+      container.mozRequestFullScreen();
+    } else if (container.msRequestFullscreen) {
+      container.msRequestFullscreen();
     }
   });
   
