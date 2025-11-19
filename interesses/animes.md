@@ -17,6 +17,7 @@ sidebar: null
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
+  background: #0a1428;
 }
 
 .page__content {
@@ -41,8 +42,6 @@ body {
   padding: 20px 0;
   color: #e0eaff;
   font-size: 14px;
-  position: relative;
-  z-index: 1;
 }
 
 .breadcrumb a {
@@ -71,11 +70,17 @@ body {
   box-shadow: 0 15px 40px rgba(0, 20, 40, 0.85);
 }
 
+.hero-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .hero-banner::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(10, 20, 40, 0.8) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(10, 20, 40, 0.85) 100%);
   z-index: 1;
 }
 
@@ -102,7 +107,7 @@ body {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradient 3s ease infinite;
-  text-shadow: 0 0 30px rgba(0, 238, 255, 0.5);
+  text-shadow: 0 0 30px rgba(0, 238, 255, 0.4);
 }
 
 .hero-subtitle {
@@ -113,12 +118,10 @@ body {
 
 /* ==================== CONTENT WRAPPER ==================== */
 .content-wrapper {
-  position: relative;
-  z-index: 1;
-  background: rgba(10, 20, 40, 0.85);
+  background: rgba(10, 20, 40, 0.9);
   padding: 50px 40px;
   border-radius: 25px;
-  box-shadow: 0 10px 40px rgba(0, 238, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 238, 255, 0.15);
   backdrop-filter: blur(10px);
 }
 
@@ -136,17 +139,16 @@ body {
 
 /* ==================== ANIME CARDS ==================== */
 .anime-card {
-  background: linear-gradient(145deg, rgba(0, 238, 255, 0.08), rgba(255, 255, 255, 0.05));
-  border: 2px solid #00eaff;
+  background: linear-gradient(145deg, rgba(0, 238, 255, 0.1), rgba(255, 255, 255, 0.05));
+  border: 2px solid rgba(0, 238, 255, 0.5);
   border-radius: 25px;
-  padding: 40px;
-  margin-bottom: 50px;
+  padding: 50px 45px;
+  margin-bottom: 70px;
   transition: 0.4s ease;
 }
 
 .anime-card:hover {
   transform: translateY(-10px);
-  border-color: #00eaff;
   box-shadow: 0 20px 50px rgba(0, 238, 255, 0.4);
 }
 
@@ -154,7 +156,7 @@ body {
   font-size: 36px;
   font-weight: 900;
   color: #ffffff;
-  text-shadow: 0 0 20px #00eaff;
+  text-shadow: 0 0 20px rgba(0, 238, 255, 0.6);
 }
 
 .anime-subtitle {
@@ -165,16 +167,76 @@ body {
 
 /* ==================== SLIDESHOW ==================== */
 .slideshow-container {
-  box-shadow: 0 15px 40px rgba(0, 238, 255, 0.3);
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  margin-top: 25px;
+  box-shadow: 0 15px 40px rgba(0, 238, 255, 0.25);
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide img {
+  width: 100%;
+  border-radius: 20px;
 }
 
 .slide-caption {
-  background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
   color: #ffffff;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.slide-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 238, 255, 0.2);
+  border: none;
+  font-size: 40px;
+  color: #ffffff;
+  padding: 10px 18px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slide-arrow:hover {
+  background: rgba(0, 238, 255, 0.5);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+.slide-nav {
+  text-align: center;
+  margin-top: 10px;
 }
 
 .slide-dot {
+  height: 12px;
+  width: 12px;
+  margin: 4px;
   background: rgba(0, 238, 255, 0.3);
+  border-radius: 50%;
+  display: inline-block;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .slide-dot.active {
@@ -184,7 +246,11 @@ body {
 
 /* ==================== VIDEO EMBED ==================== */
 .video-container {
-  box-shadow: 0 15px 40px rgba(0, 238, 255, 0.3);
+  margin: 25px 0 35px;
+  aspect-ratio: 16 / 9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 238, 255, 0.25);
 }
 
 /* ==================== CONTENT BLOCKS ==================== */
@@ -193,33 +259,46 @@ body {
   color: #ffffff;
   border-left: 4px solid #00eaff;
   padding-left: 15px;
+  margin-bottom: 10px;
   text-shadow: 0 0 8px #00eaff;
 }
 
 .content-block p {
   font-size: 18px;
   color: #e0eaff;
+  margin-bottom: 12px;
+  line-height: 1.75;
 }
 
+/* ==================== HIGHLIGHT BOX ==================== */
 .highlight-box {
-  background: rgba(0, 238, 255, 0.15);
+  background: rgba(0, 238, 255, 0.18);
   border-left: 4px solid #00eaff;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 30px 0;
+}
+
+.highlight-box p {
+  color: #f8fbff;
+  line-height: 1.75;
 }
 
 .highlight-box strong {
   color: #ffffff;
-  text-shadow: 0 0 8px #00eaff;
-}
-.highlight-box h3 {
-  color: #ffffff !important;
-  text-shadow: 0 0 8px #00eaff;
 }
 
 /* ==================== TAGS ==================== */
 .tag {
+  display: inline-block;
+  padding: 6px 14px;
+  margin: 6px;
+  border-radius: 12px;
   background: rgba(0, 238, 255, 0.2);
   border: 1px solid #00eaff;
   color: #00eaff;
+  font-size: 14px;
+  transition: 0.3s;
 }
 
 .tag:hover {
@@ -229,17 +308,29 @@ body {
 
 /* ==================== BACK BUTTON ==================== */
 .back-button {
-  background: linear-gradient(135deg, #00eaff, #111b2e);
+  display: inline-block;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #00eaff, #0f1b31);
   color: #ffffff;
-  box-shadow: 0 5px 20px rgba(0, 238, 255, 0.4);
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(0, 238, 255, 0.35);
+  transition: 0.3s;
 }
 
 .back-button:hover {
   box-shadow: 0 10px 30px rgba(0, 238, 255, 0.6);
 }
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media (max-width: 768px) {
+  .hero-title { font-size: 38px; }
+  .hero-subtitle { font-size: 16px; }
+  .anime-title { font-size: 30px; }
+  .anime-card { padding: 35px 25px; }
+  .slide-arrow { font-size: 28px; padding: 6px 10px; }
+}
 </style>
-
-
 
 
 <div class="particles-bg"></div>
@@ -606,22 +697,23 @@ body {
 
 <!-- JavaScript -->
 <script>
-// Slideshow functionality
+// ==================== SLIDESHOW ====================
 let currentSlide = {};
 
 function initSlideshow(containerId) {
   currentSlide[containerId] = 0;
   const container = document.getElementById(containerId);
   const slides = container.querySelectorAll('.slide');
-  const navContainer = document.getElementById(containerId.replace('-slideshow', '-nav'));
-  
-  // Create dots
+  const nav = document.getElementById(containerId.replace('-slideshow', '-nav'));
+
+  slides[0].classList.add('active');
+
   slides.forEach((_, index) => {
     const dot = document.createElement('span');
     dot.className = 'slide-dot';
     if (index === 0) dot.classList.add('active');
     dot.onclick = () => goToSlide(containerId, index);
-    navContainer.appendChild(dot);
+    nav.appendChild(dot);
   });
 }
 
@@ -629,15 +721,15 @@ function changeSlide(containerId, direction) {
   const container = document.getElementById(containerId);
   const slides = container.querySelectorAll('.slide');
   const dots = document.getElementById(containerId.replace('-slideshow', '-nav')).querySelectorAll('.slide-dot');
-  
+
   slides[currentSlide[containerId]].classList.remove('active');
   dots[currentSlide[containerId]].classList.remove('active');
-  
+
   currentSlide[containerId] += direction;
-  
+
   if (currentSlide[containerId] >= slides.length) currentSlide[containerId] = 0;
   if (currentSlide[containerId] < 0) currentSlide[containerId] = slides.length - 1;
-  
+
   slides[currentSlide[containerId]].classList.add('active');
   dots[currentSlide[containerId]].classList.add('active');
 }
@@ -646,29 +738,29 @@ function goToSlide(containerId, index) {
   const container = document.getElementById(containerId);
   const slides = container.querySelectorAll('.slide');
   const dots = document.getElementById(containerId.replace('-slideshow', '-nav')).querySelectorAll('.slide-dot');
-  
+
   slides[currentSlide[containerId]].classList.remove('active');
   dots[currentSlide[containerId]].classList.remove('active');
-  
+
   currentSlide[containerId] = index;
-  
-  slides[currentSlide[containerId]].classList.add('active');
-  dots[currentSlide[containerId]].classList.add('active');
+
+  slides[index].classList.add('active');
+  dots[index].classList.add('active');
 }
 
-// Auto-play slideshow
-function autoPlaySlideshow(containerId, interval = 5000) {
-  setInterval(() => {
-    changeSlide(containerId, 1);
-  }, interval);
+function autoPlay(containerId, interval = 5500) {
+  setInterval(() => changeSlide(containerId, 1), interval);
 }
 
-// Initialize on load
+// ==================== PAGE INIT ====================
 document.addEventListener('DOMContentLoaded', () => {
   initSlideshow('bleach-slideshow');
-  autoPlaySlideshow('bleach-slideshow', 5000);
-  
-  // Scroll animations
+  autoPlay('bleach-slideshow');
+
+  initSlideshow('arquivox-slideshow');
+  autoPlay('arquivox-slideshow');
+
+  // Animation entrance
   const cards = document.querySelectorAll('.anime-card');
   cards.forEach((card, index) => {
     card.style.opacity = '0';
@@ -679,21 +771,5 @@ document.addEventListener('DOMContentLoaded', () => {
       card.style.transform = 'translateY(0)';
     }, index * 200);
   });
-});
-
-// Parallax effect
-let ticking = false;
-window.addEventListener('scroll', () => {
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      const scrolled = window.pageYOffset;
-      const parallaxBg = document.querySelector('.particles-bg');
-      if (parallaxBg) {
-        parallaxBg.style.transform = `translateY(${scrolled * 0.2}px)`;
-      }
-      ticking = false;
-    });
-    ticking = true;
-  }
 });
 </script>
