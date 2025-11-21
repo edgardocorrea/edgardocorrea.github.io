@@ -243,6 +243,12 @@ body {
   transform: translateX(-50%);
   color: #00eaff;
   animation: bounce 2s infinite;
+  cursor: pointer; /* ADICIONADO: Indica que é clicável */
+  transition: transform 0.3s ease; /* ADICIONADO: Animação suave no hover */
+}
+
+.scroll-indicator:hover {
+  transform: translateX(-50%) scale(1.2); /* ADICIONADO: Efeito de zoom no hover */
 }
 
 @keyframes bounce {
@@ -425,16 +431,6 @@ body {
   font-size: 14px;
 }
 
-/* Easter Egg Hint & Modal */
-.easter-egg-hint {
-  text-align: center;
-  color: #8a9ba8;
-  font-size: 11px;
-  margin-top: 40px;
-  opacity: 0.8;
-  font-style: italic;
-}
-
 /* Modal Secreto */
 .modal-overlay {
   display: none; /* Escondido por padrão */
@@ -446,7 +442,7 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(5px);
-  /* CORREÇÃO: Centraliza o modal na tela */
+  /* Centraliza o modal na tela */
   justify-content: center;
   align-items: center;
 }
@@ -547,7 +543,8 @@ body {
   
   <a href="#contato" class="cta-button">Entre em contato.</a>
   
-  <div class="scroll-indicator">
+  <!-- ALTERADO: Adicionado onclick para abrir o modal -->
+  <div class="scroll-indicator" onclick="showSecretModal()">
     <span style="font-size: 32px;">↓</span>
   </div>
 </section>
@@ -656,8 +653,7 @@ body {
 
 </div>
 
-<!-- Dica para o Easter Egg -->
-<p class="easter-egg-hint">Dica: Existe um comando secreto nesta página... 😉</p>
+<!-- A dica foi removida daqui -->
 
 </div> <!-- End of Wrapper -->
 
@@ -775,30 +771,7 @@ document.querySelectorAll('.interest-card, .social-card').forEach(el => {
   observer.observe(el);
 });
 
-// Easter Egg: código "edy1"
-const easterEggCode = 'edy1';
-let typedString = '';
-let easterEggTimeout;
-
-document.addEventListener('keydown', (e) => {
-  // Limpa o timeout anterior
-  clearTimeout(easterEggTimeout);
-
-  // Adiciona a tecla pressionada à string
-  typedString += e.key;
-
-  // Verifica se o código foi digitado (ignorando maiúsculas/minúsculas)
-  if (typedString.toLowerCase().includes(easterEggCode)) {
-    showSecretModal();
-    typedString = ''; // Reseta a string após ativar
-  }
-
-  // Reseta a string se o usuário parar de digitar por 2 segundos
-  easterEggTimeout = setTimeout(() => {
-    typedString = '';
-  }, 2000);
-});
-
+// FUNÇÕES DO MODAL SECRETO (Easter Egg)
 function showSecretModal() {
   document.getElementById('secretModal').style.display = 'flex';
 }
