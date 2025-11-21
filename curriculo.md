@@ -469,7 +469,7 @@ function displayWelcomeMessage() {
   addLine(`<span class="outputw">║  Analista de Sistemas | Currículo On-Line versão 1.3b        ║</span>`);
   addLine(`<span class="outputw">╚══════════════════════════════════════════════════════════════╝</span>`);
   addLine(`<span class="output">Sistema inicializado...</span>`);
-  addLine(`<span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span>`);
+  addLine(`<span class="output">Digite um comando ou clique em um comando disponível abaixo ↓</span>`);
 }
 
 /**
