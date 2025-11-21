@@ -17,7 +17,6 @@ sidebar: null
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
-  background: #0a1428;
 }
 
 .page__content {
