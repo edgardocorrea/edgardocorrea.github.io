@@ -428,8 +428,8 @@ body {
 /* Easter Egg Hint & Modal */
 .easter-egg-hint {
   text-align: center;
-  color: #8a9ba8; /* COR ALTERADA: mais clara e sutil */
-  font-size: 11px; /* FONTE DIMINUÍDA */
+  color: #8a9ba8;
+  font-size: 11px;
   margin-top: 40px;
   opacity: 0.8;
   font-style: italic;
@@ -446,14 +446,15 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(5px);
-  animation: fadeIn 0.3s ease;
+  /* CORREÇÃO: Centraliza o modal na tela */
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
   background: #0a1e2e;
   border: 2px solid #00eaff;
   border-radius: 15px;
-  margin: 15% auto;
   padding: 30px;
   max-width: 500px;
   box-shadow: 0 0 30px rgba(0, 234, 255, 0.5);
@@ -521,7 +522,7 @@ body {
   .hero-description { font-size: 16px; }
   
   .accordion-title { font-size: 22px; }
-  .modal-content { margin: 30% auto; padding: 20px; }
+  .modal-content { margin: 20px; padding: 20px; max-width: 90%; }
 }
 </style>
 
@@ -667,26 +668,29 @@ body {
     <h2 class="modal-title">// Canal Direto Desbloqueado</h2>
     <div class="modal-body">
       <p>Parabéns! Você não é apenas um visitante, é um explorador.</p>
-      <p>Se você é um recrutador e acredita que boas ideias e código limpo podem mudar o mundo, você veio ao lugar certo. Meu email está aberto para conversas sobre como podemos colaborar.</p>
+      <p>Se você é um recrutador e acredita que boas ideias e código limpo podem mudar o mundo, você veio ao lugar certo. Meu e-mail está aberto para conversas sobre como podemos colaborar.</p>
     </div>
-    <a href="mailto:edgardo.edyone-1@yahoo.com?subject=Canal%20Direto%20Desbloqueado%20-%20Vaga%20de%20TI&body=Olá%20Edgardo,%20achei%20seu%20perfil%20e%20o%20Canal%20Direto%20no%20seu%20site.%20Gostaria%20de%20conversar%20sobre%20uma%20oportunidade." class="modal-cta-button">Enviar Email Agora</a>
+    <a href="mailto:edgardo.edyone-1@yahoo.com?subject=Canal%20Direto%20Desbloqueado%20-%20Vaga%20de%20TI&body=Olá%20Edgardo,%20achei%20seu%20perfil%20e%20o%20Canal%20Direto%20no%20seu%20site.%20Gostaria%20de%20conversar%20sobre%20uma%20oportunidade." class="modal-cta-button">Enviar E-mail Agora</a>
   </div>
 </div>
 
-<!-- Accordion Functionality -->
+<!-- Funcionalidade do Acordeão -->
 <script>
 function toggleAccordion(header) {
   const accordion = header.parentElement;
   const allAccordions = document.querySelectorAll('.section-accordion');
   
+  // Fecha todos os outros acordeões
   allAccordions.forEach(acc => {
     if (acc !== accordion && acc.classList.contains('active')) {
       acc.classList.remove('active');
     }
   });
   
+  // Alterna o acordeão clicado
   accordion.classList.toggle('active');
   
+  // Rolagem suave para o acordeão
   if (accordion.classList.contains('active')) {
     setTimeout(() => {
       accordion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -694,7 +698,7 @@ function toggleAccordion(header) {
   }
 }
 
-// Smooth scroll for anchors
+// Rolagem suave para âncoras
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -702,6 +706,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       
+      // Abre o acordeão se for um link para uma seção
       const accordion = target.closest('.section-accordion');
       if (accordion && !accordion.classList.contains('active')) {
         accordion.querySelector('.accordion-header').click();
@@ -710,7 +715,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// Typewriter Effect
+// Efeito de Máquina de Escrever
 const typewriterElement = document.querySelector('.typewriter');
 if (typewriterElement) {
   const text = typewriterElement.textContent;
@@ -731,7 +736,7 @@ if (typewriterElement) {
   }, 1000);
 }
 
-// Parallax Effect on Scroll
+// Efeito de Parallax na Rolagem
 let isScrollTicking = false;
 window.addEventListener('scroll', () => {
   if (!isScrollTicking) {
@@ -747,7 +752,7 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Intersection Observer for Animations
+// Intersection Observer para Animações
 const observerOptions = {
   threshold: 0.2,
   rootMargin: '0px 0px -100px 0px'
@@ -762,6 +767,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
+// Observa todos os cards animáveis
 document.querySelectorAll('.interest-card, .social-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
@@ -769,27 +775,32 @@ document.querySelectorAll('.interest-card, .social-card').forEach(el => {
   observer.observe(el);
 });
 
-// Easter Egg: "edy1" code
+// Easter Egg: código "edy1"
 const easterEggCode = 'edy1';
 let typedString = '';
 let easterEggTimeout;
 
 document.addEventListener('keydown', (e) => {
+  // Limpa o timeout anterior
   clearTimeout(easterEggTimeout);
+
+  // Adiciona a tecla pressionada à string
   typedString += e.key;
 
+  // Verifica se o código foi digitado (ignorando maiúsculas/minúsculas)
   if (typedString.toLowerCase().includes(easterEggCode)) {
     showSecretModal();
-    typedString = '';
+    typedString = ''; // Reseta a string após ativar
   }
 
+  // Reseta a string se o usuário parar de digitar por 2 segundos
   easterEggTimeout = setTimeout(() => {
     typedString = '';
   }, 2000);
 });
 
 function showSecretModal() {
-  document.getElementById('secretModal').style.display = 'block';
+  document.getElementById('secretModal').style.display = 'flex';
 }
 
 function closeSecretModal() {
