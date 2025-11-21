@@ -360,7 +360,7 @@ EXPERIÊNCIA PROFISSIONAL (RESUMO)
 📍 Analista de Suporte Técnico
 • Atendimento a usuários via telefone, chat e acesso remoto
 • Solução de incidentes em Windows, redes e aplicativos corporativos
-• Acompanhamento e registro de chamados em sistema ITSM
+• Acompanhamento e registro de chamados em sistema ERP(AICS)
 
 📍 Assistente de Infraestrutura de TI
 • Suporte em Active Directory, permissões e políticas de acesso
@@ -465,7 +465,7 @@ function displayWelcomeMessage() {
   terminalOutput.innerHTML = "";
   addLine(`<span class="outputw">╔══════════════════════════════════════════════════════════════╗</span>`);
   addLine(`<span class="outputw">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span>`);
-  addLine(`<span class="outputw">║  Analista de Sistemas | Currículo On-Line versão 1.3b       ║</span>`);
+  addLine(`<span class="outputw">║  Analista de Sistemas | Currículo On-Line versão 1.3b        ║</span>`);
   addLine(`<span class="outputw">╚══════════════════════════════════════════════════════════════╝</span>`);
   addLine(`<span class="output">Sistema inicializado...</span>`);
   addLine(`<span class="output">Digite um comando ou clique em uma sugestão abaixo ↓</span>`);
