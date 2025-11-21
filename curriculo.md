@@ -19,7 +19,6 @@ body {
   align-items: center;
   justify-content: flex-start;
   width: 100%;
-  background: transparent;
 }
 
 .initial-content {
@@ -29,18 +28,21 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
   backdrop-filter: blur(3px);
   z-index: 1;
-  width: 100%;
-  max-width: 1000px;
-  padding: 20px;
-  box-sizing: border-box;
+}
+
+.page {
+  background: transparent;
 }
 
 .page__content {
+  background: transparent;
   padding: 20px;
+  max-width: 100%;
 }
 
+/* Título com efeito neon azul */
 .page__title {
-  display: block; /* Garante que o título seja exibido */
+  display: block;
   color: #00d4ff;
   font-family: 'Courier New', monospace;
   font-size: 2.5rem;
@@ -78,7 +80,6 @@ body {
   gap: 8px;
   padding-bottom: 8px;
   border-bottom: 1px solid #ffffff;
-  align-items: center;
 }
 
 .terminal-button {
@@ -442,7 +443,7 @@ Preparando download...
 };
 
 /* Dados das Habilidades */
-const skills = [
+const skillsData = [
   { name: 'Redes (TCP/IP, VLANs)', level: 80 },
   { name: 'Linux (Ubuntu, Slackware)', level: 65 },
   { name: 'Windows Server', level: 75 },
@@ -460,7 +461,7 @@ const skills = [
 /**
  * Exibe a mensagem de boas-vindas ao carregar a página.
  */
-function showWelcomeMessage() {
+function displayWelcomeMessage() {
   terminalOutput.innerHTML = "";
   addLine(`<span class="outputw">╔══════════════════════════════════════════════════════════════╗</span>`);
   addLine(`<span class="outputw">║  Bem-vindo ao Sistema de Informação de Edgardo Correa        ║</span>`);
@@ -478,7 +479,7 @@ function processCommand(cmd) {
   cmd = cmd.toLowerCase().trim();
 
   if (cmd === "apagar") {
-    showWelcomeMessage();
+    displayWelcomeMessage();
     commandInput.value = "";
     return;
   }
@@ -488,7 +489,7 @@ function processCommand(cmd) {
 
   if (cmd === "habilidades") {
     addLine(commandResponses[cmd]);
-    setTimeout(() => renderSkills(), 100);
+    setTimeout(() => renderSkillsBars(), 100);
   } else if (commandResponses[cmd]) {
     addLine(commandResponses[cmd]);
   } else if (cmd !== "") {
@@ -514,14 +515,14 @@ function addLine(content) {
 /**
  * Renderiza as barras de progresso das habilidades com animação.
  */
-function renderSkills() {
+function renderSkillsBars() {
   const container = document.getElementById("skillsContainer");
   if (!container) return;
 
   container.innerHTML = "";
   const fragment = document.createDocumentFragment();
   
-  skills.forEach((skill, index) => {
+  skillsData.forEach((skill, index) => {
     const skillBar = document.createElement("div");
     skillBar.className = "skill-bar";
     
@@ -558,6 +559,6 @@ commandInput.addEventListener("keypress", (e) => {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-  showWelcomeMessage();
+  displayWelcomeMessage();
 });
 </script>
