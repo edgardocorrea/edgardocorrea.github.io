@@ -1,8 +1,9 @@
 ---
 title: "Certificações e Badges"
-permalink: /certificacoes/
 layout: single
-toc: false
+permalink: /certificacoes/
+author_profile: false
+sidebar: null
 ---
 
 <style>
