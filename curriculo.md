@@ -274,7 +274,7 @@ body {
     <span class="terminal-button btn-close"></span>
     <span class="terminal-button btn-minimize"></span>
     <span class="terminal-button btn-maximize"></span>
-    <span class="terminal-title">edgardo@lnx:~$</span>
+    <span class="terminal-title">edgardo@lnx:~$ </span>
   </div>
   <div class="terminal-output" id="terminalOutput"></div>
   <div class="terminal-input-area">
@@ -450,7 +450,7 @@ const skillsData = [
   { name: 'Windows Server', level: 75 },
   { name: 'PowerShell', level: 81 },
   { name: 'Bash Scripting', level: 85 },
-  { name: 'VMware / Hyper-V', level: 60 },
+  { name: 'VMware', level: 60 },
   { name: 'Docker', level: 75 },
   { name: 'Automação', level: 88 },
   { name: 'Segurança', level: 72 },
