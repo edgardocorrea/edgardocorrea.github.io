@@ -162,7 +162,6 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: gradient 3s ease infinite;
-  /* CORREÇÃO: Usar drop-shadow para o efeito neon */
   filter: drop-shadow(0 0 40px rgba(0, 234, 255, 0.8));
 }
 
@@ -426,13 +425,93 @@ body {
   font-size: 14px;
 }
 
-/* Easter Egg Hint */
+/* Easter Egg Hint & Modal */
 .easter-egg-hint {
   text-align: center;
-  color: #666;
-  font-size: 12px;
+  color: #8a9ba8; /* COR ALTERADA: mais clara e sutil */
+  font-size: 11px; /* FONTE DIMINUÍDA */
   margin-top: 40px;
-  opacity: 0.6;
+  opacity: 0.8;
+  font-style: italic;
+}
+
+/* Modal Secreto */
+.modal-overlay {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: #0a1e2e;
+  border: 2px solid #00eaff;
+  border-radius: 15px;
+  margin: 15% auto;
+  padding: 30px;
+  max-width: 500px;
+  box-shadow: 0 0 30px rgba(0, 234, 255, 0.5);
+  text-align: center;
+  position: relative;
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.close-modal {
+  color: #aaa;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-modal:hover {
+  color: #ffffff;
+}
+
+.modal-title {
+  color: #00eaff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.modal-body {
+  color: #b3d9ff;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.modal-cta-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #00eaff;
+  color: #0a1e2e;
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.modal-cta-button:hover {
+  background: #ffffff;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
 }
 
 /* Responsive */
@@ -442,6 +521,7 @@ body {
   .hero-description { font-size: 16px; }
   
   .accordion-title { font-size: 22px; }
+  .modal-content { margin: 30% auto; padding: 20px; }
 }
 </style>
 
@@ -576,9 +656,22 @@ body {
 </div>
 
 <!-- Dica para o Easter Egg -->
-<p class="easter-egg-hint">Dica: Tente digitar "edy1" em qualquer lugar da página... 😉</p>
+<p class="easter-egg-hint">Dica: Existe um comando secreto nesta página... 😉</p>
 
 </div> <!-- End of Wrapper -->
+
+<!-- Modal Secreto (Easter Egg) -->
+<div id="secretModal" class="modal-overlay">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeSecretModal()">&times;</span>
+    <h2 class="modal-title">// Canal Direto Desbloqueado</h2>
+    <div class="modal-body">
+      <p>Parabéns! Você não é apenas um visitante, é um explorador.</p>
+      <p>Se você é um recrutador e acredita que boas ideias e código limpo podem mudar o mundo, você veio ao lugar certo. Meu email está aberto para conversas sobre como podemos colaborar.</p>
+    </div>
+    <a href="mailto:edgardo.edyone-1@yahoo.com?subject=Canal%20Direto%20Desbloqueado%20-%20Vaga%20de%20TI&body=Olá%20Edgardo,%20achei%20seu%20perfil%20e%20o%20Canal%20Direto%20no%20seu%20site.%20Gostaria%20de%20conversar%20sobre%20uma%20oportunidade." class="modal-cta-button">Enviar Email Agora</a>
+  </div>
+</div>
 
 <!-- Accordion Functionality -->
 <script>
@@ -586,17 +679,14 @@ function toggleAccordion(header) {
   const accordion = header.parentElement;
   const allAccordions = document.querySelectorAll('.section-accordion');
   
-  // Close all other accordions
   allAccordions.forEach(acc => {
     if (acc !== accordion && acc.classList.contains('active')) {
       acc.classList.remove('active');
     }
   });
   
-  // Toggle the clicked accordion
   accordion.classList.toggle('active');
   
-  // Smooth scroll to the accordion
   if (accordion.classList.contains('active')) {
     setTimeout(() => {
       accordion.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -612,7 +702,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (target) {
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       
-      // Open accordion if it's a link to a section
       const accordion = target.closest('.section-accordion');
       if (accordion && !accordion.classList.contains('active')) {
         accordion.querySelector('.accordion-header').click();
@@ -673,7 +762,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all animatable cards
 document.querySelectorAll('.interest-card, .social-card').forEach(el => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(30px)';
@@ -687,39 +775,32 @@ let typedString = '';
 let easterEggTimeout;
 
 document.addEventListener('keydown', (e) => {
-  // Limpa o timeout anterior
   clearTimeout(easterEggTimeout);
-
-  // Adiciona a tecla pressionada à string
   typedString += e.key;
 
-  // Verifica se o código foi digitado (ignorando maiúsculas/minúsculas)
   if (typedString.toLowerCase().includes(easterEggCode)) {
-    triggerEasterEgg();
-    typedString = ''; // Reseta a string após ativar
+    showSecretModal();
+    typedString = '';
   }
 
-  // Reseta a string se o usuário parar de digitar por 2 segundos
   easterEggTimeout = setTimeout(() => {
     typedString = '';
   }, 2000);
 });
 
-function triggerEasterEgg() {
-  document.body.style.animation = 'rainbow 2s linear infinite';
-  setTimeout(() => {
-    alert('🎉 Parabéns! Você ativou o modo arco-íris! 🚀');
-    document.body.style.animation = '';
-  }, 100);
+function showSecretModal() {
+  document.getElementById('secretModal').style.display = 'block';
 }
 
-// Rainbow Animation for Easter Egg
-const style = document.createElement('style');
-style.textContent = `
-  @keyframes rainbow {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
+function closeSecretModal() {
+  document.getElementById('secretModal').style.display = 'none';
+}
+
+// Fecha o modal se o usuário clicar fora dele
+window.onclick = function(event) {
+  const modal = document.getElementById('secretModal');
+  if (event.target == modal) {
+    modal.style.display = 'none';
   }
-`;
-document.head.appendChild(style);
+}
 </script>
