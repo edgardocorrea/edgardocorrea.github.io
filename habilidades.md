@@ -5,11 +5,19 @@ layout: single
 ---
 
 <style>
-/* ==================== ESTILIZAÇÃO PARA HABILIDADES ==================== */
+/* ==================== VARIÁVEIS CSS ==================== */
+:root {
+  --primary-color: #4da6ff;
+  --secondary-color: #00ccff;
+  --dark-bg: #142850;
+  --darker-bg: rgba(10, 20, 40, 0.85);
+  --light-text: #ffffff;
+  --gray-text: #cccccc;
+}
 
-/* Fundo da página */
+/* ==================== CONFIGURAÇÕES GERAIS ==================== */
 body.page--habilidades {
-  background: #142850;
+  background: var(--dark-bg);
   overflow-x: hidden;
   min-height: 100vh;
   position: relative;
@@ -18,22 +26,72 @@ body.page--habilidades {
 /* Bloco inicial (initial-content) – fundo azul, sem hover animado */
 .initial-content {
   position: relative;
-  background: rgba(10,20,40,0.85);
+  background: var(--darker-bg);
   padding: 30px 25px;
   border-radius: 20px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
   backdrop-filter: blur(3px);
   z-index: 1;
-  /* Remover movimento ou transição hover para esse bloco */
   transition: none;
   box-sizing: border-box;
 }
 
-/* Todos os cards de habilidades (notice) */
+/* ==================== TÍTULO COM EFEITO NEON ==================== */
+.page-title {
+  text-align: center;
+  margin: 40px 0;
+  position: relative;
+}
+
+.page-title h1 {
+  font-size: 56px;
+  font-weight: 900;
+  color: var(--light-text);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 
+    0 0 10px var(--primary-color),
+    0 0 20px var(--primary-color),
+    0 0 30px var(--primary-color),
+    0 0 40px var(--secondary-color);
+  animation: neon-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-glow {
+  from {
+    text-shadow: 
+      0 0 10px var(--primary-color),
+      0 0 20px var(--primary-color),
+      0 0 30px var(--primary-color),
+      0 0 40px var(--secondary-color);
+  }
+  to {
+    text-shadow: 
+      0 0 5px var(--primary-color),
+      0 0 10px var(--primary-color),
+      0 0 15px var(--primary-color),
+      0 0 20px var(--secondary-color),
+      0 0 35px var(--secondary-color),
+      0 0 40px var(--secondary-color);
+  }
+}
+
+/* Manter regra existente para compatibilidade */
+.page__title {
+  text-align: center;
+  font-size: 48px !important;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
+}
+
+/* ==================== CARDS DE HABILIDADES ==================== */
 .notice--info,
 .notice--success,
 .notice--warning {
-  background: rgba(10, 20, 40, 0.8);
+  background: var(--darker-bg);
   border-radius: 15px;
   padding: 30px 25px;
   margin-bottom: 25px;
@@ -43,7 +101,7 @@ body.page--habilidades {
   transition: all 0.4s ease;
 }
 
-/* Somente no card de Infraestrutura & Redes (notice--info) aplicar neon animado */
+/* Efeito neon apenas no card de Infraestrutura & Redes (notice--info) */
 .notice--info::before {
   content: "";
   position: absolute;
@@ -51,7 +109,7 @@ body.page--habilidades {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: linear-gradient(135deg, #4da6ff, #00ccff, #4da6ff, #00ccff);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color), var(--primary-color), var(--secondary-color));
   opacity: 0.2;
   transform: rotate(45deg);
   filter: blur(40px);
@@ -61,7 +119,7 @@ body.page--habilidades {
   border-radius: 20px;
 }
 
-/* Hover só no notice--info (Infraestrutura) para brilho neon */
+/* Efeito hover para todos os cards */
 .notice--info:hover,
 .notice--success:hover,
 .notice--warning:hover {
@@ -70,21 +128,10 @@ body.page--habilidades {
 }
 
 /* ==================== TÍTULOS ==================== */
-/* Neon apenas no título principal “Minhas Habilidades” */
-.page__title {
-  text-align: center;
-  font-size: 48px !important;
-  font-weight: 700;
-  background: linear-gradient(90deg, #4da6ff, #00ccff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 10px rgba(77, 166, 255, 0.5);
-}
-
-/* Título “Principais Habilidades” (ou h2/h3) com cor preta normal */
-.intro-text, /* se seu “Principais Habilidades” for intro-text */ 
+/* Título "Principais Habilidades" (ou h2/h3) com cor branca normal */
+.intro-text, 
 h2, h3 {
-  color: #FFFFFF; /* preto */
+  color: var(--light-text);
   background: none;
   -webkit-background-clip: unset;
   -webkit-text-fill-color: unset;
@@ -97,46 +144,47 @@ h2, h3 {
 .notice--warning h4 {
   position: relative;
   z-index: 1;
-  color: #cccccc;
+  color: var(--gray-text);
   text-shadow: none;
   margin-bottom: 10px;
 }
 
-/* ==================== LISTAS nos cards ==================== */
+/* ==================== LISTAS ==================== */
 /* Remover a bolinha padrão dos <li> */
 .notice--info ul,
 .notice--success ul,
 .notice--warning ul {
   list-style: none;
-  padding-left: 0; /* opcional para alinhar melhor */
+  padding-left: 0;
 }
 
-/* Manter apenas a bolinha neon personalizada */
+/* Estilo personalizado para os itens da lista */
 .notice--info li,
 .notice--success li,
 .notice--warning li {
   position: relative;
   z-index: 1;
-  color: #cccccc;
+  color: var(--gray-text);
   padding-left: 20px;
   margin-bottom: 8px;
 }
 
+/* Bolinha neon personalizada */
 .notice--info li::before,
 .notice--success li::before,
 .notice--warning li::before {
   content: "•";
   position: absolute;
   left: 0;
-  color: #4da6ff;
+  color: var(--primary-color);
   font-weight: bold;
   text-shadow:
-    0 0 3px #4da6ff,
-    0 0 6px #00ccff,
-    0 0 10px #00ccff;
+    0 0 3px var(--primary-color),
+    0 0 6px var(--secondary-color),
+    0 0 10px var(--secondary-color);
 }
 
-/* ==================== ANIMAÇÃO NEON ==================== */
+/* ==================== ANIMAÇÕES ==================== */
 @keyframes neonGlow {
   0%, 100% {
     transform: rotate(0deg) translate(-50%, -50%);
@@ -146,7 +194,7 @@ h2, h3 {
   }
 }
 
-/* ==================== RESPONSIVO ==================== */
+/* ==================== RESPONSIVIDADE ==================== */
 @media (max-width: 768px) {
   .initial-content,
   .notice--info,
@@ -154,21 +202,26 @@ h2, h3 {
   .notice--warning {
     padding: 20px 15px;
   }
+  
   .page__title {
     font-size: 36px !important;
+  }
+  
+  .page-title h1 {
+    font-size: 42px;
   }
 }
 </style>
 
+<!-- Título com Efeito Neon -->
+<div class="page-title">
+  <h1>Minhas Habilidades</h1>
+</div>
 
+<!-- Título Secundário -->
+<h2>💻 Principais Habilidades</h2>
 
-
-
-
-
-
-## 💻 Principais Habilidades
-
+<!-- Cards de Habilidades -->
 <div class="notice--info">
   <h4>Infraestrutura & Redes</h4>
   <ul>
