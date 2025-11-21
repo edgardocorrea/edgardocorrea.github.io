@@ -82,11 +82,6 @@ body {
   100% { opacity: 1; transform: scale(1.05); }
 }
 
-@keyframes gridMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(40px, 40px); }
-}
-
 /* Hero Section */
 .hero-section {
   display: flex;
@@ -242,11 +237,6 @@ body {
     inset 0 0 35px rgba(255,255,255,1);
 }
 
-@keyframes ctaPulse {
-  0%, 100% { box-shadow: 0 0 30px rgba(0, 255, 136, 0.4); }
-  50% { box-shadow: 0 0 50px rgba(0, 255, 136, 0.8); }
-}
-
 .scroll-indicator {
   position: absolute;
   bottom: 20px;
@@ -330,136 +320,6 @@ body {
 .section-accordion.active .accordion-content {
   max-height: 2000px;
   padding: 0 30px 30px 30px;
-}
-
-/* Timeline */
-.timeline {
-  position: relative;
-  padding: 20px 0;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: linear-gradient(180deg, #00eaff, #0066ff);
-  box-shadow: 0 0 10px #00eaff;
-}
-
-.timeline-item {
-  display: flex;
-  margin-bottom: 40px;
-  position: relative;
-  opacity: 0;
-  animation: fadeInUp 0.6s ease forwards;
-}
-
-.timeline-item:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-
-.timeline-item:nth-child(1) { animation-delay: 0.2s; }
-.timeline-item:nth-child(2) { animation-delay: 0.4s; }
-.timeline-item:nth-child(3) { animation-delay: 0.6s; }
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.timeline-content {
-  width: 45%;
-  background: rgba(0, 20, 40, 0.6);
-  border: 1px solid rgba(0, 234, 255, 0.3);
-  border-radius: 15px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-}
-
-.timeline-dot {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background: #00ff88;
-  border-radius: 50%;
-  box-shadow: 0 0 20px #00ff88;
-  animation: dotPulse 2s infinite;
-}
-
-@keyframes dotPulse {
-  0%, 100% { box-shadow: 0 0 20px #00ff88; }
-  50% { box-shadow: 0 0 40px #00ff88; }
-}
-
-.timeline-date {
-  color: #00ff88;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.timeline-title {
-  color: #00eaff;
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* Skills */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-}
-
-.skill-item {
-  margin-bottom: 25px;
-}
-
-.skill-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
-}
-
-.skill-name {
-  color: #00eaff;
-  font-weight: 600;
-}
-
-.skill-level {
-  color: #00ff88;
-  font-weight: 600;
-}
-
-.skill-bar {
-  height: 10px;
-  background: rgba(0, 234, 255, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-}
-
-.skill-fill {
-  height: 100%;
-  background: linear-gradient(90deg, #0066ff, #00eaff);
-  border-radius: 10px;
-  box-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
-  width: 0;
-  transition: width 1.5s ease;
-}
-
-.section-accordion.active .skill-fill {
-  animation: fillBar 1.5s ease forwards;
-}
-
-@keyframes fillBar {
-  to { width: var(--skill-width); }
 }
 
 /* Interest Cards */
@@ -566,19 +426,22 @@ body {
   font-size: 14px;
 }
 
+/* Easter Egg Hint */
+.easter-egg-hint {
+  text-align: center;
+  color: #666;
+  font-size: 12px;
+  margin-top: 40px;
+  opacity: 0.6;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .hero-title { font-size: 42px; }
   .typewriter { font-size: 20px; }
   .hero-description { font-size: 16px; }
   
-  .timeline::before { left: 20px; }
-  .timeline-item { flex-direction: column !important; margin-left: 40px; }
-  .timeline-content { width: 100%; }
-  .timeline-dot { left: 20px; }
-  
   .accordion-title { font-size: 22px; }
-  .skills-grid { grid-template-columns: 1fr; }
 }
 </style>
 
@@ -632,98 +495,6 @@ body {
       <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
         Quando não estou codando ou resolvendo tickets, você me encontra assistindo animes, explorando novas tecnologias ou pensando em como automatizar processos do dia a dia. 
       </p>
-    </div>
-  </div>
-
-  <!-- Skills -->
-  <div class="section-accordion">
-    <div class="accordion-header" onclick="toggleAccordion(this)">
-      <div class="accordion-title">
-        <span class="accordion-icon">🔷</span>
-        <span class="neon-text">Resumo hábil</span>
-      </div>
-      <span class="accordion-arrow">▼</span>
-    </div>
-    <div class="accordion-content">
-      <div class="skills-grid">
-        <div>
-          <h3 style="color: #00eaff; margin-bottom: 20px;">Infraestrutura & Redes</h3>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Windows Server</span>
-              <span class="skill-level">75%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" style="--skill-width: 75%;"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Active Directory</span>
-              <span class="skill-level">75%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" style="--skill-width: 75%;"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Redes & VPN</span>
-              <span class="skill-level">80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" style="--skill-width: 80%;"></div>
-            </div>
-          </div>
-        </div>
-        
-        <div>
-          <h3 style="color: #00eaff; margin-bottom: 20px;">Automação & Desenvolvimento</h3>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">PowerShell</span>
-              <span class="skill-level">80%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" style="--skill-width: 80%;"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">Node.js</span>
-              <span class="skill-level">72%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" style="--skill-width: 72%;"></div>
-            </div>
-          </div>
-          
-          <div class="skill-item">
-            <div class="skill-header">
-              <span class="skill-name">JavaScript</span>
-              <span class="skill-level">70%</span>
-            </div>
-            <div class="skill-bar">
-              <div class="skill-fill" style="--skill-width: 70%;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <h3 style="color: #00eaff; margin-top: 40px; margin-bottom: 20px;">Soft Skills</h3>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px;">
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">🤝 Trabalho em Equipe</span>
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">💬 Comunicação Clara</span>
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">🎯 Foco em Resultados</span>
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">⚡Proatividade</span>
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">😊 Otimismo</span>
-        <span style="background: rgba(0, 234, 255, 0.2); border: 1px solid #00eaff; color: #00eaff; padding: 8px 16px; border-radius: 20px;">📝 Aprendizado Contínuo</span>
-      </div>
     </div>
   </div>
 
@@ -803,6 +574,10 @@ body {
   </div>
 
 </div>
+
+<!-- Dica para o Easter Egg -->
+<p class="easter-egg-hint">Dica: Tente digitar "edy1" em qualquer lugar da página... 😉</p>
+
 </div> <!-- End of Wrapper -->
 
 <!-- Accordion Functionality -->
@@ -828,20 +603,6 @@ function toggleAccordion(header) {
     }, 100);
   }
 }
-
-// Animate skills when the section is opened
-document.querySelectorAll('.section-accordion').forEach(accordion => {
-  accordion.addEventListener('transitionend', function(e) {
-    if (e.propertyName === 'max-height' && this.classList.contains('active')) {
-      const skills = this.querySelectorAll('.skill-fill');
-      skills.forEach((skill, index) => {
-        setTimeout(() => {
-          skill.style.width = skill.style.getPropertyValue('--skill-width');
-        }, index * 100);
-      });
-    }
-  });
-});
 
 // Smooth scroll for anchors
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -920,32 +681,35 @@ document.querySelectorAll('.interest-card, .social-card').forEach(el => {
   observer.observe(el);
 });
 
-// Konami Code Easter Egg
-const konamiCodeSequence = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-let konamiCodePosition = 0;
-let hasTriggeredEasterEgg = false;
+// Easter Egg: "edy1" code
+const easterEggCode = 'edy1';
+let typedString = '';
+let easterEggTimeout;
 
 document.addEventListener('keydown', (e) => {
-  if (hasTriggeredEasterEgg) return;
+  // Limpa o timeout anterior
+  clearTimeout(easterEggTimeout);
 
-  if (e.key === konamiCodeSequence[konamiCodePosition]) {
-    konamiCodePosition++;
-    if (konamiCodePosition === konamiCodeSequence.length) {
-      triggerEasterEgg();
-      konamiCodePosition = 0;
-    }
-  } else {
-    konamiCodePosition = 0;
+  // Adiciona a tecla pressionada à string
+  typedString += e.key;
+
+  // Verifica se o código foi digitado (ignorando maiúsculas/minúsculas)
+  if (typedString.toLowerCase().includes(easterEggCode)) {
+    triggerEasterEgg();
+    typedString = ''; // Reseta a string após ativar
   }
+
+  // Reseta a string se o usuário parar de digitar por 2 segundos
+  easterEggTimeout = setTimeout(() => {
+    typedString = '';
+  }, 2000);
 });
 
 function triggerEasterEgg() {
-  hasTriggeredEasterEgg = true;
   document.body.style.animation = 'rainbow 2s linear infinite';
   setTimeout(() => {
-    alert('🎉 Easter Egg encontrado! Você é curioso(a) hein! 🚀');
+    alert('🎉 Parabéns! Você ativou o modo arco-íris! 🚀');
     document.body.style.animation = '';
-    hasTriggeredEasterEgg = false; // Allow re-triggering
   }, 100);
 }
 
