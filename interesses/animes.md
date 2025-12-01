@@ -927,20 +927,11 @@ body {
     </p>
   </section>
 
-  <!-- Back Button -->
-  <div style="text-align: center;">
-    <a href="/sobre/#contato" class="back-button">← Voltar aos Interesses</a>
-  </div>
-
 <!-- Botões de Navegação -->
 <div style="text-align: center; margin-top: 40px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
   <a href="https://edgardocorrea.github.io/" class="back-button">← Página Inicial</a>
   <a href="/sobre/" class="back-button">← Sobre Mim</a>
-  <a href="/sobre/#contato" class="back-button">← Voltar aos Interesses</a>
 </div>
-
-
-
 
 </div>
 
