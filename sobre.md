@@ -578,43 +578,90 @@ body {
   </div>
 
   <!-- Interesses -->
-  <div class="section-accordion">
-    <div class="accordion-header" onclick="toggleAccordion(this)">
-      <div class="accordion-title">
-        <span class="accordion-icon">🔷</span>
-        <span class="neon-text">Além do Código</span>
-      </div>
-      <span class="accordion-arrow">▼</span>
+<div class="accordion-content">
+
+  <p style="color: #b3d9ff; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">
+    Além da tecnologia, gosto de explorar tudo que alimenta criatividade, disciplina e pensamento crítico. Aqui estão algumas coisas que fazem parte de quem sou:
+  </p>
+
+  <div class="interests-grid">
+
+    <!-- Leitura -->
+    <div class="interest-card">
+      <span class="interest-icon">📚</span>
+      <div class="interest-title">Leitura</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        De “Clean Code” a ficção como Duna, leitura me ajuda a expandir visão e melhorar como profissional.
+      </p>
     </div>
-    <div class="accordion-content">
-      <div class="interests-grid">
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
-          <div class="interest-title">Animes & Séries</div>
-        </div>
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
-          <div class="interest-title">Inteligência Artificial</div>
-        </div>
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
-          <div class="interest-title">Automação</div>
-        </div>
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
-          <div class="interest-title">Inovação Tech</div>
-        </div>
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
-          <div class="interest-title">Podcasts Tech</div>
-        </div>
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
-          <div class="interest-title">Web Development</div>
-        </div>
-      </div>
+
+    <!-- Automação na Vida Real -->
+    <div class="interest-card">
+      <span class="interest-icon">⚙️</span>
+      <div class="interest-title">Automação do Dia a Dia</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        Gosto de transformar tarefas repetitivas em processos automáticos — até fora do trabalho.
+      </p>
     </div>
+
+    <!-- Mindset de Crescimento -->
+    <div class="interest-card">
+      <span class="interest-icon">🌱</span>
+      <div class="interest-title">Evolução Contínua</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        Sempre buscando aprender algo novo — hábitos, tecnologia, produtividade ou comunicação.
+      </p>
+    </div>
+
+    <!-- Fitness/Equilibrio -->
+    <div class="interest-card">
+      <span class="interest-icon">🏃‍♂️</span>
+      <div class="interest-title">Equilíbrio e Saúde</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        Caminhadas, academia e momentos offline para manter a mente focada e criativa.
+      </p>
+    </div>
+
+    <!-- Música -->
+    <div class="interest-card">
+      <span class="interest-icon">🎧</span>
+      <div class="interest-title">Música</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        Trilhas, lo-fi e eletrônica para concentrar, relaxar e inspirar ideias.
+      </p>
+    </div>
+
+    <!-- Animes & Séries -->
+    <div class="interest-card">
+      <span class="interest-icon">🎬</span>
+      <div class="interest-title">Animes & Séries</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        Boa narrativa e criatividade sempre me inspiram a pensar em soluções diferentes.
+      </p>
+    </div>
+
+    <!-- Pensamento Criativo -->
+    <div class="interest-card">
+      <span class="interest-icon">💡</span>
+      <div class="interest-title">Criatividade</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        Gosto de imaginar, desenhar ideias e explorar formas novas de resolver problemas.
+      </p>
+    </div>
+
+    <!-- Filosofias Pessoais -->
+    <div class="interest-card">
+      <span class="interest-icon">✨</span>
+      <div class="interest-title">Filosofia de Vida</div>
+      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
+        “Melhorar 1% por dia.”  
+        “Simplicidade vence complexidade.”  
+        “Disciplina sustenta talento.”
+      </p>
+    </div>
+
   </div>
+</div>
 
   <!-- Contato -->
   <div class="section-accordion" id="contato">
