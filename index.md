@@ -1,7 +1,10 @@
 ---
-title: "" # Força título vazio
-excerpt: "" # Força excerpt vazio
+title: "Edgardo Correa - Analista de Sistemas"
+excerpt: "Transformando desafios técnicos em soluções elegantes. Especializado em infraestrutura, redes e automação com paixão por inovação."
 layout: splash
+image:
+  path: /assets/images/banner-home.jpg # Imagem para Open Graph
+  alt: "Banner de Edgardo Correa com um notebook"
 header:
   overlay_color: "rgba(0,0,0,0.4)"
   overlay_filter: 0.3
@@ -221,3 +224,4 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 </script>
+
