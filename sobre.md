@@ -606,11 +606,11 @@ body {
           <div class="interest-title">Leitura & Música</div>
         </div>
        <!-- Animes & Séries -->
-        <div class="interest-card">
           <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
           <span class="interest-icon">🔹</span>
           <div class="interest-title">Animes & Séries</div>
-        </div>
+          </div>
+          </a>
        <!-- Mindset de Crescimento -->
         <div class="interest-card">
           <span class="interest-icon">🔹</span>
