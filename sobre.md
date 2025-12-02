@@ -344,6 +344,11 @@ body {
   text-align: center;
   transition: all 0.3s ease;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .interest-card:hover {
@@ -446,6 +451,7 @@ body {
   /* Centraliza o modal na tela */
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .modal-content {
@@ -606,11 +612,10 @@ body {
           <div class="interest-title">Leitura & Música</div>
         </div>
        <!-- Animes & Séries -->
-        <div class="interest-card">
-          <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
-          <span class="interest-icon">🔹</span>
+       <!-- CORREÇÃO: Substituímos a estrutura incorreta por um link direto -->
+        <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
+          <span class="interest-icon">🎬</span>
           <div class="interest-title">Animes & Séries</div>
-        </div>
         </a>
        <!-- Mindset de Crescimento -->
         <div class="interest-card">
