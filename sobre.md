@@ -562,106 +562,76 @@ body {
       </div>
       <span class="accordion-arrow">▼</span>
     </div>
-    <div class="accordion-content">
-      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px;">
-        Formado em <strong style="color: #00eaff;">Sistemas de Informação</strong> e movido pela paixão em resolver problemas complexos de forma criativa. Acredito que tecnologia é sobre pessoas — criar soluções que realmente fazem diferença no dia a dia.
-      </p>
-      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-        Minha filosofia: <strong style="color: #00ff88;">"Todo problema tem solução, e cada desafio é uma oportunidade de crescimento."</strong> Adoro trabalhar em equipe, compartilhar conhecimento e trazer energia positiva para os projetos.
-      </p>      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-        Meu slogan: <strong style="color: #00ff88;">"Simplifique e Conquiste o Certo."</strong>
-      </p>
-      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-        Quando não estou codando ou resolvendo tickets, você me encontra assistindo animes, explorando novas tecnologias ou pensando em como automatizar processos do dia a dia. 
-      </p>
-    </div>
-  </div>
-
-  <!-- Interesses -->
 <div class="accordion-content">
-
-  <p style="color: #b3d9ff; font-size: 16px; line-height: 1.8; margin-bottom: 25px;">
-    Além da tecnologia, gosto de explorar tudo que alimenta criatividade, disciplina e pensamento crítico. Aqui estão algumas coisas que fazem parte de quem sou:
+  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px;">
+    Sou formado em <strong style="color: #00eaff;">Sistemas de Informação</strong> e movido pela curiosidade — aquela vontade constante de entender como as coisas funcionam e como podem ser otimizadas. Acredito que tecnologia tem a missão de tornar a vida das pessoas mais simples, eficiente e conectada.
   </p>
 
-  <div class="interests-grid">
+  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+    Gosto de trabalhar com foco, clareza e intenção. Sou prático, organizado e apaixonado por resolver problemas reais, transformando processos confusos em soluções estruturadas. Meu estilo de trabalho é colaborativo e orientado a resultados — sempre documentando, aprendendo e compartilhando conhecimento.
+  </p>
 
-    <!-- Leitura -->
-    <div class="interest-card">
-      <span class="interest-icon">📚</span>
-      <div class="interest-title">Leitura</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        De “Clean Code” a ficção como Duna, leitura me ajuda a expandir visão e melhorar como profissional.
-      </p>
-    </div>
+  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+    Alguns valores que me guiam no dia a dia: <strong style="color: #00ff88;">simplicidade, ética, aprendizado contínuo e melhoria constante</strong>. Acredito que cada desafio é uma oportunidade de evoluir.
+  </p>
 
-    <!-- Automação na Vida Real -->
-    <div class="interest-card">
-      <span class="interest-icon">⚙️</span>
-      <div class="interest-title">Automação do Dia a Dia</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        Gosto de transformar tarefas repetitivas em processos automáticos — até fora do trabalho.
-      </p>
-    </div>
+  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+    Nos estudos e referências, sou fã de livros que ampliam visão e aprimoram habilidades. Entre meus favoritos estão <strong style="color: #00eaff;">“Clean Code”</strong>, <strong style="color: #00eaff;">“Atomic Habits”</strong> e <strong style="color: #00eaff;">“The Pragmatic Programmer”</strong>. Também gosto de ficção como <strong style="color: #00eaff;">Duna</strong> e <strong style="color: #00eaff;">1984</strong>, que alimentam criatividade e pensamento crítico.
+  </p>
 
-    <!-- Mindset de Crescimento -->
-    <div class="interest-card">
-      <span class="interest-icon">🌱</span>
-      <div class="interest-title">Evolução Contínua</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        Sempre buscando aprender algo novo — hábitos, tecnologia, produtividade ou comunicação.
-      </p>
-    </div>
+  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+    Fora do código, curto games, música, leitura e explorar ferramentas que possam automatizar o dia a dia. Para mim, a tecnologia não é apenas trabalho — é também diversão, curiosidade e descoberta.
+  </p>
 
-    <!-- Fitness/Equilibrio -->
-    <div class="interest-card">
-      <span class="interest-icon">🏃‍♂️</span>
-      <div class="interest-title">Equilíbrio e Saúde</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        Caminhadas, academia e momentos offline para manter a mente focada e criativa.
-      </p>
-    </div>
-
-    <!-- Música -->
-    <div class="interest-card">
-      <span class="interest-icon">🎧</span>
-      <div class="interest-title">Música</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        Trilhas, lo-fi e eletrônica para concentrar, relaxar e inspirar ideias.
-      </p>
-    </div>
-
-    <!-- Animes & Séries -->
-    <div class="interest-card">
-      <span class="interest-icon">🎬</span>
-      <div class="interest-title">Animes & Séries</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        Boa narrativa e criatividade sempre me inspiram a pensar em soluções diferentes.
-      </p>
-    </div>
-
-    <!-- Pensamento Criativo -->
-    <div class="interest-card">
-      <span class="interest-icon">💡</span>
-      <div class="interest-title">Criatividade</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        Gosto de imaginar, desenhar ideias e explorar formas novas de resolver problemas.
-      </p>
-    </div>
-
-    <!-- Filosofias Pessoais -->
-    <div class="interest-card">
-      <span class="interest-icon">✨</span>
-      <div class="interest-title">Filosofia de Vida</div>
-      <p style="color: #b3d9ff; margin-top: 10px; font-size: 14px;">
-        “Melhorar 1% por dia.”  
-        “Simplicidade vence complexidade.”  
-        “Disciplina sustenta talento.”
-      </p>
-    </div>
-
-  </div>
+  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+    Meu objetivo é me aprofundar cada vez mais em <strong style="color: #00ff88;">automação, infraestrutura e inovação</strong>, sempre mantendo meu lema pessoal: <strong style="color: #00ff88;">“Simplifique e conquiste o certo.”</strong>
+  </p>
 </div>
+
+  <!-- Interesses -->
+  <div class="section-accordion">
+    <div class="accordion-header" onclick="toggleAccordion(this)">
+      <div class="accordion-title">
+        <span class="accordion-icon">🔷</span>
+        <span class="neon-text">Além do Código</span>
+      </div>
+      <span class="accordion-arrow">▼</span>
+    </div>
+    <div class="accordion-content">
+      <div class="interests-grid">
+       <!-- Leitura & Música -->
+        <div class="interest-card">
+          <span class="interest-icon">🔹</span>
+          <div class="interest-title">Leitura & Música</div>
+        </div>
+       <!-- Animes & Séries -->
+        <div class="interest-card">
+          <span class="interest-icon">🔹</span>
+          <div class="interest-title">Animes & Séries</div>
+        </div>
+       <!-- Mindset de Crescimento -->
+        <div class="interest-card">
+          <span class="interest-icon">🔹</span>
+          <div class="interest-title">Evolução Contínua</div>
+        </div>
+       <!-- Fitness/Equilibrio -->
+        <div class="interest-card">
+          <span class="interest-icon">🔹</span>
+          <div class="interest-title">Equilíbrio e Saúde</div>
+        </div>
+       <!-- Pensamento Criativo -->
+        <div class="interest-card">
+          <span class="interest-icon">🔹</span>
+          <div class="interest-title">Criatividade</div>
+        </div>
+       <!-- Filosofias Pessoais -->
+        <div class="interest-card">
+          <span class="interest-icon">🔹</span>
+          <div class="interest-title">Filosofia de Vida</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Contato -->
   <div class="section-accordion" id="contato">
