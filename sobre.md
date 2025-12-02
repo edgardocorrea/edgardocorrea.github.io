@@ -607,6 +607,7 @@ body {
         </div>
        <!-- Animes & Séries -->
         <div class="interest-card">
+          <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
           <span class="interest-icon">🔹</span>
           <div class="interest-title">Animes & Séries</div>
         </div>
