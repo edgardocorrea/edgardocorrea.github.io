@@ -9,5 +9,5 @@ gem "minimal-mistakes-jekyll"
 # Plugins
 group :jekyll_plugins do
   gem "jekyll-feed", "~> 0.12"
-  gem "jekyll-sitemap" # Adicione esta linha
+  gem "jekyll-sitemap"
 end
