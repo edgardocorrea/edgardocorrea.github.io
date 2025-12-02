@@ -522,16 +522,17 @@ body {
 .back-button {
   display: inline-block;
   padding: 14px 24px;
-  background: linear-gradient(135deg, #00eaff, #0f1b31);
+  background: linear-gradient(135deg, #0077b6, #0f1b31); /* Gradiente mais escuro */
   color: #ffffff;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 5px 20px rgba(0, 238, 255, 0.35);
+  box-shadow: 0 5px 20px rgba(0, 119, 182, 0.35); /* Sombra ajustada à nova cor */
   transition: 0.3s;
 }
 
 .back-button:hover {
-  box-shadow: 0 10px 30px rgba(0, 238, 255, 0.6);
+  box-shadow: 0 10px 30px rgba(0, 119, 182, 0.6); /* Sombra no hover ajustada */
+  transform: translateY(-3px); /* Adicionado um leve efeito de elevação */
 }
 
 /* ==================== RESPONSIVIDADE ==================== */
