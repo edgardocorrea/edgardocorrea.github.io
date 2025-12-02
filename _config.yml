@@ -5,10 +5,10 @@
 # ==================== INFORMAÇÕES BÁSICAS ====================
 locale: "pt-BR"
 title: "Edgardo Correa"
-title_separator: "|"  # CORRIGIDO: Usar "|" ao invés de "-" (melhor SEO)
+title_separator: "|"
 subtitle: "Analista de Sistemas"
 name: "Edgardo Correa"
-description: "Analista de Sistemas de Informação com foco em infraestrutura de redes, automação e segurança."
+description: "Edgardo Correa, Analista de Sistemas. Transformo desafios técnicos em soluções elegantes de infraestrutura, redes e automação. Especialista em otimizar processos e garantir a segurança da informação."
 url: "https://edgardocorrea.github.io"
 baseurl: ""
 repository: "edgardocorrea/edgardocorrea.github.io"
@@ -26,10 +26,10 @@ masthead_title: "Edgardo Correa"
 # ==================== AUTOR ====================
 author:
   name: "Edgardo Correa"
-  avatar: "/assets/images/bio-photo.jpg"
+  avatar: "/assets/images/minha_foto.png"
   bio: "Analista de Sistemas de Informação | Infraestrutura de Redes | Automação | Segurança"
   location: "São Paulo, SP - Brasil"
-  email: "edgardo.correa@email.com"  # ATENÇÃO: Email pessoal
+  email: "edgardo.edyone-1@yahoo.com"   # Email pessoal
   links:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
@@ -115,8 +115,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
-  # OPCIONAL: Descomentar se quiser SEO avançado
-  # - jekyll-seo-tag
+  - jekyll-seo-tag
 
 # ==================== CONFIGURAÇÕES MARKDOWN ====================
 markdown: kramdown
@@ -138,7 +137,6 @@ kramdown:
 
 # ==================== TIMEZONE E IDIOMA ====================
 timezone: America/Sao_Paulo
-locale: "pt-BR"
 
 # ==================== SEO ====================
 og_image: "/assets/images/site-og-image.jpg"
