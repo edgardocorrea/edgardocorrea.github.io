@@ -562,31 +562,32 @@ body {
       </div>
       <span class="accordion-arrow">▼</span>
     </div>
-<div class="accordion-content">
-  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px;">
-    Sou formado em <strong style="color: #00eaff;">Sistemas de Informação</strong> e movido pela curiosidade — aquela vontade constante de entender como as coisas funcionam e como podem ser otimizadas. Acredito que tecnologia tem a missão de tornar a vida das pessoas mais simples, eficiente e conectada.
-  </p>
+    <div class="accordion-content">
+      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px;">
+        Sou formado em <strong style="color: #00eaff;">Sistemas de Informação</strong> e movido pela curiosidade — aquela vontade constante de entender como as coisas funcionam e como podem ser otimizadas. Acredito que tecnologia tem a missão de tornar a vida das pessoas mais simples, eficiente e conectada.
+      </p>
 
-  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-    Gosto de trabalhar com foco, clareza e intenção. Sou prático, organizado e apaixonado por resolver problemas reais, transformando processos confusos em soluções estruturadas. Meu estilo de trabalho é colaborativo e orientado a resultados — sempre documentando, aprendendo e compartilhando conhecimento.
-  </p>
+      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+        Gosto de trabalhar com foco, clareza e intenção. Sou prático, organizado e apaixonado por resolver problemas reais, transformando processos confusos em soluções estruturadas. Meu estilo de trabalho é colaborativo e orientado a resultados — sempre documentando, aprendendo e compartilhando conhecimento.
+      </p>
 
-  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-    Alguns valores que me guiam no dia a dia: <strong style="color: #00ff88;">simplicidade, ética, aprendizado contínuo e melhoria constante</strong>. Acredito que cada desafio é uma oportunidade de evoluir.
-  </p>
+      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+        Alguns valores que me guiam no dia a dia: <strong style="color: #00ff88;">simplicidade, ética, aprendizado contínuo e melhoria constante</strong>. Acredito que cada desafio é uma oportunidade de evoluir.
+      </p>
 
-  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-    Nos estudos e referências, sou fã de livros que ampliam visão e aprimoram habilidades. Entre meus favoritos estão <strong style="color: #00eaff;">“Clean Code”</strong>, <strong style="color: #00eaff;">“Atomic Habits”</strong> e <strong style="color: #00eaff;">“The Pragmatic Programmer”</strong>. Também gosto de ficção como <strong style="color: #00eaff;">Duna</strong> e <strong style="color: #00eaff;">1984</strong>, que alimentam criatividade e pensamento crítico.
-  </p>
+      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+        Nos estudos e referências, sou fã de livros que ampliam visão e aprimoram habilidades. Entre meus favoritos estão <strong style="color: #00eaff;">"Clean Code"</strong>, <strong style="color: #00eaff;">"Atomic Habits"</strong> e <strong style="color: #00eaff;">"The Pragmatic Programmer"</strong>. Também gosto de ficção como <strong style="color: #00eaff;">Duna</strong> e <strong style="color: #00eaff;">1984</strong>, que alimentam criatividade e pensamento crítico.
+      </p>
 
-  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-    Fora do código, curto games, música, leitura e explorar ferramentas que possam automatizar o dia a dia. Para mim, a tecnologia não é apenas trabalho — é também diversão, curiosidade e descoberta.
-  </p>
+      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+        Fora do código, curto games, música, leitura e explorar ferramentas que possam automatizar o dia a dia. Para mim, a tecnologia não é apenas trabalho — é também diversão, curiosidade e descoberta.
+      </p>
 
-  <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-    Meu objetivo é me aprofundar cada vez mais em <strong style="color: #00ff88;">automação, infraestrutura e inovação</strong>, sempre mantendo meu lema pessoal: <strong style="color: #00ff88;">“Simplifique e conquiste o certo.”</strong>
-  </p>
-</div>
+      <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
+        Meu objetivo é me aprofundar cada vez mais em <strong style="color: #00ff88;">automação, infraestrutura e inovação</strong>, sempre mantendo meu lema pessoal: <strong style="color: #00ff88;">"Simplifique e conquiste o certo."</strong>
+      </p>
+    </div>
+  </div>
 
   <!-- Interesses -->
   <div class="section-accordion">
@@ -670,7 +671,6 @@ body {
   </div>
 
 </div>
-
 <!-- Fim do Container Principal -->
 
 <!-- Modal Secreto (Easter Egg) -->
