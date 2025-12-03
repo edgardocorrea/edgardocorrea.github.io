@@ -14,19 +14,20 @@ author_profile: false
 }
 
 body {
+  background: #000814 !important;
+  color: #e6faff;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
 .initial-content {
   position: relative;
-  background: rgba(10,20,40,0.95);
+  background: rgba(10,20,40,0.85);
   padding: 30px 25px;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
   backdrop-filter: blur(3px);
   z-index: 1;
-  margin: 20px 0;
 }
 
 .page__content {
