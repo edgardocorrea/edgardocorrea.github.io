@@ -148,14 +148,16 @@ body {
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
   z-index: 1000;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(20px);
 }
 
 .back-to-top.visible {
   opacity: 1;
   visibility: visible;
+  transform: translateY(0);
 }
 
 .back-to-top:hover {
@@ -560,6 +562,13 @@ body {
   .books-tabs { gap: 8px; }
   .book-tab { padding: 10px 20px; font-size: 14px; }
   .content-section { padding: 30px 20px; }
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -571,6 +580,13 @@ body {
   .book-tab { 
     padding: 8px 16px; 
     font-size: 13px; 
+  }
+  .back-to-top {
+    bottom: 15px;
+    right: 15px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
   }
 }
 
@@ -634,19 +650,19 @@ body {
     <div class="band-card">
       <span class="band-icon">🎤</span>
       <div class="band-name">Nothing But Thieves</div>
-      <div class="band-description">"Intensidade emocional crua"</div>
+      <div class="band-description">"Amsterdam- Intensidade emocional crua"</div>
     </div>
     
     <div class="band-card">
       <span class="band-icon">🎹</span>
       <div class="band-name">The Doors</div>
-      <div class="band-description">"Poesia psicodélica atemporal"</div>
+      <div class="band-description">"The End - Poesia psicodélica atemporal"</div>
     </div>
     
     <div class="band-card">
       <span class="band-icon">⚡</span>
       <div class="band-name">Linkin Park</div>
-      <div class="band-description">"A trilha sonora de uma geração"</div>
+      <div class="band-description">"Numb - A trilha sonora de uma geração"</div>
     </div>
   </div>
   
@@ -1004,15 +1020,43 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Botão voltar ao topo
+  // Botão voltar ao topo com comportamento aprimorado
   const backToTopButton = document.getElementById('backToTop');
+  let lastScrollTop = 0;
+  let scrollTimer = null;
   
   window.addEventListener('scroll', function() {
-    if (window.pageYOffset > 300) {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    // Mostrar botão após rolar 300px para baixo
+    if (scrollTop > 300) {
       backToTopButton.classList.add('visible');
     } else {
       backToTopButton.classList.remove('visible');
     }
+    
+    // Detectar direção do scroll
+    if (scrollTop > lastScrollTop) {
+      // Rolando para baixo - manter visível
+      backToTopButton.classList.add('visible');
+    } else {
+      // Rolando para cima - esconder temporariamente
+      backToTopButton.classList.remove('visible');
+      
+      // Limpar timer anterior
+      if (scrollTimer) {
+        clearTimeout(scrollTimer);
+      }
+      
+      // Esperar um pouco antes de mostrar novamente
+      scrollTimer = setTimeout(() => {
+        if (scrollTop > 300) {
+          backToTopButton.classList.add('visible');
+        }
+      }, 500);
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
   
   backToTopButton.addEventListener('click', function() {
