@@ -46,8 +46,8 @@ body {
   z-index: 0;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.02) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.02) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
 }
 
 /* ==================== HERO SECTION ==================== */
@@ -59,7 +59,7 @@ body {
   background: linear-gradient(135deg, #0a2840 0%, #001e3c 100%);
   border-radius: 20px;
   margin: 20px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
 .hero-leitura h1 {
@@ -92,12 +92,12 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 8, 20, 0.95);
   backdrop-filter: blur(10px);
   padding: 15px 0;
   margin-bottom: 30px;
-  border-bottom: 2px solid rgba(0, 102, 255, 0.1);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  border-bottom: 2px solid rgba(0, 102, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .quick-nav-container {
@@ -112,10 +112,10 @@ body {
 
 .quick-nav-item {
   padding: 10px 25px;
-  background: rgba(0, 102, 255, 0.08);
-  border: 2px solid rgba(0, 102, 255, 0.2);
+  background: rgba(0, 102, 255, 0.15);
+  border: 2px solid rgba(0, 102, 255, 0.3);
   border-radius: 30px;
-  color: #0066ff;
+  color: #b3d9ff;
   text-decoration: none;
   font-weight: 600;
   font-size: 15px;
@@ -125,11 +125,11 @@ body {
 }
 
 .quick-nav-item:hover, .quick-nav-item.active {
-  background: rgba(0, 102, 255, 0.15);
-  border-color: #0066ff;
-  color: #0066ff;
+  background: rgba(0, 234, 255, 0.25);
+  border-color: #00eaff;
+  color: #00eaff;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
 }
 
 /* ==================== BOTÃO VOLTAR AO TOPO ==================== */
@@ -139,20 +139,20 @@ body {
   right: 30px;
   width: 50px;
   height: 50px;
-  background: #0066ff;
+  background: rgba(0, 102, 255, 0.8);
   border: 2px solid #00eaff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #e6faff;
   font-size: 24px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .back-to-top.visible {
@@ -161,9 +161,9 @@ body {
 }
 
 .back-to-top:hover {
-  background: #0052cc;
+  background: rgba(0, 234, 255, 0.8);
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+  box-shadow: 0 8px 20px rgba(0, 234, 255, 0.4);
 }
 
 /* ==================== BOTÕES DE NAVEGAÇÃO ==================== */
@@ -181,54 +181,51 @@ body {
   align-items: center;
   gap: 10px;
   padding: 12px 30px;
-  background: white;
-  border: 2px solid #0066ff;
-  color: #0066ff;
+  background: rgba(0, 102, 255, 0.1);
+  border: 2px solid #00eaff;
+  color: #00eaff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
 }
 
 .nav-button:hover {
-  background: #0066ff;
-  color: white;
+  background: rgba(0, 234, 255, 0.2);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 234, 255, 0.3);
 }
 
 .nav-button.secondary {
   border-color: #00ff88;
   color: #00ff88;
-  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.15);
 }
 
 .nav-button.secondary:hover {
-  background: #00ff88;
-  color: white;
-  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.25);
+  background: rgba(0, 255, 136, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
 }
 
 .back-button {
   display: inline-block;
   padding: 12px 30px;
-  background: white;
-  border: 2px solid #0066ff;
-  color: #0066ff;
+  background: rgba(0, 234, 255, 0.1);
+  border: 2px solid #00eaff;
+  color: #00eaff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 20px;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
 }
 
 .back-button:hover {
-  background: #0066ff;
-  color: white;
+  background: rgba(0, 234, 255, 0.2);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 234, 255, 0.3);
 }
 
 /* ==================== SEÇÕES ==================== */
@@ -236,18 +233,19 @@ body {
   position: relative;
   z-index: 1;
   margin: 40px 0;
-  background: white;
+  background: rgba(10,20,40,0.85);
   border-radius: 20px;
   padding: 40px 30px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
 }
 
 .section-title {
   font-size: 42px;
-  color: #0066ff;
+  color: #00eaff;
   text-align: center;
   margin-bottom: 50px;
-  text-shadow: none;
+  text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
 }
 
 /* ==================== MÚSICA - CARDS BANDAS ==================== */
@@ -262,15 +260,14 @@ body {
 }
 
 .band-card {
-  background: linear-gradient(145deg, #f8f9fa, #ffffff);
-  border: 2px solid rgba(0, 102, 255, 0.15);
+  background: linear-gradient(145deg, rgba(0, 102, 255, 0.08), rgba(0, 234, 255, 0.08));
+  border: 2px solid rgba(0, 234, 255, 0.3);
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .band-card::before {
@@ -280,7 +277,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.05), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
   transition: left 0.6s ease;
 }
 
@@ -290,27 +287,27 @@ body {
 
 .band-card:hover {
   transform: translateY(-10px);
-  border-color: #0066ff;
-  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.15);
+  border-color: #00eaff;
+  box-shadow: 0 20px 50px rgba(0, 234, 255, 0.3);
 }
 
 .band-icon {
   font-size: 64px;
   margin-bottom: 20px;
   display: block;
-  filter: drop-shadow(0 0 10px rgba(0, 102, 255, 0.3));
+  filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
 }
 
 .band-name {
   font-size: 26px;
   font-weight: 700;
-  color: #0066ff;
+  color: #00eaff;
   margin-bottom: 15px;
 }
 
 .band-description {
   font-size: 15px;
-  color: #666;
+  color: #b3d9ff;
   line-height: 1.6;
   font-style: italic;
 }
@@ -319,36 +316,35 @@ body {
 .spotify-container {
   max-width: 900px;
   margin: 0 auto 80px;
-  background: linear-gradient(145deg, #f8f9fa, #ffffff);
-  border: 2px solid rgba(0, 102, 255, 0.15);
+  background: linear-gradient(145deg, rgba(0, 102, 255, 0.08), rgba(0, 234, 255, 0.08));
+  border: 2px solid rgba(0, 234, 255, 0.3);
   border-radius: 20px;
   padding: 40px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .spotify-title {
   font-size: 28px;
-  color: #0066ff;
+  color: #00eaff;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
 .spotify-subtitle {
   font-size: 16px;
-  color: #666;
+  color: #b3d9ff;
   margin-bottom: 30px;
   font-style: italic;
 }
 
 .spotify-container iframe {
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 102, 255, 0.15);
+  box-shadow: 0 10px 40px rgba(0, 234, 255, 0.2);
 }
 
 .spotify-placeholder {
-  background: #f8f9fa;
-  border: 2px dashed rgba(0, 102, 255, 0.2);
+  background: rgba(0, 20, 40, 0.6);
+  border: 2px dashed rgba(0, 234, 255, 0.3);
   border-radius: 12px;
   padding: 60px 40px;
   text-align: center;
@@ -356,15 +352,15 @@ body {
 
 .spotify-placeholder p {
   font-size: 18px;
-  color: #666;
+  color: #b3d9ff;
   margin-bottom: 15px;
 }
 
 .spotify-placeholder code {
-  background: rgba(0, 102, 255, 0.1);
+  background: rgba(0, 234, 255, 0.1);
   padding: 4px 12px;
   border-radius: 6px;
-  color: #0066ff;
+  color: #00ff88;
   font-size: 14px;
 }
 
@@ -379,28 +375,28 @@ body {
 
 .book-tab {
   padding: 12px 30px;
-  background: white;
-  border: 2px solid rgba(0, 102, 255, 0.2);
+  background: rgba(0, 102, 255, 0.1);
+  border: 2px solid rgba(0, 102, 255, 0.3);
   border-radius: 30px;
-  color: #0066ff;
+  color: #b3d9ff;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 15px;
-  box-shadow: 0 3px 10px rgba(0, 102, 255, 0.08);
+  box-shadow: 0 3px 10px rgba(0, 102, 255, 0.15);
 }
 
 .book-tab:hover {
-  background: rgba(0, 102, 255, 0.05);
+  background: rgba(0, 102, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.12);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.25);
 }
 
 .book-tab.active {
-  background: #0066ff;
-  border-color: #0066ff;
-  color: white;
-  box-shadow: 0 5px 20px rgba(0, 102, 255, 0.25);
+  background: rgba(0, 234, 255, 0.25);
+  border-color: #00eaff;
+  color: #00eaff;
+  box-shadow: 0 5px 20px rgba(0, 234, 255, 0.4);
 }
 
 .books-category {
@@ -429,20 +425,19 @@ body {
 }
 
 .book-card {
-  background: white;
-  border: 2px solid rgba(0, 102, 255, 0.15);
+  background: linear-gradient(145deg, rgba(0, 20, 40, 0.8), rgba(0, 30, 50, 0.8));
+  border: 2px solid rgba(0, 234, 255, 0.3);
   border-radius: 20px;
   padding: 30px;
   transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .book-card:hover {
-  border-color: #0066ff;
-  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.15);
+  border-color: #00eaff;
+  box-shadow: 0 15px 50px rgba(0, 234, 255, 0.3);
   transform: translateY(-8px);
 }
 
@@ -459,8 +454,8 @@ body {
   height: 150px;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 102, 255, 0.1);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 234, 255, 0.2);
 }
 
 .book-info {
@@ -470,14 +465,14 @@ body {
 .book-title {
   font-size: 20px;
   font-weight: 700;
-  color: #0066ff;
+  color: #00eaff;
   margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .book-author {
   font-size: 15px;
-  color: #666;
+  color: #b3d9ff;
   margin-bottom: 10px;
   font-style: italic;
 }
@@ -489,9 +484,9 @@ body {
 
 .book-genre {
   display: inline-block;
-  background: rgba(0, 255, 136, 0.1);
+  background: rgba(0, 255, 136, 0.2);
   border: 1px solid #00ff88;
-  color: #00cc6a;
+  color: #00ff88;
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 12px;
@@ -502,7 +497,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, margin-top 0.5s ease;
-  color: #555;
+  color: #b3d9ff;
   line-height: 1.7;
   font-size: 15px;
 }
@@ -511,7 +506,7 @@ body {
   max-height: 500px;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid rgba(0, 102, 255, 0.1);
+  border-top: 1px solid rgba(0, 234, 255, 0.2);
 }
 
 .read-more-btn {
@@ -520,9 +515,9 @@ body {
   gap: 8px;
   margin-top: 15px;
   padding: 8px 20px;
-  background: rgba(0, 102, 255, 0.08);
-  border: 1px solid #0066ff;
-  color: #0066ff;
+  background: rgba(0, 234, 255, 0.1);
+  border: 1px solid #00eaff;
+  color: #00eaff;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
@@ -531,7 +526,7 @@ body {
 }
 
 .read-more-btn:hover {
-  background: rgba(0, 102, 255, 0.15);
+  background: rgba(0, 234, 255, 0.2);
   transform: translateX(5px);
 }
 
@@ -670,7 +665,7 @@ body {
         2. Clique em "Compartilhar" → "Incorporar playlist"<br>
         3. Substitua este div pelo código <code>&lt;iframe&gt;</code>
       </p>
-      <p style="font-size: 13px; color: #0066ff; margin-top: 20px;">
+      <p style="font-size: 13px; color: #00ff88; margin-top: 20px;">
         Exemplo: https://open.spotify.com/embed/playlist/SUA_PLAYLIST_ID
       </p>
     </div>
