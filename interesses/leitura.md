@@ -64,17 +64,33 @@ body {
   font-size: 56px;
   font-weight: 900;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #00eaff, #0066ff, #00eaff);
-  background-size: 200% auto;
+  background: #ffffff;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradient 3s ease infinite;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.8),
+    0 0 20px rgba(255, 255, 255, 0.6),
+    0 0 30px rgba(255, 255, 255, 0.4),
+    0 0 40px rgba(255, 255, 255, 0.2);
+  animation: whiteGlow 2s ease-in-out infinite alternate;
 }
 
-@keyframes gradient {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes whiteGlow {
+  0% {
+    text-shadow: 
+      0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.6),
+      0 0 30px rgba(255, 255, 255, 0.4),
+      0 0 40px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 1),
+      0 0 30px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(255, 255, 255, 0.6),
+      0 0 50px rgba(255, 255, 255, 0.4);
+  }
 }
 
 .hero-leitura p {
@@ -154,37 +170,43 @@ body {
 /* ==================== BOTÃO VOLTAR AO TOPO ==================== */
 .back-to-top {
   position: fixed;
-  bottom: 30px;
+  bottom: 50%;
   right: 30px;
-  width: 50px;
-  height: 50px;
-  background: rgba(0, 102, 255, 0.8);
-  border: 2px solid #00eaff;
+  transform: translateY(50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 102, 255, 0.3);
+  border: 2px solid rgba(0, 234, 255, 0.4);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e6faff;
-  font-size: 24px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 28px;
+  font-weight: bold;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s ease;
   z-index: 1000;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  transform: translateY(20px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .back-to-top.visible {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
+  transform: translateY(50%) scale(1);
 }
 
 .back-to-top:hover {
-  background: rgba(0, 234, 255, 0.8);
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 234, 255, 0.4);
+  background: rgba(0, 102, 255, 0.9);
+  border-color: #00eaff;
+  color: #ffffff;
+  box-shadow: 
+    0 0 30px rgba(0, 234, 255, 0.6),
+    0 0 50px rgba(0, 234, 255, 0.4),
+    0 8px 25px rgba(0, 0, 0, 0.5);
+  transform: translateY(50%) scale(1.1);
 }
 
 /* ==================== BOTÕES DE NAVEGAÇÃO ==================== */
@@ -584,11 +606,10 @@ body {
   .book-tab { padding: 10px 20px; font-size: 14px; }
   .content-section { padding: 30px 20px; }
   .back-to-top {
-    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
     right: 20px;
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
   }
   .quick-nav {
     margin: 15px 0 25px 0;
@@ -607,11 +628,10 @@ body {
     font-size: 13px; 
   }
   .back-to-top {
-    bottom: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
     right: 15px;
-    width: 40px;
-    height: 40px;
-    font-size: 18px;
   }
   .quick-nav {
     border-radius: 25px;
@@ -654,9 +674,9 @@ body {
   <div class="quick-nav-container">
     <a href="#musica" class="quick-nav-item">🎵 Música</a>
     <a href="#leitura" class="quick-nav-item">📚 Leitura</a>
-    <a href="#ficcao" class="quick-nav-item">🌌 Ficção</a>
-    <a href="#tecnicos" class="quick-nav-item">💻 Técnicos</a>
-    <a href="#pessoal" class="quick-nav-item">🧠 Pessoal</a>
+    <a href="#leitura-ficcao" class="quick-nav-item">🌌 Ficção</a>
+    <a href="#leitura-tecnicos" class="quick-nav-item">💻 Técnicos</a>
+    <a href="#leitura-pessoal" class="quick-nav-item">🧠 Pessoal</a>
   </div>
 </nav>
 
@@ -739,7 +759,7 @@ body {
   </div>
   
   <!-- FICÇÃO TRANSFORMADORA -->
-  <div id="ficcao" class="books-category active">
+  <div id="leitura-ficcao" class="books-category active">
     <h3 class="category-title">🌌 Ficção Transformadora</h3>
     <div class="books-grid">
       
@@ -816,7 +836,7 @@ body {
   </div>
   
   <!-- TÉCNICOS/CARREIRA -->
-  <div id="tecnicos" class="books-category">
+  <div id="leitura-tecnicos" class="books-category">
     <h3 class="category-title">💻 Técnicos & Carreira</h3>
     <div class="books-grid">
       
@@ -893,7 +913,7 @@ body {
   </div>
   
   <!-- DESENVOLVIMENTO PESSOAL -->
-  <div id="pessoal" class="books-category">
+  <div id="leitura-pessoal" class="books-category">
     <h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
     <div class="books-grid">
       
@@ -1022,7 +1042,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Add active class to clicked tab and corresponding category
       this.classList.add('active');
       const tabId = this.getAttribute('data-tab');
-      const targetCategory = document.getElementById(tabId);
+      const targetCategory = document.getElementById(`leitura-${tabId}`);
       
       if (targetCategory) {
         targetCategory.classList.add('active');
@@ -1051,10 +1071,42 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetElement = document.getElementById(targetId);
       
       if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
-        });
+        // Se for uma categoria de livros, ativar a aba correspondente primeiro
+        if (targetId.startsWith('leitura-')) {
+          const categoryType = targetId.replace('leitura-', '');
+          
+          // Ativar a aba correta
+          tabs.forEach(tab => {
+            tab.classList.remove('active');
+            if (tab.getAttribute('data-tab') === categoryType) {
+              tab.classList.add('active');
+            }
+          });
+          
+          // Mostrar a categoria correta
+          categories.forEach(category => {
+            category.classList.remove('active');
+            if (category.id === targetId) {
+              category.classList.add('active');
+            }
+          });
+          
+          // Scroll para a seção de leitura
+          const booksSection = document.getElementById('leitura');
+          if (booksSection) {
+            const sectionTop = booksSection.offsetTop - 80;
+            window.scrollTo({
+              top: sectionTop,
+              behavior: 'smooth'
+            });
+          }
+        } else {
+          // Scroll normal para outras seções
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
       }
     });
   });
