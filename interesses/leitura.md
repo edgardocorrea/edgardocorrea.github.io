@@ -14,18 +14,21 @@ author_profile: false
 }
 
 body {
+  background: #f8f9fa !important;
+  color: #333;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
 .initial-content {
   position: relative;
-  background: rgba(10,20,40,0.85);
+  background: rgba(10,20,40,0.95);
   padding: 30px 25px;
   border-radius: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
   backdrop-filter: blur(3px);
   z-index: 1;
+  margin: 20px 0;
 }
 
 .page__content {
@@ -44,16 +47,20 @@ body {
   z-index: 0;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.02) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.02) 0%, transparent 50%);
 }
 
 /* ==================== HERO SECTION ==================== */
 .hero-leitura {
   position: relative;
   text-align: center;
-  padding: 100px 20px 80px;
+  padding: 80px 20px 60px;
   z-index: 1;
+  background: linear-gradient(135deg, #0a2840 0%, #001e3c 100%);
+  border-radius: 20px;
+  margin: 20px 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .hero-leitura h1 {
@@ -86,15 +93,16 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 8, 20, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   padding: 15px 0;
   margin-bottom: 30px;
-  border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+  border-bottom: 2px solid rgba(0, 102, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
 }
 
 .quick-nav-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -104,22 +112,25 @@ body {
 }
 
 .quick-nav-item {
-  padding: 8px 20px;
-  background: rgba(0, 102, 255, 0.1);
-  border: 1px solid rgba(0, 102, 255, 0.3);
+  padding: 10px 25px;
+  background: rgba(0, 102, 255, 0.08);
+  border: 2px solid rgba(0, 102, 255, 0.2);
   border-radius: 30px;
-  color: #b3d9ff;
+  color: #0066ff;
   text-decoration: none;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
   transition: all 0.3s ease;
+  min-width: 140px;
+  text-align: center;
 }
 
 .quick-nav-item:hover, .quick-nav-item.active {
-  background: rgba(0, 234, 255, 0.2);
-  border-color: #00eaff;
-  color: #00eaff;
+  background: rgba(0, 102, 255, 0.15);
+  border-color: #0066ff;
+  color: #0066ff;
   transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.2);
 }
 
 /* ==================== BOTÃO VOLTAR AO TOPO ==================== */
@@ -129,20 +140,20 @@ body {
   right: 30px;
   width: 50px;
   height: 50px;
-  background: rgba(0, 102, 255, 0.8);
+  background: #0066ff;
   border: 2px solid #00eaff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #e6faff;
+  color: white;
   font-size: 24px;
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
   z-index: 1000;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
 }
 
 .back-to-top.visible {
@@ -151,8 +162,9 @@ body {
 }
 
 .back-to-top:hover {
-  background: rgba(0, 234, 255, 0.8);
+  background: #0052cc;
   transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
 }
 
 /* ==================== BOTÕES DE NAVEGAÇÃO ==================== */
@@ -162,6 +174,7 @@ body {
   gap: 20px;
   margin: 60px 0;
   flex-wrap: wrap;
+  padding: 0 20px;
 }
 
 .nav-button {
@@ -169,63 +182,73 @@ body {
   align-items: center;
   gap: 10px;
   padding: 12px 30px;
-  background: rgba(0, 102, 255, 0.1);
-  border: 2px solid #00eaff;
-  color: #00eaff;
+  background: white;
+  border: 2px solid #0066ff;
+  color: #0066ff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
 }
 
 .nav-button:hover {
-  background: rgba(0, 234, 255, 0.2);
+  background: #0066ff;
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
 }
 
 .nav-button.secondary {
   border-color: #00ff88;
   color: #00ff88;
+  box-shadow: 0 4px 12px rgba(0, 255, 136, 0.1);
 }
 
 .nav-button.secondary:hover {
-  background: rgba(0, 255, 136, 0.2);
-  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+  background: #00ff88;
+  color: white;
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.25);
 }
 
 .back-button {
   display: inline-block;
   padding: 12px 30px;
-  background: rgba(0, 234, 255, 0.1);
-  border: 2px solid #00eaff;
-  color: #00eaff;
+  background: white;
+  border: 2px solid #0066ff;
+  color: #0066ff;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
   margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.1);
 }
 
 .back-button:hover {
-  background: rgba(0, 234, 255, 0.2);
+  background: #0066ff;
+  color: white;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 102, 255, 0.25);
 }
 
 /* ==================== SEÇÕES ==================== */
 .content-section {
   position: relative;
   z-index: 1;
-  margin: 60px 0;
+  margin: 40px 0;
+  background: white;
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .section-title {
   font-size: 42px;
-  color: #00eaff;
+  color: #0066ff;
   text-align: center;
   margin-bottom: 50px;
-  text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+  text-shadow: none;
 }
 
 /* ==================== MÚSICA - CARDS BANDAS ==================== */
@@ -240,14 +263,15 @@ body {
 }
 
 .band-card {
-  background: linear-gradient(145deg, rgba(0, 102, 255, 0.08), rgba(0, 234, 255, 0.08));
-  border: 2px solid rgba(0, 234, 255, 0.3);
+  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+  border: 2px solid rgba(0, 102, 255, 0.15);
   border-radius: 20px;
   padding: 40px 30px;
   text-align: center;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .band-card::before {
@@ -257,7 +281,7 @@ body {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(0, 102, 255, 0.05), transparent);
   transition: left 0.6s ease;
 }
 
@@ -267,27 +291,27 @@ body {
 
 .band-card:hover {
   transform: translateY(-10px);
-  border-color: #00eaff;
-  box-shadow: 0 20px 50px rgba(0, 234, 255, 0.3);
+  border-color: #0066ff;
+  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.15);
 }
 
 .band-icon {
   font-size: 64px;
   margin-bottom: 20px;
   display: block;
-  filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
+  filter: drop-shadow(0 0 10px rgba(0, 102, 255, 0.3));
 }
 
 .band-name {
   font-size: 26px;
   font-weight: 700;
-  color: #00eaff;
+  color: #0066ff;
   margin-bottom: 15px;
 }
 
 .band-description {
   font-size: 15px;
-  color: #b3d9ff;
+  color: #666;
   line-height: 1.6;
   font-style: italic;
 }
@@ -296,35 +320,36 @@ body {
 .spotify-container {
   max-width: 900px;
   margin: 0 auto 80px;
-  background: linear-gradient(145deg, rgba(0, 102, 255, 0.08), rgba(0, 234, 255, 0.08));
-  border: 2px solid rgba(0, 234, 255, 0.3);
+  background: linear-gradient(145deg, #f8f9fa, #ffffff);
+  border: 2px solid rgba(0, 102, 255, 0.15);
   border-radius: 20px;
   padding: 40px;
   text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .spotify-title {
   font-size: 28px;
-  color: #00eaff;
+  color: #0066ff;
   margin-bottom: 10px;
   font-weight: 700;
 }
 
 .spotify-subtitle {
   font-size: 16px;
-  color: #b3d9ff;
+  color: #666;
   margin-bottom: 30px;
   font-style: italic;
 }
 
 .spotify-container iframe {
   border-radius: 12px;
-  box-shadow: 0 10px 40px rgba(0, 234, 255, 0.2);
+  box-shadow: 0 10px 40px rgba(0, 102, 255, 0.15);
 }
 
 .spotify-placeholder {
-  background: rgba(0, 20, 40, 0.6);
-  border: 2px dashed rgba(0, 234, 255, 0.3);
+  background: #f8f9fa;
+  border: 2px dashed rgba(0, 102, 255, 0.2);
   border-radius: 12px;
   padding: 60px 40px;
   text-align: center;
@@ -332,15 +357,15 @@ body {
 
 .spotify-placeholder p {
   font-size: 18px;
-  color: #b3d9ff;
+  color: #666;
   margin-bottom: 15px;
 }
 
 .spotify-placeholder code {
-  background: rgba(0, 234, 255, 0.1);
+  background: rgba(0, 102, 255, 0.1);
   padding: 4px 12px;
   border-radius: 6px;
-  color: #00ff88;
+  color: #0066ff;
   font-size: 14px;
 }
 
@@ -350,33 +375,38 @@ body {
   justify-content: center;
   margin-bottom: 40px;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
 }
 
 .book-tab {
-  padding: 10px 25px;
-  background: rgba(0, 102, 255, 0.1);
-  border: 1px solid rgba(0, 102, 255, 0.3);
+  padding: 12px 30px;
+  background: white;
+  border: 2px solid rgba(0, 102, 255, 0.2);
   border-radius: 30px;
-  color: #b3d9ff;
+  color: #0066ff;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-size: 15px;
+  box-shadow: 0 3px 10px rgba(0, 102, 255, 0.08);
 }
 
 .book-tab:hover {
-  background: rgba(0, 102, 255, 0.2);
+  background: rgba(0, 102, 255, 0.05);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 255, 0.12);
 }
 
 .book-tab.active {
-  background: rgba(0, 234, 255, 0.2);
-  border-color: #00eaff;
-  color: #00eaff;
+  background: #0066ff;
+  border-color: #0066ff;
+  color: white;
+  box-shadow: 0 5px 20px rgba(0, 102, 255, 0.25);
 }
 
 .books-category {
   display: none;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
 }
 
 .books-category.active {
@@ -400,19 +430,20 @@ body {
 }
 
 .book-card {
-  background: linear-gradient(145deg, rgba(0, 20, 40, 0.8), rgba(0, 30, 50, 0.8));
-  border: 2px solid rgba(0, 234, 255, 0.3);
+  background: white;
+  border: 2px solid rgba(0, 102, 255, 0.15);
   border-radius: 20px;
   padding: 30px;
   transition: all 0.4s ease;
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
 .book-card:hover {
-  border-color: #00eaff;
-  box-shadow: 0 15px 50px rgba(0, 234, 255, 0.3);
+  border-color: #0066ff;
+  box-shadow: 0 15px 40px rgba(0, 102, 255, 0.15);
   transform: translateY(-8px);
 }
 
@@ -429,8 +460,8 @@ body {
   height: 150px;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(0, 234, 255, 0.2);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 102, 255, 0.1);
 }
 
 .book-info {
@@ -440,14 +471,14 @@ body {
 .book-title {
   font-size: 20px;
   font-weight: 700;
-  color: #00eaff;
+  color: #0066ff;
   margin-bottom: 8px;
   line-height: 1.3;
 }
 
 .book-author {
   font-size: 15px;
-  color: #b3d9ff;
+  color: #666;
   margin-bottom: 10px;
   font-style: italic;
 }
@@ -459,9 +490,9 @@ body {
 
 .book-genre {
   display: inline-block;
-  background: rgba(0, 255, 136, 0.2);
+  background: rgba(0, 255, 136, 0.1);
   border: 1px solid #00ff88;
-  color: #00ff88;
+  color: #00cc6a;
   padding: 4px 12px;
   border-radius: 12px;
   font-size: 12px;
@@ -472,7 +503,7 @@ body {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s ease, margin-top 0.5s ease;
-  color: #b3d9ff;
+  color: #555;
   line-height: 1.7;
   font-size: 15px;
 }
@@ -481,7 +512,7 @@ body {
   max-height: 500px;
   margin-top: 20px;
   padding-top: 20px;
-  border-top: 1px solid rgba(0, 234, 255, 0.2);
+  border-top: 1px solid rgba(0, 102, 255, 0.1);
 }
 
 .read-more-btn {
@@ -490,9 +521,9 @@ body {
   gap: 8px;
   margin-top: 15px;
   padding: 8px 20px;
-  background: rgba(0, 234, 255, 0.1);
-  border: 1px solid #00eaff;
-  color: #00eaff;
+  background: rgba(0, 102, 255, 0.08);
+  border: 1px solid #0066ff;
+  color: #0066ff;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
@@ -501,7 +532,7 @@ body {
 }
 
 .read-more-btn:hover {
-  background: rgba(0, 234, 255, 0.2);
+  background: rgba(0, 102, 255, 0.15);
   transform: translateX(5px);
 }
 
@@ -514,6 +545,17 @@ body {
 }
 
 /* ==================== RESPONSIVO ==================== */
+@media (max-width: 1200px) {
+  .quick-nav-container {
+    justify-content: space-around;
+  }
+  .quick-nav-item {
+    min-width: 120px;
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero-leitura h1 { font-size: 38px; }
   .section-title { font-size: 32px; }
@@ -521,8 +563,23 @@ body {
   .books-grid { grid-template-columns: 1fr; }
   .book-header { flex-direction: column; align-items: center; text-align: center; }
   .book-cover { margin-bottom: 15px; }
-  .quick-nav-container { padding: 0 10px; }
-  .quick-nav-item { font-size: 12px; padding: 6px 15px; }
+  .quick-nav-container { padding: 0 10px; gap: 10px; }
+  .quick-nav-item { font-size: 13px; padding: 6px 15px; min-width: 100px; }
+  .books-tabs { gap: 8px; }
+  .book-tab { padding: 10px 20px; font-size: 14px; }
+  .content-section { padding: 30px 20px; }
+}
+
+@media (max-width: 480px) {
+  .quick-nav-item { 
+    font-size: 12px; 
+    padding: 5px 12px; 
+    min-width: 80px;
+  }
+  .book-tab { 
+    padding: 8px 16px; 
+    font-size: 13px; 
+  }
 }
 
 /* ==================== ANIMAÇÕES ==================== */
@@ -614,7 +671,7 @@ body {
         2. Clique em "Compartilhar" → "Incorporar playlist"<br>
         3. Substitua este div pelo código <code>&lt;iframe&gt;</code>
       </p>
-      <p style="font-size: 13px; color: #00ff88; margin-top: 20px;">
+      <p style="font-size: 13px; color: #0066ff; margin-top: 20px;">
         Exemplo: https://open.spotify.com/embed/playlist/SUA_PLAYLIST_ID
       </p>
     </div>
