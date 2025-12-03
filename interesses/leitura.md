@@ -167,6 +167,50 @@ body {
   box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
 }
 
+/* ==================== QUICK-NAV ==================== */
+
+/* Scroll suave nativo do navegador */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Adicione isto para melhorar o offset do sticky nav */
+:target {
+  scroll-margin-top: 100px;
+}
+
+/* Mostrar/esconder categorias por âncora */
+.books-category {
+  display: none;
+}
+
+/* Mostrar categoria ativa */
+#ficacao-books:target,
+#ficacao-books.active,
+#tecnicos-books:target,
+#tecnicos-books.active,
+#pessoal-books:target,
+#pessoal-books.active {
+  display: block;
+}
+
+/* Animar entrada */
+.books-category {
+  animation: fadeInBooks 0.3s ease;
+}
+
+@keyframes fadeInBooks {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* ==================== BOTÃO VOLTAR AO TOPO ==================== */
 .back-to-top {
   position: fixed;
@@ -674,9 +718,11 @@ body {
   <div class="quick-nav-container">
     <a href="#musica" class="quick-nav-item">🎵 Música</a>
     <a href="#leitura" class="quick-nav-item">📚 Leitura</a>
-    <a href="#leitura-ficcao" class="quick-nav-item">🌌 Ficção</a>
-    <a href="#leitura-tecnicos" class="quick-nav-item">💻 Técnicos</a>
-    <a href="#leitura-pessoal" class="quick-nav-item">🧠 Pessoal</a>
+    
+    <!-- Links diretos para cada categoria com scroll-behavior -->
+    <a href="#ficacao-books" class="quick-nav-item">🌌 Ficção</a>
+    <a href="#tecnicos-books" class="quick-nav-item">💻 Técnicos</a>
+    <a href="#pessoal-books" class="quick-nav-item">🧠 Pessoal</a>
   </div>
 </nav>
 
@@ -758,10 +804,10 @@ body {
     <div class="book-tab" data-tab="pessoal">🧠 Desenvolvimento Pessoal</div>
   </div>
   
-  <!-- FICÇÃO TRANSFORMADORA -->
-  <div id="leitura-ficcao" class="books-category active">
-	<h3 class="category-title">🌌 Ficção Transformadora</h3>
-    <div class="books-grid">
+<!-- FICÇÃO TRANSFORMADORA -->
+<div id="ficacao-books" class="books-category active">
+  <h3 class="category-title">🌌 Ficção Transformadora</h3>
+  <div class="books-grid">
       
       <!-- DUNA -->
       <div class="book-card" onclick="toggleBook(this)">
@@ -835,10 +881,10 @@ body {
     </div>
   </div>
   
-  <!-- TÉCNICOS/CARREIRA -->
-  <div id="leitura-tecnicos" class="books-category">
-	<h3 class="category-title">💻 Técnicos & Carreira</h3>
-    <div class="books-grid">
+<!-- DESENVOLVIMENTO PESSOAL -->
+<div id="pessoal-books" class="books-category">
+  <h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
+  <div class="books-grid">
       
       <!-- CLEAN CODE -->
       <div class="book-card" onclick="toggleBook(this)">
@@ -1031,162 +1077,33 @@ body {
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.book-tab');
-  const categories = document.querySelectorAll('.books-category');
   const quickNavItems = document.querySelectorAll('.quick-nav-item');
-  const backToTopButton = document.getElementById('backToTop');
-  const booksSection = document.getElementById('leitura');
   
-  // ========== ABAS DOS LIVROS ==========
+  // Mapear abas para IDs de categorias
+  const tabToId = {
+    'ficcao': 'ficacao-books',
+    'tecnicos': 'tecnicos-books',
+    'pessoal': 'pessoal-books'
+  };
+  
+  // Clique nas abas internas (dentro da seção de leitura)
   tabs.forEach(tab => {
     tab.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation();
-      
-      tabs.forEach(t => t.classList.remove('active'));
-      categories.forEach(c => c.classList.remove('active'));
-      
-      this.classList.add('active');
       const tabId = this.getAttribute('data-tab');
-      const targetCategory = document.getElementById(`leitura-${tabId}`);
+      const targetId = tabToId[tabId];
       
-      if (targetCategory) {
-        targetCategory.classList.add('active');
+      if (targetId) {
+        // Navegar para a âncora
+        window.location.hash = targetId;
+        // Ou usar isto sem recarregar:
+        // history.pushState(null, null, '#' + targetId);
       }
     });
   });
   
-  // ========== NAVEGAÇÃO RÁPIDA (QUICK NAV) ==========
-  quickNavItems.forEach(item => {
-    item.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      const href = this.getAttribute('href');
-      if (!href || href === '#') return;
-      
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-      
-      if (!targetElement) return;
-      
-      // Se for categoria de livros, ativar a aba ANTES do scroll
-      if (targetId.startsWith('leitura-')) {
-        const categoryType = targetId.replace('leitura-', '');
-        
-        // Desativar todas as abas
-        tabs.forEach(tab => tab.classList.remove('active'));
-        categories.forEach(cat => cat.classList.remove('active'));
-        
-        // Ativar a aba correta
-        tabs.forEach(tab => {
-          if (tab.getAttribute('data-tab') === categoryType) {
-            tab.classList.add('active');
-          }
-        });
-        
-        // Mostrar a categoria correta
-        const categoryElement = document.getElementById(`leitura-${categoryType}`);
-        if (categoryElement) {
-          categoryElement.classList.add('active');
-        }
-      }
-      
-      // Delay pequeno para garantir que o DOM foi atualizado
-      setTimeout(() => {
-        const targetPosition = targetElement.offsetTop - 100;
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth'
-        });
-      }, 50);
-      
-    }, false);
-  });
-  
-  // ========== BOTÃO VOLTAR AO TOPO ==========
-  window.addEventListener('scroll', function() {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const booksSectionTop = booksSection ? booksSection.offsetTop : 0;
-    
-    if (scrollTop >= booksSectionTop - 200) {
-      backToTopButton.classList.add('visible');
-    } else {
-      backToTopButton.classList.remove('visible');
-    }
-  });
-  
-  if (backToTopButton) {
-    backToTopButton.addEventListener('click', function(e) {
-      e.preventDefault();
-      
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-  }
-  
-  // ========== QUICK-NAV ATIVA CONFORME SCROLL ==========
-  window.addEventListener('scroll', function() {
-    let current = '';
-    const sections = document.querySelectorAll('section[id], div[id^="leitura-"]');
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      if (scrollTop >= sectionTop - 150) {
-        current = section.getAttribute('id');
-      }
-    });
-    
-    quickNavItems.forEach(item => {
-      const href = item.getAttribute('href');
-      item.classList.remove('active');
-      
-      if (href === `#${current}`) {
-        item.classList.add('active');
-      }
-    });
-  });
-});
-
-// ========== EXPANDIR/COLAPSAR LIVROS ==========
-function toggleBook(card) {
-  const allCards = document.querySelectorAll('.book-card');
-  allCards.forEach(c => {
-    if (c !== card && c.classList.contains('expanded')) {
-      c.classList.remove('expanded');
-    }
-  });
-  
-  card.classList.toggle('expanded');
-  
-  if (card.classList.contains('expanded')) {
-    setTimeout(() => {
-      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }, 100);
-  }
-}
-
-// ========== ANIMAÇÃO AO ENTRAR NA VIEWPORT ==========
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, observerOptions);
-
-document.querySelectorAll('.book-card, .band-card').forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'all 0.6s ease';
-  observer.observe(el);
+  // Quick nav já funciona naturalmente com <a href="#id">
+  // Sem necessidade de JS!
 });
 </script>
 
