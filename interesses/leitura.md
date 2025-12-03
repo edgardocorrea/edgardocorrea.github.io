@@ -1026,44 +1026,34 @@ body {
   </a>
 </div>
 
-<!-- JavaScript -->
+<!-- INÍCIO: <script> -->
+
 <script>
-// Abas dos livros
+// ========== ABAS DOS LIVROS ==========
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.book-tab');
   const categories = document.querySelectorAll('.books-category');
+  const quickNavItems = document.querySelectorAll('.quick-nav-item');
+  const backToTopButton = document.getElementById('backToTop');
+  const booksSection = document.getElementById('leitura');
   
+  // Abas dos livros
   tabs.forEach(tab => {
     tab.addEventListener('click', function() {
-      // Remove active class from all tabs and categories
       tabs.forEach(t => t.classList.remove('active'));
       categories.forEach(c => c.classList.remove('active'));
       
-      // Add active class to clicked tab and corresponding category
       this.classList.add('active');
       const tabId = this.getAttribute('data-tab');
       const targetCategory = document.getElementById(`leitura-${tabId}`);
       
       if (targetCategory) {
         targetCategory.classList.add('active');
-        
-        // Scroll suave para a categoria de livros
-        setTimeout(() => {
-          const booksSection = document.getElementById('leitura');
-          if (booksSection) {
-            const sectionTop = booksSection.offsetTop - 80;
-            window.scrollTo({
-              top: sectionTop,
-              behavior: 'smooth'
-            });
-          }
-        }, 100);
       }
     });
   });
   
-  // Navegação rápida
-  const quickNavItems = document.querySelectorAll('.quick-nav-item');
+  // ========== NAVEGAÇÃO RÁPIDA (QUICK NAV) ==========
   quickNavItems.forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
@@ -1071,11 +1061,10 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetElement = document.getElementById(targetId);
       
       if (targetElement) {
-        // Se for uma categoria de livros, ativar a aba correspondente primeiro
+        // Se for categoria de livros, ativar a aba
         if (targetId.startsWith('leitura-')) {
           const categoryType = targetId.replace('leitura-', '');
           
-          // Ativar a aba correta
           tabs.forEach(tab => {
             tab.classList.remove('active');
             if (tab.getAttribute('data-tab') === categoryType) {
@@ -1083,71 +1072,35 @@ document.addEventListener('DOMContentLoaded', function() {
             }
           });
           
-          // Mostrar a categoria correta
           categories.forEach(category => {
             category.classList.remove('active');
             if (category.id === targetId) {
               category.classList.add('active');
             }
           });
-          
-          // Scroll para a seção de leitura
-          const booksSection = document.getElementById('leitura');
-          if (booksSection) {
-            const sectionTop = booksSection.offsetTop - 80;
-            window.scrollTo({
-              top: sectionTop,
-              behavior: 'smooth'
-            });
-          }
-        } else {
-          // Scroll normal para outras seções
-          window.scrollTo({
-            top: targetElement.offsetTop - 80,
-            behavior: 'smooth'
-          });
         }
+        
+        // Scroll direto ao elemento (sem offset)
+        const elementTop = targetElement.offsetTop;
+        window.scrollTo({
+          top: elementTop,
+          behavior: 'smooth'
+        });
       }
     });
   });
   
-  // Botão voltar ao topo com comportamento aprimorado
-  const backToTopButton = document.getElementById('backToTop');
-  let lastScrollTop = 0;
-  let scrollTimer = null;
-  
+  // ========== BOTÃO VOLTAR AO TOPO (DINÂMICO) ==========
   window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const booksSectionTop = booksSection.offsetTop;
     
-    // Mostrar botão após rolar 300px para baixo
-    if (scrollTop > 300) {
+    // Mostrar quando desce na seção de livros
+    if (scrollTop >= booksSectionTop - 200) {
       backToTopButton.classList.add('visible');
     } else {
       backToTopButton.classList.remove('visible');
     }
-    
-    // Detectar direção do scroll
-    if (scrollTop > lastScrollTop) {
-      // Rolando para baixo - manter visível
-      backToTopButton.classList.add('visible');
-    } else {
-      // Rolando para cima - esconder temporariamente
-      backToTopButton.classList.remove('visible');
-      
-      // Limpar timer anterior
-      if (scrollTimer) {
-        clearTimeout(scrollTimer);
-      }
-      
-      // Esperar um pouco antes de mostrar novamente
-      scrollTimer = setTimeout(() => {
-        if (scrollTop > 300) {
-          backToTopButton.classList.add('visible');
-        }
-      }, 500);
-    }
-    
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
   });
   
   backToTopButton.addEventListener('click', function() {
@@ -1157,13 +1110,13 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Atualizar navegação rápida com base na seção visível
+  // ========== QUICK-NAV ATIVA CONFORME SCROLL ==========
   window.addEventListener('scroll', function() {
     let current = '';
-    const sections = document.querySelectorAll('section[id]');
+    const sections = document.querySelectorAll('section[id], div[id^="leitura-"]');
     
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
+      const sectionTop = section.offsetTop - 150;
       if (window.pageYOffset >= sectionTop) {
         current = section.getAttribute('id');
       }
@@ -1178,8 +1131,8 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+// ========== EXPANDIR/COLAPSAR LIVROS ==========
 function toggleBook(card) {
-  // Fecha outros cards abertos
   const allCards = document.querySelectorAll('.book-card');
   allCards.forEach(c => {
     if (c !== card && c.classList.contains('expanded')) {
@@ -1187,10 +1140,8 @@ function toggleBook(card) {
     }
   });
   
-  // Toggle do card clicado
   card.classList.toggle('expanded');
   
-  // Scroll suave para o card
   if (card.classList.contains('expanded')) {
     setTimeout(() => {
       card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -1198,7 +1149,7 @@ function toggleBook(card) {
   }
 }
 
-// Animação ao entrar na viewport
+// ========== ANIMAÇÃO AO ENTRAR NA VIEWPORT ==========
 const observerOptions = {
   threshold: 0.1,
   rootMargin: '0px 0px -50px 0px'
@@ -1220,3 +1171,4 @@ document.querySelectorAll('.book-card, .band-card').forEach(el => {
   observer.observe(el);
 });
 </script>
+<!-- FIM: </script> -->
