@@ -760,7 +760,7 @@ body {
   
   <!-- FICÇÃO TRANSFORMADORA -->
   <div id="leitura-ficcao" class="books-category active">
-    <h3 class="category-title">🌌 Ficção Transformadora</h3>
+	<h3 class="category-title">🌌 Ficção Transformadora</h3>
     <div class="books-grid">
       
       <!-- DUNA -->
@@ -837,7 +837,7 @@ body {
   
   <!-- TÉCNICOS/CARREIRA -->
   <div id="leitura-tecnicos" class="books-category">
-    <h3 class="category-title">💻 Técnicos & Carreira</h3>
+	<h3 class="category-title">💻 Técnicos & Carreira</h3>
     <div class="books-grid">
       
       <!-- CLEAN CODE -->
@@ -914,7 +914,7 @@ body {
   
   <!-- DESENVOLVIMENTO PESSOAL -->
   <div id="leitura-pessoal" class="books-category">
-    <h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
+	<h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
     <div class="books-grid">
       
       <!-- ATOMIC HABITS -->
