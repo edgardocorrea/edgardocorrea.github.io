@@ -1055,11 +1055,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // ========== NAVEGAÇÃO RÁPIDA (QUICK NAV) - SEM SCROLL AO TOPO ==========
+  // ========== NAVEGAÇÃO RÁPIDA (QUICK NAV) ==========
   quickNavItems.forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation();
       
       const href = this.getAttribute('href');
       if (!href || href === '#') return;
@@ -1067,41 +1066,40 @@ document.addEventListener('DOMContentLoaded', function() {
       const targetId = href.substring(1);
       const targetElement = document.getElementById(targetId);
       
-      if (targetElement) {
-        // Se for categoria de livros, ativar a aba ANTES do scroll
-        if (targetId.startsWith('leitura-')) {
-          const categoryType = targetId.replace('leitura-', '');
-          
-          // Desativar todas as abas
-          tabs.forEach(tab => tab.classList.remove('active'));
-          categories.forEach(cat => cat.classList.remove('active'));
-          
-          // Ativar a aba correta
-          tabs.forEach(tab => {
-            if (tab.getAttribute('data-tab') === categoryType) {
-              tab.classList.add('active');
-            }
-          });
-          
-          // Mostrar a categoria correta
-          const categoryElement = document.getElementById(`leitura-${categoryType}`);
-          if (categoryElement) {
-            categoryElement.classList.add('active');
+      if (!targetElement) return;
+      
+      // Se for categoria de livros, ativar a aba ANTES do scroll
+      if (targetId.startsWith('leitura-')) {
+        const categoryType = targetId.replace('leitura-', '');
+        
+        // Desativar todas as abas
+        tabs.forEach(tab => tab.classList.remove('active'));
+        categories.forEach(cat => cat.classList.remove('active'));
+        
+        // Ativar a aba correta
+        tabs.forEach(tab => {
+          if (tab.getAttribute('data-tab') === categoryType) {
+            tab.classList.add('active');
           }
-        }
-        
-        // SCROLL SUAVE - sem offset
-        const targetPosition = targetElement.offsetTop;
-        
-        window.scrollTo({
-          top: targetPosition,
-          behavior: 'smooth',
-          block: 'start'
         });
+        
+        // Mostrar a categoria correta
+        const categoryElement = document.getElementById(`leitura-${categoryType}`);
+        if (categoryElement) {
+          categoryElement.classList.add('active');
+        }
       }
       
-      return false;
-    }, true); // Usar capture phase
+      // Delay pequeno para garantir que o DOM foi atualizado
+      setTimeout(() => {
+        const targetPosition = targetElement.offsetTop - 100;
+        window.scrollTo({
+          top: targetPosition,
+          behavior: 'smooth'
+        });
+      }, 50);
+      
+    }, false);
   });
   
   // ========== BOTÃO VOLTAR AO TOPO ==========
@@ -1119,14 +1117,11 @@ document.addEventListener('DOMContentLoaded', function() {
   if (backToTopButton) {
     backToTopButton.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation();
       
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
-      
-      return false;
     });
   }
   
