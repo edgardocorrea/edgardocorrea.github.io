@@ -14,6 +14,8 @@ author_profile: false
 }
 
 body {
+  background: #000814 !important;
+  color: #e6faff;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
@@ -90,12 +92,46 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(0, 8, 20, 0.95);
+  background: linear-gradient(90deg, 
+    rgba(0, 102, 255, 0.15) 0%, 
+    rgba(0, 8, 20, 0.95) 10%, 
+    rgba(0, 8, 20, 0.95) 90%, 
+    rgba(0, 102, 255, 0.15) 100%);
   backdrop-filter: blur(10px);
   padding: 15px 0;
-  margin-bottom: 30px;
-  border-bottom: 2px solid rgba(0, 102, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  margin: 20px 0 30px 0;
+  border-radius: 50px;
+  box-shadow: 
+    0 0 20px rgba(0, 102, 255, 0.3),
+    0 0 40px rgba(0, 102, 255, 0.2),
+    inset 0 0 20px rgba(0, 234, 255, 0.1);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.quick-nav::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(90deg, 
+    #0066ff 0%, 
+    #00eaff 25%, 
+    #0066ff 50%, 
+    #00eaff 75%, 
+    #0066ff 100%);
+  border-radius: 50px;
+  z-index: -1;
+  background-size: 200% 100%;
+  animation: neonBorder 3s linear infinite;
+}
+
+@keyframes neonBorder {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
 }
 
 .quick-nav-container {
@@ -105,7 +141,7 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  padding: 0 20px;
+  padding: 0 30px;
 }
 
 .quick-nav-item {
@@ -120,6 +156,26 @@ body {
   transition: all 0.3s ease;
   min-width: 140px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.quick-nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(0, 234, 255, 0.3), 
+    transparent);
+  transition: left 0.6s ease;
+}
+
+.quick-nav-item:hover::before {
+  left: 100%;
 }
 
 .quick-nav-item:hover, .quick-nav-item.active {
@@ -127,7 +183,9 @@ body {
   border-color: #00eaff;
   color: #00eaff;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
+  box-shadow: 
+    0 5px 15px rgba(0, 234, 255, 0.3),
+    0 0 20px rgba(0, 234, 255, 0.2);
 }
 
 /* ==================== BOTÃO VOLTAR AO TOPO ==================== */
@@ -557,7 +615,7 @@ body {
   .books-grid { grid-template-columns: 1fr; }
   .book-header { flex-direction: column; align-items: center; text-align: center; }
   .book-cover { margin-bottom: 15px; }
-  .quick-nav-container { padding: 0 10px; gap: 10px; }
+  .quick-nav-container { padding: 0 20px; gap: 10px; }
   .quick-nav-item { font-size: 13px; padding: 6px 15px; min-width: 100px; }
   .books-tabs { gap: 8px; }
   .book-tab { padding: 10px 20px; font-size: 14px; }
@@ -568,6 +626,10 @@ body {
     width: 45px;
     height: 45px;
     font-size: 20px;
+  }
+  .quick-nav {
+    margin: 15px 0 25px 0;
+    border-radius: 30px;
   }
 }
 
@@ -587,6 +649,9 @@ body {
     width: 40px;
     height: 40px;
     font-size: 18px;
+  }
+  .quick-nav {
+    border-radius: 25px;
   }
 }
 
@@ -650,19 +715,19 @@ body {
     <div class="band-card">
       <span class="band-icon">🎤</span>
       <div class="band-name">Nothing But Thieves</div>
-      <div class="band-description">"Amsterdam- Intensidade emocional crua"</div>
+      <div class="band-description">"Intensidade emocional crua"</div>
     </div>
     
     <div class="band-card">
       <span class="band-icon">🎹</span>
       <div class="band-name">The Doors</div>
-      <div class="band-description">"The End - Poesia psicodélica atemporal"</div>
+      <div class="band-description">"Poesia psicodélica atemporal"</div>
     </div>
     
     <div class="band-card">
       <span class="band-icon">⚡</span>
       <div class="band-name">Linkin Park</div>
-      <div class="band-description">"Numb - A trilha sonora de uma geração"</div>
+      <div class="band-description">"A trilha sonora de uma geração"</div>
     </div>
   </div>
   
