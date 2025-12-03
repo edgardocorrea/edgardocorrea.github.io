@@ -1029,7 +1029,6 @@ body {
 <!-- INÍCIO: <script> -->
 
 <script>
-// ========== ABAS DOS LIVROS ==========
 document.addEventListener('DOMContentLoaded', function() {
   const tabs = document.querySelectorAll('.book-tab');
   const categories = document.querySelectorAll('.books-category');
@@ -1037,9 +1036,12 @@ document.addEventListener('DOMContentLoaded', function() {
   const backToTopButton = document.getElementById('backToTop');
   const booksSection = document.getElementById('leitura');
   
-  // Abas dos livros
+  // ========== ABAS DOS LIVROS ==========
   tabs.forEach(tab => {
-    tab.addEventListener('click', function() {
+    tab.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
       tabs.forEach(t => t.classList.remove('active'));
       categories.forEach(c => c.classList.remove('active'));
       
@@ -1053,49 +1055,60 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // ========== NAVEGAÇÃO RÁPIDA (QUICK NAV) ==========
+  // ========== NAVEGAÇÃO RÁPIDA (QUICK NAV) - SEM SCROLL AO TOPO ==========
   quickNavItems.forEach(item => {
     item.addEventListener('click', function(e) {
       e.preventDefault();
-      const targetId = this.getAttribute('href').substring(1);
+      e.stopPropagation();
+      
+      const href = this.getAttribute('href');
+      if (!href || href === '#') return;
+      
+      const targetId = href.substring(1);
       const targetElement = document.getElementById(targetId);
       
       if (targetElement) {
-        // Se for categoria de livros, ativar a aba
+        // Se for categoria de livros, ativar a aba ANTES do scroll
         if (targetId.startsWith('leitura-')) {
           const categoryType = targetId.replace('leitura-', '');
           
+          // Desativar todas as abas
+          tabs.forEach(tab => tab.classList.remove('active'));
+          categories.forEach(cat => cat.classList.remove('active'));
+          
+          // Ativar a aba correta
           tabs.forEach(tab => {
-            tab.classList.remove('active');
             if (tab.getAttribute('data-tab') === categoryType) {
               tab.classList.add('active');
             }
           });
           
-          categories.forEach(category => {
-            category.classList.remove('active');
-            if (category.id === targetId) {
-              category.classList.add('active');
-            }
-          });
+          // Mostrar a categoria correta
+          const categoryElement = document.getElementById(`leitura-${categoryType}`);
+          if (categoryElement) {
+            categoryElement.classList.add('active');
+          }
         }
         
-        // Scroll direto ao elemento (sem offset)
-        const elementTop = targetElement.offsetTop;
+        // SCROLL SUAVE - sem offset
+        const targetPosition = targetElement.offsetTop;
+        
         window.scrollTo({
-          top: elementTop,
-          behavior: 'smooth'
+          top: targetPosition,
+          behavior: 'smooth',
+          block: 'start'
         });
       }
-    });
+      
+      return false;
+    }, true); // Usar capture phase
   });
   
-  // ========== BOTÃO VOLTAR AO TOPO (DINÂMICO) ==========
+  // ========== BOTÃO VOLTAR AO TOPO ==========
   window.addEventListener('scroll', function() {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    const booksSectionTop = booksSection.offsetTop;
+    const booksSectionTop = booksSection ? booksSection.offsetTop : 0;
     
-    // Mostrar quando desce na seção de livros
     if (scrollTop >= booksSectionTop - 200) {
       backToTopButton.classList.add('visible');
     } else {
@@ -1103,28 +1116,38 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  backToTopButton.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
+  if (backToTopButton) {
+    backToTopButton.addEventListener('click', function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+      
+      return false;
     });
-  });
+  }
   
   // ========== QUICK-NAV ATIVA CONFORME SCROLL ==========
   window.addEventListener('scroll', function() {
     let current = '';
     const sections = document.querySelectorAll('section[id], div[id^="leitura-"]');
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 150;
-      if (window.pageYOffset >= sectionTop) {
+      const sectionTop = section.offsetTop;
+      if (scrollTop >= sectionTop - 150) {
         current = section.getAttribute('id');
       }
     });
     
     quickNavItems.forEach(item => {
+      const href = item.getAttribute('href');
       item.classList.remove('active');
-      if (item.getAttribute('href') === `#${current}`) {
+      
+      if (href === `#${current}`) {
         item.classList.add('active');
       }
     });
@@ -1171,4 +1194,5 @@ document.querySelectorAll('.book-card, .band-card').forEach(el => {
   observer.observe(el);
 });
 </script>
+
 <!-- FIM: </script> -->
