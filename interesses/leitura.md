@@ -1,0 +1,782 @@
+---
+layout: single
+title: "Música & Leitura"
+permalink: /interesses/leitura/
+author_profile: false
+---
+
+<style>
+/* ==================== BASE ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #000814 !important;
+  color: #e6faff;
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+}
+
+.page__content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==================== PARTÍCULAS DE FUNDO ==================== */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero-leitura {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px 80px;
+  z-index: 1;
+}
+
+.hero-leitura h1 {
+  font-size: 56px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #00eaff, #0066ff, #00eaff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.hero-leitura p {
+  font-size: 20px;
+  color: #b3d9ff;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  line-height: 1.6;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 30px;
+  background: rgba(0, 234, 255, 0.1);
+  border: 2px solid #00eaff;
+  color: #00eaff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.back-button:hover {
+  background: rgba(0, 234, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.3);
+}
+
+/* ==================== SEÇÕES ==================== */
+.content-section {
+  position: relative;
+  z-index: 1;
+  margin: 60px 0;
+}
+
+.section-title {
+  font-size: 42px;
+  color: #00eaff;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+}
+
+/* ==================== MÚSICA - CARDS BANDAS ==================== */
+.bands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.band-card {
+  background: linear-gradient(145deg, rgba(0, 102, 255, 0.08), rgba(0, 234, 255, 0.08));
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.band-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.band-card:hover::before {
+  left: 100%;
+}
+
+.band-card:hover {
+  transform: translateY(-10px);
+  border-color: #00eaff;
+  box-shadow: 0 20px 50px rgba(0, 234, 255, 0.3);
+}
+
+.band-icon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(0, 234, 255, 0.5));
+}
+
+.band-name {
+  font-size: 26px;
+  font-weight: 700;
+  color: #00eaff;
+  margin-bottom: 15px;
+}
+
+.band-description {
+  font-size: 15px;
+  color: #b3d9ff;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ==================== SPOTIFY PLAYER ==================== */
+.spotify-container {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  background: linear-gradient(145deg, rgba(0, 102, 255, 0.08), rgba(0, 234, 255, 0.08));
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+.spotify-title {
+  font-size: 28px;
+  color: #00eaff;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.spotify-subtitle {
+  font-size: 16px;
+  color: #b3d9ff;
+  margin-bottom: 30px;
+  font-style: italic;
+}
+
+.spotify-container iframe {
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 234, 255, 0.2);
+}
+
+.spotify-placeholder {
+  background: rgba(0, 20, 40, 0.6);
+  border: 2px dashed rgba(0, 234, 255, 0.3);
+  border-radius: 12px;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.spotify-placeholder p {
+  font-size: 18px;
+  color: #b3d9ff;
+  margin-bottom: 15px;
+}
+
+.spotify-placeholder code {
+  background: rgba(0, 234, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 6px;
+  color: #00ff88;
+  font-size: 14px;
+}
+
+/* ==================== LEITURA - BOOKS ==================== */
+.books-category {
+  margin-bottom: 80px;
+}
+
+.category-title {
+  font-size: 32px;
+  color: #00ff88;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.book-card {
+  background: linear-gradient(145deg, rgba(0, 20, 40, 0.8), rgba(0, 30, 50, 0.8));
+  border: 2px solid rgba(0, 234, 255, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card:hover {
+  border-color: #00eaff;
+  box-shadow: 0 15px 50px rgba(0, 234, 255, 0.3);
+  transform: translateY(-8px);
+}
+
+.book-header {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.book-cover {
+  width: 100px;
+  min-width: 100px;
+  height: 150px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.book-info {
+  flex: 1;
+}
+
+.book-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #00eaff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.book-author {
+  font-size: 15px;
+  color: #b3d9ff;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.book-rating {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.book-genre {
+  display: inline-block;
+  background: rgba(0, 255, 136, 0.2);
+  border: 1px solid #00ff88;
+  color: #00ff88;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.book-review {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, margin-top 0.5s ease;
+  color: #b3d9ff;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.book-card.expanded .book-review {
+  max-height: 500px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.read-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: rgba(0, 234, 255, 0.1);
+  border: 1px solid #00eaff;
+  color: #00eaff;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background: rgba(0, 234, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.read-more-btn .arrow {
+  transition: transform 0.3s ease;
+}
+
+.book-card.expanded .read-more-btn .arrow {
+  transform: rotate(90deg);
+}
+
+/* ==================== RESPONSIVO ==================== */
+@media (max-width: 768px) {
+  .hero-leitura h1 { font-size: 38px; }
+  .section-title { font-size: 32px; }
+  .bands-grid { grid-template-columns: 1fr; }
+  .books-grid { grid-template-columns: 1fr; }
+  .book-header { flex-direction: column; align-items: center; text-align: center; }
+  .book-cover { margin-bottom: 15px; }
+}
+
+/* ==================== ANIMAÇÕES ==================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.band-card, .book-card, .spotify-container {
+  animation: fadeInUp 0.6s ease backwards;
+}
+
+.band-card:nth-child(1) { animation-delay: 0.1s; }
+.band-card:nth-child(2) { animation-delay: 0.2s; }
+.band-card:nth-child(3) { animation-delay: 0.3s; }
+.band-card:nth-child(4) { animation-delay: 0.4s; }
+</style>
+
+<!-- Partículas de Fundo -->
+<div class="particles-bg"></div>
+
+<!-- Hero Section -->
+<section class="hero-leitura">
+  <h1>🎵📚 Música & Leitura</h1>
+  <p>As influências que moldam minha visão de mundo, criatividade e forma de pensar</p>
+  <a href="/sobre/" class="back-button">← Voltar ao Perfil</a>
+</section>
+
+<!-- SEÇÃO: MÚSICA -->
+<section class="content-section">
+  <h2 class="section-title">🎵 Trilha Sonora da Vida</h2>
+  
+  <!-- Cards das Bandas -->
+  <div class="bands-grid">
+    <div class="band-card">
+      <span class="band-icon">🎸</span>
+      <div class="band-name">Muse</div>
+      <div class="band-description">"Uprising - Resistência em forma de som"</div>
+    </div>
+    
+    <div class="band-card">
+      <span class="band-icon">🎤</span>
+      <div class="band-name">Nothing But Thieves</div>
+      <div class="band-description">"Intensidade emocional crua"</div>
+    </div>
+    
+    <div class="band-card">
+      <span class="band-icon">🎹</span>
+      <div class="band-name">The Doors</div>
+      <div class="band-description">"Poesia psicodélica atemporal"</div>
+    </div>
+    
+    <div class="band-card">
+      <span class="band-icon">⚡</span>
+      <div class="band-name">Linkin Park</div>
+      <div class="band-description">"A trilha sonora de uma geração"</div>
+    </div>
+  </div>
+  
+  <!-- Spotify Player -->
+  <div class="spotify-container">
+    <div class="spotify-title">Playlist: Code & Focus</div>
+    <div class="spotify-subtitle">Trilha sonora perfeita para codar e mergulhar em projetos</div>
+    
+    <!-- PLACEHOLDER - Substitua pelo seu embed do Spotify -->
+    <div class="spotify-placeholder">
+      <p>🎧 <strong>Adicione sua playlist aqui!</strong></p>
+      <p style="font-size: 14px; margin-top: 10px;">
+        1. Crie uma playlist pública no Spotify<br>
+        2. Clique em "Compartilhar" → "Incorporar playlist"<br>
+        3. Substitua este div pelo código <code>&lt;iframe&gt;</code>
+      </p>
+      <p style="font-size: 13px; color: #00ff88; margin-top: 20px;">
+        Exemplo: https://open.spotify.com/embed/playlist/SUA_PLAYLIST_ID
+      </p>
+    </div>
+    
+    <!-- EXEMPLO de como ficará (descomente e adicione seu ID):
+    <iframe 
+      style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/SUA_PLAYLIST_ID" 
+      width="100%" 
+      height="380" 
+      frameBorder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+      loading="lazy">
+    </iframe>
+    -->
+  </div>
+</section>
+
+<!-- SEÇÃO: LEITURA -->
+<section class="content-section">
+  <h2 class="section-title">📚 Livros que Moldaram Minha Visão</h2>
+  
+  <!-- FICÇÃO TRANSFORMADORA -->
+  <div class="books-category">
+    <h3 class="category-title">🌌 Ficção Transformadora</h3>
+    <div class="books-grid">
+      
+      <!-- DUNA -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/81ym2Ay0bNL._SL1500_.jpg" alt="Duna" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Duna</div>
+            <div class="book-author">Frank Herbert</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Ficção Científica</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>Por que mudou minha vida:</strong><br><br>
+          Duna não é apenas ficção científica — é uma aula de complexidade. Política, ecologia, religião, estratégia... tudo entrelaçado de forma elegante. Me mostrou que sistemas complexos podem ser compreensíveis quando bem estruturados. 
+          <br><br>
+          Mudou completamente como vejo ficção e como penso em arquiteturas de sistemas. A ideia de que pequenas ações têm consequências massivas no futuro é algo que aplico tanto em código quanto na vida. Um universo que respira complexidade com simplicidade narrativa.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+      <!-- NEUROMANCER -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/81L2JSBZ9hL._SL1500_.jpg" alt="Neuromancer" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Neuromancer</div>
+            <div class="book-author">William Gibson</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Cyberpunk</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>O livro que definiu cyberpunk:</strong><br><br>
+          Gibson previu o futuro digital antes da internet se popularizar. O conceito de "ciberespaço" nasceu aqui. A estética neon, hackers, megacorporações, IA consciente — tudo que inspira minha visão de tecnologia.
+          <br><br>
+          Me fez entender que tecnologia não é neutra — ela reflete poder, controle e liberdade. A fusão entre humano e máquina, a vulnerabilidade dos sistemas... tudo aqui é atemporal e profético. É impossível trabalhar com tech e não se inspirar nesse universo.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+      <!-- FUNDAÇÃO -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/91V5hLOTeJL._SL1500_.jpg" alt="Fundação" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Fundação</div>
+            <div class="book-author">Isaac Asimov</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Ficção Científica</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>Matemática prevendo sociedades:</strong><br><br>
+          A psicohistória de Asimov é fascinante — usar matemática para prever o comportamento de civilizações inteiras. Me inspirou a ver dados como padrões que contam histórias sobre o futuro.
+          <br><br>
+          A ideia de que conhecimento e planejamento podem moldar o destino da humanidade é poderosa. Asimov me ensinou que infraestrutura (seja social ou tecnológica) é a base de tudo. Um império cai, mas conhecimento bem preservado renasce. Isso mudou como penso em documentação e sistemas legados.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- TÉCNICOS/CARREIRA -->
+  <div class="books-category">
+    <h3 class="category-title">💻 Técnicos & Carreira</h3>
+    <div class="books-grid">
+      
+      <!-- CLEAN CODE -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/71T7aD3EOTL._SL1328_.jpg" alt="Clean Code" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Clean Code</div>
+            <div class="book-author">Robert C. Martin</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Programação</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>A bíblia do código legível:</strong><br><br>
+          Uncle Bob transformou como escrevo cada função. "Código é lido 10x mais do que é escrito" — essa frase mudou tudo. Aprendi que clareza é mais importante que inteligência.
+          <br><br>
+          Nomes significativos, funções pequenas, comentários apenas quando necessário. Cada linha deve contar uma história. Aplico esses princípios em scripts PowerShell, automações Node.js e até em documentação. Clean Code não é sobre perfeccionismo — é sobre respeitar quem vai ler seu código depois (incluindo você mesmo).
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+      <!-- THE PRAGMATIC PROGRAMMER -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/71f1jieYHNL._SL1500_.jpg" alt="The Pragmatic Programmer" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">The Pragmatic Programmer</div>
+            <div class="book-author">Hunt & Thomas</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Desenvolvimento</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>Carpintaria de software:</strong><br><br>
+          Cada capítulo é uma lição prática de como ser um desenvolvedor melhor. "DRY - Don't Repeat Yourself" virou meu mantra. Automatizar processos repetitivos não é preguiça — é eficiência.
+          <br><br>
+          Aprendi a pensar em código como artesanato: ferramentas certas, atenção aos detalhes, orgulho do trabalho. O conceito de "broken windows" (janelas quebradas) mudou como lido com dívida técnica. Um pequeno problema ignorado se torna uma avalanche. Pragmatismo é equilibrar perfeição com entrega.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+      <!-- THE PHOENIX PROJECT -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/81XRKXk4gbL._SL1500_.jpg" alt="The Phoenix Project" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">The Phoenix Project</div>
+            <div class="book-author">Gene Kim</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">DevOps</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>DevOps em forma de thriller:</strong><br><br>
+          Este livro transformou infraestrutura em narrativa envolvente. Impossível parar de ler! Acompanhar o caos de TI se transformando em fluxo otimizado foi revelador.
+          <br><br>
+          Os "Três Caminhos" (Flow, Feedback, Continuous Learning) mudaram como vejo suporte e automação. Gargalos, trabalho não planejado, heroísmo vs processos — tudo isso virou real. Me fez entender que infraestrutura não é apenas servidores, mas fluxo de valor. Cada automação que crio hoje vem dessa filosofia.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- DESENVOLVIMENTO PESSOAL -->
+  <div class="books-category">
+    <h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
+    <div class="books-grid">
+      
+      <!-- ATOMIC HABITS -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/81YkqyaFVEL._SL1500_.jpg" alt="Atomic Habits" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Atomic Habits</div>
+            <div class="book-author">James Clear</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Produtividade</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>1% melhor todo dia:</strong><br><br>
+          "1% melhor todo dia = 37x melhor em um ano." Essa matemática simples mudou minha vida. Não são metas ambiciosas que transformam — são sistemas consistentes.
+          <br><br>
+          Aprendi a focar em identidade, não em resultados. "Eu sou alguém que aprende diariamente" é mais poderoso que "quero aprender X". Aplico isso em tudo: estudar uma tecnologia nova por 30min/dia, automatizar uma tarefa por semana, documentar learnings. Hábitos compostos são mágica real.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+      <!-- DEEP WORK -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/71gCGwqH3KL._SL1500_.jpg" alt="Deep Work" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Deep Work</div>
+            <div class="book-author">Cal Newport</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Foco</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>Foco profundo é superpoder:</strong><br><br>
+          Na era da distração constante, quem consegue focar profundamente vence. Newport prova com dados que trabalho superficial é ilusão de produtividade.
+          <br><br>
+          Aprendi a criar blocos de tempo ininterruptos para resolver problemas complexos. Desligar notificações, isolar-se e mergulhar em um desafio por 2-3h gera mais resultado que 8h distraídas. Mudou como estruturo meu dia: shallow work (emails, meetings) em horários específicos, deep work protegido. Automação nasceu de sessões de deep work.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+      <!-- MINDSET -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/71n4-c10d1L._SL1500_.jpg" alt="Mindset" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Mindset</div>
+            <div class="book-author">Carol S. Dweck</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Psicologia</span>
+          </div>
+        </div>
+		
+		<!-- MINDSET -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/71n4-c10d1L._SL1500_.jpg" alt="Mindset" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Mindset</div>
+            <div class="book-author">Carol S. Dweck</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">Psicologia</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>Mentalidade de crescimento vs fixa:</strong><br><br>
+          Dweck revolucionou como vejo desafios. Pessoas com mindset fixo acreditam que talento é inato. Pessoas com mindset de crescimento sabem que habilidades são construídas.
+          <br><br>
+          Mudou completamente como reajo a erros. Bugs não são falhas pessoais — são oportunidades de aprender. Cada problema de infraestrutura é uma chance de melhorar. "Ainda não sei" virou mais poderoso que "não sei". Essa mentalidade alimenta minha curiosidade e resiliência em TI, onde sempre há algo novo para aprender.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+      <!-- SAPIENS -->
+      <div class="book-card" onclick="toggleBook(this)">
+        <div class="book-header">
+          <img src="https://m.media-amazon.com/images/I/71V6fvQ+pxL._SL1500_.jpg" alt="Sapiens" class="book-cover">
+          <div class="book-info">
+            <div class="book-title">Sapiens</div>
+            <div class="book-author">Yuval Noah Harari</div>
+            <div class="book-rating">⭐⭐⭐⭐⭐</div>
+            <span class="book-genre">História</span>
+          </div>
+        </div>
+        <div class="book-review">
+          <strong>Contexto histórico massivo:</strong><br><br>
+          Harari conta a história da humanidade de forma épica e acessível. De caçadores-coletores a algoritmos dominando decisões — uma jornada fascinante.
+          <br><br>
+          Me deu perspectiva sobre tecnologia. IA não é o primeiro "salto cognitivo" da humanidade. Agricultura, escrita, dinheiro — tudo foi disruptivo. Entender padrões históricos me ajuda a ver o presente com clareza. Tecnologia não é apenas código — é poder, controle e evolução. Sapiens ampliou minha visão sobre o papel da tech na sociedade.
+        </div>
+        <div class="read-more-btn">
+          <span>Leia mais</span>
+          <span class="arrow">→</span>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</section>
+
+<!-- JavaScript -->
+<script>
+function toggleBook(card) {
+  // Fecha outros cards abertos
+  const allCards = document.querySelectorAll('.book-card');
+  allCards.forEach(c => {
+    if (c !== card && c.classList.contains('expanded')) {
+      c.classList.remove('expanded');
+    }
+  });
+  
+  // Toggle do card clicado
+  card.classList.toggle('expanded');
+  
+  // Scroll suave para o card
+  if (card.classList.contains('expanded')) {
+    setTimeout(() => {
+      card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+}
+
+// Animação ao entrar na viewport
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.book-card, .band-card').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(30px)';
+  el.style.transition = 'all 0.6s ease';
+  observer.observe(el);
+});
+</script>
