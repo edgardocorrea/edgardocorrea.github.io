@@ -14,8 +14,6 @@ author_profile: false
 }
 
 body {
-  background: #000814 !important;
-  color: #e6faff;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
