@@ -14,6 +14,8 @@ author_profile: false
 }
 
 body {
+  background: #000814 !important;
+  color: #e6faff;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
@@ -79,6 +81,119 @@ body {
   max-width: 700px;
   margin: 0 auto 40px;
   line-height: 1.6;
+}
+
+/* ==================== MENU DE NAVEGAÇÃO RÁPIDA ==================== */
+.quick-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(0, 8, 20, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 234, 255, 0.2);
+}
+
+.quick-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 0 20px;
+}
+
+.quick-nav-item {
+  padding: 8px 20px;
+  background: rgba(0, 102, 255, 0.1);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  border-radius: 30px;
+  color: #b3d9ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.quick-nav-item:hover, .quick-nav-item.active {
+  background: rgba(0, 234, 255, 0.2);
+  border-color: #00eaff;
+  color: #00eaff;
+  transform: translateY(-2px);
+}
+
+/* ==================== BOTÃO VOLTAR AO TOPO ==================== */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: rgba(0, 102, 255, 0.8);
+  border: 2px solid #00eaff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6faff;
+  font-size: 24px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background: rgba(0, 234, 255, 0.8);
+  transform: translateY(-5px);
+}
+
+/* ==================== BOTÕES DE NAVEGAÇÃO ==================== */
+.nav-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 60px 0;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 30px;
+  background: rgba(0, 102, 255, 0.1);
+  border: 2px solid #00eaff;
+  color: #00eaff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background: rgba(0, 234, 255, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 234, 255, 0.3);
+}
+
+.nav-button.secondary {
+  border-color: #00ff88;
+  color: #00ff88;
+}
+
+.nav-button.secondary:hover {
+  background: rgba(0, 255, 136, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
 }
 
 .back-button {
@@ -232,8 +347,42 @@ body {
 }
 
 /* ==================== LEITURA - BOOKS ==================== */
+.books-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.book-tab {
+  padding: 10px 25px;
+  background: rgba(0, 102, 255, 0.1);
+  border: 1px solid rgba(0, 102, 255, 0.3);
+  border-radius: 30px;
+  color: #b3d9ff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.book-tab:hover {
+  background: rgba(0, 102, 255, 0.2);
+}
+
+.book-tab.active {
+  background: rgba(0, 234, 255, 0.2);
+  border-color: #00eaff;
+  color: #00eaff;
+}
+
 .books-category {
+  display: none;
   margin-bottom: 80px;
+}
+
+.books-category.active {
+  display: block;
 }
 
 .category-title {
@@ -374,6 +523,8 @@ body {
   .books-grid { grid-template-columns: 1fr; }
   .book-header { flex-direction: column; align-items: center; text-align: center; }
   .book-cover { margin-bottom: 15px; }
+  .quick-nav-container { padding: 0 10px; }
+  .quick-nav-item { font-size: 12px; padding: 6px 15px; }
 }
 
 /* ==================== ANIMAÇÕES ==================== */
@@ -405,11 +556,24 @@ body {
 <section class="hero-leitura">
   <h1>🎵📚 Música & Leitura</h1>
   <p>As influências que moldam minha visão de mundo, criatividade e forma de pensar</p>
-  <a href="/sobre/" class="back-button">← Voltar ao Perfil</a>
 </section>
 
+<!-- Menu de Navegação Rápida -->
+<nav class="quick-nav">
+  <div class="quick-nav-container">
+    <a href="#musica" class="quick-nav-item">🎵 Música</a>
+    <a href="#leitura" class="quick-nav-item">📚 Leitura</a>
+    <a href="#ficcao" class="quick-nav-item">🌌 Ficção</a>
+    <a href="#tecnicos" class="quick-nav-item">💻 Técnicos</a>
+    <a href="#pessoal" class="quick-nav-item">🧠 Pessoal</a>
+  </div>
+</nav>
+
+<!-- Botão Voltar ao Topo -->
+<div class="back-to-top" id="backToTop">↑</div>
+
 <!-- SEÇÃO: MÚSICA -->
-<section class="content-section">
+<section id="musica" class="content-section">
   <h2 class="section-title">🎵 Trilha Sonora da Vida</h2>
   
   <!-- Cards das Bandas -->
@@ -473,11 +637,18 @@ body {
 </section>
 
 <!-- SEÇÃO: LEITURA -->
-<section class="content-section">
+<section id="leitura" class="content-section">
   <h2 class="section-title">📚 Livros que Moldaram Minha Visão</h2>
   
+  <!-- Abas de Navegação -->
+  <div class="books-tabs">
+    <div class="book-tab active" data-tab="ficcao">🌌 Ficção Transformadora</div>
+    <div class="book-tab" data-tab="tecnicos">💻 Técnicos & Carreira</div>
+    <div class="book-tab" data-tab="pessoal">🧠 Desenvolvimento Pessoal</div>
+  </div>
+  
   <!-- FICÇÃO TRANSFORMADORA -->
-  <div class="books-category">
+  <div id="ficcao" class="books-category active">
     <h3 class="category-title">🌌 Ficção Transformadora</h3>
     <div class="books-grid">
       
@@ -554,7 +725,7 @@ body {
   </div>
   
   <!-- TÉCNICOS/CARREIRA -->
-  <div class="books-category">
+  <div id="tecnicos" class="books-category">
     <h3 class="category-title">💻 Técnicos & Carreira</h3>
     <div class="books-grid">
       
@@ -631,7 +802,7 @@ body {
   </div>
   
   <!-- DESENVOLVIMENTO PESSOAL -->
-  <div class="books-category">
+  <div id="pessoal" class="books-category">
     <h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
     <div class="books-grid">
       
@@ -692,18 +863,6 @@ body {
             <span class="book-genre">Psicologia</span>
           </div>
         </div>
-		
-		<!-- MINDSET -->
-      <div class="book-card" onclick="toggleBook(this)">
-        <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/71n4-c10d1L._SL1500_.jpg" alt="Mindset" class="book-cover">
-          <div class="book-info">
-            <div class="book-title">Mindset</div>
-            <div class="book-author">Carol S. Dweck</div>
-            <div class="book-rating">⭐⭐⭐⭐⭐</div>
-            <span class="book-genre">Psicologia</span>
-          </div>
-        </div>
         <div class="book-review">
           <strong>Mentalidade de crescimento vs fixa:</strong><br><br>
           Dweck revolucionou como vejo desafios. Pessoas com mindset fixo acreditam que talento é inato. Pessoas com mindset de crescimento sabem que habilidades são construídas.
@@ -715,9 +874,6 @@ body {
           <span class="arrow">→</span>
         </div>
       </div>
-      
-    </div>
-  </div>
       
       <!-- SAPIENS -->
       <div class="book-card" onclick="toggleBook(this)">
@@ -744,11 +900,102 @@ body {
       
     </div>
   </div>
-  
 </section>
+
+<!-- Botões de Navegação -->
+<div class="nav-buttons">
+  <a href="/interesses/animes-seriados/" class="nav-button">
+    <span>←</span>
+    <span>Animes & Séries</span>
+  </a>
+  
+  <a href="/sobre/" class="nav-button secondary">
+    <span>🏠</span>
+    <span>Voltar ao Perfil</span>
+  </a>
+  
+  <a href="#" class="nav-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+    <span>↑</span>
+    <span>Topo da Página</span>
+  </a>
+</div>
 
 <!-- JavaScript -->
 <script>
+// Abas dos livros
+document.addEventListener('DOMContentLoaded', function() {
+  const tabs = document.querySelectorAll('.book-tab');
+  const categories = document.querySelectorAll('.books-category');
+  
+  tabs.forEach(tab => {
+    tab.addEventListener('click', function() {
+      // Remove active class from all tabs and categories
+      tabs.forEach(t => t.classList.remove('active'));
+      categories.forEach(c => c.classList.remove('active'));
+      
+      // Add active class to clicked tab and corresponding category
+      this.classList.add('active');
+      const tabId = this.getAttribute('data-tab');
+      document.getElementById(tabId).classList.add('active');
+    });
+  });
+  
+  // Navegação rápida
+  const quickNavItems = document.querySelectorAll('.quick-nav-item');
+  quickNavItems.forEach(item => {
+    item.addEventListener('click', function(e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href').substring(1);
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+  
+  // Botão voltar ao topo
+  const backToTopButton = document.getElementById('backToTop');
+  
+  window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+      backToTopButton.classList.add('visible');
+    } else {
+      backToTopButton.classList.remove('visible');
+    }
+  });
+  
+  backToTopButton.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  
+  // Atualizar navegação rápida com base na seção visível
+  window.addEventListener('scroll', function() {
+    let current = '';
+    const sections = document.querySelectorAll('section[id]');
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+    
+    quickNavItems.forEach(item => {
+      item.classList.remove('active');
+      if (item.getAttribute('href') === `#${current}`) {
+        item.classList.add('active');
+      }
+    });
+  });
+});
+
 function toggleBook(card) {
   // Fecha outros cards abertos
   const allCards = document.querySelectorAll('.book-card');
