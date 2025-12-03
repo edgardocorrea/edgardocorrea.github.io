@@ -92,46 +92,13 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: linear-gradient(90deg, 
-    rgba(0, 102, 255, 0.15) 0%, 
-    rgba(0, 8, 20, 0.95) 10%, 
-    rgba(0, 8, 20, 0.95) 90%, 
-    rgba(0, 102, 255, 0.15) 100%);
+  background: rgba(0, 8, 20, 0.95);
   backdrop-filter: blur(10px);
   padding: 15px 0;
   margin: 20px 0 30px 0;
   border-radius: 50px;
-  box-shadow: 
-    0 0 20px rgba(0, 102, 255, 0.3),
-    0 0 40px rgba(0, 102, 255, 0.2),
-    inset 0 0 20px rgba(0, 234, 255, 0.1);
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  position: relative;
-}
-
-.quick-nav::before {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  background: linear-gradient(90deg, 
-    #0066ff 0%, 
-    #00eaff 25%, 
-    #0066ff 50%, 
-    #00eaff 75%, 
-    #0066ff 100%);
-  border-radius: 50px;
-  z-index: -1;
-  background-size: 200% 100%;
-  animation: neonBorder 3s linear infinite;
-}
-
-@keyframes neonBorder {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  border: 2px solid rgba(0, 102, 255, 0.3);
 }
 
 .quick-nav-container {
@@ -183,9 +150,7 @@ body {
   border-color: #00eaff;
   color: #00eaff;
   transform: translateY(-2px);
-  box-shadow: 
-    0 5px 15px rgba(0, 234, 255, 0.3),
-    0 0 20px rgba(0, 234, 255, 0.2);
+  box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
 }
 
 /* ==================== BOTÃO VOLTAR AO TOPO ==================== */
@@ -1041,11 +1006,6 @@ body {
     <span>🏠</span>
     <span>Voltar ao Perfil</span>
   </a>
-  
-  <a href="#" class="nav-button" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-    <span>↑</span>
-    <span>Topo da Página</span>
-  </a>
 </div>
 
 <!-- JavaScript -->
@@ -1064,7 +1024,23 @@ document.addEventListener('DOMContentLoaded', function() {
       // Add active class to clicked tab and corresponding category
       this.classList.add('active');
       const tabId = this.getAttribute('data-tab');
-      document.getElementById(tabId).classList.add('active');
+      const targetCategory = document.getElementById(tabId);
+      
+      if (targetCategory) {
+        targetCategory.classList.add('active');
+        
+        // Scroll suave para a categoria de livros
+        setTimeout(() => {
+          const booksSection = document.getElementById('leitura');
+          if (booksSection) {
+            const sectionTop = booksSection.offsetTop - 80;
+            window.scrollTo({
+              top: sectionTop,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
     });
   });
   
