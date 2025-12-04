@@ -592,7 +592,7 @@ body {
 
 <!-- Seção Hero -->
 <section class="hero-leitura">
-  <h1>🎵📚 Música & Leitura</h1>
+  <h1>Música & Leitura</h1>
   <p>As influências que moldam minha visão de mundo, criatividade e forma de pensar</p>
 </section>
 
@@ -918,12 +918,12 @@ body {
 <!-- Botões de Navegação -->
 <div class="nav-buttons">
   <a href="/" class="nav-button">
-    <span>🏠</span>
-    <span>Inicio</span>
+    <span>←</span>
+    <span>Início</span>
   </a>
   
   <a href="/sobre/" class="nav-button secondary">
-    <span>←</span>
+    <span>◉</span>
     <span>Voltar ao Perfil</span>
   </a>
 </div>
