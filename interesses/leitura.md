@@ -642,7 +642,7 @@ body {
   <!-- Player do Spotify -->
   <div class="spotify-container">
     <div class="spotify-title">Playlist: Code & Focus</div>
-    <div class="spotify-subtitle">Trilha sonora perfeita para codar e mergulhar em projetos</div>
+    <div class="spotify-subtitle">Trilha sonora perfeita para refletir e mergulhar em projetos</div>
     
     <!-- Placeholder para o Spotify -->
 	<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6ujIGj23dHCnFNPTNMwBQc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
