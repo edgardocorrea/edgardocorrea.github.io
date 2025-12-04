@@ -582,7 +582,7 @@ body {
       </p>
 
       <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
-        Nos estudos e referências, sou fã de livros que ampliam visão e aprimoram habilidades. Entre meus favoritos estão <strong style="color: #00eaff;">"Clean Code"</strong>, <strong style="color: #00eaff;">"Atomic Habits"</strong> e <strong style="color: #00eaff;">"The Pragmatic Programmer"</strong>. Também gosto de ficção como <strong style="color: #00eaff;">Duna</strong> e <strong style="color: #00eaff;">1984</strong>, que alimentam criatividade e pensamento crítico.
+        Nos estudos e referências, sou fã de livros que ampliam visão e aprimoram habilidades. Entre meus favoritos estão <strong style="color: #00eaff;">"Código Limpo"</strong>, <strong style="color: #00eaff;">"Habitos Atômicos"</strong> e <strong style="color: #00eaff;">"O Programador Pragmático"</strong>. Também gosto de ficção como <strong style="color: #00eaff;">Duna</strong> e <strong style="color: #00eaff;">1984</strong>, que alimentam criatividade e pensamento crítico.
       </p>
 
       <p style="color: #b3d9ff; line-height: 1.8; font-size: 16px; margin-top: 15px;">
