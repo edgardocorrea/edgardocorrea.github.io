@@ -1,11 +1,12 @@
 ---
 layout: single
-title: "Crescimento Corporativo"
+title: "Evolução Contínua"
 permalink: /interesses/evolucao/
 author_profile: false
 ---
 
 <style>
+/* ==================== BASE ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -14,12 +15,18 @@ author_profile: false
 
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  overflow-x: hidden;
   scroll-behavior: smooth;
 }
 
-:target {
-  scroll-margin-top: 100px;
+/* Container principal */
+.initial-content {
+  position: relative;
+  background: rgba(10,20,40,0.85);
+  padding: 30px 25px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
+  z-index: 1;
 }
 
 .page__content {
@@ -28,7 +35,7 @@ body {
   padding: 0 20px;
 }
 
-/* Background Premium */
+/* ==================== PARTÍCULAS DE FUNDO ==================== */
 .particles-bg {
   position: fixed;
   top: 0;
@@ -38,38 +45,49 @@ body {
   z-index: 0;
   pointer-events: none;
   background: 
-    radial-gradient(circle at 20% 30%, rgba(0, 234, 255, 0.03) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
+    radial-gradient(circle at 20% 30%, rgba(0, 119, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(0, 51, 153, 0.05) 0%, transparent 50%);
 }
 
-/* Hero Section */
+/* ==================== HERO SECTION ==================== */
 .hero-evolucao {
   position: relative;
   text-align: center;
   padding: 80px 20px 60px;
   z-index: 1;
-  background: linear-gradient(135deg, #0a2840 0%, #001e3c 100%);
+  background: linear-gradient(135deg, #002244 0%, #001529 100%);
   border-radius: 20px;
   margin: 20px 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
 }
 
 .hero-evolucao h1 {
   font-size: 56px;
   font-weight: 900;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #00eaff, #00bfff, #00eaff);
+  background: linear-gradient(90deg, #ffffff, #e0f2ff, #ffffff);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: growthGlow 3s ease-in-out infinite;
+  background-clip: text;
+  animation: neonGradient 3s ease infinite;
+  text-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(0, 119, 255, 0.5);
 }
 
-@keyframes growthGlow {
+@keyframes neonGradient {
   0%, 100% {
-    text-shadow: 0 0 10px rgba(0, 234, 255, 0.6), 0 0 20px rgba(0, 191, 255, 0.4);
+    background-position: 0% 50%;
+    text-shadow: 
+      0 0 20px rgba(255, 255, 255, 0.8),
+      0 0 40px rgba(0, 119, 255, 0.5);
   }
   50% {
-    text-shadow: 0 0 20px rgba(0, 234, 255, 0.9), 0 0 40px rgba(0, 191, 255, 0.6);
+    background-position: 100% 50%;
+    text-shadow: 
+      0 0 30px rgba(255, 255, 255, 1),
+      0 0 60px rgba(0, 119, 255, 0.7);
   }
 }
 
@@ -81,169 +99,29 @@ body {
   line-height: 1.6;
 }
 
-/* Quick Nav */
-.quick-nav {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: rgba(0, 8, 20, 0.95);
-  backdrop-filter: blur(10px);
-  padding: 15px 0;
-  margin: 20px 0 30px 0;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  border: 2px solid rgba(0, 102, 255, 0.3);
-}
-
-.quick-nav-container {
-  max-width: 100%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  padding: 0 30px;
-}
-
-.quick-nav-item {
-  padding: 10px 25px;
-  background: rgba(0, 102, 255, 0.15);
-  border: 2px solid rgba(0, 102, 255, 0.3);
-  border-radius: 30px;
-  color: #b3d9ff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 15px;
-  transition: all 0.3s ease;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.quick-nav-item::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(0, 234, 255, 0.3), transparent);
-  transition: left 0.6s ease;
-}
-
-.quick-nav-item:hover::before {
-  left: 100%;
-}
-
-.quick-nav-item:hover, .quick-nav-item.active {
-  background: rgba(0, 234, 255, 0.25);
-  border-color: #00eaff;
-  color: #00eaff;
-  transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
-}
-
-/* Content Sections */
+/* ==================== SEÇÕES ==================== */
 .content-section {
   position: relative;
   z-index: 1;
   margin: 40px 0;
-  background: rgba(10,20,40,0.85);
+  background: rgba(0, 20, 60, 0.85);
   border-radius: 20px;
   padding: 40px 30px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
   backdrop-filter: blur(3px);
 }
 
-/* Cards */
-.evolution-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-bottom: 60px;
-}
-
-.evolution-card {
-  background: linear-gradient(145deg, rgba(0, 191, 255, 0.08), rgba(0, 234, 255, 0.08));
-  border: 2px solid rgba(0, 234, 255, 0.3);
-  border-radius: 20px;
-  padding: 30px;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-}
-
-.evolution-card:hover {
-  transform: translateY(-10px);
-  border-color: #00eaff;
-  box-shadow: 0 20px 50px rgba(0, 234, 255, 0.3);
-}
-
-.card-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-
-.card-icon { font-size: 40px; }
-.card-title { font-size: 24px; font-weight: 700; color: #00eaff; }
-.card-arrow { margin-left: auto; font-size: 20px; color: #00bfff; transition: transform 0.3s ease; }
-
-.evolution-card.expanded .card-arrow { transform: rotate(180deg); }
-
-.card-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease;
-  color: #b3d9ff;
-  line-height: 1.8;
-}
-
-.evolution-card.expanded .card-content {
-  max-height: 1000px;
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid rgba(0, 234, 255, 0.2);
-}
-
-.card-list { list-style: none; margin: 15px 0; }
-.card-list li {
-  padding: 8px 0;
-  padding-left: 25px;
-  position: relative;
-}
-.card-list li::before { content: '▸'; position: absolute; left: 0; color: #00eaff; font-weight: bold; }
-
-.card-quote {
-  margin-top: 15px;
-  padding: 15px;
-  background: rgba(0, 234, 255, 0.1);
-  border-left: 3px solid #00eaff;
-  border-radius: 8px;
-  font-style: italic;
-  color: #00eaff;
-  animation: fadeInQuote 1s ease forwards;
-}
-
-@keyframes fadeInQuote {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Section Title */
 .section-title {
   font-size: 42px;
-  color: #00eaff;
+  color: #4dabf7;
   text-align: center;
-  margin-bottom: 50px;
-  text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(77, 171, 247, 0.5);
 }
 
 .section-subtitle {
   font-size: 18px;
-  color: #b3d9ff;
+  color: #a5d8ff;
   text-align: center;
   margin-bottom: 50px;
   line-height: 1.8;
@@ -252,21 +130,198 @@ body {
   margin-right: auto;
 }
 
-/* Final Message */
+/* ==================== CARDS EXPANSÍVEIS ==================== */
+.evolution-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.evolution-card {
+  background: linear-gradient(145deg, rgba(0, 51, 153, 0.1), rgba(0, 119, 255, 0.1));
+  border: 2px solid rgba(77, 171, 247, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.evolution-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(77, 171, 247, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.evolution-card:hover::before {
+  left: 100%;
+}
+
+.evolution-card:hover {
+  transform: translateY(-10px);
+  border-color: #4dabf7;
+  box-shadow: 0 20px 50px rgba(77, 171, 247, 0.3);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4dabf7, #339af0);
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  box-shadow: 0 0 15px rgba(77, 171, 247, 0.4);
+}
+
+.card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4dabf7;
+  flex: 1;
+}
+
+.card-arrow {
+  font-size: 20px;
+  color: #74c0fc;
+  transition: transform 0.3s ease;
+}
+
+.evolution-card.expanded .card-arrow {
+  transform: rotate(180deg);
+}
+
+.card-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+  color: #a5d8ff;
+  line-height: 1.8;
+}
+
+.evolution-card.expanded .card-content {
+  max-height: 1500px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(77, 171, 247, 0.2);
+}
+
+.card-list {
+  list-style: none;
+  margin: 15px 0;
+}
+
+.card-list li {
+  padding: 10px 0;
+  padding-left: 25px;
+  position: relative;
+  font-size: 15px;
+}
+
+.card-list li::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #4dabf7;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.card-quote {
+  margin-top: 15px;
+  padding: 15px;
+  background: rgba(77, 171, 247, 0.1);
+  border-left: 3px solid #4dabf7;
+  border-radius: 8px;
+  font-style: italic;
+  color: #74c0fc;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ==================== COMMITMENT BOX ==================== */
+.commitment-box {
+  background: linear-gradient(135deg, rgba(77, 171, 247, 0.1), rgba(0, 51, 153, 0.1));
+  border: 2px solid rgba(77, 171, 247, 0.4);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  margin: 60px 0;
+}
+
+.commitment-values {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.value-item {
+  padding: 15px;
+  background: rgba(77, 171, 247, 0.08);
+  border: 1px solid rgba(77, 171, 247, 0.3);
+  border-radius: 12px;
+  color: #4dabf7;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.value-item:hover {
+  background: rgba(77, 171, 247, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(77, 171, 247, 0.2);
+}
+
+/* ==================== FINAL MESSAGE ==================== */
 .final-message {
   text-align: center;
   padding: 40px;
   margin-top: 60px;
-  background: linear-gradient(145deg, rgba(0, 102, 255, 0.08), rgba(0, 234, 255, 0.08));
-  border: 2px solid rgba(0, 234, 255, 0.3);
+  background: linear-gradient(145deg, rgba(0, 51, 153, 0.1), rgba(77, 171, 247, 0.1));
+  border: 2px solid rgba(77, 171, 247, 0.3);
   border-radius: 20px;
 }
 
-.final-message h2 { font-size: 32px; color: #00eaff; margin-bottom: 20px; }
-.final-message p { font-size: 18px; color: #b3d9ff; line-height: 1.8; margin-bottom: 20px; }
-.final-quote { font-size: 20px; color: #00eaff; font-weight: 700; font-style: italic; margin-top: 30px; }
+.final-message h2 {
+  font-size: 32px;
+  color: #4dabf7;
+  margin-bottom: 20px;
+}
 
-/* Nav Buttons */
+.final-message p {
+  font-size: 17px;
+  color: #a5d8ff;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.final-quote {
+  font-size: 18px;
+  color: #4dabf7;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 30px;
+}
+
+/* ==================== BOTÕES DE NAVEGAÇÃO ==================== */
 .nav-buttons {
   display: flex;
   justify-content: center;
@@ -281,35 +336,72 @@ body {
   align-items: center;
   gap: 10px;
   padding: 12px 30px;
-  background: rgba(0, 102, 255, 0.1);
-  border: 2px solid #00eaff;
-  color: #00eaff;
+  background: rgba(0, 51, 153, 0.1);
+  border: 2px solid #74c0fc;
+  color: #74c0fc;
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 51, 153, 0.15);
 }
 
-.nav-button:hover { background: rgba(0, 234, 255, 0.2); transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0, 234, 255, 0.3); }
+.nav-button:hover {
+  background: rgba(116, 192, 252, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(116, 192, 252, 0.3);
+}
 
-.nav-button.secondary { border-color: #00eaff; color: #00eaff; }
-.nav-button.secondary:hover { background: rgba(0, 191, 255, 0.2); }
+.nav-button.secondary {
+  border-color: #4dabf7;
+  color: #4dabf7;
+  box-shadow: 0 4px 12px rgba(77, 171, 247, 0.15);
+}
 
+.nav-button.secondary:hover {
+  background: rgba(77, 171, 247, 0.2);
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
   .hero-evolucao h1 { font-size: 38px; }
   .section-title { font-size: 32px; }
   .evolution-cards { grid-template-columns: 1fr; }
-  .quick-nav-item { font-size: 13px; padding: 6px 15px; }
 }
 
-/* Animations */
+@media (max-width: 480px) {
+  .card-icon { 
+    width: 32px; 
+    height: 32px; 
+    font-size: 16px;
+  }
+  .card-title { font-size: 18px; }
+}
+
+/* ==================== ANIMAÇÕES ==================== */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.evolution-card { animation: fadeInUp 0.6s ease backwards; }
+.evolution-card {
+  animation: fadeInUp 0.6s ease backwards;
+}
+
 .evolution-card:nth-child(1) { animation-delay: 0.1s; }
 .evolution-card:nth-child(2) { animation-delay: 0.2s; }
 .evolution-card:nth-child(3) { animation-delay: 0.3s; }
@@ -321,154 +413,232 @@ body {
 <!-- Partículas de Fundo -->
 <div class="particles-bg"></div>
 
-<!-- Hero -->
+<!-- Hero Section -->
 <section class="hero-evolucao">
-  <h1>🚀 Crescimento Corporativo</h1>
-  <p>Excelência, inovação e resultados — um compromisso diário com evolução e performance.</p>
+  <h1>Evolução Contínua</h1>
+  <p>Crescimento não é um destino, é uma forma de viver. Aprender sempre, melhorar sempre, nunca estacionar.</p>
 </section>
 
-<!-- Quick Nav -->
-<nav class="quick-nav">
-  <div class="quick-nav-container">
-    <a href="#sobre" class="quick-nav-item">📖 Filosofia</a>
-    <a href="#cards" class="quick-nav-item">🚀 Áreas</a>
-  </div>
-</nav>
-
-<!-- Filosofia -->
+<!-- Seção: Filosofia -->
 <section id="sobre" class="content-section">
-  <h2 class="section-title">📖 Filosofia Corporativa</h2>
+  <h2 class="section-title">A Filosofia da Evolução</h2>
   <div class="section-subtitle">
-    A excelência corporativa é construída diariamente, combinando inovação, disciplina e estratégia bem aplicada.
+    Acredito profundamente que ninguém se torna excelente apenas com talento — excelência é construída com disciplina, consistência e intenção. Este espaço documenta as ideias que moldam meu crescimento profissional e pessoal.
   </div>
 </section>
 
-<!-- Cards Corporativos -->
-<section id="cards" class="content-section">
-  <h2 class="section-title">🚀 Pilares do Crescimento Corporativo</h2>
+<!-- Seção: Pilares do Crescimento -->
+<section id="pilares" class="content-section">
+  <h2 class="section-title">Pilares do Crescimento</h2>
   
   <div class="evolution-cards">
-    <!-- Card 1 -->
-    <div class="evolution-card">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <span class="card-icon">💡</span>
-        <span class="card-title">Inovação Contínua</span>
+    
+    <!-- Card 1: Mentalidade de Crescimento -->
+    <div class="evolution-card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-icon">*</div>
+        <span class="card-title">Mentalidade de Crescimento</span>
         <span class="card-arrow">▼</span>
       </div>
       <div class="card-content">
+        <p>Ver desafios como oportunidades, fracassos como informações valiosas e limitações como temporárias.</p>
         <ul class="card-list">
-          <li>Processos ágeis e eficientes</li>
-          <li>Incentivo à criatividade da equipe</li>
-          <li>Feedback constante e construtivo</li>
+          <li>Estudo constante de novas tecnologias</li>
+          <li>Testes práticos e pequenos experimentos semanais</li>
+          <li>Revisão periódica de habilidades fortes e fracas</li>
+          <li>Paixão por aprender e compartilhar conhecimento</li>
         </ul>
-        <div class="card-quote">"A inovação distingue um líder de um seguidor." – Steve Jobs</div>
+        <div class="card-quote">"Melhorar 1% todos os dias sempre vence tentar ser perfeito."</div>
       </div>
     </div>
 
-    <!-- Card 2 -->
-    <div class="evolution-card">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <span class="card-icon">📊</span>
-        <span class="card-title">Crescimento Corporativo</span>
+    <!-- Card 2: Hábitos Fortes -->
+    <div class="evolution-card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-icon">*</div>
+        <span class="card-title">Hábitos Fortes</span>
         <span class="card-arrow">▼</span>
       </div>
       <div class="card-content">
+        <p>Adotar pequenos comportamentos que acumulam grandes resultados ao longo do tempo.</p>
         <ul class="card-list">
-          <li>Metas claras e mensuráveis</li>
-          <li>Expansão estratégica de mercado</li>
-          <li>Investimento contínuo em talentos</li>
+          <li>Ler diariamente (mesmo que 10 minutos)</li>
+          <li>Documentar tudo o que aprendo</li>
+          <li>Criar pequenos projetos para validar ideias</li>
+          <li>Blindar foco: evitar multitarefa</li>
+          <li>Priorizar descanso, clareza mental e saúde</li>
         </ul>
-        <div class="card-quote">"O crescimento é o resultado de uma estratégia bem executada." – Indra Nooyi</div>
+        <div class="card-quote">Esses hábitos impactam direto: mais precisão, mais calma, menos retrabalho.</div>
       </div>
     </div>
 
-    <!-- Card 3 -->
-    <div class="evolution-card">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <span class="card-icon">🤝</span>
-        <span class="card-title">Liderança Eficaz</span>
+    <!-- Card 3: Ferramentas e Rotinas -->
+    <div class="evolution-card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-icon">*</div>
+        <span class="card-title">Ferramentas & Rotinas</span>
         <span class="card-arrow">▼</span>
       </div>
       <div class="card-content">
+        <p>Formas simples e consistentes de acompanhar progresso e evoluir continuamente.</p>
         <ul class="card-list">
-          <li>Tomada de decisão transparente</li>
-          <li>Inspirar confiança e motivação</li>
-          <li>Desenvolvimento de líderes internos</li>
+          <li><strong>Notion</strong> — organização e mapas de aprendizado</li>
+          <li><strong>GitHub</strong> — evolução técnica visível em projetos</li>
+          <li><strong>Método Kaizen</strong> — melhorar 1 detalhe por vez</li>
+          <li><strong>Análise pós-projeto</strong> — entender o que funcionou</li>
         </ul>
-        <div class="card-quote">"A liderança é ação, não posição." – Donald McGannon</div>
+        <div class="card-quote">Não acredito em mudanças gigantes. Acredito na constância bem feita.</div>
       </div>
     </div>
 
-    <!-- Card 4 -->
-    <div class="evolution-card">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <span class="card-icon">⚙️</span>
-        <span class="card-title">Eficiência Operacional</span>
+    <!-- Card 4: Desenvolvimento Técnico -->
+    <div class="evolution-card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-icon">*</div>
+        <span class="card-title">Técnico Contínuo</span>
         <span class="card-arrow">▼</span>
       </div>
       <div class="card-content">
+        <p>Para mim, aprender tecnologia é um processo interminável — e isso é o melhor da área.</p>
         <ul class="card-list">
-          <li>Automatização de processos-chave</li>
-          <li>Redução de desperdícios</li>
-          <li>Monitoramento constante de performance</li>
+          <li>Automação de processos</li>
+          <li>Infraestrutura e redes</li>
+          <li>Melhores práticas de documentação</li>
+          <li>Arquitetura simples e eficiente</li>
+          <li>Sistemas mais seguros e resilientes</li>
         </ul>
-        <div class="card-quote">"Eficiência é fazer as coisas corretamente; eficácia é fazer as coisas certas." – Peter Drucker</div>
+        <div class="card-quote">Cada avanço técnico faz parte de uma jornada maior, nunca um ponto final.</div>
       </div>
     </div>
 
-    <!-- Card 5 -->
-    <div class="evolution-card">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <span class="card-icon">🌱</span>
-        <span class="card-title">Sustentabilidade</span>
+    <!-- Card 5: Evolução Pessoal -->
+    <div class="evolution-card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-icon">*</div>
+        <span class="card-title">Evolução Pessoal</span>
         <span class="card-arrow">▼</span>
       </div>
       <div class="card-content">
+        <p>Profissão e vida caminham juntas. Ambas exigem crescimento contínuo.</p>
         <ul class="card-list">
-          <li>Redução da pegada ambiental</li>
-          <li>Programas sociais corporativos</li>
-          <li>Processos éticos e responsáveis</li>
+          <li>Aprender a ouvir mais e falar menos</li>
+          <li>Transformar frustração em combustível</li>
+          <li>Aprender com pessoas mais experientes</li>
+          <li>Manter humildade intelectual sempre</li>
+          <li>Persistir mesmo quando falta motivação</li>
         </ul>
-        <div class="card-quote">"Sustentabilidade não é apenas um objetivo, é uma responsabilidade." – Paul Polman</div>
+        <div class="card-quote">Ser a cada dia uma versão mais completa e preparada de mim.</div>
       </div>
     </div>
 
-    <!-- Card 6 -->
-    <div class="evolution-card">
-      <div class="card-header" onclick="toggleCard(this.parentElement)">
-        <span class="card-icon">📈</span>
-        <span class="card-title">Transformação Digital</span>
+    <!-- Card 6: Meu Compromisso -->
+    <div class="evolution-card" onclick="toggleCard(this)">
+      <div class="card-header">
+        <div class="card-icon">*</div>
+        <span class="card-title">Meu Compromisso</span>
         <span class="card-arrow">▼</span>
       </div>
       <div class="card-content">
-        <ul class="card-list">
-          <li>Adaptação tecnológica contínua</li>
-          <li>Uso de dados para decisões estratégicas</li>
-          <li>Inovação em produtos e serviços</li>
-        </ul>
-        <div class="card-quote">"A tecnologia sozinha não basta. É preciso estratégia e pessoas." – Satya Nadella</div>
+        <p>Continuar crescendo, estudando e aprimorando meu trabalho com princípios sólidos.</p>
+        <div class="commitment-values">
+          <div class="value-item">Simplicidade</div>
+          <div class="value-item">Ética</div>
+          <div class="value-item">Clareza</div>
+          <div class="value-item">Disciplina</div>
+          <div class="value-item">Constância</div>
+        </div>
+        <div class="card-quote">"Pequenas melhorias diárias constroem mudanças extraordinárias."</div>
       </div>
     </div>
 
   </div>
 </section>
 
-<!-- Mensagem Final -->
+<!-- Seção: Mensagem Final -->
 <section class="final-message">
-  <h2>🌟 Estamos Sempre Evoluindo</h2>
-  <p>Nosso compromisso com a excelência não termina. Cada desafio é uma oportunidade de crescimento e aprendizado contínuo.</p>
-  <p class="final-quote">"O sucesso corporativo é a soma de pequenas melhorias diárias." – Autor Desconhecido</p>
+  <h2>Evolução Contínua é uma Forma de Viver</h2>
+  <p>Não é um objetivo — é um caminho.</p>
+  <p>É assim que cresço como profissional, como pessoa e como alguém que acredita que <strong>tecnologia deve servir para facilitar, transformar e inspirar</strong>.</p>
+  <p class="final-quote">"O melhor dia para começar é hoje. O segundo melhor é agora."</p>
 </section>
 
-<!-- Navegação Final -->
+<!-- Botões de Navegação -->
 <div class="nav-buttons">
-  <a href="/interesses/" class="nav-button">⬅️ Voltar</a>
-  <a href="/contato/" class="nav-button secondary">📩 Contato</a>
+  <a href="/interesses/leitura/" class="nav-button">
+    <div class="nav-icon">←</div>
+    <span>Início</span>
+  </a>
+  
+  <a href="/sobre/" class="nav-button secondary">
+    <div class="nav-icon">◉</div>
+    <span>Voltar ao Perfil</span>
+  </a>
 </div>
 
+<!-- JavaScript -->
 <script>
-// Toggle Cards
-function toggleCard(card) {
-  card.classList.toggle('expanded');
-}
+/**
+ * INICIALIZAÇÃO DA PÁGINA
+ */
+document.addEventListener('DOMContentLoaded', function() {
+  
+  /**
+   * Toggle Cards: Abre/fecha cards ao clicar
+   */
+  window.toggleCard = function(card) {
+    const allCards = document.querySelectorAll('.evolution-card');
+    allCards.forEach(c => {
+      if (c !== card && c.classList.contains('expanded')) {
+        c.classList.remove('expanded');
+      }
+    });
+    
+    card.classList.toggle('expanded');
+    
+    if (card.classList.contains('expanded')) {
+      setTimeout(() => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  };
+  
+  /**
+   * Scroll Animations: Anima cards ao entrar na viewport
+   */
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+  };
+  
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, observerOptions);
+  
+  document.querySelectorAll('.evolution-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(30px)';
+    el.style.transition = 'all 0.6s ease';
+    observer.observe(el);
+  });
+  
+  /**
+   * Active Navigation: Destaca menu conforme scroll
+   */
+  window.addEventListener('scroll', function() {
+    let current = '';
+    const sections = document.querySelectorAll('section[id]');
+    
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
+      if (window.pageYOffset >= sectionTop) {
+        current = section.getAttribute('id');
+      }
+    });
+  });
+});
 </script>
