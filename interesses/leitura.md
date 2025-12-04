@@ -6,7 +6,7 @@ author_profile: false
 ---
 
 <style>
-/* ==================== BASE ==================== */
+/* ==================== ESTILOS GLOBAIS ==================== */
 * {
   margin: 0;
   padding: 0;
@@ -14,10 +14,13 @@ author_profile: false
 }
 
 body {
+  background: #000814 !important;
+  color: #e6faff;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
+/* Container principal do conteúdo */
 .initial-content {
   position: relative;
   background: rgba(10,20,40,0.85);
@@ -34,7 +37,7 @@ body {
   padding: 0 20px;
 }
 
-/* ==================== PARTÍCULAS DE FUNDO ==================== */
+/* ==================== FUNDO COM PARTÍCULAS ==================== */
 .particles-bg {
   position: fixed;
   top: 0;
@@ -48,7 +51,7 @@ body {
     radial-gradient(circle at 80% 70%, rgba(0, 102, 255, 0.03) 0%, transparent 50%);
 }
 
-/* ==================== HERO SECTION ==================== */
+/* ==================== SEÇÃO HERO ==================== */
 .hero-leitura {
   position: relative;
   text-align: center;
@@ -167,50 +170,6 @@ body {
   box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
 }
 
-/* ==================== QUICK-NAV ==================== */
-
-/* Scroll suave nativo do navegador */
-html {
-  scroll-behavior: smooth;
-}
-
-/* Adicione isto para melhorar o offset do sticky nav */
-:target {
-  scroll-margin-top: 100px;
-}
-
-/* Mostrar/esconder categorias por âncora */
-.books-category {
-  display: none;
-}
-
-/* Mostrar categoria ativa */
-#ficacao-books:target,
-#ficacao-books.active,
-#tecnicos-books:target,
-#tecnicos-books.active,
-#pessoal-books:target,
-#pessoal-books.active {
-  display: block;
-}
-
-/* Animar entrada */
-.books-category {
-  animation: fadeInBooks 0.3s ease;
-}
-
-@keyframes fadeInBooks {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
 /* ==================== BOTÃO VOLTAR AO TOPO ==================== */
 .back-to-top {
   position: fixed;
@@ -295,27 +254,7 @@ html {
   box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
 }
 
-.back-button {
-  display: inline-block;
-  padding: 12px 30px;
-  background: rgba(0, 234, 255, 0.1);
-  border: 2px solid #00eaff;
-  color: #00eaff;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  margin-top: 20px;
-  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.15);
-}
-
-.back-button:hover {
-  background: rgba(0, 234, 255, 0.2);
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 234, 255, 0.3);
-}
-
-/* ==================== SEÇÕES ==================== */
+/* ==================== SEÇÕES DE CONTEÚDO ==================== */
 .content-section {
   position: relative;
   z-index: 1;
@@ -335,7 +274,7 @@ html {
   text-shadow: 0 0 20px rgba(0, 234, 255, 0.5);
 }
 
-/* ==================== MÚSICA - CARDS BANDAS ==================== */
+/* ==================== CARDS DAS BANDAS ==================== */
 .bands-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -399,7 +338,7 @@ html {
   font-style: italic;
 }
 
-/* ==================== SPOTIFY PLAYER ==================== */
+/* ==================== PLAYER SPOTIFY ==================== */
 .spotify-container {
   max-width: 900px;
   margin: 0 auto 80px;
@@ -451,7 +390,7 @@ html {
   font-size: 14px;
 }
 
-/* ==================== LEITURA - BOOKS ==================== */
+/* ==================== ABAS DOS LIVROS ==================== */
 .books-tabs {
   display: flex;
   justify-content: center;
@@ -625,7 +564,7 @@ html {
   transform: rotate(90deg);
 }
 
-/* ==================== RESPONSIVO ==================== */
+/* ==================== RESPONSIVIDADE ==================== */
 @media (max-width: 1200px) {
   .quick-nav-container {
     justify-content: space-around;
@@ -707,27 +646,26 @@ html {
 <!-- Partículas de Fundo -->
 <div class="particles-bg"></div>
 
-<!-- Hero Section -->
+<!-- Seção Hero com Título Principal -->
 <section class="hero-leitura">
   <h1>🎵📚 Música & Leitura</h1>
   <p>As influências que moldam minha visão de mundo, criatividade e forma de pensar</p>
 </section>
 
-<!-- Menu de Navegação Rápida -->
+<!-- Menu de Navegação Rápida Simplificado -->
 <nav class="quick-nav">
   <div class="quick-nav-container">
     <a href="#musica" class="quick-nav-item">🎵 Música</a>
     <a href="#leitura" class="quick-nav-item">📚 Leitura</a>
-    
-    <!-- Links diretos para cada categoria com scroll-behavior -->
-    <a href="#ficacao-books" class="quick-nav-item">🌌 Ficção</a>
-    <a href="#tecnicos-books" class="quick-nav-item">💻 Técnicos</a>
-    <a href="#pessoal-books" class="quick-nav-item">🧠 Pessoal</a>
+    <a href="#topo" class="quick-nav-item">⬆️ Topo</a>
   </div>
 </nav>
 
-<!-- Botão Voltar ao Topo -->
+<!-- Botão Flutuante para Voltar ao Topo -->
 <div class="back-to-top" id="backToTop">↑</div>
+
+<!-- Seção Principal com ID para o link "Topo" -->
+<div id="topo"></div>
 
 <!-- SEÇÃO: MÚSICA -->
 <section id="musica" class="content-section">
@@ -760,12 +698,12 @@ html {
     </div>
   </div>
   
-  <!-- Spotify Player -->
+  <!-- Player do Spotify -->
   <div class="spotify-container">
     <div class="spotify-title">Playlist: Code & Focus</div>
     <div class="spotify-subtitle">Trilha sonora perfeita para codar e mergulhar em projetos</div>
     
-    <!-- PLACEHOLDER - Substitua pelo seu embed do Spotify -->
+    <!-- Placeholder para o Spotify -->
     <div class="spotify-placeholder">
       <p>🎧 <strong>Adicione sua playlist aqui!</strong></p>
       <p style="font-size: 14px; margin-top: 10px;">
@@ -777,19 +715,6 @@ html {
         Exemplo: https://open.spotify.com/embed/playlist/SUA_PLAYLIST_ID
       </p>
     </div>
-    
-    <!-- EXEMPLO de como ficará (descomente e adicione seu ID):
-    <iframe 
-      style="border-radius:12px" 
-      src="https://open.spotify.com/embed/playlist/SUA_PLAYLIST_ID" 
-      width="100%" 
-      height="380" 
-      frameBorder="0" 
-      allowfullscreen="" 
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-      loading="lazy">
-    </iframe>
-    -->
   </div>
 </section>
 
@@ -797,17 +722,17 @@ html {
 <section id="leitura" class="content-section">
   <h2 class="section-title">📚 Livros que Moldaram Minha Visão</h2>
   
-  <!-- Abas de Navegação -->
+  <!-- Abas de Navegação para Categorias de Livros -->
   <div class="books-tabs">
     <div class="book-tab active" data-tab="ficcao">🌌 Ficção Transformadora</div>
     <div class="book-tab" data-tab="tecnicos">💻 Técnicos & Carreira</div>
     <div class="book-tab" data-tab="pessoal">🧠 Desenvolvimento Pessoal</div>
   </div>
   
-<!-- FICÇÃO TRANSFORMADORA -->
-<div id="ficacao-books" class="books-category active">
-  <h3 class="category-title">🌌 Ficção Transformadora</h3>
-  <div class="books-grid">
+  <!-- CATEGORIA: FICÇÃO TRANSFORMADORA -->
+  <div id="ficcao" class="books-category active">
+    <h3 class="category-title">🌌 Ficção Transformadora</h3>
+    <div class="books-grid">
       
       <!-- DUNA -->
       <div class="book-card" onclick="toggleBook(this)">
@@ -881,10 +806,10 @@ html {
     </div>
   </div>
   
-<!-- DESENVOLVIMENTO PESSOAL -->
-<div id="pessoal-books" class="books-category">
-  <h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
-  <div class="books-grid">
+  <!-- CATEGORIA: TÉCNICOS/CARREIRA -->
+  <div id="tecnicos" class="books-category">
+    <h3 class="category-title">💻 Técnicos & Carreira</h3>
+    <div class="books-grid">
       
       <!-- CLEAN CODE -->
       <div class="book-card" onclick="toggleBook(this)">
@@ -958,9 +883,9 @@ html {
     </div>
   </div>
   
-  <!-- DESENVOLVIMENTO PESSOAL -->
-  <div id="leitura-pessoal" class="books-category">
-	<h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
+  <!-- CATEGORIA: DESENVOLVIMENTO PESSOAL -->
+  <div id="pessoal" class="books-category">
+    <h3 class="category-title">🧠 Desenvolvimento Pessoal</h3>
     <div class="books-grid">
       
       <!-- ATOMIC HABITS -->
@@ -1059,7 +984,7 @@ html {
   </div>
 </section>
 
-<!-- Botões de Navegação -->
+<!-- Botões de Navegação no Final da Página -->
 <div class="nav-buttons">
   <a href="/interesses/animes-seriados/" class="nav-button">
     <span>←</span>
@@ -1072,39 +997,204 @@ html {
   </a>
 </div>
 
-<!-- INÍCIO: <script> -->
-
+<!-- JavaScript Simplificado e Comentado -->
 <script>
+/**
+ * INICIALIZAÇÃO DA PÁGINA
+ * Executado quando o DOM está completamente carregado
+ */
 document.addEventListener('DOMContentLoaded', function() {
-  const tabs = document.querySelectorAll('.book-tab');
-  const quickNavItems = document.querySelectorAll('.quick-nav-item');
   
-  // Mapear abas para IDs de categorias
-  const tabToId = {
-    'ficcao': 'ficacao-books',
-    'tecnicos': 'tecnicos-books',
-    'pessoal': 'pessoal-books'
+  /**
+   * FUNÇÃO: Alternar abas dos livros
+   * Controla a exibição das categorias de livros
+   */
+  const initBookTabs = function() {
+    const tabs = document.querySelectorAll('.book-tab');
+    const categories = document.querySelectorAll('.books-category');
+    
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        // Remove a classe active de todas as abas e categorias
+        tabs.forEach(t => t.classList.remove('active'));
+        categories.forEach(c => c.classList.remove('active'));
+        
+        // Adiciona a classe active à aba clicada e à categoria correspondente
+        this.classList.add('active');
+        const tabId = this.getAttribute('data-tab');
+        const targetCategory = document.getElementById(tabId);
+        
+        if (targetCategory) {
+          targetCategory.classList.add('active');
+        }
+      });
+    });
   };
   
-  // Clique nas abas internas (dentro da seção de leitura)
-  tabs.forEach(tab => {
-    tab.addEventListener('click', function(e) {
-      e.preventDefault();
-      const tabId = this.getAttribute('data-tab');
-      const targetId = tabToId[tabId];
+  /**
+   * FUNÇÃO: Configurar navegação rápida
+   * Implementa o comportamento de scroll suave para os links do menu
+   */
+  const setupQuickNav = function() {
+    const quickNavItems = document.querySelectorAll('.quick-nav-item');
+    
+    quickNavItems.forEach(item => {
+      item.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        
+        if (targetElement) {
+          // Rola suavemente até o elemento
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  };
+  
+  /**
+   * FUNÇÃO: Configurar botão voltar ao topo
+   * Controla a exibição e comportamento do botão flutuante
+   */
+  const setupBackToTopButton = function() {
+    const backToTopButton = document.getElementById('backToTop');
+    let lastScrollTop = 0;
+    let scrollTimer = null;
+    
+    // Monitora eventos de scroll para controlar o botão
+    window.addEventListener('scroll', function() {
+      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       
-      if (targetId) {
-        // Navegar para a âncora
-        window.location.hash = targetId;
-        // Ou usar isto sem recarregar:
-        // history.pushState(null, null, '#' + targetId);
+      // Mostra botão após rolar 300px para baixo
+      if (scrollTop > 300) {
+        backToTopButton.classList.add('visible');
+      } else {
+        backToTopButton.classList.remove('visible');
+      }
+      
+      // Detecta direção do scroll para comportamento dinâmico
+      if (scrollTop > lastScrollTop) {
+        // Rolando para baixo - manter visível
+        backToTopButton.classList.add('visible');
+      } else {
+        // Rolando para cima - esconder temporariamente
+        backToTopButton.classList.remove('visible');
+        
+        // Limpa timer anterior
+        if (scrollTimer) {
+          clearTimeout(scrollTimer);
+        }
+        
+        // Espera um pouco antes de mostrar novamente
+        scrollTimer = setTimeout(() => {
+          if (scrollTop > 300) {
+            backToTopButton.classList.add('visible');
+          }
+        }, 500);
+      }
+      
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    });
+    
+    // Configura clique no botão para voltar ao topo
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  };
+  
+  /**
+   * FUNÇÃO: Alternar cards de livros
+   * Controla a exibição das resenhas dos livros
+   */
+  const toggleBook = function(card) {
+    // Fecha outros cards abertos
+    const allCards = document.querySelectorAll('.book-card');
+    allCards.forEach(c => {
+      if (c !== card && c.classList.contains('expanded')) {
+        c.classList.remove('expanded');
       }
     });
-  });
+    
+    // Alterna o estado do card clicado
+    card.classList.toggle('expanded');
+    
+    // Rola suavemente para o card se foi expandido
+    if (card.classList.contains('expanded')) {
+      setTimeout(() => {
+        card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    }
+  };
   
-  // Quick nav já funciona naturalmente com <a href="#id">
-  // Sem necessidade de JS!
+  /**
+   * FUNÇÃO: Configurar animações de entrada
+   * Adiciona animações quando os elementos entram na viewport
+   */
+  const setupScrollAnimations = function() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+    
+    // Prepara elementos para animação
+    document.querySelectorAll('.book-card, .band-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(30px)';
+      el.style.transition = 'all 0.6s ease';
+      observer.observe(el);
+    });
+  };
+  
+  /**
+   * FUNÇÃO: Atualizar navegação ativa
+   * Destaca o item do menu correspondente à seção visível
+   */
+  const setupActiveNavigation = function() {
+    const quickNavItems = document.querySelectorAll('.quick-nav-item');
+    
+    window.addEventListener('scroll', function() {
+      let current = '';
+      const sections = document.querySelectorAll('section[id], div[id]');
+      
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if (window.pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      
+      quickNavItems.forEach(item => {
+        item.classList.remove('active');
+        if (item.getAttribute('href') === `#${current}`) {
+          item.classList.add('active');
+        }
+      });
+    });
+  };
+  
+  // Inicializa todas as funcionalidades
+  initBookTabs();
+  setupQuickNav();
+  setupBackToTopButton();
+  setupScrollAnimations();
+  setupActiveNavigation();
+  
+  // Torna a função toggleBook global para acesso via onclick
+  window.toggleBook = toggleBook;
 });
 </script>
-
-<!-- FIM: </script> -->
