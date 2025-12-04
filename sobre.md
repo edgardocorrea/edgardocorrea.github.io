@@ -363,6 +363,24 @@ body {
   display: block; /* remove qualquer linha em cima/embaixo da imagem */
 }
 
+/* Remove bordas/outline de links dos cards */
+.interest-card {
+  outline: none;          /* remove contorno do navegador */
+  text-decoration: none;  /* remove qualquer linha de link */
+}
+
+/* Remove pseudo-elementos que possam gerar linhas */
+.interest-card::before,
+.interest-card::after {
+  content: none;
+}
+
+/* Garantir que ícone e título fiquem bem alinhados sem linhas fantasmas */
+.interest-card span,
+.interest-card div {
+  display: block;
+}
+
 .interest-icon {
   font-size: 48px;
   margin-bottom: 15px;
@@ -623,7 +641,7 @@ body {
           <div class="interest-title">Animes & Séries</div>
         </a>
        <!-- Mindset de Crescimento -->
-        <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
+        <a href="/interesses/evolucao/" class="interest-card" target="_blank" rel="noopener noreferrer">
           <span class="interest-icon">📈</span>
           <div class="interest-title">Evolução Contínua</div>
         </a>
