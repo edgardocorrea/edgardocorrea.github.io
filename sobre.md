@@ -607,12 +607,11 @@ body {
     <div class="accordion-content">
       <div class="interests-grid">
        <!-- Leitura & Música -->
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
+        <a href="/interesses/leitura/" class="interest-card" target="_blank" rel="noopener noreferrer">
+          <span class="interest-icon">📚🎵</span>
           <div class="interest-title">Leitura & Música</div>
-        </div>
+        </a>
        <!-- Animes & Séries -->
-       <!-- CORREÇÃO: Substituímos a estrutura incorreta por um link direto -->
         <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
           <span class="interest-icon">🎬</span>
           <div class="interest-title">Animes & Séries</div>
