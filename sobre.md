@@ -349,12 +349,18 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  outline: none; /* remove linha de foco */
 }
 
 .interest-card:hover {
   transform: translateY(-10px);
   border-color: #00eaff;
   box-shadow: 0 15px 40px rgba(0, 234, 255, 0.3);
+  outline: none; /* garante que não apareça ao passar o mouse */
+}
+
+.interest-card img {
+  display: block; /* remove qualquer linha em cima/embaixo da imagem */
 }
 
 .interest-icon {
@@ -617,10 +623,10 @@ body {
           <div class="interest-title">Animes & Séries</div>
         </a>
        <!-- Mindset de Crescimento -->
-        <div class="interest-card">
-          <span class="interest-icon">🔹</span>
+        <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
+          <span class="interest-icon">📈</span>
           <div class="interest-title">Evolução Contínua</div>
-        </div>
+        </a>
        <!-- Fitness/Equilibrio -->
         <div class="interest-card">
           <span class="interest-icon">🔹</span>
