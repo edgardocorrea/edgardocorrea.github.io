@@ -673,13 +673,13 @@ body {
 
 <!-- Botões de Navegação -->
 <div class="nav-buttons">
-  <a href="/interesses/leitura/" class="nav-button">
-    <span class="nav-icon">←</span>
+  <a href="/" class="nav-button">
+    <span>←</span>
     <span>Início</span>
   </a>
   
   <a href="/sobre/" class="nav-button secondary">
-    <span class="nav-icon">◉</span>
+    <span>◉</span>
     <span>Voltar ao Perfil</span>
   </a>
 </div>
