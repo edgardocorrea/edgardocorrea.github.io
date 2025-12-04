@@ -14,13 +14,11 @@ author_profile: false
 }
 
 body {
-  background: #000814 !important;
-  color: #e6faff;
   font-family: 'Inter', 'Segoe UI', sans-serif;
   overflow-x: hidden;
 }
 
-/* Container principal do conteúdo */
+/* Container principal */
 .initial-content {
   position: relative;
   background: rgba(10,20,40,0.85);
@@ -168,48 +166,6 @@ body {
   color: #00eaff;
   transform: translateY(-2px);
   box-shadow: 0 5px 15px rgba(0, 234, 255, 0.3);
-}
-
-/* ==================== BOTÃO VOLTAR AO TOPO ==================== */
-.back-to-top {
-  position: fixed;
-  bottom: 50%;
-  right: 30px;
-  transform: translateY(50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(0, 102, 255, 0.3);
-  border: 2px solid rgba(0, 234, 255, 0.4);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 28px;
-  font-weight: bold;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.4s ease;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.back-to-top.visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(50%) scale(1);
-}
-
-.back-to-top:hover {
-  background: rgba(0, 102, 255, 0.9);
-  border-color: #00eaff;
-  color: #ffffff;
-  box-shadow: 
-    0 0 30px rgba(0, 234, 255, 0.6),
-    0 0 50px rgba(0, 234, 255, 0.4),
-    0 8px 25px rgba(0, 0, 0, 0.5);
-  transform: translateY(50%) scale(1.1);
 }
 
 /* ==================== BOTÕES DE NAVEGAÇÃO ==================== */
@@ -588,12 +544,6 @@ body {
   .books-tabs { gap: 8px; }
   .book-tab { padding: 10px 20px; font-size: 14px; }
   .content-section { padding: 30px 20px; }
-  .back-to-top {
-    width: 50px;
-    height: 50px;
-    font-size: 24px;
-    right: 20px;
-  }
   .quick-nav {
     margin: 15px 0 25px 0;
     border-radius: 30px;
@@ -609,12 +559,6 @@ body {
   .book-tab { 
     padding: 8px 16px; 
     font-size: 13px; 
-  }
-  .back-to-top {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    right: 15px;
   }
   .quick-nav {
     border-radius: 25px;
@@ -646,13 +590,13 @@ body {
 <!-- Partículas de Fundo -->
 <div class="particles-bg"></div>
 
-<!-- Seção Hero com Título Principal -->
+<!-- Seção Hero -->
 <section class="hero-leitura">
   <h1>🎵📚 Música & Leitura</h1>
   <p>As influências que moldam minha visão de mundo, criatividade e forma de pensar</p>
 </section>
 
-<!-- Menu de Navegação Rápida Simplificado -->
+<!-- Menu de Navegação Rápida -->
 <nav class="quick-nav">
   <div class="quick-nav-container">
     <a href="#musica" class="quick-nav-item">🎵 Música</a>
@@ -661,10 +605,7 @@ body {
   </div>
 </nav>
 
-<!-- Botão Flutuante para Voltar ao Topo -->
-<div class="back-to-top" id="backToTop">↑</div>
-
-<!-- Seção Principal com ID para o link "Topo" -->
+<!-- Âncora para o link "Topo" -->
 <div id="topo"></div>
 
 <!-- SEÇÃO: MÚSICA -->
@@ -682,19 +623,19 @@ body {
     <div class="band-card">
       <span class="band-icon">🎤</span>
       <div class="band-name">Nothing But Thieves</div>
-      <div class="band-description">"Intensidade emocional crua"</div>
+      <div class="band-description">"Amsterdam - Intensidade emocional crua"</div>
     </div>
     
     <div class="band-card">
       <span class="band-icon">🎹</span>
       <div class="band-name">The Doors</div>
-      <div class="band-description">"Poesia psicodélica atemporal"</div>
+      <div class="band-description">"The End - Poesia psicodélica atemporal"</div>
     </div>
     
     <div class="band-card">
       <span class="band-icon">⚡</span>
       <div class="band-name">Linkin Park</div>
-      <div class="band-description">"A trilha sonora de uma geração"</div>
+      <div class="band-description">"Numb - A trilha sonora de uma geração"</div>
     </div>
   </div>
   
@@ -722,7 +663,7 @@ body {
 <section id="leitura" class="content-section">
   <h2 class="section-title">📚 Livros que Moldaram Minha Visão</h2>
   
-  <!-- Abas de Navegação para Categorias de Livros -->
+  <!-- Abas de Navegação -->
   <div class="books-tabs">
     <div class="book-tab active" data-tab="ficcao">🌌 Ficção Transformadora</div>
     <div class="book-tab" data-tab="tecnicos">💻 Técnicos & Carreira</div>
@@ -737,7 +678,7 @@ body {
       <!-- DUNA -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/81ym2Ay0bNL._SL1500_.jpg" alt="Duna" class="book-cover">
+          <img src="/assets/images/interesses/livros/Duna.jpg" alt="Duna" class="book-cover">
           <div class="book-info">
             <div class="book-title">Duna</div>
             <div class="book-author">Frank Herbert</div>
@@ -760,7 +701,7 @@ body {
       <!-- NEUROMANCER -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/81L2JSBZ9hL._SL1500_.jpg" alt="Neuromancer" class="book-cover">
+          <img src="/assets/images/interesses/livros/Neuromancer.jpg" alt="Neuromancer" class="book-cover">
           <div class="book-info">
             <div class="book-title">Neuromancer</div>
             <div class="book-author">William Gibson</div>
@@ -783,7 +724,7 @@ body {
       <!-- FUNDAÇÃO -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/91V5hLOTeJL._SL1500_.jpg" alt="Fundação" class="book-cover">
+          <img src="/assets/images/interesses/livros/Fundação.jpg" alt="Fundação" class="book-cover">
           <div class="book-info">
             <div class="book-title">Fundação</div>
             <div class="book-author">Isaac Asimov</div>
@@ -814,9 +755,9 @@ body {
       <!-- CLEAN CODE -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/71T7aD3EOTL._SL1328_.jpg" alt="Clean Code" class="book-cover">
+          <img src="/assets/images/interesses/livros/Codigo_limpo.jpg" alt="Código Limpo" class="book-cover">
           <div class="book-info">
-            <div class="book-title">Clean Code</div>
+            <div class="book-title">Código Limpo</div>
             <div class="book-author">Robert C. Martin</div>
             <div class="book-rating">⭐⭐⭐⭐⭐</div>
             <span class="book-genre">Programação</span>
@@ -824,9 +765,9 @@ body {
         </div>
         <div class="book-review">
           <strong>A bíblia do código legível:</strong><br><br>
-          Uncle Bob transformou como escrevo cada função. "Código é lido 10x mais do que é escrito" — essa frase mudou tudo. Aprendi que clareza é mais importante que inteligência.
+          Prof/Mestre Fernando me apresentou o Tio Bob ou Uncle Bob é transformou como escrevo cada função. "Código é lido 10x mais do que é escrito" — essa frase mudou tudo. Aprendi que clareza é mais importante que inteligência.
           <br><br>
-          Nomes significativos, funções pequenas, comentários apenas quando necessário. Cada linha deve contar uma história. Aplico esses princípios em scripts PowerShell, automações Node.js e até em documentação. Clean Code não é sobre perfeccionismo — é sobre respeitar quem vai ler seu código depois (incluindo você mesmo).
+          Nomes significativos, funções pequenas, comentários apenas quando necessário. Cada linha deve contar uma história. Aplico esses princípios na compreensão de scripts em PowerShell, automações Node.js e até em documentação. Clean Code não é sobre perfeccionismo — é sobre respeitar quem vai ler seu código depois (incluindo você mesmo) - é um excelente livro em todos os aspectos.
         </div>
         <div class="read-more-btn">
           <span>Leia mais</span>
@@ -837,9 +778,9 @@ body {
       <!-- THE PRAGMATIC PROGRAMMER -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/71f1jieYHNL._SL1500_.jpg" alt="The Pragmatic Programmer" class="book-cover">
+          <img src="/assets/images/interesses/livros/Programador.jpg" alt="O Programador Pragmático" class="book-cover">
           <div class="book-info">
-            <div class="book-title">The Pragmatic Programmer</div>
+            <div class="book-title">O Programador Pragmático</div>
             <div class="book-author">Hunt & Thomas</div>
             <div class="book-rating">⭐⭐⭐⭐⭐</div>
             <span class="book-genre">Desenvolvimento</span>
@@ -860,9 +801,9 @@ body {
       <!-- THE PHOENIX PROJECT -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/81XRKXk4gbL._SL1500_.jpg" alt="The Phoenix Project" class="book-cover">
+          <img src="/assets/images/interesses/livros/Projeto_Fenix.jpg" alt="O Projeto Fênix" class="book-cover">
           <div class="book-info">
-            <div class="book-title">The Phoenix Project</div>
+            <div class="book-title">O Projeto Fênix</div>
             <div class="book-author">Gene Kim</div>
             <div class="book-rating">⭐⭐⭐⭐⭐</div>
             <span class="book-genre">DevOps</span>
@@ -891,9 +832,9 @@ body {
       <!-- ATOMIC HABITS -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/81YkqyaFVEL._SL1500_.jpg" alt="Atomic Habits" class="book-cover">
+          <img src="/assets/images/interesses/livros/Habitos.jpg" alt="Habitos Atômicos" class="book-cover">
           <div class="book-info">
-            <div class="book-title">Atomic Habits</div>
+            <div class="book-title">Habitos Atômicos</div>
             <div class="book-author">James Clear</div>
             <div class="book-rating">⭐⭐⭐⭐⭐</div>
             <span class="book-genre">Produtividade</span>
@@ -914,9 +855,9 @@ body {
       <!-- DEEP WORK -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/71gCGwqH3KL._SL1500_.jpg" alt="Deep Work" class="book-cover">
+          <img src="/assets/images/interesses/livros/Trabalho.jpg" alt="Trabalho Focado" class="book-cover">
           <div class="book-info">
-            <div class="book-title">Deep Work</div>
+            <div class="book-title">Trabalho Focado</div>
             <div class="book-author">Cal Newport</div>
             <div class="book-rating">⭐⭐⭐⭐⭐</div>
             <span class="book-genre">Foco</span>
@@ -937,7 +878,7 @@ body {
       <!-- MINDSET -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/71n4-c10d1L._SL1500_.jpg" alt="Mindset" class="book-cover">
+          <img src="/assets/images/interesses/livros/MindSet.jpg" alt="Mindset" class="book-cover">
           <div class="book-info">
             <div class="book-title">Mindset</div>
             <div class="book-author">Carol S. Dweck</div>
@@ -960,7 +901,7 @@ body {
       <!-- SAPIENS -->
       <div class="book-card" onclick="toggleBook(this)">
         <div class="book-header">
-          <img src="https://m.media-amazon.com/images/I/71V6fvQ+pxL._SL1500_.jpg" alt="Sapiens" class="book-cover">
+          <img src="/assets/images/interesses/livros/Sapiens.jpg" alt="Sapiens" class="book-cover">
           <div class="book-info">
             <div class="book-title">Sapiens</div>
             <div class="book-author">Yuval Noah Harari</div>
@@ -984,20 +925,20 @@ body {
   </div>
 </section>
 
-<!-- Botões de Navegação no Final da Página -->
+<!-- Botões de Navegação -->
 <div class="nav-buttons">
-  <a href="/interesses/animes-seriados/" class="nav-button">
-    <span>←</span>
-    <span>Animes & Séries</span>
+  <a href="/" class="nav-button">
+    <span>🏠</span>
+    <span>Inicio</span>
   </a>
   
   <a href="/sobre/" class="nav-button secondary">
-    <span>🏠</span>
+    <span>←</span>
     <span>Voltar ao Perfil</span>
   </a>
 </div>
 
-<!-- JavaScript Simplificado e Comentado -->
+<!-- JavaScript Simplificado -->
 <script>
 /**
  * INICIALIZAÇÃO DA PÁGINA
@@ -1051,59 +992,6 @@ document.addEventListener('DOMContentLoaded', function() {
             behavior: 'smooth'
           });
         }
-      });
-    });
-  };
-  
-  /**
-   * FUNÇÃO: Configurar botão voltar ao topo
-   * Controla a exibição e comportamento do botão flutuante
-   */
-  const setupBackToTopButton = function() {
-    const backToTopButton = document.getElementById('backToTop');
-    let lastScrollTop = 0;
-    let scrollTimer = null;
-    
-    // Monitora eventos de scroll para controlar o botão
-    window.addEventListener('scroll', function() {
-      const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      // Mostra botão após rolar 300px para baixo
-      if (scrollTop > 300) {
-        backToTopButton.classList.add('visible');
-      } else {
-        backToTopButton.classList.remove('visible');
-      }
-      
-      // Detecta direção do scroll para comportamento dinâmico
-      if (scrollTop > lastScrollTop) {
-        // Rolando para baixo - manter visível
-        backToTopButton.classList.add('visible');
-      } else {
-        // Rolando para cima - esconder temporariamente
-        backToTopButton.classList.remove('visible');
-        
-        // Limpa timer anterior
-        if (scrollTimer) {
-          clearTimeout(scrollTimer);
-        }
-        
-        // Espera um pouco antes de mostrar novamente
-        scrollTimer = setTimeout(() => {
-          if (scrollTop > 300) {
-            backToTopButton.classList.add('visible');
-          }
-        }, 500);
-      }
-      
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-    
-    // Configura clique no botão para voltar ao topo
-    backToTopButton.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
       });
     });
   };
@@ -1190,7 +1078,6 @@ document.addEventListener('DOMContentLoaded', function() {
   // Inicializa todas as funcionalidades
   initBookTabs();
   setupQuickNav();
-  setupBackToTopButton();
   setupScrollAnimations();
   setupActiveNavigation();
   
