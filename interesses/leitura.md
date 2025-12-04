@@ -645,17 +645,7 @@ body {
     <div class="spotify-subtitle">Trilha sonora perfeita para codar e mergulhar em projetos</div>
     
     <!-- Placeholder para o Spotify -->
-    <div class="spotify-placeholder">
-      <p>🎧 <strong>Adicione sua playlist aqui!</strong></p>
-      <p style="font-size: 14px; margin-top: 10px;">
-        1. Crie uma playlist pública no Spotify<br>
-        2. Clique em "Compartilhar" → "Incorporar playlist"<br>
-        3. Substitua este div pelo código <code>&lt;iframe&gt;</code>
-      </p>
-      <p style="font-size: 13px; color: #00ff88; margin-top: 20px;">
-        Exemplo: https://open.spotify.com/embed/playlist/SUA_PLAYLIST_ID
-      </p>
-    </div>
+	<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6ujIGj23dHCnFNPTNMwBQc?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
 </section>
 
