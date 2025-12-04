@@ -65,32 +65,33 @@ body {
   font-size: 56px;
   font-weight: 900;
   margin-bottom: 20px;
-  background: linear-gradient(90deg, #ffffff, #e0f2ff, #ffffff);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: neonGradient 3s ease infinite;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   text-shadow: 
     0 0 10px #00eaff,
     0 0 20px #00eaff,
     0 0 30px #00eaff,
     0 0 40px #0077b6;
-    animation: neon-glow 2s ease-in-out infinite alternate;
+  animation: neon-glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes neonGradient {
-  0%, 100% {
-    background-position: 0% 50%;
+@keyframes neon-glow {
+  from {
     text-shadow: 
-      0 0 20px rgba(255, 255, 255, 0.8),
-      0 0 40px rgba(0, 119, 255, 0.5);
+      0 0 10px #00eaff,
+      0 0 20px #00eaff,
+      0 0 30px #00eaff,
+      0 0 40px #0077b6;
   }
-  50% {
-    background-position: 100% 50%;
+  to {
     text-shadow: 
-      0 0 30px rgba(255, 255, 255, 1),
-      0 0 60px rgba(0, 119, 255, 0.7);
+      0 0 5px #00eaff,
+      0 0 10px #00eaff,
+      0 0 15px #00eaff,
+      0 0 20px #0077b6,
+      0 0 35px #0077b6,
+      0 0 40px #0077b6;
   }
 }
 
