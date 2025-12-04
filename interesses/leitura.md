@@ -70,11 +70,11 @@ body {
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-shadow: 
-    0 0 10px rgba(255, 255, 255, 0.8),
-    0 0 20px rgba(255, 255, 255, 0.6),
-    0 0 30px rgba(255, 255, 255, 0.4),
-    0 0 40px rgba(255, 255, 255, 0.2);
-  animation: whiteGlow 2s ease-in-out infinite alternate;
+    0 0 10px #00eaff,
+    0 0 20px #00eaff,
+    0 0 30px #00eaff,
+    0 0 40px #0077b6;
+    animation: neon-glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes whiteGlow {
