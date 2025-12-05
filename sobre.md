@@ -631,17 +631,17 @@ body {
     <div class="accordion-content">
       <div class="interests-grid">
        <!-- Leitura & Música -->
-        <a href="/interesses/leitura/" class="interest-card" target="_blank" rel="noopener noreferrer">
+        <a href="/interesses/leitura/" class="interest-card">
           <span class="interest-icon">📚🎵</span>
           <div class="interest-title">Leitura & Música</div>
         </a>
        <!-- Animes & Séries -->
-        <a href="/interesses/animes/" class="interest-card" target="_blank" rel="noopener noreferrer">
+        <a href="/interesses/animes/" class="interest-card">
           <span class="interest-icon">🎬</span>
           <div class="interest-title">Animes & Séries</div>
         </a>
        <!-- Mindset de Crescimento -->
-        <a href="/interesses/evolucao/" class="interest-card" target="_blank" rel="noopener noreferrer">
+        <a href="/interesses/evolucao/" class="interest-card">
           <span class="interest-icon">📈</span>
           <div class="interest-title">Evolução Contínua</div>
         </a>
