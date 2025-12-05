@@ -40,10 +40,12 @@ author:
     - label: "Credly"
       icon: "fas fa-fw fa-certificate"
       url: "https://www.credly.com/users/edgardo.correa/badges"
-    # OPCIONAL: Adicione mais links se necessário
+    # OPCIONAL: 
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope"
     #   url: "mailto:edgardo.correa@email.com"
+# SEO do Minimal Mistakes esta ativo
+seo: true
 
 # ==================== FOOTER (COMPACTO) ====================
 footer:
