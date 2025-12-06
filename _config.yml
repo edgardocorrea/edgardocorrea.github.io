@@ -38,11 +38,8 @@ author:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/edgardocorrea"
     - label: "Credly"
-      icon: "fab fa-fw fa-certificate"
+      icon: "fas fa-fw fa-certificate"
       url: "https://www.credly.com/users/edgardo.correa/badges"
-    - label: "Pinterest"
-      icon: "fas fa-fw fa-pinterest"  # Ícone do Pinterest
-      url: "https://www.pinterest.com/edgardo_correa/"
     # OPCIONAL: 
     # - label: "Email"
     #   icon: "fas fa-fw fa-envelope"
