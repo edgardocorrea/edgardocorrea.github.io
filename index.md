@@ -10,6 +10,23 @@ header:
   overlay_filter: 0.3
   image_description: "" # Remove alt text
 ---
+<!-- INÍCIO: SCRIPT JSON-LD PARA O GOOGLE -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Edgardo Correa",
+  "jobTitle": "Analista de Sistemas",
+  "description": "Transformando desafios técnicos em soluções elegantes. Especializado em infraestrutura, redes e automação.",
+  "url": "https://edgardocorrea.github.io",
+  "image": "https://edgardocorrea.github.io/assets/images/bio-photo.jpg",
+  "sameAs": [
+    "https://github.com/edgardocorrea"
+  ]
+}
+</script>
+<!-- FIM: SCRIPT JSON-LD -->
+
 <!-- Imagem e texto customizado posicionado sobre a tela do notebook -->
 <div class="hero-image-wrapper">
   <canvas id="noiseCanvas"></canvas>
@@ -224,4 +241,5 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 </script>
+
 
