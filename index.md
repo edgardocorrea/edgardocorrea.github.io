@@ -9,16 +9,6 @@ header:
   overlay_color: "rgba(0,0,0,0.4)"
   overlay_filter: 0.3
 ---
-
----
-title: "" # Força título vazio
-excerpt: "" # Força excerpt vazio
-layout: splash
-header:
-  overlay_color: "rgba(0,0,0,0.4)"
-  overlay_filter: 0.3
-  image_description: "" # Remove alt text
----
 <!-- Imagem e texto customizado posicionado sobre a tela do notebook -->
 <div class="hero-image-wrapper">
   <canvas id="noiseCanvas"></canvas>
@@ -233,4 +223,5 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 </script>
+
 
