@@ -1,30 +1,24 @@
 ---
-title: "Edgardo Correa - Analista de Sistemas"
-excerpt: "Transformando desafios técnicos em soluções elegantes. Especializado em infraestrutura, redes e automação com paixão por inovação."
+title: "Edgardo Correa - Analista de Sistemas" # Título para a aba do navegador e resultados de busca
+excerpt: "Transformando desafios técnicos em soluções elegantes. Especializado em infraestrutura, redes e automação com paixão por inovação." # Descrição para o Google
 layout: splash
 image:
   path: /assets/images/banner-home.jpg # Imagem para Open Graph
   alt: "Banner de Edgardo Correa com um notebook"
 header:
+  overlay_color: "rgba(0,0,0,0.4)"
+  overlay_filter: 0.3
+---
+
+---
+title: "" # Força título vazio
+excerpt: "" # Força excerpt vazio
+layout: splash
+header:
+  overlay_color: "rgba(0,0,0,0.4)"
+  overlay_filter: 0.3
   image_description: "" # Remove alt text
 ---
-<!-- INÍCIO: SCRIPT JSON-LD PARA O GOOGLE -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Edgardo Correa",
-  "jobTitle": "Analista de Sistemas",
-  "description": "Transformando desafios técnicos em soluções elegantes. Especializado em infraestrutura, redes e automação.",
-  "url": "https://edgardocorrea.github.io",
-  "image": "https://edgardocorrea.github.io/assets/images/bio-photo.jpg",
-  "sameAs": [
-    "https://github.com/edgardocorrea"
-  ]
-}
-</script>
-<!-- FIM: SCRIPT JSON-LD -->
-
 <!-- Imagem e texto customizado posicionado sobre a tela do notebook -->
 <div class="hero-image-wrapper">
   <canvas id="noiseCanvas"></canvas>
@@ -239,6 +233,4 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 </script>
-
-
 
