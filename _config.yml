@@ -168,38 +168,60 @@ social:
 
 # ==================== ARQUIVOS EXCLUÍDOS DO BUILD ====================
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
+  # Pastas e arquivos de desenvolvimento
   - Gemfile
   - Gemfile.lock
+  - package.json
+  - package-lock.json
+  - yarn.lock
   - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - README.md
-  - LICENSE
-  - CHANGELOG.md
-  - "*.sublime-project"
-  - "*.sublime-workspace"
+  - vendor/
+  - gemfiles/
+  - log/
+  - tmp/
+  - config/
+  - Rakefile
+  - Gruntfile.js
+  - gulpfile.js
+
+  # Pastas internas do Jekyll (cache / gerados)
+  - .sass-cache/
+  - .jekyll-cache/
+  - .jekyll-metadata
+  - .jekyll-assets-cache
   - .asset-cache
   - .bundle
-  - .jekyll-assets-cache
-  - .sass-cache
+
+  # Documentação e arquivos auxiliares
+  - README.md
+  - LICENSE
+  - CHANGELOG
+  - CHANGELOG.md
+  - /docs
+  - /test
+
+  # Arquivos de editores e IDEs
+  - "*.sublime-project"
+  - "*.sublime-workspace"
+  - .idea/
+  - .vscode/
+
+  # JS não utilizados diretamente no tema
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
-  - Capfile
-  - CHANGELOG
-  - config
-  - Gruntfile.js
-  - gulpfile.js
-  - log
-  - Rakefile
-  - tmp
-  - /docs
-  - /test
+
+  # Excluir ASSETS do sitemap (importante)
+  - assets/images/
+  - assets/fonts/
+  - assets/videos/
+  - assets/files/
+
+  # Impede que PASTAS de assets virem páginas no sitemap
+  - assets/
+
+  # Outros possíveis arquivos inúteis
+  - _site/
 
 # ==================== KEEP (MANTER NO BUILD) ====================
 keep_files:
