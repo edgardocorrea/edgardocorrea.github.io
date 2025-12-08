@@ -1,21 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://edgardocorrea.github.io/</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
   </url>
+
   <url>
     <loc>https://edgardocorrea.github.io/sobre/</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
+
+  <url>
+    <loc>https://edgardocorrea.github.io/curriculo/</loc>
+  </url>
+
+  <url>
+    <loc>https://edgardocorrea.github.io/habilidades/</loc>
+  </url>
+
+  <url>
+    <loc>https://edgardocorrea.github.io/certificacoes/</loc>
+  </url>
+
+  <url>
+    <loc>https://edgardocorrea.github.io/portfolio/</loc>
+  </url>
+
+  <!-- PÁGINAS DA SEÇÃO INTERESSES -->
   <url>
     <loc>https://edgardocorrea.github.io/interesses/animes/</loc>
-    <lastmod>2023-11-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://edgardocorrea.github.io/interesses/evolucao/</loc>
+  </url>
+
+  <url>
+    <loc>https://edgardocorrea.github.io/interesses/leitura/</loc>
+  </url>
+
+  <!-- ARQUIVO DE VERIFICAÇÃO DO GOOGLE -->
+  <url>
+    <loc>https://edgardocorrea.github.io/google6479efbe5e2b12c4.html</loc>
+  </url>
+
 </urlset>
