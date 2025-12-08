@@ -6,8 +6,6 @@ image:
   path: /assets/images/banner-home.jpg # Imagem para Open Graph
   alt: "Banner de Edgardo Correa com um notebook"
 header:
-  overlay_color: "rgba(0,0,0,0.4)"
-  overlay_filter: 0.3
   image_description: "" # Remove alt text
 ---
 <!-- INÍCIO: SCRIPT JSON-LD PARA O GOOGLE -->
@@ -241,5 +239,6 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 </script>
+
 
 
