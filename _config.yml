@@ -26,8 +26,10 @@ masthead_title: "Edgardo Correa"
 # ==================== AUTOR ====================
 author:
   name: "Edgardo Correa"
-  avatar: "/assets/images/avatar_edgardo.jpg"
+  job: "Analista de Sistemas"
   bio: "Analista de Sistemas de Informação | Infraestrutura de Redes | Automação | Segurança"
+  avatar: "/assets/images/avatar_edgardo.jpg"
+  image: "/assets/images/bio-photo.jpg"
   location: "São Paulo, SP - Brasil"
   email: "edgardo.edyone-1@yahoo.com"   # Email pessoal
   links:
