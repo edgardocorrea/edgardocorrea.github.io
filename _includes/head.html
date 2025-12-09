@@ -1,14 +1,14 @@
+<!-- _includes/head-custom.html -->
+
 <meta charset="utf-8">
 
 {% include seo.html %}
-
 {% include structured-data.html %}
 
 {% unless site.atom_feed.hide %}
   <link href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ site.title }} Feed">
 {% endunless %}
 
-{%- comment %} https://docs.google.com/presentation/d/1rmxwWa9P6_xHqonmh5ONXRS-jPc5XKbnv99Rjkhe04s/present {% endcomment -%}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
@@ -17,6 +17,21 @@
     window.enable_copy_code_button = true;
   {%- endif %}
 </script>
+
+<!-- ============== MELHORIAS ============== -->
+
+<!-- 1. Cor do Tema para UI do Navegador (Mobile) -->
+<meta name="theme-color" content="#10192c">
+
+<!-- 2. Ícones Personalizados (Favicon, Apple Touch Icon) -->
+<link rel="shortcut icon" href="{{ site.favicon_path | default: '/assets/images/favicon.ico' | relative_url }}">
+<link rel="apple-touch-icon" href="{{ site.touch_icon_path | default: '/assets/images/apple-touch-icon.png' | relative_url }}">
+
+<!-- ============== FIM DAS MELHORIAS ============== -->
+
+<!-- Otimização de Performance -->
+<link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
 <!-- For all browsers -->
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
