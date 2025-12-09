@@ -143,6 +143,10 @@ timezone: America/Sao_Paulo
 
 # ==================== SEO ====================
 og_image: "/assets/images/avatar_edgardo.jpg"
+og_image_alt: "Foto de perfil de Edgardo Correa, Analista de Sistemas"
+og_image_width: 400  # largura
+og_image_height: 400 # altura
+og_locale: "pt_BR"
 social:
   type: Person
   name: Edgardo Correa
