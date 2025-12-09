@@ -142,7 +142,7 @@ kramdown:
 timezone: America/Sao_Paulo
 
 # ==================== SEO ====================
-og_image: "/assets/images/bio-photo.jpg"
+og_image: "/assets/images/avatar_edgardo.jpg"
 social:
   type: Person
   name: Edgardo Correa
