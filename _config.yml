@@ -28,8 +28,7 @@ author:
   name: "Edgardo Correa"
   job: "Analista de Sistemas"
   bio: "Analista de Sistemas de Informação | Infraestrutura de Redes | Automação | Segurança"
-  avatar: "/assets/images/avatar_edgardo.jpg"
-  image: "/assets/images/bio-photo.jpg"
+
   location: "São Paulo, SP - Brasil"
   email: "edgardo.edyone-1@yahoo.com"   # Email pessoal
   links:
@@ -168,60 +167,38 @@ social:
 
 # ==================== ARQUIVOS EXCLUÍDOS DO BUILD ====================
 exclude:
-  # Pastas e arquivos de desenvolvimento
-  - Gemfile
-  - Gemfile.lock
-  - package.json
-  - package-lock.json
-  - yarn.lock
-  - node_modules/
-  - vendor/
-  - gemfiles/
-  - log/
-  - tmp/
-  - config/
-  - Rakefile
-  - Gruntfile.js
-  - gulpfile.js
-
-  # Pastas internas do Jekyll (cache / gerados)
   - .sass-cache/
   - .jekyll-cache/
-  - .jekyll-metadata
-  - .jekyll-assets-cache
-  - .asset-cache
-  - .bundle
-
-  # Documentação e arquivos auxiliares
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
   - README.md
   - LICENSE
-  - CHANGELOG
   - CHANGELOG.md
-  - /docs
-  - /test
-
-  # Arquivos de editores e IDEs
   - "*.sublime-project"
   - "*.sublime-workspace"
-  - .idea/
-  - .vscode/
-
-  # JS não utilizados diretamente no tema
+  - .asset-cache
+  - .bundle
+  - .jekyll-assets-cache
+  - .sass-cache
   - assets/js/plugins
   - assets/js/_main.js
   - assets/js/vendor
-
-  # Excluir ASSETS do sitemap (importante)
-  - assets/images/
-  - assets/fonts/
-  - assets/videos/
-  - assets/files/
-
-  # Impede que PASTAS de assets virem páginas no sitemap
-  - assets/
-
-  # Outros possíveis arquivos inúteis
-  - _site/
+  - Capfile
+  - CHANGELOG
+  - config
+  - Gruntfile.js
+  - gulpfile.js
+  - log
+  - Rakefile
+  - tmp
+  - /docs
+  - /test
 
 # ==================== KEEP (MANTER NO BUILD) ====================
 keep_files:
