@@ -3,8 +3,8 @@ title: "" # Força título vazio
 excerpt: "" # Força excerpt vazio
 layout: splash
 header:
-  overlay_color: "rgba(0,0,0,0.4)"
-  overlay_filter: 0.3
+  overlay_color: "rgba(0,0,0,0.5)"
+  overlay_filter: 0.4
   image_description: "" # Remove alt text
 ---
 
@@ -32,7 +32,7 @@ header:
 <style>
 
 /* ------------------------------------------------ */
-/*       H1 e H2 NEON AZUL – MELHORADO          */
+/*       H1 e H2 - Tema Dourado/Cobre          */
 /* ------------------------------------------------ */
 
 .hero-h1 {
@@ -40,59 +40,52 @@ header:
   font-size: 3rem;
   margin-top: 40px;
   margin-bottom: 10px;
-  color: #00eaff;
+  color: #d4af37; /* Dourado */
   text-shadow:
-    0 0 5px #00eaff,
-    0 0 10px #00eaff,
-    0 0 20px #00aacc,
-    0 0 30px #0088cc,
-    0 0 40px #006699,
-    0 0 50px #004466;
+    0 0 4px #d4af37,
+    0 0 8px #b8860b,
+    0 0 15px #a67c00,
+    0 0 25px #8b6914;
   font-family: "Courier New", monospace;
   font-weight: bold;
-  animation: neonGlow 2s ease-in-out infinite alternate;
+  animation: goldGlow 3s ease-in-out infinite alternate;
 }
 
 .hero-h2 {
   text-align: center;
   font-size: 1.6rem;
   margin-bottom: 30px;
-  color: #7de9ff;
+  color: #f0e68c; /* Amarelo claro */
   text-shadow:
-    0 0 4px #7de9ff,
-    0 0 8px #4dc8ff,
-    0 0 15px #0099cc,
-    0 0 25px #006699;
+    0 0 3px #f0e68c,
+    0 0 6px #daa520,
+    0 0 12px #b8860b;
   font-family: "Courier New", monospace;
-  animation: neonGlow 2.5s ease-in-out infinite alternate;
+  animation: goldGlow 3.5s ease-in-out infinite alternate;
 }
 
-@keyframes neonGlow {
+@keyframes goldGlow {
   0% {
     text-shadow:
-      0 0 5px #00eaff,
-      0 0 10px #00eaff,
-      0 0 20px #00aacc,
-      0 0 30px #0088cc,
-      0 0 40px #006699,
-      0 0 50px #004466;
+      0 0 4px #d4af37,
+      0 0 8px #b8860b,
+      0 0 15px #a67c00,
+      0 0 25px #8b6914;
   }
   100% {
     text-shadow:
-      0 0 8px #00eaff,
-      0 0 15px #00eaff,
-      0 0 25px #00aacc,
-      0 0 35px #0088cc,
-      0 0 45px #006699,
-      0 0 55px #004466;
+      0 0 6px #d4af37,
+      0 0 12px #b8860b,
+      0 0 20px #a67c00,
+      0 0 30px #8b6914;
   }
 }
 
 /* ------------------------------------------------ */
-/* ESTILOS EXISTENTES – MANTIDOS COM MELHORIAS     */
+/* ESTILOS EXISTENTES – MELHORADOS COM TEMA DOURADO     */
 /* ------------------------------------------------ */
 
-/* Efeito de ruído no canvas - aumentado para melhor contraste */
+/* Efeito de ruído no canvas - mais sutil */
 #noiseCanvas {
   position: absolute;
   top: 0;
@@ -102,37 +95,37 @@ header:
   z-index: 5;
   pointer-events: none;
   mix-blend-mode: overlay;
-  opacity: 0.2; /* aumentado para melhor contraste */
+  opacity: 0.15; /* mais sutil */
 }
 
-/* Estilo da imagem principal com efeito neon mais forte */
+/* Estilo da imagem principal com efeito dourado */
 .hero-img {
   position: relative;
   z-index: 8;
   border-radius: 18px;
-  border: 3px solid #10192c; /* Azul escuro */
+  border: 3px solid #1a1a1a; /* Preto mais profundo */
   box-shadow:
-    0 0 8px #10192c,
-    0 0 16px #16233a,
-    0 0 30px #1d3254,
-    0 0 45px rgba(0, 234, 255, 0.3); /* adicionado brilho neon */
-  animation: neonPulse 3s ease-in-out infinite alternate;
+    0 0 8px #1a1a1a,
+    0 0 16px #2a2a2a,
+    0 0 30px #3a3a3a,
+    0 0 45px rgba(212, 175, 55, 0.2); /* brilho dourado sutil */
+  animation: goldPulse 4s ease-in-out infinite alternate;
 }
 
-@keyframes neonPulse {
+@keyframes goldPulse {
   0% {
     box-shadow:
-      0 0 8px #10192c,
-      0 0 16px #16233a,
-      0 0 30px #1d3254,
-      0 0 45px rgba(0, 234, 255, 0.3);
+      0 0 8px #1a1a1a,
+      0 0 16px #2a2a2a,
+      0 0 30px #3a3a3a,
+      0 0 45px rgba(212, 175, 55, 0.2);
   }
   100% {
     box-shadow:
-      0 0 12px #16233a,
-      0 0 25px #1d3254,
-      0 0 40px #274977,
-      0 0 55px rgba(0, 234, 255, 0.5); /* brilho máximo */
+      0 0 12px #1a1a1a,
+      0 0 25px #2a2a2a,
+      0 0 40px #3a3a3a,
+      0 0 55px rgba(212, 175, 55, 0.3); /* brilho dourado máximo */
   }
 }
 
@@ -147,55 +140,44 @@ header:
   text-align: left;
   z-index: 10;
   padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.4);
   border: none;
   border-radius: 8px;
   box-shadow: none;
   font-family: "Courier New", monospace;
-  animation: flickerScreen 1.5s infinite;
+  animation: flickerScreen 2s infinite;
 }
 
-/* Efeito flicker sutil */
-@keyframes flickerScreen {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
-  20%, 22%, 24%, 55% { opacity: 0.85; }
-}
-
-/* Prompt de comando */
+/* Prompt de comando - dourado */
 .command-prompt {
-  color: #00aaff;
+  color: #d4af37;
   font-weight: bold;
 }
 
-/* Texto da digitação */
+/* Texto da digitação - dourado */
 #typewriter {
-  color: #00eaff;
-  text-shadow: 0 0 5px #00eaff;
+  color: #f0e68c;
+  text-shadow: 0 0 4px #d4af37;
 }
 
-/* Texto descritivo */
+/* Texto descritivo - amarelo claro */
 .hero-description .custom-excerpt {
-  color: #b8eaff;
+  color: #f0e68c;
   font-size: 16px;
   line-height: 1.5;
   margin-top: 20px;
-  text-shadow: 0 0 8px #00d4ff88;
+  text-shadow: 0 0 6px #d4af3788;
 }
 
-/* Cursor Piscante com cor mais vibrante */
+/* Cursor Piscante - dourado */
 .cursor-blink {
   display: inline-block;
   width: 10px;
   height: 20px;
-  background: #00eaff;
+  background: #d4af37;
   margin-left: 5px;
   animation: blinkCursor 0.9s infinite;
-  box-shadow: 0 0 5px #00eaff;
-}
-
-@keyframes blinkCursor {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  box-shadow: 0 0 4px #d4af37;
 }
 
 /* Responsivo - Tablets */
