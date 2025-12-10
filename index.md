@@ -31,25 +31,24 @@ header:
 
 <style>
 /* ------------------------------------------------ */
-/*       H1 e H2 - Simples e Profissional          */
+/*       H1 e H2 - Ajustados para caber na tela    */
 /* ------------------------------------------------ */
-
 .hero-h1 {
   text-align: center;
-  font-size: 3rem;
-  margin-top: 40px;
-  margin-bottom: 10px;
-  color: #1a1a1a; /* preto escuro */
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* leve sombra para destaque */
+  font-size: 2.2rem; /* menor para caber na tela */
+  margin-top: 20px;
+  margin-bottom: 5px;
+  color: #1a1a1a;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
   font-family: "Courier New", monospace;
   font-weight: bold;
 }
 
 .hero-h2 {
   text-align: center;
-  font-size: 1.6rem;
-  margin-bottom: 30px;
-  color: #555555; /* cinza escuro */
+  font-size: 1.2rem; /* menor para caber na tela */
+  margin-bottom: 20px;
+  color: #555555;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   font-family: "Courier New", monospace;
 }
@@ -57,7 +56,6 @@ header:
 /* ------------------------------------------------ */
 /* ESTILOS EXISTENTES – LIMPOS                       */
 /* ------------------------------------------------ */
-
 #noiseCanvas {
   position: absolute;
   top: 0;
@@ -67,7 +65,7 @@ header:
   z-index: 5;
   pointer-events: none;
   mix-blend-mode: overlay;
-  opacity: 0.05; /* mais sutil */
+  opacity: 0.05;
 }
 
 .hero-img {
@@ -85,14 +83,14 @@ header:
 /* ------------------------------------------------ */
 .hero-text-overlay {
   position: absolute;
-  top: 50%;  
+  top: 48%;  /* levemente mais alto */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40%;
-  max-width: 600px;
+  width: 35%; /* overlay mais estreito */
+  max-width: 500px;
   text-align: left;
   z-index: 10;
-  padding: 20px 30px;
+  padding: 15px 20px;
   background-color: rgba(0, 0, 0, 0.15); /* fundo escuro translúcido leve */
   border-radius: 8px;
   font-family: "Courier New", monospace;
@@ -100,15 +98,15 @@ header:
 
 /* Prompt de comando */
 .command-prompt {
-  color: #333;
+  color: #fff; /* branco */
   font-weight: bold;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 /* Texto da digitação */
 #typewriter {
-  color: #111;
-  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  color: #fff; /* branco */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 /* Texto descritivo */
@@ -125,7 +123,7 @@ header:
   display: inline-block;
   width: 10px;
   height: 20px;
-  background: #333;
+  background: #fff; /* branco */
   margin-left: 5px;
   animation: blinkCursor 0.9s infinite;
 }
@@ -145,6 +143,12 @@ header:
   #typewriter, .command-prompt {
     font-size: 14px;
   }
+  .hero-h1 {
+    font-size: 1.8rem;
+  }
+  .hero-h2 {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -156,6 +160,12 @@ header:
   }
   #typewriter, .command-prompt {
     font-size: 12px;
+  }
+  .hero-h1 {
+    font-size: 1.5rem;
+  }
+  .hero-h2 {
+    font-size: 0.9rem;
   }
   .cursor-blink {
     width: 6px;
