@@ -7,6 +7,11 @@ header:
   overlay_filter: 0.3
   image_description: "" # Remove alt text
 ---
+
+<!-- TÍTULOS PRINCIPAIS (SEO) -->
+<h1 class="hero-h1">Edgardo Correa</h1>
+<h2 class="hero-h2">Analista de Sistemas – Redes, Infraestrutura e Segurança</h2>
+
 <!-- Imagem e texto customizado posicionado sobre a tela do notebook -->
 <div class="hero-image-wrapper">
   <canvas id="noiseCanvas"></canvas>
@@ -25,6 +30,52 @@ header:
 </div>
 
 <style>
+
+/* ------------------------------------------------ */
+/*       H1 e H2 NEON AZUL – SEO + VISUAL          */
+/* ------------------------------------------------ */
+
+.hero-h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  color: #00eaff;
+  text-shadow:
+    0 0 4px #00eaff,
+    0 0 8px #00eaff,
+    0 0 12px #00aacc,
+    0 0 18px #0088cc;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+}
+
+.hero-h2 {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-bottom: 30px;
+  color: #7de9ff;
+  text-shadow:
+    0 0 3px #7de9ff,
+    0 0 6px #4dc8ff,
+    0 0 10px #0099cc;
+  font-family: "Courier New", monospace;
+}
+
+/* Responsivo */
+@media (max-width: 480px) {
+  .hero-h1 {
+    font-size: 2rem;
+  }
+  .hero-h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ------------------------------------------------ */
+/* ESTILOS EXISTENTES – MANTIDOS SEM ALTERAÇÃO     */
+/* ------------------------------------------------ */
+
 /* Efeito de ruído no canvas */
 #noiseCanvas {
   position: absolute;
@@ -46,7 +97,7 @@ header:
   border: 3px solid #10192c; /* Azul escuro */
   box-shadow:
     0 0 6px #10192c,
-    0 0 12px #16233a,   /* tom levemente mais claro */
+    0 0 12px #16233a,
     0 0 22px #1d3254;   /* brilho externo */
   animation: neonPulse 2.5s ease-in-out infinite alternate;
 }
@@ -77,10 +128,10 @@ header:
   text-align: left;
   z-index: 10;
   padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.3); /* Fundo mais transparente */
-  border: none; /* Remove borda azul */
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
   border-radius: 8px;
-  box-shadow: none; /* Remove sombra */
+  box-shadow: none;
   font-family: "Courier New", monospace;
   animation: flickerScreen 1.5s infinite;
 }
@@ -144,19 +195,19 @@ header:
 /* Responsivo - Celulares */
 @media (max-width: 480px) {
   .hero-text-overlay {
-    width: 85%; /* Largura maior para telas pequenas */
+    width: 85%;
     top: 50%;
     padding: 10px 15px;
-    text-align: center; /* Centraliza o texto no mobile */
+    text-align: center;
   }
 
   .hero-description .custom-excerpt {
-    font-size: 13px; /* CORREÇÃO: Fonte legível */
+    font-size: 13px;
     line-height: 1.4;
   }
 
   #typewriter, .command-prompt {
-    font-size: 12px; /* CORREÇÃO: Fonte legível */
+    font-size: 12px;
   }
 
   .cursor-blink {
@@ -164,6 +215,7 @@ header:
     height: 16px;
   }
 }
+
 </style>
 
 <script>
@@ -175,9 +227,8 @@ function typeWriterEffect() {
   if (i < typewriterText.length) {
     document.getElementById("typewriter").innerHTML += typewriterText.charAt(i);
     i++;
-    setTimeout(typeWriterEffect, 55); // velocidade da digitação
+    setTimeout(typeWriterEffect, 55);
   } else {
-    // CORREÇÃO: Usa querySelector para a classe
     document.querySelector(".hero-description").style.display = "block";
   }
 }
@@ -199,7 +250,7 @@ function initNoiseEffect() {
     const imageData = ctx.createImageData(canvas.width, canvas.height);
     const buffer = new Uint32Array(imageData.data.buffer);
     for (let i = 0; i < buffer.length; i++) {
-      buffer[i] = Math.random() < 0.1 ? 0xffffffff : 0xff000000; // pixels brancos aleatórios
+      buffer[i] = Math.random() < 0.1 ? 0xffffffff : 0xff000000;
     }
     ctx.putImageData(imageData, 0, 0);
     requestAnimationFrame(generateNoise);
