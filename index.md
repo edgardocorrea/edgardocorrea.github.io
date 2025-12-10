@@ -32,7 +32,7 @@ header:
 <style>
 
 /* ------------------------------------------------ */
-/*       H1 e H2 - Tema Dourado/Cobre          */
+/*       H1 e H2 - Profissional Azul Neon          */
 /* ------------------------------------------------ */
 
 .hero-h1 {
@@ -40,52 +40,49 @@ header:
   font-size: 3rem;
   margin-top: 40px;
   margin-bottom: 10px;
-  color: #d4af37; /* Dourado */
+  color: #00eaff;
   text-shadow:
-    0 0 4px #d4af37,
-    0 0 8px #b8860b,
-    0 0 15px #a67c00,
-    0 0 25px #8b6914;
+    0 0 6px #00eaff,
+    0 0 12px #00c0ff,
+    0 0 20px #0088cc;
   font-family: "Courier New", monospace;
   font-weight: bold;
-  animation: goldGlow 3s ease-in-out infinite alternate;
+  animation: neonPulse 2.5s ease-in-out infinite alternate;
 }
 
 .hero-h2 {
   text-align: center;
   font-size: 1.6rem;
   margin-bottom: 30px;
-  color: #f0e68c; /* Amarelo claro */
+  color: #7de9ff;
   text-shadow:
-    0 0 3px #f0e68c,
-    0 0 6px #daa520,
-    0 0 12px #b8860b;
+    0 0 4px #7de9ff,
+    0 0 8px #4dc8ff,
+    0 0 12px #0099cc;
   font-family: "Courier New", monospace;
-  animation: goldGlow 3.5s ease-in-out infinite alternate;
+  animation: neonPulse 3s ease-in-out infinite alternate;
 }
 
-@keyframes goldGlow {
+/* Animação sutil neon */
+@keyframes neonPulse {
   0% {
     text-shadow:
-      0 0 4px #d4af37,
-      0 0 8px #b8860b,
-      0 0 15px #a67c00,
-      0 0 25px #8b6914;
+      0 0 6px #00eaff,
+      0 0 12px #00c0ff,
+      0 0 20px #0088cc;
   }
   100% {
     text-shadow:
-      0 0 6px #d4af37,
-      0 0 12px #b8860b,
-      0 0 20px #a67c00,
-      0 0 30px #8b6914;
+      0 0 10px #00eaff,
+      0 0 18px #00c0ff,
+      0 0 28px #0088cc;
   }
 }
 
 /* ------------------------------------------------ */
-/* ESTILOS EXISTENTES – MELHORADOS COM TEMA DOURADO     */
+/* ESTILOS EXISTENTES – MANTIDOS                   */
 /* ------------------------------------------------ */
 
-/* Efeito de ruído no canvas - mais sutil */
 #noiseCanvas {
   position: absolute;
   top: 0;
@@ -95,41 +92,36 @@ header:
   z-index: 5;
   pointer-events: none;
   mix-blend-mode: overlay;
-  opacity: 0.15; /* mais sutil */
+  opacity: 0.15;
 }
 
-/* Estilo da imagem principal com efeito dourado */
 .hero-img {
   position: relative;
   z-index: 8;
   border-radius: 18px;
-  border: 3px solid #1a1a1a; /* Preto mais profundo */
+  border: 3px solid #10192c;
   box-shadow:
-    0 0 8px #1a1a1a,
-    0 0 16px #2a2a2a,
-    0 0 30px #3a3a3a,
-    0 0 45px rgba(212, 175, 55, 0.2); /* brilho dourado sutil */
-  animation: goldPulse 4s ease-in-out infinite alternate;
+    0 0 6px #10192c,
+    0 0 12px #16233a,
+    0 0 22px #1d3254;
+  animation: imagePulse 2.5s ease-in-out infinite alternate;
 }
 
-@keyframes goldPulse {
+@keyframes imagePulse {
   0% {
     box-shadow:
-      0 0 8px #1a1a1a,
-      0 0 16px #2a2a2a,
-      0 0 30px #3a3a3a,
-      0 0 45px rgba(212, 175, 55, 0.2);
+      0 0 6px #10192c,
+      0 0 12px #16233a,
+      0 0 22px #1d3254;
   }
   100% {
     box-shadow:
-      0 0 12px #1a1a1a,
-      0 0 25px #2a2a2a,
-      0 0 40px #3a3a3a,
-      0 0 55px rgba(212, 175, 55, 0.3); /* brilho dourado máximo */
+      0 0 10px #16233a,
+      0 0 20px #1d3254,
+      0 0 35px #274977;
   }
 }
 
-/* Container do texto sobre a imagem */
 .hero-text-overlay {
   position: absolute;
   top: 50%;  
@@ -140,62 +132,60 @@ header:
   text-align: left;
   z-index: 10;
   padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.4);
-  border: none;
+  background-color: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
-  box-shadow: none;
   font-family: "Courier New", monospace;
-  animation: flickerScreen 2s infinite;
+  animation: flickerScreen 1.5s infinite;
 }
 
-/* Prompt de comando - dourado */
 .command-prompt {
-  color: #d4af37;
+  color: #00aaff;
   font-weight: bold;
 }
 
-/* Texto da digitação - dourado */
 #typewriter {
-  color: #f0e68c;
-  text-shadow: 0 0 4px #d4af37;
+  color: #00eaff;
 }
 
-/* Texto descritivo - amarelo claro */
 .hero-description .custom-excerpt {
-  color: #f0e68c;
+  color: #b8eaff;
   font-size: 16px;
   line-height: 1.5;
   margin-top: 20px;
-  text-shadow: 0 0 6px #d4af3788;
+  text-shadow: 0 0 8px #00d4ff88;
 }
 
-/* Cursor Piscante - dourado */
 .cursor-blink {
   display: inline-block;
   width: 10px;
   height: 20px;
-  background: #d4af37;
+  background: #00eaff;
   margin-left: 5px;
   animation: blinkCursor 0.9s infinite;
-  box-shadow: 0 0 4px #d4af37;
 }
 
-/* Responsivo - Tablets */
+@keyframes flickerScreen {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 1; }
+  20%, 22%, 24%, 55% { opacity: 0.85; }
+}
+
+@keyframes blinkCursor {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
   .hero-text-overlay {
     width: 70%;
     top: 40%;
     padding: 15px 20px;
   }
-  .hero-description .custom-excerpt {
-    font-size: 14px;
-  }
   #typewriter, .command-prompt {
     font-size: 14px;
   }
 }
 
-/* Responsivo - Celulares */
 @media (max-width: 480px) {
   .hero-text-overlay {
     width: 85%;
@@ -203,16 +193,9 @@ header:
     padding: 10px 15px;
     text-align: center;
   }
-
-  .hero-description .custom-excerpt {
-    font-size: 13px;
-    line-height: 1.4;
-  }
-
   #typewriter, .command-prompt {
     font-size: 12px;
   }
-
   .cursor-blink {
     width: 6px;
     height: 16px;
@@ -222,7 +205,6 @@ header:
 </style>
 
 <script>
-// Texto para o efeito de digitação
 const typewriterText = `read -p "Analista de Sistemas com experiência em infra, redes e automação." edyone ; echo "Apaixonado por soluções eficientes :P"`;
 let i = 0;
 
@@ -241,11 +223,9 @@ window.onload = () => {
   initNoiseEffect();
 };
 
-// Inicia e anima o efeito de ruído
 function initNoiseEffect() {
   const canvas = document.getElementById('noiseCanvas');
   const ctx = canvas.getContext('2d');
-
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 
@@ -262,7 +242,6 @@ function initNoiseEffect() {
   generateNoise();
 }
 
-// Redimensiona o canvas se a janela mudar
 window.addEventListener('resize', () => {
   const canvas = document.getElementById('noiseCanvas');
   canvas.width = window.innerWidth;
