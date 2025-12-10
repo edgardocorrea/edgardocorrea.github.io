@@ -32,7 +32,7 @@ header:
 <style>
 
 /* ------------------------------------------------ */
-/*       H1 e H2 NEON AZUL – SEO + VISUAL          */
+/*       H1 e H2 NEON AZUL – MELHORADO          */
 /* ------------------------------------------------ */
 
 .hero-h1 {
@@ -42,12 +42,15 @@ header:
   margin-bottom: 10px;
   color: #00eaff;
   text-shadow:
-    0 0 4px #00eaff,
-    0 0 8px #00eaff,
-    0 0 12px #00aacc,
-    0 0 18px #0088cc;
+    0 0 5px #00eaff,
+    0 0 10px #00eaff,
+    0 0 20px #00aacc,
+    0 0 30px #0088cc,
+    0 0 40px #006699,
+    0 0 50px #004466;
   font-family: "Courier New", monospace;
   font-weight: bold;
+  animation: neonGlow 2s ease-in-out infinite alternate;
 }
 
 .hero-h2 {
@@ -56,27 +59,40 @@ header:
   margin-bottom: 30px;
   color: #7de9ff;
   text-shadow:
-    0 0 3px #7de9ff,
-    0 0 6px #4dc8ff,
-    0 0 10px #0099cc;
+    0 0 4px #7de9ff,
+    0 0 8px #4dc8ff,
+    0 0 15px #0099cc,
+    0 0 25px #006699;
   font-family: "Courier New", monospace;
+  animation: neonGlow 2.5s ease-in-out infinite alternate;
 }
 
-/* Responsivo */
-@media (max-width: 480px) {
-  .hero-h1 {
-    font-size: 2rem;
+@keyframes neonGlow {
+  0% {
+    text-shadow:
+      0 0 5px #00eaff,
+      0 0 10px #00eaff,
+      0 0 20px #00aacc,
+      0 0 30px #0088cc,
+      0 0 40px #006699,
+      0 0 50px #004466;
   }
-  .hero-h2 {
-    font-size: 1.1rem;
+  100% {
+    text-shadow:
+      0 0 8px #00eaff,
+      0 0 15px #00eaff,
+      0 0 25px #00aacc,
+      0 0 35px #0088cc,
+      0 0 45px #006699,
+      0 0 55px #004466;
   }
 }
 
 /* ------------------------------------------------ */
-/* ESTILOS EXISTENTES – MANTIDOS SEM ALTERAÇÃO     */
+/* ESTILOS EXISTENTES – MANTIDOS COM MELHORIAS     */
 /* ------------------------------------------------ */
 
-/* Efeito de ruído no canvas */
+/* Efeito de ruído no canvas - aumentado para melhor contraste */
 #noiseCanvas {
   position: absolute;
   top: 0;
@@ -86,34 +102,37 @@ header:
   z-index: 5;
   pointer-events: none;
   mix-blend-mode: overlay;
-  opacity: 0.15; /* intensidade do ruído */
+  opacity: 0.2; /* aumentado para melhor contraste */
 }
 
-/* Estilo da imagem principal com efeito neon */
+/* Estilo da imagem principal com efeito neon mais forte */
 .hero-img {
   position: relative;
   z-index: 8;
   border-radius: 18px;
   border: 3px solid #10192c; /* Azul escuro */
   box-shadow:
-    0 0 6px #10192c,
-    0 0 12px #16233a,
-    0 0 22px #1d3254;   /* brilho externo */
-  animation: neonPulse 2.5s ease-in-out infinite alternate;
+    0 0 8px #10192c,
+    0 0 16px #16233a,
+    0 0 30px #1d3254,
+    0 0 45px rgba(0, 234, 255, 0.3); /* adicionado brilho neon */
+  animation: neonPulse 3s ease-in-out infinite alternate;
 }
 
 @keyframes neonPulse {
   0% {
     box-shadow:
-      0 0 6px #10192c,
-      0 0 12px #16233a,
-      0 0 22px #1d3254;
+      0 0 8px #10192c,
+      0 0 16px #16233a,
+      0 0 30px #1d3254,
+      0 0 45px rgba(0, 234, 255, 0.3);
   }
   100% {
     box-shadow:
-      0 0 10px #16233a,
-      0 0 20px #1d3254,
-      0 0 35px #274977; /* brilho máximo */
+      0 0 12px #16233a,
+      0 0 25px #1d3254,
+      0 0 40px #274977,
+      0 0 55px rgba(0, 234, 255, 0.5); /* brilho máximo */
   }
 }
 
@@ -151,6 +170,7 @@ header:
 /* Texto da digitação */
 #typewriter {
   color: #00eaff;
+  text-shadow: 0 0 5px #00eaff;
 }
 
 /* Texto descritivo */
@@ -162,7 +182,7 @@ header:
   text-shadow: 0 0 8px #00d4ff88;
 }
 
-/* Cursor Piscante */
+/* Cursor Piscante com cor mais vibrante */
 .cursor-blink {
   display: inline-block;
   width: 10px;
@@ -170,6 +190,7 @@ header:
   background: #00eaff;
   margin-left: 5px;
   animation: blinkCursor 0.9s infinite;
+  box-shadow: 0 0 5px #00eaff;
 }
 
 @keyframes blinkCursor {
