@@ -368,7 +368,7 @@ body.page--portfolio main.grid__item {
     <span class="status-badge">✓ Ativo</span>
     
     <div class="project-icon">
-      📶
+      >🌐
     </div>
     
     <h2 class="project-title">Modem VIVO</h2>
