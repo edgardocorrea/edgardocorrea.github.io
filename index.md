@@ -40,7 +40,7 @@ header:
   margin-top: 40px;
   margin-bottom: 10px;
   color: #1a1a1a; /* preto escuro */
-  text-shadow: 1px 1px 2px #bbb; /* leve sombra cinza */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* leve sombra para destaque */
   font-family: "Courier New", monospace;
   font-weight: bold;
 }
@@ -50,6 +50,7 @@ header:
   font-size: 1.6rem;
   margin-bottom: 30px;
   color: #555555; /* cinza escuro */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
   font-family: "Courier New", monospace;
 }
 
@@ -79,6 +80,9 @@ header:
     0 0 12px #eee;
 }
 
+/* ------------------------------------------------ */
+/* HERO TEXT OVERLAY - FUNDO ESCURO LEVE           */
+/* ------------------------------------------------ */
 .hero-text-overlay {
   position: absolute;
   top: 50%;  
@@ -89,27 +93,34 @@ header:
   text-align: left;
   z-index: 10;
   padding: 20px 30px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(0, 0, 0, 0.15); /* fundo escuro translúcido leve */
   border-radius: 8px;
   font-family: "Courier New", monospace;
 }
 
+/* Prompt de comando */
 .command-prompt {
   color: #333;
   font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
+/* Texto da digitação */
 #typewriter {
   color: #111;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
+/* Texto descritivo */
 .hero-description .custom-excerpt {
   color: #555;
   font-size: 16px;
   line-height: 1.5;
   margin-top: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
+/* Cursor piscante */
 .cursor-blink {
   display: inline-block;
   width: 10px;
