@@ -363,7 +363,7 @@ body.page--portfolio main.grid__item {
 <!-- Grid de Projetos -->
 <div class="projects-grid">
 
-  <!-- Projeto 1: Modem VIVO Unlock -->
+  <!-- Projeto 1: Modem VIVO -->
   <div class="project-card">
     <span class="status-badge">✓ Ativo</span>
     
@@ -371,7 +371,7 @@ body.page--portfolio main.grid__item {
       📡
     </div>
     
-    <h2 class="project-title">Modem VIVO Unlock</h2>
+    <h2 class="project-title">Modem VIVO</h2>
     
     <p class="project-description">
       Ferramenta de automação completa para desbloqueio de configurações avançadas do modem Askey RTF8115VW REV5 (VIVO). Desenvolvida com Node.js e Selenium WebDriver para automatizar o processo de forma segura e eficiente.
