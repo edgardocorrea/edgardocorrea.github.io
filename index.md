@@ -1,5 +1,16 @@
+---
+title: "" 
+excerpt: "" 
+layout: splash
+header:
+  overlay_color: "rgba(255,255,255,0.0)"
+  overlay_filter: 0
+  image_description: "" 
+---
+
 <!-- TÍTULOS PRINCIPAIS (SEO) -->
 <h1 class="hero-h1">Edgardo Correa</h1>
+<h2 class="hero-h2">Analista de Sistemas – Redes, Infraestrutura e Segurança</h2>
 
 <!-- Imagem e texto customizado sobre a tela do notebook -->
 <div class="hero-image-wrapper">
@@ -24,7 +35,7 @@
 /* ------------------------------------------------ */
 .hero-h1 {
   text-align: center;
-  font-size: 2.2rem;
+  font-size: 2.2rem; /* menor para caber na tela */
   margin-top: 20px;
   margin-bottom: 5px;
   color: #1a1a1a;
@@ -35,7 +46,7 @@
 
 .hero-h2 {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* menor para caber na tela */
   margin-bottom: 20px;
   color: #555555;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
@@ -57,7 +68,6 @@
   opacity: 0.05;
 }
 
-/* CORREÇÃO: Adicionando max-width e altura automática para a imagem não expandir */
 .hero-img {
   position: relative;
   z-index: 8;
@@ -66,10 +76,6 @@
   box-shadow:
     0 0 6px #ddd,
     0 0 12px #eee;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
 }
 
 /* ------------------------------------------------ */
@@ -77,29 +83,29 @@
 /* ------------------------------------------------ */
 .hero-text-overlay {
   position: absolute;
-  top: 48%;
+  top: 48%;  /* levemente mais alto */
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 35%;
+  width: 35%; /* overlay mais estreito */
   max-width: 500px;
   text-align: left;
   z-index: 10;
   padding: 15px 20px;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.15); /* fundo escuro translúcido leve */
   border-radius: 8px;
   font-family: "Courier New", monospace;
 }
 
 /* Prompt de comando */
 .command-prompt {
-  color: #fff;
+  color: #fff; /* branco */
   font-weight: bold;
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 /* Texto da digitação */
 #typewriter {
-  color: #fff;
+  color: #fff; /* branco */
   text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
@@ -117,7 +123,7 @@
   display: inline-block;
   width: 10px;
   height: 20px;
-  background: #fff;
+  background: #fff; /* branco */
   margin-left: 5px;
   animation: blinkCursor 0.9s infinite;
 }
@@ -167,33 +173,6 @@
   }
 }
 
-/* CORREÇÃO: Adicionando estilos para o contêiner do herói */
-.hero-image-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-@media (max-width: 1200px) {
-  .hero-image-wrapper {
-    padding: 15px;
-  }
-}
-
-@media (max-width: 992px) {
-  .hero-image-wrapper {
-    padding: 10px;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-image-wrapper {
-    padding: 5px;
-  }
-}
 </style>
 
 <script>
@@ -240,3 +219,4 @@ window.addEventListener('resize', () => {
   canvas.height = window.innerHeight;
 });
 </script>
+
